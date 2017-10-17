@@ -1,4 +1,4 @@
-
+//sostituire l'obsoleto Array con un ArrayList che è molto meglio
 public class Turni {
 		String TAG = ("2:30-10:36");
 		String NACHT = ("16:30-00:36");
