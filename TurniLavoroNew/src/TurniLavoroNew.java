@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Random;
 import java.io.*;
 
@@ -9,8 +10,10 @@ class TurniLavoroNew {
 		// Creo 5 dipendenti come prova su un array di dipendenti
 		Dipendente dipendente[];
 		dipendente = new Dipendente[4];
+	//	ArrayList <Dipendente> dipendenteArrayList = new ArrayList<Dipendente>();
 		Stampa stampa = new Stampa();
 		for (int i = 0; i < 4; i++) {
+			//dipendenteArrayList.add (new Dipendente.setNome("DipendenteArrayList n: " + i)); // COME si mette il nome dentro Dipendente.setName(nome)?
 			dipendente[i] = new Dipendente();
 			dipendente[i].setNome("Dipendente n: " + i);
 			dipendente[i].setLivello(4);
@@ -21,7 +24,8 @@ class TurniLavoroNew {
 					if (OrarioLavorativo == 2) { 
 							giornoLibero = new  Random() .nextInt(5) ; // 0 per DOM, 1 per LUN, 2 per MAR, 3 ... VEN non si è mai liberi.
 					}
-			stampa.StampaSuVideo(dipendente[i], SwitchTurni.generaTurni(giornoLibero, OrarioLavorativo, dipendente[i]));
+			dipendente[i].malattia = false;
+			stampa.StampaSuVideo(dipendente[i], SwitchTurni.generaTurni(giornoLibero, OrarioLavorativo, dipendente[i], dipendente[i].malattia));
 			System.out.println("\n");
 			
 		}

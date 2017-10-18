@@ -15,6 +15,7 @@ public class Dipendente {
 	boolean nuovoArrivato = false;
 	boolean lifeFirma = false;
 	boolean licenziato = false;
+	boolean malattia = false;
 	
 	public String getNome() {
 		return nome;
