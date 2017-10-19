@@ -11,6 +11,7 @@ public class Dipendente {
 	private double OreNotturne = 0;
 	private double OreFestivita = 0;
 	private double OreDomenica = 0;
+	private int giorniMalattia = 0;
 	boolean azubi = false;
 	boolean nuovoArrivato = false;
 	boolean lifeFirma = false;
@@ -52,6 +53,12 @@ public class Dipendente {
 	}
 	public double getOreDomenica() {
 		return OreDomenica;
+	}
+	public void setGiorniMalattia (int giorniMalattia) {
+		this.giorniMalattia += giorniMalattia;
+	}
+	public int getGiorniMalattia () {
+		return giorniMalattia;
 	}
 }
 

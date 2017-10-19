@@ -14,17 +14,14 @@ class TurniLavoroNew {
 			dipendente.setNome("DipendenteArray n: " + i);
 			dipendente.setLivello(4);
 			dipendente.setLineaLavoro(1);
-			dipendente.malattia = false;
+			dipendente.malattia = true;
 			dipendenteArrayList.add (dipendente);
 			int OrarioLavorativo = 1; // 1 per TAG, 2 per NACHT
-			int giornoLibero = 0; //serve per non far venire l'errore su Switchturni DA ELIMINARE
+			int giornoLibero = 0;
 				OrarioLavorativo = new Random () .nextInt(2) + 1;
 					if (OrarioLavorativo == 2) { 
 							giornoLibero = new  Random() .nextInt(5) ; // 0 per DOM, 1 per LUN, 2 per MAR, 3 ... VEN non si è mai liberi.
-					}
-					giornoLibero = 0;
-			//stampa.StampaSuVideo(dipendente, SwitchTurni.generaTurni(giornoLibero, OrarioLavorativo, dipendente, dipendente.malattia));
-			stampa.StampaSuVideo(dipendente, SwitchTurni.generaTurni(giornoLibero, OrarioLavorativo, dipendente, dipendente.malattia));
+					}			stampa.StampaSuVideo(dipendente, SwitchTurni.generaTurni(giornoLibero, OrarioLavorativo, dipendente, dipendente.malattia));
 			System.out.println("\n");
 			
 		}
