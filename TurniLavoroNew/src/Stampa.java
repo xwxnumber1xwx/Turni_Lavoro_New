@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
 public class Stampa {
-	public void StampaSuVideo (Dipendente dipendente, ArrayList<String> Turni) {
-		System.out.print(dipendente.nome + " Stufe: " + dipendente.livello + " Linie: " + dipendente.lineaLavoro + "\n");
+	public void StampaSuVideo (Dipendente dipendente, ArrayList<String> Turni, int LineaLavoro) {
+		System.out.print(dipendente.nome + " Stufe: " + dipendente.livello + " Linie: " + LineaLavoro + "\n");
 		// a seguire causa ERRORE su arraylistr che è grande piu dei dati inseriti e quindi arrayListLenght è uguale a -1
 		int arrayListLenght = Turni.size();// mi da la lunghezza dell'arrayList
 		for (int x = 0; x < arrayListLenght; x++) {

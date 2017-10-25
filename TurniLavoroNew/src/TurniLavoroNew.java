@@ -1,63 +1,49 @@
 import java.util.ArrayList;
-import java.util.Properties;
 import java.util.Random;
 import java.io.*;
 
 class TurniLavoroNew {
-	public static void saveFile () {
-	Properties proprieties = new Properties();
-	OutputStream os = null;
-	try {
-		os = new FileOutputStream("C:/Users/Daniele/options.proprieties") ;
-	} catch (FileNotFoundException e1) {
-		// TODO Auto-generated catch block
-		e1.printStackTrace();
-	}
-	String TAG_DOM = "TAG_DOM";
-	proprieties.setProperty(TAG_DOM, "Libero");
-	proprieties.setProperty("TAG_MAR", "2:30-10:36");
-	proprieties.setProperty("TAG_MER", "2:30-10:36");
-	proprieties.setProperty("TAG_GIO", "2:30-10:36");
-	proprieties.setProperty("TAG_VEN", "2:00-10:06");
-	proprieties.setProperty("TAG_SAB", "Libero");
-	proprieties.setProperty("NACHT_DOM", "16:00-00:06");
-	proprieties.setProperty("NACHT_LUN", "16:30-00:36");
-	proprieties.setProperty("NACHT_MAR", "16:30-00:36");
-	proprieties.setProperty("NACHT_MER", "16:30-00:36");
-	proprieties.setProperty("NACHT_GIO", "16:30-00:36");
-	proprieties.setProperty("NACHT_VEN_1", "15:00-23:06");
-	proprieties.setProperty("NACHT_VEN_2", "18:00-02:06");
-	proprieties.setProperty("NACHT_SAB", "Libero");
-	try {
-		proprieties.store(os, "NON_TOCCARE");
-	} catch (IOException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
 	
-	}
-
+// DA SISTEMARE HO CONFUSO LINEALAVORO CON TAG E NACHT
 	public static void main(String[] args)
 		throws IOException { //Sicurezza per eventuali errori di Input e Output
 				// Creo 5 dipendenti come prova su un array di dipendenti
-				saveFile();
+				Preferenze.InitFile();
 				ArrayList <Dipendente> dipendenteArrayList = new ArrayList<Dipendente>(6);
 				Stampa stampa = new Stampa();
-				for (int i = 0; i < 4; i++) {
+				int LineaLavoro = 0;
+				int LineaLavoroTag = 0;
+				int LineaLavoroNacht = 0;
+				String p = Preferenze.getOnePreference("TAG_MIN_MITARBEITER");
+				int minMatt = Integer.parseInt(p);
+				Preferenze.getOnePreference("NACHT_MIN_MITARBEITER");
+				int minNacht = Integer.parseInt(p);
+				//int minMatt = Integer.parseInt(Preferenze.getOnePreference("TAG_MIN_MITARBEITER")); //ERRORE MI RESTITUISCE NULL!
+				//int minNacht = Integer.parseInt(Preferenze.getOnePreference("NACHT_MIN_MITARBEITER"));//ERRORE MI RESTITUISCE NULL!
+				for (int i = 0; i < 5; i++) {
 					Dipendente dipendente  = new Dipendente();
 					dipendente.setNome("DipendenteArray n: " + i);
 					dipendente.setLivello(4);
-					dipendente.setLineaLavoro(1);
-					dipendente.malattia = false; // solo una prova, da cancellare
+					int[] linea = {1,2}; //Da inserire in base alla capacità lavorativa;
+					dipendente.setLineaLavoro(linea);
+					dipendente.malattia = new Random () .nextBoolean(); // solo una prova per la gente malata, da cancellare
 					dipendenteArrayList.add (dipendente);
-					int OrarioLavorativo = 1; // 1 per TAG, 2 per NACHT
-					int giornoLibero = 0;
-						OrarioLavorativo = new Random () .nextInt(2) + 1;
-							if (OrarioLavorativo == 2) { 
-									giornoLibero = new  Random() .nextInt(5) ; // 0 per DOM, 1 per LUN, 2 per MAR, 3 ... VEN non si è mai liberi.
-							}			stampa.StampaSuVideo(dipendente, SwitchTurni.generaTurni(giornoLibero, OrarioLavorativo, dipendente, dipendente.malattia));
-					System.out.println("\n");
+					// int OrarioLavorativo = 1; // 1 per TAG, 2 per NACHT
+					if (LineaLavoroNacht <= minNacht) {
+						LineaLavoro = 2;
+						LineaLavoroNacht++;
+					} else {
+						LineaLavoro = 1;
+						LineaLavoroTag++;
+					}
 					
+					int giornoLibero = 0;
+					int OrarioLavorativo = new Random () .nextInt(2) + 1;
+						if (OrarioLavorativo == 2) { 
+								giornoLibero = new  Random() .nextInt(5) ; // 0 per DOM, 1 per LUN, 2 per MAR, 3 ... VEN non si è mai liberi.
+						}			
+						stampa.StampaSuVideo(dipendente, SwitchTurni.generaTurni(giornoLibero, OrarioLavorativo, dipendente, dipendente.malattia), LineaLavoro);
+						System.out.println("\n");
 				}
 				
 				

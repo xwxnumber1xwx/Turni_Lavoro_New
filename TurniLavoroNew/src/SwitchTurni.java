@@ -52,7 +52,7 @@ public class SwitchTurni {
 			}
 			x++;
 		}
-		while (x < 6);
+		while (x < 7);
 
 		return turniLavoratoreArrayList;
 	}
