@@ -18,31 +18,10 @@ public class Preferenze {
 			e1.printStackTrace();
 		}
 		proprieties.setProperty("TAG_Y_N", "Y");
-		proprieties.setProperty("MITTLE_Y_N", "N");
 		proprieties.setProperty("NACHT_Y_N", "Y");
 		proprieties.setProperty("TAG_MIN_MITARBEITER", "3");
-		proprieties.setProperty("MITTLE_MIN_MITARBEITER", "0");
-		proprieties.setProperty("NACH_MIN_MITARBEITER", "2");
-		proprieties.setProperty("TAG_DOM", "Libero");
-		proprieties.setProperty("TAG_MAR", "2:30-10:36");
-		proprieties.setProperty("TAG_MER", "2:30-10:36");
-		proprieties.setProperty("TAG_GIO", "2:30-10:36");
-		proprieties.setProperty("TAG_VEN", "2:00-10:06");
-		proprieties.setProperty("TAG_SAB", "Libero");
-		proprieties.setProperty("MITTLE_DOM", "");
-		proprieties.setProperty("MITTLE_MAR", "");
-		proprieties.setProperty("MITTLE_MER", "");
-		proprieties.setProperty("MITTLE_GIO", "");
-		proprieties.setProperty("MITLE_VEN", "");
-		proprieties.setProperty("MITTLE_SAB", "");
-		proprieties.setProperty("NACHT_DOM", "16:00-00:06");
-		proprieties.setProperty("NACHT_LUN", "16:30-00:36");
-		proprieties.setProperty("NACHT_MAR", "16:30-00:36");
-		proprieties.setProperty("NACHT_MER", "16:30-00:36");
-		proprieties.setProperty("NACHT_GIO", "16:30-00:36");
-		proprieties.setProperty("NACHT_VEN_1", "15:00-23:06");
-		proprieties.setProperty("NACHT_VEN_2", "18:00-02:06");
-		proprieties.setProperty("NACHT_SAB", "Libero");
+		proprieties.setProperty("NACHT_MIN_MITARBEITER", "6");
+		proprieties.setProperty("NUM_MITARBEITER_LINEE1_NACHT", "2");
 		try {
 			proprieties.store(os, "NON_TOCCARE"); //Salva il file con tutte le informazioni di sopra. Questo metodo va per ultimo.
 		} catch (IOException e) {

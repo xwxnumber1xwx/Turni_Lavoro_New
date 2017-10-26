@@ -7,42 +7,44 @@ class TurniLavoroNew {
 // DA SISTEMARE HO CONFUSO LINEALAVORO CON TAG E NACHT
 	public static void main(String[] args)
 		throws IOException { //Sicurezza per eventuali errori di Input e Output
-				// Creo 5 dipendenti come prova su un array di dipendenti
+				// Creo 9 dipendenti come prova su un array di dipendenti
 				Preferenze.InitFile();
-				ArrayList <Dipendente> dipendenteArrayList = new ArrayList<Dipendente>(6);
+				ArrayList <Dipendente> dipendenteArrayList = new ArrayList<Dipendente>(9);
 				Stampa stampa = new Stampa();
-				int LineaLavoro = 0;
-				int LineaLavoroTag = 0;
-				int LineaLavoroNacht = 0;
-				String p = Preferenze.getOnePreference("TAG_MIN_MITARBEITER");
-				int minMatt = Integer.parseInt(p);
-				Preferenze.getOnePreference("NACHT_MIN_MITARBEITER");
+				int LineaLavoro = 1; // da AGGIUNGERE funzione per determinare quale line lavoro
+				int Nacht = 0;
+				int TagNacht = 1;
+				int NumMitarbeiterLinee = 1;
+				String p = Preferenze.getOnePreference("NACHT_MIN_MITARBEITER");
 				int minNacht = Integer.parseInt(p);
-				//int minMatt = Integer.parseInt(Preferenze.getOnePreference("TAG_MIN_MITARBEITER")); //ERRORE MI RESTITUISCE NULL!
-				//int minNacht = Integer.parseInt(Preferenze.getOnePreference("NACHT_MIN_MITARBEITER"));//ERRORE MI RESTITUISCE NULL!
-				for (int i = 0; i < 5; i++) {
+				p = Preferenze.getOnePreference("NUM_MITARBEITER_LINEE1_NACHT");
+				int NumMitarbeiterNacht = Integer.parseInt(p);
+				for (int i = 0; i < 9; i++) {
 					Dipendente dipendente  = new Dipendente();
 					dipendente.setNome("DipendenteArray n: " + i);
 					dipendente.setLivello(4);
 					int[] linea = {1,2}; //Da inserire in base alla capacità lavorativa;
 					dipendente.setLineaLavoro(linea);
-					dipendente.malattia = new Random () .nextBoolean(); // solo una prova per la gente malata, da cancellare
+					//dipendente.malattia = new Random () .nextBoolean(); // solo una prova per la gente malata, da cancellare
 					dipendenteArrayList.add (dipendente);
-					// int OrarioLavorativo = 1; // 1 per TAG, 2 per NACHT
-					if (LineaLavoroNacht <= minNacht) {
-						LineaLavoro = 2;
-						LineaLavoroNacht++;
+					if (Nacht <= minNacht) { // IMPLEMENTARE REFERENCE A METODI
+						Nacht++;
+						TagNacht = 2; //NACHT
+						if (NumMitarbeiterLinee < NumMitarbeiterNacht) {
+							LineaLavoro = 1;
+							NumMitarbeiterLinee++;
+						} else {
+								LineaLavoro = 2;
+							}
 					} else {
-						LineaLavoro = 1;
-						LineaLavoroTag++;
+						TagNacht = 1; //TAG
 					}
 					
 					int giornoLibero = 0;
-					int OrarioLavorativo = new Random () .nextInt(2) + 1;
-						if (OrarioLavorativo == 2) { 
+						if (TagNacht == 2) { 
 								giornoLibero = new  Random() .nextInt(5) ; // 0 per DOM, 1 per LUN, 2 per MAR, 3 ... VEN non si è mai liberi.
 						}			
-						stampa.StampaSuVideo(dipendente, SwitchTurni.generaTurni(giornoLibero, OrarioLavorativo, dipendente, dipendente.malattia), LineaLavoro);
+						stampa.StampaSuVideo(dipendente, SwitchTurni.generaTurni(giornoLibero, TagNacht, dipendente, dipendente.malattia), LineaLavoro);
 						System.out.println("\n");
 				}
 				
