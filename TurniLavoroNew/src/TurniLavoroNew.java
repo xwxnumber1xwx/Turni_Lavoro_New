@@ -4,7 +4,6 @@ import java.io.*;
 
 class TurniLavoroNew {
 	
-// DA SISTEMARE HO CONFUSO LINEALAVORO CON TAG E NACHT
 	public static void main(String[] args)
 		throws IOException { //Sicurezza per eventuali errori di Input e Output
 				// Creo 9 dipendenti come prova su un array di dipendenti
