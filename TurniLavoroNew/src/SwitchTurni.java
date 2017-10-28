@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 
+//C´e un errore che se domenica si ü liberi, venerdi viene stampato 2 volte prima alle 18 poi dopo il sabato alle 15
+
 public class SwitchTurni {
 	public static ArrayList<String> generaTurni (int giornoLibero, int MattSera, Dipendente dipendente, boolean malattia) {
 		/*Inserire:
@@ -30,12 +32,12 @@ public class SwitchTurni {
 					if (x == 5 & MattSera == 2 & giornoLibero == 0) {
 						if (malattia == false) {
 						turniLavoratoreArrayList.add (5, sett.settimana[5][0] + " " + sett.settimana[5][MattSera+1]); //impostata Venerdi alle 18 se domenica NACHT è libero
+						dipendente.setOreNotturne(sett.oreNotturne[x][MattSera]); //Calcolo oreNotturne VENERDI alle 18
 						}
 						else {
 							turniLavoratoreArrayList.add(x, sett.settimana[giornoLibero][0] + " krank");
 							dipendente.setGiorniMalattia(1);
 						}
-					dipendente.setOreNotturne(sett.oreNotturne[x][MattSera]); //Calcolo oreNotturne VENERDI alle 18
 					}
 					else {
 					dipendente.setOreNotturne(sett.oreNotturne[x][MattSera-1]); //Calcolo oreNotturne venerdi alle 15
@@ -44,10 +46,11 @@ public class SwitchTurni {
 			}
 			else {
 				if (malattia == false) {
-					turniLavoratoreArrayList.add(giornoLibero, sett.settimana[giornoLibero][0] + " libero"); // ERRORE perchè l'arrayList non ha ancora la posizione del giornoLibero
+					turniLavoratoreArrayList.add(giornoLibero, sett.settimana[giornoLibero][0] + " libero"); // ERRORE perche l'arrayList non ha ancora la posizione del giornoLibero
 					}
 					else {
 						turniLavoratoreArrayList.add(giornoLibero, sett.settimana[giornoLibero][0] + " krank");
+						dipendente.setGiorniMalattia(1);
 			}
 			}
 			x++;

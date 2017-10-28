@@ -8,7 +8,7 @@ public class Dipendente {
 	int lineaLavoro[] = {1,2};
 	boolean linieLeiter = false;
 	boolean soloMattina = false;
-	private double OreNotturne = 0;
+	private Double OreNotturne = 0D;
 	private double OreFestivita = 0;
 	private double OreDomenica = 0;
 	private int giorniMalattia = 0;
@@ -17,6 +17,7 @@ public class Dipendente {
 	boolean lifeFirma = false;
 	boolean licenziato = false;
 	boolean malattia = false;
+	double TotZuSchlag = 0D;
 	
 	public String getNome() {
 		return nome;
@@ -38,18 +39,30 @@ public class Dipendente {
 	}
 	public void setOreNotturne(double OreNotturne) {
 		this.OreNotturne += OreNotturne;
+		double percentuale = (double)(Integer.parseInt(Preferenze.getOnePreference("ZUSCHLAG_NACHT")));
+		double setTotZuSchlag = 0D;
+		setTotZuSchlag += (percentuale/100)*OreNotturne;
+		setTotZuSchlag(setTotZuSchlag);
 	}
-	public double getOreNotturne() {
+	public Double getOreNotturne() {
 		return OreNotturne;
 	}
 	public void setOreFestivita(double OreFestivita) {
 		this.OreFestivita += OreFestivita;
+		double percentuale = (double)(Integer.parseInt(Preferenze.getOnePreference("ZUSCHLAG_FEIERTAG")));
+		double setTotZuSchlag = 0D;
+			setTotZuSchlag += (percentuale/100)*OreFestivita;
+		setTotZuSchlag(setTotZuSchlag);
 	}
 	public double getOreFestivita() {
 		return OreFestivita;
 	}
 	public void setOreDomenica(double OreDomenica) {
 		this.OreDomenica += OreDomenica;
+		double percentuale = (double)(Integer.parseInt(Preferenze.getOnePreference("ZUSCHLAG_SONNTAG")));
+		double setTotZuSchlag = 0D;
+		setTotZuSchlag += (percentuale/100)*OreDomenica;
+		setTotZuSchlag(setTotZuSchlag);
 	}
 	public double getOreDomenica() {
 		return OreDomenica;
@@ -59,6 +72,12 @@ public class Dipendente {
 	}
 	public int getGiorniMalattia () {
 		return giorniMalattia;
+	}
+	public Double getTotZuSchlag () {
+		return TotZuSchlag;
+	}
+	public void setTotZuSchlag (Double TotZuSchlag) {
+		this.TotZuSchlag += TotZuSchlag;
 	}
 }
 

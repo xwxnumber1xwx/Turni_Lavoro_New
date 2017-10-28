@@ -22,6 +22,9 @@ public class Preferenze {
 		proprieties.setProperty("TAG_MIN_MITARBEITER", "3");
 		proprieties.setProperty("NACHT_MIN_MITARBEITER", "6");
 		proprieties.setProperty("NUM_MITARBEITER_LINEE1_NACHT", "2");
+		proprieties.setProperty("ZUSCHLAG_NACHT", "50");
+		proprieties.setProperty("ZUSCHLAG_FEIERTAG", "150");
+		proprieties.setProperty("ZUSCHLAG_SONNTAG", "75");
 		try {
 			proprieties.store(os, "NON_TOCCARE"); //Salva il file con tutte le informazioni di sopra. Questo metodo va per ultimo.
 		} catch (IOException e) {

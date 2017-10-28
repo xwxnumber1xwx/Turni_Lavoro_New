@@ -14,19 +14,20 @@ class TurniLavoroNew {
 				int Nacht = 0;
 				int TagNacht = 1;
 				int NumMitarbeiterLinee = 1;
-				String p = Preferenze.getOnePreference("NACHT_MIN_MITARBEITER");
-				int minNacht = Integer.parseInt(p);
-				p = Preferenze.getOnePreference("NUM_MITARBEITER_LINEE1_NACHT");
-				int NumMitarbeiterNacht = Integer.parseInt(p);
+				int minNacht = Integer.parseInt(Preferenze.getOnePreference("NACHT_MIN_MITARBEITER"));
+				int NumMitarbeiterNacht = Integer.parseInt(Preferenze.getOnePreference("NUM_MITARBEITER_LINEE1_NACHT"));
+				
 				for (int i = 0; i < 9; i++) {
 					Dipendente dipendente  = new Dipendente();
 					dipendente.setNome("DipendenteArray n: " + i);
 					dipendente.setLivello(4);
 					int[] linea = {1,2}; //Da inserire in base alla capacità lavorativa;
 					dipendente.setLineaLavoro(linea);
+					//dipendente.setTotZuSchlag((new  Random().nextDouble())*100); //Giusto una prova per far ordinare il metodo getMenoore
+					
 					//dipendente.malattia = new Random () .nextBoolean(); // solo una prova per la gente malata, da cancellare
-					dipendenteArrayList.add (dipendente);
-					if (Nacht <= minNacht) { // IMPLEMENTARE REFERENCE A METODI
+					dipendenteArrayList.add (dipendente); // DA COMPLETARE
+					if (Nacht <= minNacht) {
 						Nacht++;
 						TagNacht = 2; //NACHT
 						if (NumMitarbeiterLinee < NumMitarbeiterNacht) {
@@ -47,9 +48,10 @@ class TurniLavoroNew {
 						System.out.println("\n");
 				}
 				
+				//getMenoOre menoOre = new getMenoOre ();
+				//dipendenteArrayList = menoOre.OrdinePerNotti(dipendenteArrayList);
+				//dipendenteArrayList.forEach(System.out::println);
 				
-				
-			
 				//Inserire inserimento da Tastiera su Database
 				//Chiedere se qualcuno è malato, le OreNotturne, OreFestivita, OreDomeniche le riceverà comunque 
 				
