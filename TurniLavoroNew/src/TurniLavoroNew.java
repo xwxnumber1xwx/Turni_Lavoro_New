@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Random;
 import java.io.*;
 
@@ -47,6 +48,12 @@ class TurniLavoroNew {
 						stampa.StampaSuVideo(dipendente, SwitchTurni.generaTurni(giornoLibero, TagNacht, dipendente, dipendente.malattia), LineaLavoro);
 						System.out.println("\n");
 				}
+				//ORDINAMENTO ARRAY SOLO UNA PROVA
+			//	dipendenteArrayList.forEach(System.out::println);
+				dipendenteArrayList = getMenoOre.OrdinePerNottiArray(dipendenteArrayList);
+			//	System.out.println ("");
+			//	dipendenteArrayList.forEach(System.out::println);
+				
 				
 				//getMenoOre menoOre = new getMenoOre ();
 				//dipendenteArrayList = menoOre.OrdinePerNotti(dipendenteArrayList);
