@@ -1,4 +1,8 @@
 import java.time.LocalTime;
+import java.time.temporal.ChronoUnit;
+import java.time.temporal.Temporal;
+import java.time.temporal.TemporalUnit;
+import java.util.concurrent.TimeUnit;
 
 public class Turni {
 		String TAG = ("2:30-10:36");
@@ -26,34 +30,32 @@ public class Turni {
 				{0, 0}, //SAB
 		};
 		
-		LocalTime tagInizio = LocalTime.of(2,30);
-		LocalTime tagFine = LocalTime.of(10,36);
-		LocalTime nachtInizio = LocalTime.of(16, 30);
-		LocalTime nachFine = LocalTime.of(00, 36);
-		LocalTime InizioNachtZuSchlagTAG = LocalTime.of(00, 00);
-		LocalTime FineNachtZuSchlagTAG = LocalTime.of(4, 00);
-		LocalTime InizioNachtZuSchlagNACHT = LocalTime.of(21, 00);
-		LocalTime FineNachtZuSchlagNACHT = LocalTime.of(00, 00);
+		LocalTime tagInizio = LocalTime.of(Integer.parseInt(Preferenze.getOnePreference("TAG_INIZIO_H")), Integer.parseInt(Preferenze.getOnePreference("TAG_INIZIO_M")));
+		LocalTime tagFine = LocalTime.of(Integer.parseInt(Preferenze.getOnePreference("TAG_FINE_H")), Integer.parseInt(Preferenze.getOnePreference("TAG_FINE_M")));
+		LocalTime nachtInizio = LocalTime.of(Integer.parseInt(Preferenze.getOnePreference("NACHT_INIZIO_H")), Integer.parseInt(Preferenze.getOnePreference("NACHT_INIZIO_M")));
+		LocalTime nachFine = LocalTime.of(Integer.parseInt(Preferenze.getOnePreference("NACHT_FINE_H")), Integer.parseInt(Preferenze.getOnePreference("NACHT_FINE_M")));
+		LocalTime InizioNachtZuSchlagTAG = LocalTime.of(Integer.parseInt(Preferenze.getOnePreference("ZUSCHLAG_TAG_INIZIO_H")), Integer.parseInt(Preferenze.getOnePreference("ZUSCHLAG_TAG_INIZIO_M")));
+		LocalTime FineNachtZuSchlagTAG = LocalTime.of(Integer.parseInt(Preferenze.getOnePreference("ZUSCHLAG_TAG_FINE_H")), Integer.parseInt(Preferenze.getOnePreference("ZUSCHLAG_TAG_FINE_M")));
+		LocalTime InizioNachtZuSchlagNACHT = LocalTime.of(Integer.parseInt(Preferenze.getOnePreference("ZUSCHLAG_NACHT_INIZIO_H")), Integer.parseInt(Preferenze.getOnePreference("ZUSCHLAG_NACHT_INIZIO_M")));
+		LocalTime FineNachtZuSchlagNACHT = LocalTime.of(Integer.parseInt(Preferenze.getOnePreference("ZUSCHLAG_NACHT_INIZIO_H")), Integer.parseInt(Preferenze.getOnePreference("ZUSCHLAG_NACHT_INIZIO_M")));
 	
-		public static int calcoloZuSchlagTAG (LocalTime inizio, LocalTime fine, LocalTime inzioZuSchlag, LocalTime fineZuSchlag) {
-			int zuSchlag = 0;
-			int inizioIntH = inizio.getHour();
-			int inizioIntM = inizio.getMinute();
-			int fineIntH = fine.getHour();
-			int fineIntM = fine.getMinute();
-			int inizioZuSchlagIntH = inzioZuSchlag.getHour();
-			int inizioZuSchlagIntM = inzioZuSchlag.getMinute();
-			int fineZuSchlagIntH = fineZuSchlag.getHour();
-			int fineZuSchlagIntM = fineZuSchlag.getMinute();
-			int oreLavorate = fineIntH - inizioIntH;
-			for (int x = 0; x < oreLavorate; x++) {
-				if (fineIntH != 0) {
-					if (fineIntH <= fineZuSchlagIntH)
-					zuSchlag++;
-				}
-				fineIntH--;
-			}
+		public LocalTime getTagInizio () {
+			return tagInizio;
+		}
+		
+		
+		public static LocalTime calcoloZuSchlagTAG (LocalTime inizio, LocalTime fine, LocalTime inzioZuSchlag, LocalTime fineZuSchlag) {
 			
-			return zuSchlag;
+			LocalTime zuschlag = LocalTime.of(00, 00);
+			long oreLavorate = inizio.until(fine, ChronoUnit.MINUTES);
+			for (int x = 0; x < oreLavorate; x++) {
+				if(!(fine.equals(inizio))) {
+					if (fine.compareTo(fineZuSchlag) <= 0) {
+						zuschlag = zuschlag.plusMinutes(1);
+					}
+					fine = fine.minusMinutes(1);
+				}
+			}
+			return zuschlag;
 		}
 }
