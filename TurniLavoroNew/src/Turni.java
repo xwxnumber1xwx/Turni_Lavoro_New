@@ -1,3 +1,5 @@
+import java.time.LocalTime;
+
 public class Turni {
 		String TAG = ("2:30-10:36");
 		String NACHT = ("16:30-00:36");
@@ -24,4 +26,34 @@ public class Turni {
 				{0, 0}, //SAB
 		};
 		
+		LocalTime tagInizio = LocalTime.of(2,30);
+		LocalTime tagFine = LocalTime.of(10,36);
+		LocalTime nachtInizio = LocalTime.of(16, 30);
+		LocalTime nachFine = LocalTime.of(00, 36);
+		LocalTime InizioNachtZuSchlagTAG = LocalTime.of(00, 00);
+		LocalTime FineNachtZuSchlagTAG = LocalTime.of(4, 00);
+		LocalTime InizioNachtZuSchlagNACHT = LocalTime.of(21, 00);
+		LocalTime FineNachtZuSchlagNACHT = LocalTime.of(00, 00);
+	
+		public static int calcoloZuSchlagTAG (LocalTime inizio, LocalTime fine, LocalTime inzioZuSchlag, LocalTime fineZuSchlag) {
+			int zuSchlag = 0;
+			int inizioIntH = inizio.getHour();
+			int inizioIntM = inizio.getMinute();
+			int fineIntH = fine.getHour();
+			int fineIntM = fine.getMinute();
+			int inizioZuSchlagIntH = inzioZuSchlag.getHour();
+			int inizioZuSchlagIntM = inzioZuSchlag.getMinute();
+			int fineZuSchlagIntH = fineZuSchlag.getHour();
+			int fineZuSchlagIntM = fineZuSchlag.getMinute();
+			int oreLavorate = fineIntH - inizioIntH;
+			for (int x = 0; x < oreLavorate; x++) {
+				if (fineIntH != 0) {
+					if (fineIntH <= fineZuSchlagIntH)
+					zuSchlag++;
+				}
+				fineIntH--;
+			}
+			
+			return zuSchlag;
+		}
 }

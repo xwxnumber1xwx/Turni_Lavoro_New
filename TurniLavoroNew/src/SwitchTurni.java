@@ -1,3 +1,4 @@
+import java.time.LocalTime;
 import java.util.ArrayList;
 
 //C´e un errore che se domenica si ü liberi, venerdi viene stampato 2 volte prima alle 18 poi dopo il sabato alle 15
@@ -6,16 +7,21 @@ public class SwitchTurni {
 	public static ArrayList<String> generaTurni (int giornoLibero, int MattSera, Dipendente dipendente, boolean malattia) {
 		/*Inserire:
 			- Calcolare la malattia per pochi giorni
-			- Calcolare le OreFestivita, OreDomeniche
-			- Calcolare e confrontare OreNotturne, OreFestivita, OreDomeniche con quelle degli altri Dipendenti e dare
-			precedenza o meno
-			- 
 		*/
 		Turni sett = new Turni();
 		ArrayList <String> turniLavoratoreArrayList = new ArrayList<String>(6);
 		int x = 0;
+		LocalTime tagInizio = LocalTime.of(2,30);
+		LocalTime tagFine = LocalTime.of(10,36);
+		LocalTime nachtInizio = LocalTime.of(16, 30);
+		LocalTime nachFine = LocalTime.of(00, 36);
+		LocalTime InizioNachtZuSchlagTAG = LocalTime.of(00, 00);
+		LocalTime FineNachtZuSchlagTAG = LocalTime.of(4, 00);
+		LocalTime InizioNachtZuSchlagNACHT = LocalTime.of(21, 00);
+		LocalTime FineNachtZuSchlagNACHT = LocalTime.of(00, 00);
 		//implementare qualcosa se il Dipendente non ha giorni libero per quella settimana
 		do {
+			
 			if (x != giornoLibero) {
 				if (malattia == false) {
 				turniLavoratoreArrayList.add(x, sett.settimana[x][0] + " " + sett.settimana[x][MattSera]);
@@ -40,7 +46,13 @@ public class SwitchTurni {
 						}
 					}
 					else {
+						if (MattSera == 2) {
 					dipendente.setOreNotturne(sett.oreNotturne[x][MattSera-1]); //Calcolo oreNotturne venerdi alle 15
+						} else {
+							dipendente.setOreNotturne(sett.oreNotturne[x][MattSera-1]); //Calcolo oreNotturne del tag
+							System.out.println("IL NACHTZUSCHLAG GUADAGNATO OGGI: " + Turni.calcoloZuSchlagTAG(tagInizio, tagFine, InizioNachtZuSchlagTAG, FineNachtZuSchlagTAG));
+						}
+					
 					}
 				}
 			}
