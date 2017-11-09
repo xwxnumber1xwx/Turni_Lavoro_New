@@ -29,17 +29,29 @@ public class Preferenze {
 		proprieties.setProperty("TAG_INIZIO_M", "30");
 		proprieties.setProperty("TAG_FINE_H", "10");
 		proprieties.setProperty("TAG_FINE_M", "36");
+		proprieties.setProperty("TAG_VEN_INIZIO_H", "2");
+		proprieties.setProperty("TAG_VEN_INIZIO_M", "00");
+		proprieties.setProperty("TAG_VEN_FINE_H", "10");
+		proprieties.setProperty("TAG_VEN_FINE_M", "06");
 		proprieties.setProperty("NACHT_INIZIO_H", "16");
 		proprieties.setProperty("NACHT_INIZIO_M", "30");
 		proprieties.setProperty("NACHT_FINE_H", "00");
 		proprieties.setProperty("NACHT_FINE_M", "36");
+		proprieties.setProperty("NACHT_VEN_INIZIO_H", "15");
+		proprieties.setProperty("NACHT_VEN_INIZIO_M", "00");
+		proprieties.setProperty("NACHT_VEN_FINE_H", "23");
+		proprieties.setProperty("NACHT_VEN_FINE_M", "06");
+		proprieties.setProperty("NACHT_VEN_DOM_INIZIO_H", "18");
+		proprieties.setProperty("NACHT_VEN_DOM_INIZIO_M", "00");
+		proprieties.setProperty("NACHT_VEN_DOM_FINE_H", "2");
+		proprieties.setProperty("NACHT_VEN_DOM_FINE_M", "06");
 		proprieties.setProperty("ZUSCHLAG_TAG_INIZIO_H", "00");
 		proprieties.setProperty("ZUSCHLAG_TAG_INIZIO_M", "00");
 		proprieties.setProperty("ZUSCHLAG_TAG_FINE_H", "04");
 		proprieties.setProperty("ZUSCHLAG_TAG_FINE_M", "00");
 		proprieties.setProperty("ZUSCHLAG_NACHT_INIZIO_H", "21");
 		proprieties.setProperty("ZUSCHLAG_NACHT_INIZIO_M", "00");
-		proprieties.setProperty("ZUSCHLAG_NACHT_FINE_H", "00");
+		proprieties.setProperty("ZUSCHLAG_NACHT_FINE_H", "04");
 		proprieties.setProperty("ZUSCHLAG_NACHT_FINE_M", "00");
 		try {
 			proprieties.store(os, "NON_TOCCARE"); //Salva il file con tutte le informazioni di sopra. Questo metodo va per ultimo.

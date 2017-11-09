@@ -1,7 +1,9 @@
+import java.time.LocalTime;
 
 public class Dipendente {
 	//  azubi, nuovoArrivato, lifeFirma devo metterli una una classe estesa?
 	// Oppure devo mettere Dipendente come superclasse e poi Mitarbeirer, azubi, nuovoArrivato, lifeFirma?
+	// cambiare i valori OreNotturne, ecc... da double a LocalTime e le relative funzioni
 	long codiceLavoratore = 0;
 	String nome;
 	int livello = 0;
@@ -11,6 +13,7 @@ public class Dipendente {
 	private Double OreNotturne = 0D;
 	private double OreFestivita = 0;
 	private double OreDomenica = 0;
+	private LocalTime OreNotturneLT = LocalTime.of(00, 00);
 	private int giorniMalattia = 0;
 	boolean azubi = false;
 	boolean nuovoArrivato = false;
@@ -78,6 +81,9 @@ public class Dipendente {
 	}
 	public void setTotZuSchlag (Double TotZuSchlag) {
 		this.TotZuSchlag += TotZuSchlag;
+	}
+	public void setOreNotturneLT (LocalTime OreNotturneLT) {
+		this.OreNotturneLT = OreNotturneLT;
 	}
 }
 
