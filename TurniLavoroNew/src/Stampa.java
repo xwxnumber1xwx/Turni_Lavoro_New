@@ -9,8 +9,8 @@ public class Stampa {
 		//	System.out.print(Turni.get(x) + " \n");
 		//}
 		Turni.forEach(System.out::println);
-		System.out.println("Ore Notturne: " + dipendente.getOreNotturne());
-		System.out.println("Ore Domenica: " + dipendente.getOreDomenica());
+		System.out.println("Ore Notturne: " + dipendente.getOreNotturneLT());
+		System.out.println("Ore Domenica: " + dipendente.getOreDomenicaLT());
 		System.out.println("Giorni Malattia: " + dipendente.getGiorniMalattia());
 		System.out.println("Somma calcolata con % Zuschlag: " + dipendente.getTotZuSchlag());
 

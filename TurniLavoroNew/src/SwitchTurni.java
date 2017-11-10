@@ -1,7 +1,7 @@
+
 import java.time.LocalTime;
 import java.util.ArrayList;
 
-//C´e un errore che se domenica si ü liberi, venerdi viene stampato 2 volte prima alle 18 poi dopo il sabato alle 15
 
 public class SwitchTurni {
 	public static ArrayList<String> generaTurni (int giornoLibero, int MattSera, Dipendente dipendente, boolean malattia) {
@@ -23,41 +23,76 @@ public class SwitchTurni {
 		LocalTime FineNachtZuSchlagVEN_Dom = sett.getFineNachtZuSchlagVEN_Dom();
 		LocalTime InizioNachtZuSchlagVEN = sett.getInizioNachtZuSchlagVEN();
 		LocalTime FineNachtZuSchlagVEN = sett.getFineNachtZuSchlagVEN();
+		LocalTime domNach_inizio = sett.getdomNacht_inizio();
+		LocalTime domNach_Fine = sett.getdomNach_fine();
+		LocalTime inizio_NachtZuSchlag = sett.getInizioNachtZuSchlagNACHT();
+		LocalTime fine_NachtZuSchlag = sett.getFineNachtZuSchlagTAG();
 		
 		//implementare qualcosa se il Dipendente non ha giorni libero per quella settimana
-		do {
 			
+		for (x = 0; x < 7; x++) {
 			if (x != giornoLibero) {
-				if (malattia == false) {
-				turniLavoratoreArrayList.add(x, sett.settimana[x][0] + " " + sett.settimana[x][MattSera]);
+				if (malattia == true) {
+					turniLavoratoreArrayList.add(x, sett.settimana[giornoLibero][0] + " krank"); //scrive krank per quel giorno
+					dipendente.setGiorniMalattia(1); //aggiunge 1 giorno malattia al conto delle malattie del dipendente.
+					}
+				if (MattSera == 2) {
+					if (x == 0) { // Domenica Lavorariva
+						dipendente.setOreDomenicaLT(Turni.calcoloZuSchlag(domNach_inizio, domNach_Fine, inizio_NachtZuSchlag, fine_NachtZuSchlag)); //mi aggiunge il nachtzuschlag al conto delle ore di domenica e del totale del nachtzuschlag
+					}
+					if (x == 5 & giornoLibero == 0) { // ven 18 perche domenica libera
+						turniLavoratoreArrayList.add (x, sett.settimana[x][0] + " " + sett.settimana[x][MattSera+1]); //impostata Venerdi alle 18 se domenica NACHT è libero
+						dipendente.setOreNotturneLT(Turni.calcoloZuSchlag(InizioNachtZuSchlagVEN_Dom, FineNachtZuSchlagVEN_Dom, inizio_NachtZuSchlag, fine_NachtZuSchlag));  //mi aggiunge il nachtzuschlag al conto delle ore di domenica e del totale del nachtzuschlag
+						continue;
+					}
+					if (x == 5) { //ven 15
+						dipendente.setOreNotturneLT(Turni.calcoloZuSchlag(InizioNachtZuSchlagVEN, FineNachtZuSchlagVEN, InizioNachtZuSchlagNACHT, FineNachtZuSchlagNACHT));
+						turniLavoratoreArrayList.add(x, sett.settimana[x][0] + " " + sett.settimana[x][MattSera]); //Scrive Il giono "domenica, lunedi, ecc.." oppure "libero"
+						continue;
+					}
+				}
+				turniLavoratoreArrayList.add(x, sett.settimana[x][0] + " " + sett.settimana[x][MattSera]); //Scrive Il giono "domenica, lunedi, ecc.." oppure "libero"
+				if (MattSera == 1) {
+				dipendente.setOreNotturneLT(Turni.calcoloZuSchlag(inizioTAG, fineTAG, InizioNachtZuSchlagTAG, FineNachtZuSchlagTAG));
+				}
+				if (MattSera == 2) {
+					dipendente.setOreNotturneLT(Turni.calcoloZuSchlag(inizioNACHT, fineNACHT, InizioNachtZuSchlagNACHT, FineNachtZuSchlagNACHT));
+				}
+			} else {
+				turniLavoratoreArrayList.add(giornoLibero, sett.settimana[giornoLibero][0] + " libero");
+			}
+		}
+				
+				
+		/*		
+				if (malattia == false & x != 5) {
+				turniLavoratoreArrayList.add(x, sett.settimana[x][0] + " " + sett.settimana[x][MattSera]); //Scrive Il giono "domenica, lunedi, ecc.." oppure "libero"
 				}
 				else {
-					turniLavoratoreArrayList.add(x, sett.settimana[giornoLibero][0] + " krank");
-					dipendente.setGiorniMalattia(1);
+					if (malattia == true) {
+					turniLavoratoreArrayList.add(x, sett.settimana[giornoLibero][0] + " krankMMM"); //scrive krank per quel giorno
+					dipendente.setGiorniMalattia(1); //aggiunge 1 giorno malattia al conto delle malattie del dipendente.
+					}
 				}
 				if (x == 0 & MattSera == 2) { //Domenica NACHT
-					dipendente.setOreDomenica(sett.oreNotturne[x][MattSera-1]); //Calcolo oreDomenica
-				//	turniLavoratore[x] = sett.settimana[5][0] + " " + sett.settimana[5][MattSera+1]; //Venerdì però mi riscrive sopra con i prossimi cicli quando x = 5
+					dipendente.setOreDomenicaLT(Turni.calcoloZuSchlag(domNach_inizio, domNach_Fine, inizio_NachtZuSchlag, fine_NachtZuSchlag)); //mi aggiunge il nachtzuschlag al conto delle ore di domenica e del totale del nachtzuschlag
 				} 
 				else {
-					if (x == 5 & MattSera == 2 & giornoLibero == 0) {
+					if (x == 5 & MattSera == 2 & giornoLibero == 0) { //venerdi sera con domenica libera
 						if (malattia == false) {
-						turniLavoratoreArrayList.add (5, sett.settimana[5][0] + " " + sett.settimana[5][MattSera+1]); //impostata Venerdi alle 18 se domenica NACHT è libero
-						dipendente.setOreNotturne(sett.oreNotturne[x][MattSera]); //Calcolo oreNotturne VENERDI alle 18  /DEPRECATED
-						dipendente.setOreNotturneLT(Turni.calcoloZuSchlag(InizioNachtZuSchlagVEN_Dom, FineNachtZuSchlagVEN_Dom, InizioNachtZuSchlagNACHT, FineNachtZuSchlagNACHT));
+						turniLavoratoreArrayList.add (x, sett.settimana[x][0] + " " + sett.settimana[x][MattSera+1]); //impostata Venerdi alle 18 se domenica NACHT è libero
+						dipendente.setOreNotturneLT(Turni.calcoloZuSchlag(InizioNachtZuSchlagVEN_Dom, FineNachtZuSchlagVEN_Dom, inizio_NachtZuSchlag, fine_NachtZuSchlag));  //mi aggiunge il nachtzuschlag al conto delle ore di domenica e del totale del nachtzuschlag
 						}
 						else {
-							turniLavoratoreArrayList.add(x, sett.settimana[giornoLibero][0] + " krank");
-							dipendente.setGiorniMalattia(1);
+							turniLavoratoreArrayList.add(x, sett.settimana[giornoLibero][0] + " krank"); //scrive krank per quel giorno
+							dipendente.setGiorniMalattia(1); //aggiunge 1 giorno malattia al conto delle malattie del dipendente.
 						}
 					}
 					else {
-						if (MattSera == 2) { //Calcolo ore notturne della settimana e venerdi alle 15
-					dipendente.setOreNotturne(sett.oreNotturne[x][MattSera-1]); //Calcolo oreNotturne venerdi alle 15  //DEPRECATED
+						if (MattSera == 2 & giornoLibero != 0) { // se ha lavorato di NACHT e la domenica ha lavorato allora imposta venerdi alle 15
 					dipendente.setOreNotturneLT(Turni.calcoloZuSchlag(InizioNachtZuSchlagVEN, FineNachtZuSchlagVEN, InizioNachtZuSchlagNACHT, FineNachtZuSchlagNACHT));
 					System.out.println("IL NACHTZUSCHLAG NACHT GUADAGNATO OGGI: " + Turni.calcoloZuSchlag(inizioNACHT, fineNACHT, InizioNachtZuSchlagNACHT, FineNachtZuSchlagNACHT));
-						} else {
-							dipendente.setOreNotturne(sett.oreNotturne[x][MattSera-1]); //Calcolo oreNotturne del tag
+						} else { //venerdi TAG 
 							dipendente.setOreNotturneLT(Turni.calcoloZuSchlag(inizioTAG, fineTAG, InizioNachtZuSchlagNACHT, FineNachtZuSchlagNACHT));
 							System.out.println("IL NACHTZUSCHLAG TAG GUADAGNATO OGGI: " + Turni.calcoloZuSchlag(inizioTAG, fineTAG, InizioNachtZuSchlagTAG, FineNachtZuSchlagTAG));
 						}
@@ -67,17 +102,15 @@ public class SwitchTurni {
 			}
 			else {
 				if (malattia == false) {
-					turniLavoratoreArrayList.add(giornoLibero, sett.settimana[giornoLibero][0] + " libero"); // ERRORE perche l'arrayList non ha ancora la posizione del giornoLibero
+					turniLavoratoreArrayList.add(giornoLibero, sett.settimana[giornoLibero][0] + " libero");
 					}
 					else {
 						turniLavoratoreArrayList.add(giornoLibero, sett.settimana[giornoLibero][0] + " krank");
 						dipendente.setGiorniMalattia(1);
 			}
 			}
-			x++;
 		}
-		while (x < 7);
-
+ */
 		return turniLavoratoreArrayList;
 	}
 }

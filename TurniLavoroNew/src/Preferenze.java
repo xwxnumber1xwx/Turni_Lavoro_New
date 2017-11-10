@@ -53,6 +53,10 @@ public class Preferenze {
 		proprieties.setProperty("ZUSCHLAG_NACHT_INIZIO_M", "00");
 		proprieties.setProperty("ZUSCHLAG_NACHT_FINE_H", "04");
 		proprieties.setProperty("ZUSCHLAG_NACHT_FINE_M", "00");
+		proprieties.setProperty("NACHT_DOM_INIZIO_H", "16");
+		proprieties.setProperty("NACHT_DOM_INIZIO_M", "00");
+		proprieties.setProperty("NACHT_DOM_FINE_H", "00");
+		proprieties.setProperty("NACHT_DOM_FINE_M", "06");
 		try {
 			proprieties.store(os, "NON_TOCCARE"); //Salva il file con tutte le informazioni di sopra. Questo metodo va per ultimo.
 		} catch (IOException e) {
