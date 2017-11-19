@@ -1,8 +1,6 @@
 import java.time.Duration;
 import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
-import java.time.temporal.Temporal;
-import java.time.temporal.TemporalAmount;
 
 public class Dipendente {
 	//  azubi, nuovoArrivato, lifeFirma devo metterli una una classe estesa?
@@ -14,12 +12,12 @@ public class Dipendente {
 	int lineaLavoro[] = {1,2};
 	boolean linieLeiter = false;
 	boolean soloMattina = false;
-	private Double OreNotturne = 0D; //DEPRECATED
-	private double OreFestivita = 0; //DEPRECATED
-	private double OreDomenica = 0; //DEPRECATED
 	private Duration OreNotturneLT = Duration.of(0, ChronoUnit.MINUTES);
+	private double OreNotturne = 0;
 	private Duration OreFestivitaLT = Duration.of(0, ChronoUnit.MINUTES);
+	private double OreFestivita = 0;
 	private Duration OreDomenicaLT = Duration.of(0, ChronoUnit.MINUTES);
+	private double OreDomenica = 0;
 	private int giorniMalattia = 0;
 	boolean azubi = false;
 	boolean nuovoArrivato = false;
@@ -46,37 +44,7 @@ public class Dipendente {
 	public void setLineaLavoro (int[] i) {
 		this.lineaLavoro = i;
 	}
-	/*public void setOreNotturne(double OreNotturne) {
-		this.OreNotturne += OreNotturne;
-		double percentuale = (double)(Integer.parseInt(Preferenze.getOnePreference("ZUSCHLAG_NACHT")));
-		double setTotZuSchlag = 0D;
-		setTotZuSchlag += (percentuale/100)*OreNotturne;
-		setTotZuSchlag(setTotZuSchlag);
-	}
-	public Double getOreNotturne() {
-		return OreNotturne;
-	}
-	public void setOreFestivita(double OreFestivita) {
-		this.OreFestivita += OreFestivita;
-		double percentuale = (double)(Integer.parseInt(Preferenze.getOnePreference("ZUSCHLAG_FEIERTAG")));
-		double setTotZuSchlag = 0D;
-			setTotZuSchlag += (percentuale/100)*OreFestivita;
-		setTotZuSchlag(setTotZuSchlag);
-	}
-	public double getOreFestivita() {
-		return OreFestivita;
-	}
-	public void setOreDomenica(double OreDomenica) {
-		this.OreDomenica += OreDomenica;
-		double percentuale = (double)(Integer.parseInt(Preferenze.getOnePreference("ZUSCHLAG_SONNTAG")));
-		double setTotZuSchlag = 0D;
-		setTotZuSchlag = (percentuale/100)*OreDomenica;
-		setTotZuSchlag(setTotZuSchlag);
-	}
-	public double getOreDomenica() {
-		return OreDomenica;
-	}
-	*/
+
 	public void setGiorniMalattia (int giorniMalattia) {
 		this.giorniMalattia += giorniMalattia;
 	}
@@ -89,8 +57,45 @@ public class Dipendente {
 	public void setTotZuSchlag (Double TotZuSchlag) {
 		this.TotZuSchlag += TotZuSchlag;
 	}
+	public void setOreNotturne(LocalTime OreNotturne) {
+	int OreNotturneInt = ((OreNotturne.getHour() * 60) + OreNotturne.getMinute());
+	this.OreNotturne += OreNotturneInt;
+	double percentuale = (double)(Integer.parseInt(Preferenze.getOnePreference("ZUSCHLAG_NACHT")));
+	double setTotZuSchlag = 0D;
+	setTotZuSchlag += (percentuale/100)*OreNotturneInt;
+	setTotZuSchlag(setTotZuSchlag);
+	}
+	public Double getOreNotturne() {
+		return OreNotturne;
+	}
+	public void setOreFestivita(LocalTime OreFestivita) {
+		int OreFestivitaInt = ((OreFestivita.getHour() * 60) + OreFestivita.getMinute());
+		this.OreFestivita += OreFestivitaInt;
+		double percentuale = (double)(Integer.parseInt(Preferenze.getOnePreference("ZUSCHLAG_FEIERTAG")));
+		double setTotZuSchlag = 0D;
+			setTotZuSchlag += (percentuale/100)*OreFestivitaInt;
+		setTotZuSchlag(setTotZuSchlag);
+	}
+	public double getOreFestivita() {
+		return OreFestivita;
+	}
+	public void setOreDomenica(LocalTime OreDomenica) {
+		int OreDomenicaInt = ((OreDomenica.getHour() * 60) + OreDomenica.getMinute());
+		this.OreDomenica += OreDomenicaInt;
+		double percentuale = (double)(Integer.parseInt(Preferenze.getOnePreference("ZUSCHLAG_SONNTAG")));
+		double setTotZuSchlag = 0D;
+		setTotZuSchlag = (percentuale/100)*OreDomenicaInt;
+		setTotZuSchlag(setTotZuSchlag);
+	}
+	public double getOreDomenica() {
+		return OreDomenica;
+	}
 	public void setOreNotturneLT (LocalTime OreNotturneLT) {
-		this.OreNotturneLT.addTo(OreNotturneLT);
+		long vari = OreNotturneLT.getHour() + OreNotturneLT.getMinute();
+		this.OreNotturneLT.plus(vari, ChronoUnit.MINUTES);
+	//	this.OreNotturneLT = this.OreNotturneLT.ofMinutes(OreNotturneLT.getMinute());
+	//	this.OreNotturneLT = this.OreNotturneLT.ofHours(OreNotturneLT.getHour());
+		
 		double percentuale = (double)(Integer.parseInt(Preferenze.getOnePreference("ZUSCHLAG_NACHT")));
 		double setTotZuSchlag = (percentuale/100)*(OreNotturneLT.getMinute() + (OreNotturneLT.getHour()*60));
 		setTotZuSchlag(setTotZuSchlag);
