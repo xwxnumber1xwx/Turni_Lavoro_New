@@ -1,3 +1,4 @@
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -7,6 +8,26 @@ import java.io.OutputStream;
 import java.util.Properties;
 
 public class Preferenze {
+	
+	public static boolean FileExist(String nomeFile) {
+		boolean yn = false;
+		try {
+			File file = new File(nomeFile);
+			boolean isCreate = file.createNewFile();
+			
+			if (isCreate) {
+				System.out.println("File " + nomeFile +  " creato" + "\n");
+				yn = false;
+				
+			} else {
+				System.out.println("File " + nomeFile +  " gia esistente");
+				yn = true;
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return yn;
+	}
 	
 	public static void InitFile () {
 		Properties proprieties = new Properties();

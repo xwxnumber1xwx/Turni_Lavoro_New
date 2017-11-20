@@ -8,7 +8,10 @@ class TurniLavoroNew {
 	public static void main(String[] args)
 		throws IOException { //Sicurezza per eventuali errori di Input e Output
 				// Creo 9 dipendenti come prova su un array di dipendenti
+				String filenome = "options.proprieties";
+				if (Preferenze.FileExist(filenome) == false) {
 				Preferenze.InitFile();
+				}
 				ArrayList <Dipendente> dipendenteArrayList = new ArrayList<Dipendente>(9);
 				Stampa stampa = new Stampa();
 				int LineaLavoro = 1; // da AGGIUNGERE funzione per determinare quale line lavoro

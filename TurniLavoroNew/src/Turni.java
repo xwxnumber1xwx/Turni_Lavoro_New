@@ -104,7 +104,7 @@ public class Turni {
 			return domNacht_Fine;
 		}
 		public static LocalTime calcoloZuSchlag (LocalTime inizio, LocalTime fine, LocalTime inzioZuSchlag, LocalTime fineZuSchlag) {
-																								//21:00					//4:00
+															// 15			//23 				//21:00					//4:00
 			long oreLavorate = 0;
 			LocalTime zuschlag = LocalTime.of(00, 00);
 			if (fine.isBefore(inizio) == true){
@@ -130,7 +130,7 @@ public class Turni {
 					if (fine.compareTo(fineZuSchlag) > 0 & inizio.compareTo(fineZuSchlag) > 0) {
 						fineZuSchlag = LocalTime.of(23, 59);
 					}
-					if (inizio.compareTo(fineZuSchlag) < 0) {
+					if (inizio.compareTo(fineZuSchlag) < 0 & (fine.compareTo(fineZuSchlag) > 0)) {
 						inzioZuSchlag = LocalTime.of(00, 00);
 					}
 					if (fine.compareTo(fineZuSchlag) <= 0 & fine.compareTo(inzioZuSchlag) > 0) {
