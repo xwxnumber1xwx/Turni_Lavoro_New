@@ -20,13 +20,13 @@ class TurniLavoroNew {
 				int NumMitarbeiterLinee = 1;
 				int minNacht = Integer.parseInt(Preferenze.getOnePreference("NACHT_MIN_MITARBEITER"));
 				int NumMitarbeiterNacht = Integer.parseInt(Preferenze.getOnePreference("NUM_MITARBEITER_LINEE1_NACHT"));
-				
+				IOFile saveFile = new IOFile();
 				for (int i = 0; i < 9; i++) {
 					Dipendente dipendente  = new Dipendente();
-					dipendente.setNome("DipendenteArray n: " + i);
+					dipendente.setNome("DipendenteArray" + i);
 					dipendente.setLivello(4);
-					int[] linea = {1,2}; //Da inserire in base alla capacità lavorativa;
-					dipendente.setLineaLavoro(linea);
+					int Capacitalinea = new  Random() .nextInt(3) + 1; //1 o 2 o 3(per entrambe)
+					dipendente.setLineaLavoro(Capacitalinea);
 					//dipendente.setTotZuSchlag((new  Random().nextDouble())*100); //Giusto una prova per far ordinare il metodo getMenoore
 					
 					//dipendente.malattia = new Random () .nextBoolean(); // solo una prova per la gente malata, da cancellare
@@ -34,7 +34,7 @@ class TurniLavoroNew {
 					if (Nacht <= minNacht) {
 						Nacht++;
 						TagNacht = 2; //NACHT
-						if (NumMitarbeiterLinee < NumMitarbeiterNacht) {
+						if (NumMitarbeiterLinee <= NumMitarbeiterNacht) {
 							LineaLavoro = 1;
 							NumMitarbeiterLinee++;
 						} else {
@@ -50,6 +50,8 @@ class TurniLavoroNew {
 						}			
 						stampa.StampaSuVideo(dipendente, SwitchTurni.generaTurni(giornoLibero, TagNacht, dipendente, dipendente.malattia), LineaLavoro);
 						System.out.println("\n");
+						String pathExtern = ("D:\\Dropbox\\eclipse_desktop\\Turni_Lavoro_New\\TurniLavoroNew\\Dipendenti\\" + dipendente.getNome() + ".txt");
+						saveFile.ExportToFile(dipendente.getNome(), pathExtern, dipendente);
 				}
 				//ORDINAMENTO ARRAY SOLO UNA PROVA
 			//	dipendenteArrayList.forEach(System.out::println);

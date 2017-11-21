@@ -7,7 +7,7 @@ public class Dipendente {
 	long codiceLavoratore = 0;
 	String nome;
 	int livello = 0;
-	int lineaLavoro[] = {1,2};
+	int lineaLavoro = 0;
 	boolean linieLeiter = false;
 	boolean soloMattina = false;
 	private double OreNotturne = 0;
@@ -33,10 +33,10 @@ public class Dipendente {
 	public void setLivello (int livello) {
 		this.livello = livello;
 	}
-	public int[] getLineaLavoro () {
+	public int getLineaLavoro () {
 		return lineaLavoro;
 	}
-	public void setLineaLavoro (int[] i) {
+	public void setLineaLavoro (int i) {
 		this.lineaLavoro = i;
 	}
 
