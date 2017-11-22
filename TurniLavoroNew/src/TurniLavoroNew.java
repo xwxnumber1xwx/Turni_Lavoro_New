@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.io.*;
 
@@ -20,10 +21,11 @@ class TurniLavoroNew {
 				int NumMitarbeiterLinee = 1;
 				int minNacht = Integer.parseInt(Preferenze.getOnePreference("NACHT_MIN_MITARBEITER"));
 				int NumMitarbeiterNacht = Integer.parseInt(Preferenze.getOnePreference("NUM_MITARBEITER_LINEE1_NACHT"));
-				IOFile saveFile = new IOFile();
+				IOFile save = new IOFile();
 				for (int i = 0; i < 9; i++) {
 					Dipendente dipendente  = new Dipendente();
-					dipendente.setNome("DipendenteArray" + i);
+					dipendente.setNome("NomeDip" + i);
+					dipendente.setCognome("CognomeDip" + i);
 					dipendente.setLivello(4);
 					int Capacitalinea = new  Random() .nextInt(3) + 1; //1 o 2 o 3(per entrambe)
 					dipendente.setLineaLavoro(Capacitalinea);
@@ -50,8 +52,10 @@ class TurniLavoroNew {
 						}			
 						stampa.StampaSuVideo(dipendente, SwitchTurni.generaTurni(giornoLibero, TagNacht, dipendente, dipendente.malattia), LineaLavoro);
 						System.out.println("\n");
-						String pathExtern = ("D:\\Dropbox\\eclipse_desktop\\Turni_Lavoro_New\\TurniLavoroNew\\Dipendenti\\" + dipendente.getNome() + ".txt");
-						saveFile.ExportToFile(dipendente.getNome(), pathExtern, dipendente);
+						//String pathExtern = ("D:\\Dropbox\\eclipse_desktop\\Turni_Lavoro_New\\TurniLavoroNew\\Dipendenti\\" + dipendente.getNome() + ".txt");
+						String pathExtern = (dipendente.getCognome() + ".txt");
+						save.ExportToFile(dipendente.getCognome(), pathExtern, dipendente);
+						List<String> saved = save.ImportFile(dipendente.getCognome(), pathExtern, dipendente);
 				}
 				//ORDINAMENTO ARRAY SOLO UNA PROVA
 			//	dipendenteArrayList.forEach(System.out::println);

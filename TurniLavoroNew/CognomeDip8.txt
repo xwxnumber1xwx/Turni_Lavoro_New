@@ -1,0 +1,9 @@
+NomeDip8 CognomeDip8
+NightTarif: 
+225.0
+krank: 
+0
+Stufe: 
+4
+Linee: 
+1

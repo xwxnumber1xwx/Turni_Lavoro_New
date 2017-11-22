@@ -6,6 +6,7 @@ public class Dipendente {
 	// cambiare i valori OreNotturne, ecc... da double a LocalTime e le relative funzioni
 	long codiceLavoratore = 0;
 	String nome;
+	String cognome;
 	int livello = 0;
 	int lineaLavoro = 0;
 	boolean linieLeiter = false;
@@ -27,6 +28,14 @@ public class Dipendente {
 	public void setNome (String nome) {
 		this.nome = nome;
 	}
+	
+	public String getCognome() {
+		return cognome;
+	}
+	public void setCognome (String cognome) {
+		this.cognome = cognome;
+	}
+	
 	public int getLivello () {
 		return livello;
 	}
