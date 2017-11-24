@@ -103,15 +103,14 @@ public class Turni {
 		public LocalTime getdomNach_fine () {
 			return domNacht_Fine;
 		}
-		public static LocalTime calcoloZuSchlag (LocalTime inizio, LocalTime fine, LocalTime inzioZuSchlag, LocalTime fineZuSchlag) {
-															// 15			//23 				//21:00					//4:00
+		public static LocalTime calcoloZuSchlag (LocalTime inizio, LocalTime fine, LocalTime inzioZuSchlag, LocalTime fineZuSchlag, LocalDate date) {
+															// 15			//23 				//21:00					//4:00			//2017.11.26
 			long oreLavorate = 0;
 			LocalTime zuschlag = LocalTime.of(00, 00);
 			if (fine.isBefore(inizio) == true){
-				LocalDate data = LocalDate.now();
-				LocalDateTime inizioEGirono = LocalDateTime.of(data, inizio);
-				data = data.plusDays(1);
-				LocalDateTime fineEGiorni = LocalDateTime.of(data, fine);
+				LocalDateTime inizioEGirono = LocalDateTime.of(date, inizio);
+				date = date.plusDays(1);
+				LocalDateTime fineEGiorni = LocalDateTime.of(date, fine);
 				Duration durata = Duration.between(inizioEGirono, fineEGiorni);
 				oreLavorate = durata.toMinutes();
 				for (int x = 0; x < oreLavorate; x++) {

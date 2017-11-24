@@ -1,9 +1,9 @@
 NomeDip6 CognomeDip6
-NightTarif: 
+NightTarif:
 751.5
-krank: 
+krank:
 0
-Stufe: 
+Stufe:
 4
-Linee: 
+Linee:
 3

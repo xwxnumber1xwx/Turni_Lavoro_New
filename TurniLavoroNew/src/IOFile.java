@@ -23,22 +23,22 @@ public class IOFile {
 	try (BufferedWriter writer = Files.newBufferedWriter(path, charset)) {
 		writer.write(fileToSave, 0, fileToSave.length());
 		writer.newLine();
-		writer.write("NightTarif: ");
+		writer.write("NightTarif:");
 		writer.newLine();
 		fileToSave = fileToSave.valueOf(dipendente.getTotZuSchlag());
 		writer.write(fileToSave, 0, fileToSave.length());
 		writer.newLine();
-		writer.write("krank: ");
+		writer.write("krank:");
 		writer.newLine();
 		fileToSave = fileToSave.valueOf(dipendente.getGiorniMalattia());
 		writer.write(fileToSave, 0, fileToSave.length());
 		writer.newLine();
-		writer.write("Stufe: ");
+		writer.write("Stufe:");
 		writer.newLine();
 		fileToSave = fileToSave.valueOf(dipendente.getLivello());
 		writer.write(fileToSave, 0, fileToSave.length());
 		writer.newLine();
-		writer.write("Linee: ");
+		writer.write("Linee:");
 		writer.newLine();
 		fileToSave = fileToSave.valueOf(dipendente.getLineaLavoro());
 		writer.write(fileToSave, 0, fileToSave.length());

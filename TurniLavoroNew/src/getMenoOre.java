@@ -11,7 +11,7 @@ public class getMenoOre {
 			@Override
 			public int compare(Dipendente dipendenti2, Dipendente dipendenti1) //mi ritorna -1,0 o 1 se dipendenti1.gerOreNotturne è minore uguale o maggiore di dipendenti2.getOreNotturne
 			{
-				return dipendenti1.getTotZuSchlag().compareTo(dipendenti2.getTotZuSchlag());
+				return dipendenti2.getTotZuSchlag().compareTo(dipendenti1.getTotZuSchlag());
 				
 			}
 		});

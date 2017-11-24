@@ -2,6 +2,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.io.*;
+import java.time.DayOfWeek;
+import java.time.LocalDate;
 
 
 class TurniLavoroNew {
@@ -21,7 +23,13 @@ class TurniLavoroNew {
 				int NumMitarbeiterLinee = 1;
 				int minNacht = Integer.parseInt(Preferenze.getOnePreference("NACHT_MIN_MITARBEITER"));
 				int NumMitarbeiterNacht = Integer.parseInt(Preferenze.getOnePreference("NUM_MITARBEITER_LINEE1_NACHT"));
+				LocalDate date = LocalDate.of(2017, 1, 1);
+				int inputWeek = 48; // must to be a input data
+				date = date.plusWeeks(inputWeek);
+				ArrayList <String> turniWeek = new ArrayList<String>();
+				ArrayList <String> turnoDipendente = new ArrayList<String>();
 				IOFile save = new IOFile();
+				
 				for (int i = 0; i < 9; i++) {
 					Dipendente dipendente  = new Dipendente();
 					dipendente.setNome("NomeDip" + i);
@@ -49,17 +57,25 @@ class TurniLavoroNew {
 					int giornoLibero = 0;
 						if (TagNacht == 2) { 
 								giornoLibero = new  Random() .nextInt(5) ; // 0 per DOM, 1 per LUN, 2 per MAR, 3 ... VEN non si è mai liberi.
-						}			
-						stampa.StampaSuVideo(dipendente, SwitchTurni.generaTurni(giornoLibero, TagNacht, dipendente, dipendente.malattia), LineaLavoro);
+						}
+						turnoDipendente = SwitchTurni.generaTurni(giornoLibero, TagNacht, dipendente, dipendente.malattia, date.with(DayOfWeek.SUNDAY));
+						turniWeek.add(dipendente.getCognome() +  " " + turnoDipendente);
+						//stampa.StampaSuVideo(dipendente, SwitchTurni.generaTurni(giornoLibero, TagNacht, dipendente, dipendente.malattia, date.with(DayOfWeek.SUNDAY)), LineaLavoro);
 						System.out.println("\n");
 						//String pathExtern = ("D:\\Dropbox\\eclipse_desktop\\Turni_Lavoro_New\\TurniLavoroNew\\Dipendenti\\" + dipendente.getNome() + ".txt");
 						String pathExtern = (dipendente.getCognome() + ".txt");
 						save.ExportToFile(dipendente.getCognome(), pathExtern, dipendente);
 						List<String> saved = save.ImportFile(dipendente.getCognome(), pathExtern, dipendente);
 				}
+				turniWeek.forEach(System.out::println);
 				//ORDINAMENTO ARRAY SOLO UNA PROVA
 			//	dipendenteArrayList.forEach(System.out::println);
-				dipendenteArrayList = getMenoOre.OrdinePerNottiArray(dipendenteArrayList);
+				//dipendenteArrayList = getMenoOre.OrdinePerNottiArray(dipendenteArrayList);
+				dipendenteArrayList = getMenoOre.OrdinePerNottiArrayList(dipendenteArrayList);
+				for(int h = 0; h < dipendenteArrayList.size(); h++) {
+					Dipendente dipendenteVar = dipendenteArrayList.get(h);
+					System.out.println(dipendenteVar.getCognome() + " TOT: " + dipendenteVar.getTotZuSchlag());
+				}
 			//	System.out.println ("");
 			//	dipendenteArrayList.forEach(System.out::println);
 				
