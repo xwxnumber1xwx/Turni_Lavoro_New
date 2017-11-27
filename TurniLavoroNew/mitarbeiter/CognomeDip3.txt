@@ -1,9 +1,13 @@
 NomeDip3 CognomeDip3
 NightTarif:
-751.5
+750.5
 krank:
 0
-Stufe:
+Linee:
 4
 Linee:
-3
+2
+NurTag:
+false
+LineeLeiter:
+false

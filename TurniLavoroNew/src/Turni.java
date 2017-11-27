@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.TextStyle;
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 import java.util.Locale;
 
 public class Turni {
@@ -103,29 +104,74 @@ public class Turni {
 		public LocalTime getdomNach_fine () {
 			return domNacht_Fine;
 		}
-		public static LocalTime calcoloZuSchlag (LocalTime inizio, LocalTime fine, LocalTime inzioZuSchlag, LocalTime fineZuSchlag, LocalDate date) {
-															// 15			//23 				//21:00					//4:00			//2017.11.26
-			long oreLavorate = 0;
-			LocalTime zuschlag = LocalTime.of(00, 00);
+		public static ArrayList<LocalTime> calcoloZuSchlag (Dipendente dipendente, LocalTime inizio, LocalTime fine, LocalTime inzioZuSchlag, LocalTime fineZuSchlag, LocalDate date, DayOfWeek day) {
+																							// 15			//23 				//21:00					//4:00			//2017.11.26		Sonntag
+			ArrayList<LocalTime> zuschlager = new ArrayList<LocalTime>(3);
+			LocalTime grenzeLT = LocalTime.of(23, 59);
+			LocalDateTime grenzeLDT = LocalDateTime.of(date, grenzeLT);
+			LocalTime zuschlagNacht = LocalTime.of(00, 00);
+			LocalTime zuschlagFeiertag = LocalTime.of(00, 00);
+			LocalTime zuschlagSonntag = LocalTime.of(00, 00);
+			LocalDateTime inizioZuSchlagLDT = LocalDateTime.of(date, inzioZuSchlag);
+			date = date.plusDays(1);
+			LocalDateTime fineZuSchlagLDT = LocalDateTime.of(date, fineZuSchlag);
+			date = date.minusDays(1);
+			LocalDateTime inizioLDT = LocalDateTime.of(date, inizio);
+			LocalDateTime fineLDT;
+			if (fine.isBefore(inizio)) {
+				date = date.plusDays(1);
+				fineLDT = LocalDateTime.of(date, fine);
+				date = date.minusDays(1);
+			}else {
+				fineLDT = LocalDateTime.of(date, fine);
+			}
+			while (inizioLDT.isBefore(fineLDT) || inizioLDT.compareTo(fineLDT) == 0) {
+			if ((inizioLDT.isAfter(inizioZuSchlagLDT) & inizioLDT.isBefore(fineZuSchlagLDT)) || (inizioLDT.isAfter(inizioZuSchlagLDT.minusDays(1)) & inizioLDT.isBefore(fineZuSchlagLDT.minusDays(1)))) { //COMPRERSO TRA 21 e 4
+				if (day == DayOfWeek.SUNDAY) {
+					if (inizioLDT.isAfter(grenzeLDT) == true) {
+						zuschlagNacht = zuschlagNacht.plusMinutes(1);
+					} else {
+						zuschlagSonntag = zuschlagSonntag.plusMinutes(1);
+					} 
+				}	
+				if (day == DayOfWeek.SATURDAY) {
+						if (inizioLDT.isAfter(grenzeLDT) == true) {
+							zuschlagSonntag = zuschlagSonntag.plusMinutes(1);
+						} else {
+						zuschlagNacht = zuschlagNacht.plusMinutes(1);
+					}
+				}
+				if ((day != DayOfWeek.SATURDAY) && (day != DayOfWeek.SUNDAY) == true) {
+					zuschlagNacht = zuschlagNacht.plusMinutes(1);
+				}
+			}
+			inizioLDT = inizioLDT.plusMinutes(1);
+			}
+			/*
 			if (fine.isBefore(inizio) == true){
 				LocalDateTime inizioEGirono = LocalDateTime.of(date, inizio);
 				date = date.plusDays(1);
 				LocalDateTime fineEGiorni = LocalDateTime.of(date, fine);
-				Duration durata = Duration.between(inizioEGirono, fineEGiorni);
-				oreLavorate = durata.toMinutes();
-				for (int x = 0; x < oreLavorate; x++) {
-					if(!(fine.equals(inizio))) {
-						if (fine.compareTo(fineZuSchlag) <= 0 || fine.compareTo(inzioZuSchlag) > 0) {
-							zuschlag = zuschlag.plusMinutes(1);
-						}
-						fine = fine.minusMinutes(1);
+					while(!(fineEGiorni.equals(inizioEGirono))) {
+						if (fineEGiorni.compareTo(fineZuSchlagLDT) <= 0 || fineEGiorni.compareTo(inizioZuSchlagLDT) > 0) {
+							if (fineEGiorni.isAfter(grenze) == false || fineEGiorni.compareTo(grenze) == 0) {
+								if (day == DayOfWeek.SUNDAY) {		
+									zuschlagSonntag = zuschlagSonntag.plusMinutes(1);
+								} else {
+									zuschlagNacht = zuschlagNacht.plusMinutes(1);
+								}
+							} else { //dopo mezzanotte
+								if (day == DayOfWeek.SUNDAY) {
+									zuschlagNacht = zuschlagNacht.plusMinutes(1);
+								} if (day == DayOfWeek.SATURDAY) {
+									zuschlagSonntag = zuschlagSonntag.plusMinutes(1);
+								}
+							}
+						} 
+						fineEGiorni = fineEGiorni.minusMinutes(1);
 					}
-				}
 			}else {
-			oreLavorate = inizio.until(fine, ChronoUnit.MINUTES);
-			}
-			for (int x = 0; x < oreLavorate; x++) {
-				if(!(fine.equals(inizio))) {
+				while(!(fine.equals(inizio))) {
 					if (fine.compareTo(fineZuSchlag) > 0 & inizio.compareTo(fineZuSchlag) > 0) {
 						fineZuSchlag = LocalTime.of(23, 59);
 					}
@@ -133,11 +179,18 @@ public class Turni {
 						inzioZuSchlag = LocalTime.of(00, 00);
 					}
 					if (fine.compareTo(fineZuSchlag) <= 0 & fine.compareTo(inzioZuSchlag) > 0) {
-						zuschlag = zuschlag.plusMinutes(1);
+						if (day == DayOfWeek.SUNDAY) {
+							zuschlagSonntag = zuschlagSonntag.plusMinutes(1);
+						} else {
+						zuschlagNacht = zuschlagNacht.plusMinutes(1);
+						}
 					}
 					fine = fine.minusMinutes(1);
-				}
-			}
-			return zuschlag;
+				}}
+			*/
+			zuschlager.add(zuschlagNacht);
+			zuschlager.add(zuschlagSonntag);
+			zuschlager.add(zuschlagFeiertag);
+			return zuschlager;
 		}
 }

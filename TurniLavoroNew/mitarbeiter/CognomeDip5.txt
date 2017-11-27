@@ -1,9 +1,13 @@
 NomeDip5 CognomeDip5
 NightTarif:
-585.0
+750.5
 krank:
 0
-Stufe:
+Linee:
 4
 Linee:
-3
+1
+NurTag:
+false
+LineeLeiter:
+false

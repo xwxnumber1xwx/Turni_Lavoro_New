@@ -3,7 +3,11 @@ NightTarif:
 225.0
 krank:
 0
-Stufe:
+Linee:
 4
 Linee:
-2
+1
+NurTag:
+false
+LineeLeiter:
+false

@@ -60,7 +60,6 @@ class TurniLavoroNew {
 						}
 						turnoDipendente = SwitchTurni.generaTurni(giornoLibero, TagNacht, dipendente, dipendente.malattia, date.with(DayOfWeek.SUNDAY));
 						turniWeek.add(dipendente.getCognome() +  " " + turnoDipendente);
-						//stampa.StampaSuVideo(dipendente, SwitchTurni.generaTurni(giornoLibero, TagNacht, dipendente, dipendente.malattia, date.with(DayOfWeek.SUNDAY)), LineaLavoro);
 						System.out.println("\n");
 						//String pathExtern = ("D:\\Dropbox\\eclipse_desktop\\Turni_Lavoro_New\\TurniLavoroNew\\Dipendenti\\" + dipendente.getNome() + ".txt");
 						String pathExtern = (dipendente.getCognome() + ".txt");

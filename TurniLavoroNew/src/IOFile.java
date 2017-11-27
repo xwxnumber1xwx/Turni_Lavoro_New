@@ -18,7 +18,14 @@ public class IOFile {
 	public boolean ExportToFile(String nameFile, String pathExtern, Dipendente dipendente) {
 	boolean yn = false;
 	Charset charset = Charset.forName("UTF-8");
-	Path path = Paths.get(pathExtern);
+	Path directory = Paths.get("mitarbeiter");
+	Path path = Paths.get(directory + "//" + pathExtern);
+	try {
+		Files.createDirectories(directory);
+	} catch (IOException e1) {
+		// TODO Auto-generated catch block
+		e1.printStackTrace();
+	}
 	String fileToSave = (dipendente.getNome() + " " + dipendente.getCognome());
 	try (BufferedWriter writer = Files.newBufferedWriter(path, charset)) {
 		writer.write(fileToSave, 0, fileToSave.length());
@@ -33,7 +40,7 @@ public class IOFile {
 		fileToSave = fileToSave.valueOf(dipendente.getGiorniMalattia());
 		writer.write(fileToSave, 0, fileToSave.length());
 		writer.newLine();
-		writer.write("Stufe:");
+		writer.write("Linee:");
 		writer.newLine();
 		fileToSave = fileToSave.valueOf(dipendente.getLivello());
 		writer.write(fileToSave, 0, fileToSave.length());
@@ -41,6 +48,16 @@ public class IOFile {
 		writer.write("Linee:");
 		writer.newLine();
 		fileToSave = fileToSave.valueOf(dipendente.getLineaLavoro());
+		writer.write(fileToSave, 0, fileToSave.length());
+		writer.newLine();
+		writer.write("NurTag:");
+		writer.newLine();
+		fileToSave = fileToSave.valueOf(dipendente.soloMattina);
+		writer.write(fileToSave, 0, fileToSave.length());
+		writer.newLine();
+		writer.write("LineeLeiter:");
+		writer.newLine();
+		fileToSave = fileToSave.valueOf(dipendente.linieLeiter);
 		writer.write(fileToSave, 0, fileToSave.length());
 		writer.newLine();
 		yn = true;
@@ -71,7 +88,7 @@ public class IOFile {
 	}
 	
 	public List<String> ImportFile (String nameFile, String pathExtern, Dipendente dipendente) {
-		Path path = Paths.get(pathExtern);
+		Path path = Paths.get("mitarbeiter//" + pathExtern);
 		List<String> database = null;
 		try (BufferedReader ins =  Files.newBufferedReader(path)) {
 			database = Files.readAllLines(path);
