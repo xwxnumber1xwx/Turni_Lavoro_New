@@ -1,6 +1,6 @@
 NomeDip1 CognomeDip1
 NightTarif:
-750.5
+247.5
 krank:
 0
 Linee:
@@ -11,3 +11,5 @@ NurTag:
 false
 LineeLeiter:
 false
+Frei:
+1

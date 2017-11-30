@@ -15,12 +15,9 @@ public class Dipendente {
 	private double OreFestivita = 0;
 	private double OreDomenica = 0;
 	private int giorniMalattia = 0;
-	boolean azubi = false;
-	boolean nuovoArrivato = false;
-	boolean lifeFirma = false;
-	boolean licenziato = false;
 	boolean malattia = false;
 	double TotZuSchlag = 0D;
+	int giornoLibero = 0;
 	
 	public String getNome() {
 		return nome;
@@ -93,6 +90,12 @@ public class Dipendente {
 	}
 	public double getOreDomenica() {
 		return OreDomenica;
+	}
+	public void setGiornoLibero (int giornoLibero) {
+		this.giornoLibero = giornoLibero;
+	}
+	public int getGiornoLibero () {
+		return giornoLibero;
 	}
 }
 

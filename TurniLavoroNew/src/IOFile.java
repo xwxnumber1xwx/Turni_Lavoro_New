@@ -8,17 +8,46 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 
 import static java.nio.file.StandardOpenOption.*;
 
 public class IOFile {
 	
+	public boolean ExportTurni (String directoryEXT, String pathExtern, ArrayList<String> turniWeek) {
+		boolean yn = false;
+		Charset charset = Charset.forName("UTF-8");
+		Path directory = Paths.get(directoryEXT);
+		Path path = Paths.get(directory + "//" + pathExtern);
+		try {
+			Files.createDirectories(directory);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		String fileToSave = (turniWeek.toString());
+		try (BufferedWriter writer = Files.newBufferedWriter(path, charset)) {
+			try {
+				writer.write(fileToSave, 0, fileToSave.length());
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			writer.newLine();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		return yn;
+	}
+	
+	
 	@SuppressWarnings("static-access")
-	public boolean ExportToFile(String nameFile, String pathExtern, Dipendente dipendente) {
+	public boolean ExportToFile(String directoryEXT, String pathExtern, Dipendente dipendente) {
 	boolean yn = false;
 	Charset charset = Charset.forName("UTF-8");
-	Path directory = Paths.get("mitarbeiter");
+	Path directory = Paths.get(directoryEXT);
 	Path path = Paths.get(directory + "//" + pathExtern);
 	try {
 		Files.createDirectories(directory);
@@ -60,8 +89,13 @@ public class IOFile {
 		fileToSave = fileToSave.valueOf(dipendente.linieLeiter);
 		writer.write(fileToSave, 0, fileToSave.length());
 		writer.newLine();
+		writer.write("Frei:");
+		writer.newLine();
+		fileToSave = fileToSave.valueOf(dipendente.getGiornoLibero());
+		writer.write(fileToSave, 0, fileToSave.length());
+		writer.newLine();
 		yn = true;
-		System.out.println("File " + nameFile + " creato correttamente" + " \n");
+		System.out.println("File " + pathExtern + " creato correttamente" + " \n");
 	} catch (IOException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();

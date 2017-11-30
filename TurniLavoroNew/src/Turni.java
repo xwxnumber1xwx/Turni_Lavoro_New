@@ -147,47 +147,6 @@ public class Turni {
 			}
 			inizioLDT = inizioLDT.plusMinutes(1);
 			}
-			/*
-			if (fine.isBefore(inizio) == true){
-				LocalDateTime inizioEGirono = LocalDateTime.of(date, inizio);
-				date = date.plusDays(1);
-				LocalDateTime fineEGiorni = LocalDateTime.of(date, fine);
-					while(!(fineEGiorni.equals(inizioEGirono))) {
-						if (fineEGiorni.compareTo(fineZuSchlagLDT) <= 0 || fineEGiorni.compareTo(inizioZuSchlagLDT) > 0) {
-							if (fineEGiorni.isAfter(grenze) == false || fineEGiorni.compareTo(grenze) == 0) {
-								if (day == DayOfWeek.SUNDAY) {		
-									zuschlagSonntag = zuschlagSonntag.plusMinutes(1);
-								} else {
-									zuschlagNacht = zuschlagNacht.plusMinutes(1);
-								}
-							} else { //dopo mezzanotte
-								if (day == DayOfWeek.SUNDAY) {
-									zuschlagNacht = zuschlagNacht.plusMinutes(1);
-								} if (day == DayOfWeek.SATURDAY) {
-									zuschlagSonntag = zuschlagSonntag.plusMinutes(1);
-								}
-							}
-						} 
-						fineEGiorni = fineEGiorni.minusMinutes(1);
-					}
-			}else {
-				while(!(fine.equals(inizio))) {
-					if (fine.compareTo(fineZuSchlag) > 0 & inizio.compareTo(fineZuSchlag) > 0) {
-						fineZuSchlag = LocalTime.of(23, 59);
-					}
-					if (inizio.compareTo(fineZuSchlag) < 0 & (fine.compareTo(fineZuSchlag) > 0)) {
-						inzioZuSchlag = LocalTime.of(00, 00);
-					}
-					if (fine.compareTo(fineZuSchlag) <= 0 & fine.compareTo(inzioZuSchlag) > 0) {
-						if (day == DayOfWeek.SUNDAY) {
-							zuschlagSonntag = zuschlagSonntag.plusMinutes(1);
-						} else {
-						zuschlagNacht = zuschlagNacht.plusMinutes(1);
-						}
-					}
-					fine = fine.minusMinutes(1);
-				}}
-			*/
 			zuschlager.add(zuschlagNacht);
 			zuschlager.add(zuschlagSonntag);
 			zuschlager.add(zuschlagFeiertag);

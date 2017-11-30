@@ -11,3 +11,5 @@ NurTag:
 false
 LineeLeiter:
 false
+Frei:
+0
