@@ -16,12 +16,11 @@ class TurniLavoroNew {
 				if (Preferenze.FileExist(filenome) == false) {
 					Preferenze.InitFile();
 				}
-				boolean creazioneDipendente = false;
+				boolean creazioneDipendente = true;
 				Stampa stampa = new Stampa();
 				ArrayList <Dipendente> dipendenteArrayList = new ArrayList<Dipendente>();
 				int LineaLavoro = 1; // da AGGIUNGERE funzione per determinare quale line lavoro
 				int Nacht = 0;
-				int TagNacht = 1;
 				int NumMitarbeiterLinee = 1;
 				int minNacht = Integer.parseInt(Preferenze.getOnePreference("NACHT_MIN_MITARBEITER"));
 				int NumMitarbeiterNacht = Integer.parseInt(Preferenze.getOnePreference("NUM_MITARBEITER_LINEE1_NACHT"));
@@ -41,7 +40,12 @@ class TurniLavoroNew {
 				ArrayList <String> turniWeek = new ArrayList<String>();
 				ArrayList <String> turnoDipendente = new ArrayList<String>();
 				IOFile save = new IOFile();
-				//if (creazioneDipendente == true) {
+				if (creazioneDipendente == false) {
+					Dipendente dipendente  = new Dipendente();
+					String directory = "mitarbeiter";
+					String pathExtern = (dipendente.getCognome() + ".txt");
+					List<String> saved = save.ImportFile(directory, pathExtern);
+				}else {
 				for (int i = 0; i < 9; i++) {
 					Dipendente dipendente  = new Dipendente();
 					dipendente.setNome("NomeDip" + i);
@@ -52,7 +56,7 @@ class TurniLavoroNew {
 					dipendenteArrayList.add (dipendente); // DA COMPLETARE
 					if (Nacht <= minNacht) {
 						Nacht++;
-						TagNacht = 2; //NACHT
+						dipendente.setTagNacht(2); //Nacht
 						if (NumMitarbeiterLinee <= NumMitarbeiterNacht) {
 							LineaLavoro = 1;
 							NumMitarbeiterLinee++;
@@ -60,27 +64,33 @@ class TurniLavoroNew {
 								LineaLavoro = 2;
 							}
 					} else {
-						TagNacht = 1; //TAG
+						dipendente.setTagNacht(1); //TAG
 					}
 					
 					int giornoLibero = 0;
-						if (TagNacht == 2) { 
+						if (dipendente.getTagNacht() == 2) { 
 								giornoLibero = new  Random() .nextInt(5) ; // 0 per DOM, 1 per LUN, 2 per MAR, 3 ... VEN non si è mai liberi.
 						}
 					dipendente.setGiornoLibero(giornoLibero);
 				}
+				}
+				String directory = "";
 				for (int x = 0; x < dipendenteArrayList.size(); x++) {
 					Dipendente dipendente = dipendenteArrayList.get(x);
-					turnoDipendente = SwitchTurni.generaTurni(dipendente.getGiornoLibero(), TagNacht, dipendente, dipendente.malattia, date.with(DayOfWeek.SUNDAY));
+					turnoDipendente = SwitchTurni.generaTurni(dipendente.getGiornoLibero(), dipendente.getTagNacht(), dipendente, dipendente.malattia, date.with(DayOfWeek.SUNDAY));
+					turnoDipendente.add("\n");
 					turniWeek.add(dipendente.getCognome() +  " " + turnoDipendente);
+					dipendente.setWeekShift(turnoDipendente);
 					System.out.println("\n");
-					//String pathExtern = ("D:\\Dropbox\\eclipse_desktop\\Turni_Lavoro_New\\TurniLavoroNew\\Dipendenti\\" + dipendente.getNome() + ".txt");
-					String pathExtern = (dipendente.getCognome() + ".txt");
-					String directory = "mitarbeiter";
-					save.ExportToFile(directory, pathExtern, dipendente);
-					List<String> saved = save.ImportFile(dipendente.getCognome(), pathExtern, dipendente);
+					String nomeFile = (dipendente.getCognome() + ".txt");
+					directory = "mitarbeiter";
+					save.ExportToFile(directory, nomeFile, dipendente);
+					List<String> saved = save.ImportFile(directory, nomeFile);
 					directory = "turni_" + date.getYear();
 					save.ExportTurni(directory, String.valueOf(inputWeek+1) + ".txt", turniWeek);
+					directory = "database";
+					nomeFile = (dipendente.getCognome() + ".dbs");
+					save.ExportObjectToFile(directory, nomeFile, dipendente);
 				}
 				turniWeek.forEach(System.out::println);
 				dipendenteArrayList = getMenoOre.OrdinePerNottiArrayList(dipendenteArrayList);
@@ -88,6 +98,11 @@ class TurniLavoroNew {
 					Dipendente dipendenteVar = dipendenteArrayList.get(h);
 					System.out.println(dipendenteVar.getCognome() + " TOT: " + dipendenteVar.getTotZuSchlag());
 				}
+				directory = "database";
+				
+				dipendenteArrayList = save.ImportObjectFromFile(directory); //.forEach(System.out::println);
+				Dipendente dipendente = dipendenteArrayList.get(1);
+				System.out.println(dipendente.getNome() + dipendente.getCognome());
 				//Inserire inserimento da Tastiera su Database
 				//Chiedere se qualcuno è malato, le OreNotturne, OreFestivita, OreDomeniche le riceverà comunque 
 				//Inserire lettura da Database

@@ -1,8 +1,14 @@
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
@@ -15,11 +21,11 @@ import static java.nio.file.StandardOpenOption.*;
 
 public class IOFile {
 	
-	public boolean ExportTurni (String directoryEXT, String pathExtern, ArrayList<String> turniWeek) {
+	public boolean ExportTurni (String directoryEXT, String nomeFile, ArrayList<String> turniWeek) {
 		boolean yn = false;
 		Charset charset = Charset.forName("UTF-8");
 		Path directory = Paths.get(directoryEXT);
-		Path path = Paths.get(directory + "//" + pathExtern);
+		Path path = Paths.get(directory + "//" + nomeFile);
 		try {
 			Files.createDirectories(directory);
 		} catch (IOException e1) {
@@ -27,6 +33,9 @@ public class IOFile {
 			e1.printStackTrace();
 		}
 		String fileToSave = (turniWeek.toString());
+		fileToSave = fileToSave.replace("[", "");
+		fileToSave = fileToSave.replace("]", "");
+		fileToSave = fileToSave.replace(",", "");
 		try (BufferedWriter writer = Files.newBufferedWriter(path, charset)) {
 			try {
 				writer.write(fileToSave, 0, fileToSave.length());
@@ -44,11 +53,11 @@ public class IOFile {
 	
 	
 	@SuppressWarnings("static-access")
-	public boolean ExportToFile(String directoryEXT, String pathExtern, Dipendente dipendente) {
+	public boolean ExportToFile(String directoryEXT, String nomeFile, Dipendente dipendente) {
 	boolean yn = false;
 	Charset charset = Charset.forName("UTF-8");
 	Path directory = Paths.get(directoryEXT);
-	Path path = Paths.get(directory + "//" + pathExtern);
+	Path path = Paths.get(directory + "//" + nomeFile);
 	try {
 		Files.createDirectories(directory);
 	} catch (IOException e1) {
@@ -95,34 +104,104 @@ public class IOFile {
 		writer.write(fileToSave, 0, fileToSave.length());
 		writer.newLine();
 		yn = true;
-		System.out.println("File " + pathExtern + " creato correttamente" + " \n");
+		System.out.println("File " + nomeFile + " creato correttamente" + " \n");
 	} catch (IOException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
-	/*
-	//Secondo metodo tando per imparare, ma e meglio il primo e piu efficiente credo
-	 * 
-	String addsToSave = ("Krank: " + dipendente.getGiorniMalattia() + "  Stufe: " + dipendente.getLivello() + "  Linee: " + dipendente.getLineaLavoro());
-	byte data[] = addsToSave.getBytes();
-	try (OutputStream out = new BufferedOutputStream(Files.newOutputStream(path, CREATE, APPEND))) { //APPEND aggiunge al file giä esistente altre informazioni
-		out.write(data, 0, data.length);
-		out.
-		yn = true;
-		System.out.println("File " + nameFile + " AGGIORNATO correttamente" + " \n");
-	} catch (IOException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
-	if (yn == false) {
-		System.out.println("File " + nameFile + " non creato o non Aggiornato");
-	}
-	*/
 	return yn;
 	}
 	
-	public List<String> ImportFile (String nameFile, String pathExtern, Dipendente dipendente) {
-		Path path = Paths.get("mitarbeiter//" + pathExtern);
+	public boolean ExportObjectToFile(String directoryEXT, String nomeFile, Dipendente dipendente) {
+		
+		boolean yn = false;
+		FileOutputStream fos = null;
+		
+		Path directory = Paths.get(directoryEXT);
+		try {
+			Files.createDirectories(directory);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		try {
+			fos = new FileOutputStream(directoryEXT + "//" + nomeFile);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		ObjectOutputStream oos = null;
+		try {
+			oos = new ObjectOutputStream(fos);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			oos.writeObject(dipendente);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			oos.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		yn = true;
+		if (yn == false) {
+			System.out.println("File " + directoryEXT + " non creato o non Aggiornato");
+		}
+		return yn;
+	}
+	
+	public ArrayList<Dipendente> ImportObjectFromFile (String directoryEXT) {
+		String nomeFile = "";
+		File file = new File(directoryEXT);
+		File[] listaFile = file.listFiles();
+		ArrayList <Dipendente> dipendente = new ArrayList<Dipendente>();
+		FileInputStream fis = null;
+		for (int x = 0; x < listaFile.length; x++) {
+			if(listaFile[x].isFile()) {
+				nomeFile = listaFile[x].toString();
+			try {
+				fis = new FileInputStream(nomeFile);
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			
+			ObjectInputStream ois = null;
+			try {
+				ois = new ObjectInputStream(fis);
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			
+			try {
+				dipendente.add((Dipendente)ois.readObject());
+			} catch (ClassNotFoundException | IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			try {
+				ois.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+	return dipendente;
+	}
+	
+	
+	public List<String> ImportFile (String directoryEXT, String nomeFile) {
+		Path directory = Paths.get(directoryEXT);
+		Path path = Paths.get(directory + "//" + nomeFile);
 		List<String> database = null;
 		try (BufferedReader ins =  Files.newBufferedReader(path)) {
 			database = Files.readAllLines(path);
@@ -133,4 +212,4 @@ public class IOFile {
 		}
 		return database;
 	}
-	}
+}

@@ -1,6 +1,6 @@
 NomeDip6 CognomeDip6
 NightTarif:
-247.5
+750.5
 krank:
 0
 Linee:
@@ -12,4 +12,4 @@ false
 LineeLeiter:
 false
 Frei:
-3
+2

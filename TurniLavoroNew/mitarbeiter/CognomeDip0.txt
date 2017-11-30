@@ -1,15 +1,15 @@
 NomeDip0 CognomeDip0
 NightTarif:
-247.5
+585.0
 krank:
 0
 Linee:
 4
 Linee:
-3
+2
 NurTag:
 false
 LineeLeiter:
 false
 Frei:
-4
+0

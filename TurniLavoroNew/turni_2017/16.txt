@@ -1,0 +1,73 @@
+CognomeDip0 
+2017-04-16 Sonntag	frei 
+2017-04-17 Montag	16:30-00:36 
+2017-04-18 Dienstag	16:30-00:36 
+2017-04-19 Mittwoch	16:30-00:36 
+2017-04-20 Donnerstag	16:30-00:36 
+2017-04-21 Freitag	18:00-2:06 
+2017-04-22 Samstag	Libero 
+ CognomeDip1 
+2017-04-16 Sonntag	frei 
+2017-04-17 Montag	16:30-00:36 
+2017-04-18 Dienstag	16:30-00:36 
+2017-04-19 Mittwoch	16:30-00:36 
+2017-04-20 Donnerstag	16:30-00:36 
+2017-04-21 Freitag	18:00-2:06 
+2017-04-22 Samstag	Libero 
+ CognomeDip2 
+2017-04-16 Sonntag	16:30-00:36 
+2017-04-17 Montag	16:30-00:36 
+2017-04-18 Dienstag	16:30-00:36 
+2017-04-19 Mittwoch	16:30-00:36 
+2017-04-20 Donnerstag	frei 
+2017-04-21 Freitag	15:00-23:06 
+2017-04-22 Samstag	Libero 
+ CognomeDip3 
+2017-04-16 Sonntag	16:30-00:36 
+2017-04-17 Montag	16:30-00:36 
+2017-04-18 Dienstag	frei 
+2017-04-19 Mittwoch	16:30-00:36 
+2017-04-20 Donnerstag	16:30-00:36 
+2017-04-21 Freitag	15:00-23:06 
+2017-04-22 Samstag	Libero 
+ CognomeDip4 
+2017-04-16 Sonntag	16:30-00:36 
+2017-04-17 Montag	frei 
+2017-04-18 Dienstag	16:30-00:36 
+2017-04-19 Mittwoch	16:30-00:36 
+2017-04-20 Donnerstag	16:30-00:36 
+2017-04-21 Freitag	15:00-23:06 
+2017-04-22 Samstag	Libero 
+ CognomeDip5 
+2017-04-16 Sonntag	16:30-00:36 
+2017-04-17 Montag	16:30-00:36 
+2017-04-18 Dienstag	16:30-00:36 
+2017-04-19 Mittwoch	16:30-00:36 
+2017-04-20 Donnerstag	frei 
+2017-04-21 Freitag	15:00-23:06 
+2017-04-22 Samstag	Libero 
+ CognomeDip6 
+2017-04-16 Sonntag	16:30-00:36 
+2017-04-17 Montag	16:30-00:36 
+2017-04-18 Dienstag	frei 
+2017-04-19 Mittwoch	16:30-00:36 
+2017-04-20 Donnerstag	16:30-00:36 
+2017-04-21 Freitag	15:00-23:06 
+2017-04-22 Samstag	Libero 
+ CognomeDip7 
+2017-04-16 Sonntag	frei 
+2017-04-17 Montag	2:30-10:36 
+2017-04-18 Dienstag	2:30-10:36 
+2017-04-19 Mittwoch	2:30-10:36 
+2017-04-20 Donnerstag	2:30-10:36 
+2017-04-21 Freitag	2:00-10:06 
+2017-04-22 Samstag	Libero 
+ CognomeDip8 
+2017-04-16 Sonntag	frei 
+2017-04-17 Montag	2:30-10:36 
+2017-04-18 Dienstag	2:30-10:36 
+2017-04-19 Mittwoch	2:30-10:36 
+2017-04-20 Donnerstag	2:30-10:36 
+2017-04-21 Freitag	2:00-10:06 
+2017-04-22 Samstag	Libero 
+
