@@ -11,7 +11,7 @@ public class Dipendente implements Serializable {
 	String cognome;
 	int livello = 0;
 	int lineaLavoro = 0;
-	boolean linieLeiter = false;
+	int linieLeiter = 0;
 	boolean soloMattina = false;
 	private double OreNotturne = 0;
 	private double OreFestivita = 0;
@@ -112,5 +112,17 @@ public class Dipendente implements Serializable {
 	}
 	public ArrayList<String> getWeekShift() {
 		return weekShift;
+	}
+	public void setSoloMattina (boolean soloMattina) {
+		this.soloMattina = soloMattina;
+	}
+	public boolean getSoloMattina () {
+		return this.soloMattina;
+	}
+	public void setLinieLeiter (int linieLeiter) {
+		this.linieLeiter = linieLeiter;
+	}
+	public int getlinieLeiter () {
+		return this.linieLeiter;
 	}
 }

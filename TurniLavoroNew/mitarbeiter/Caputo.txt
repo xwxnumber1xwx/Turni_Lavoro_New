@@ -1,15 +1,15 @@
-NomeDip0 CognomeDip0
+Daniele Caputo
 NightTarif:
-585.0
+1335.5
 krank:
 0
 Linee:
-4
+0
 Linee:
-2
+3
 NurTag:
 false
 LineeLeiter:
-false
+0
 Frei:
 0
