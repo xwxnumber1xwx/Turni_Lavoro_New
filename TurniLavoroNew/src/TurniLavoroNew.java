@@ -40,6 +40,10 @@ class TurniLavoroNew {
 						String var;
 						Dipendente dipendente  = new Dipendente();
 						scan.nextLine();
+						System.out.println("Personalnummer: " + "\n");
+						long personalnummer = (long)scan.nextInt();
+						dipendente.setPersonalnummer(personalnummer);
+						scan.nextLine();
 						System.out.println("Nome: " + "\n");
 						var = scan.nextLine();
 						dipendente.setNome(var);
@@ -111,8 +115,8 @@ class TurniLavoroNew {
 					dipendente.setWeekShift(turnoDipendente);
 					System.out.println("\n");
 					nomeFile = (dipendente.getCognome() + ".txt");
-					directory = "mitarbeiter"; //MODIFICARE DA QUI IN POI E SALVARE I TURNI DEL DIPENDENTE SU UN FILE TEXT E AGGIUNGERLI MANO A MANO. con DATA
-					save.ExportToFile(directory, nomeFile, dipendente);
+					directory = "mitarbeiter";
+					save.ExportShift(directory, nomeFile, dipendente, date);
 					List<String> saved = save.ImportFile(directory, nomeFile);
 					directory = "turni_" + date.getYear();
 					save.ExportTurni(directory, String.valueOf(inputWeek+1) + ".txt", turniWeek);

@@ -1,12 +1,14 @@
+
 import java.io.Serializable;
 import java.time.LocalTime;
 import java.util.ArrayList;
 
-public class Dipendente implements Serializable {
+public class Dipendente implements Serializable{
 	//  azubi, nuovoArrivato, lifeFirma devo metterli una una classe estesa?
 	// Oppure devo mettere Dipendente come superclasse e poi Mitarbeirer, azubi, nuovoArrivato, lifeFirma?
 	// cambiare i valori OreNotturne, ecc... da double a LocalTime e le relative funzioni
-	long codiceLavoratore = 0;
+	private static final long serialVersionUID = 00000001L;
+	long personalnummer = 0;
 	String nome;
 	String cognome;
 	int livello = 0;
@@ -22,6 +24,14 @@ public class Dipendente implements Serializable {
 	int giornoLibero = 0;
 	int TagNacht = 1; //1 = TAG default
 	ArrayList<String> weekShift = new ArrayList<String>();
+	
+	public void setPersonalnummer (long personalnummer) {
+		this.personalnummer = personalnummer;
+	}
+	
+	public long getPersonalnummer () {
+		return this.personalnummer;
+	}
 	
 	public String getNome() {
 		return nome;

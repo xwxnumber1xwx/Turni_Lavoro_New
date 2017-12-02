@@ -14,6 +14,7 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,7 +54,7 @@ public class IOFile {
 	
 	
 	@SuppressWarnings("static-access")
-	public boolean ExportToFile(String directoryEXT, String nomeFile, Dipendente dipendente) {
+	public boolean ExportShift(String directoryEXT, String nomeFile, Dipendente dipendente, LocalDate date) {
 	boolean yn = false;
 	Charset charset = Charset.forName("UTF-8");
 	Path directory = Paths.get(directoryEXT);
@@ -64,45 +65,15 @@ public class IOFile {
 		// TODO Auto-generated catch block
 		e1.printStackTrace();
 	}
-	String fileToSave = (dipendente.getNome() + " " + dipendente.getCognome());
-	try (BufferedWriter writer = Files.newBufferedWriter(path, charset)) {
-		writer.write(fileToSave, 0, fileToSave.length());
-		writer.newLine();
-		writer.write("NightTarif:");
-		writer.newLine();
-		fileToSave = fileToSave.valueOf(dipendente.getTotZuSchlag());
-		writer.write(fileToSave, 0, fileToSave.length());
-		writer.newLine();
-		writer.write("krank:");
-		writer.newLine();
-		fileToSave = fileToSave.valueOf(dipendente.getGiorniMalattia());
-		writer.write(fileToSave, 0, fileToSave.length());
-		writer.newLine();
-		writer.write("Linee:");
-		writer.newLine();
-		fileToSave = fileToSave.valueOf(dipendente.getLivello());
-		writer.write(fileToSave, 0, fileToSave.length());
-		writer.newLine();
-		writer.write("Linee:");
-		writer.newLine();
-		fileToSave = fileToSave.valueOf(dipendente.getLineaLavoro());
-		writer.write(fileToSave, 0, fileToSave.length());
-		writer.newLine();
-		writer.write("NurTag:");
-		writer.newLine();
-		fileToSave = fileToSave.valueOf(dipendente.soloMattina);
-		writer.write(fileToSave, 0, fileToSave.length());
-		writer.newLine();
-		writer.write("LineeLeiter:");
-		writer.newLine();
-		fileToSave = fileToSave.valueOf(dipendente.linieLeiter);
-		writer.write(fileToSave, 0, fileToSave.length());
-		writer.newLine();
-		writer.write("Frei:");
-		writer.newLine();
-		fileToSave = fileToSave.valueOf(dipendente.getGiornoLibero());
-		writer.write(fileToSave, 0, fileToSave.length());
-		writer.newLine();
+	
+	try (BufferedWriter writer = Files.newBufferedWriter(path, charset, APPEND)) {
+		ArrayList<String> fileToSaveArray = (dipendente.getWeekShift());
+		String fileToSave = "";
+		for (int x = 0; x < fileToSaveArray.size(); x++) {
+			fileToSave = fileToSaveArray.get(x);
+			writer.write(fileToSave, 0, fileToSave.length());
+			writer.newLine();
+		}
 		yn = true;
 		System.out.println("File " + nomeFile + " creato correttamente" + " \n");
 	} catch (IOException e) {
