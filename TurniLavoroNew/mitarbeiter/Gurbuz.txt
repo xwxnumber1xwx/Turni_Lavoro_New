@@ -15,9 +15,9 @@
 
 
 
-2017-02-19 Sonntag	frei
+2017-02-19 Sonntag	16:30-00:36
 
-2017-02-20 Montag	16:30-00:36
+2017-02-20 Montag	frei
 
 2017-02-21 Dienstag	16:30-00:36
 
@@ -25,7 +25,7 @@
 
 2017-02-23 Donnerstag	16:30-00:36
 
-2017-02-24 Freitag	18:00-2:06
+2017-02-24 Freitag	15:00-23:06
 
 2017-02-25 Samstag	Libero
 
@@ -35,11 +35,11 @@
 
 2017-02-27 Montag	16:30-00:36
 
-2017-02-28 Dienstag	frei
+2017-02-28 Dienstag	16:30-00:36
 
 2017-03-01 Mittwoch	16:30-00:36
 
-2017-03-02 Donnerstag	16:30-00:36
+2017-03-02 Donnerstag	frei
 
 2017-03-03 Freitag	15:00-23:06
 
@@ -47,9 +47,9 @@
 
 
 
-2017-03-05 Sonntag	frei
+2017-03-05 Sonntag	16:30-00:36
 
-2017-03-06 Montag	16:30-00:36
+2017-03-06 Montag	frei
 
 2017-03-07 Dienstag	16:30-00:36
 
@@ -57,7 +57,7 @@
 
 2017-03-09 Donnerstag	16:30-00:36
 
-2017-03-10 Freitag	18:00-2:06
+2017-03-10 Freitag	15:00-23:06
 
 2017-03-11 Samstag	Libero
 
@@ -67,9 +67,9 @@
 
 2017-03-13 Montag	16:30-00:36
 
-2017-03-14 Dienstag	frei
+2017-03-14 Dienstag	16:30-00:36
 
-2017-03-15 Mittwoch	16:30-00:36
+2017-03-15 Mittwoch	frei
 
 2017-03-16 Donnerstag	16:30-00:36
 
@@ -79,9 +79,9 @@
 
 
 
-2017-03-19 Sonntag	16:30-00:36
+2017-03-19 Sonntag	frei
 
-2017-03-20 Montag	frei
+2017-03-20 Montag	16:30-00:36
 
 2017-03-21 Dienstag	16:30-00:36
 
@@ -89,13 +89,13 @@
 
 2017-03-23 Donnerstag	16:30-00:36
 
-2017-03-24 Freitag	15:00-23:06
+2017-03-24 Freitag	18:00-2:06
 
 2017-03-25 Samstag	Libero
 
 
 
-2017-03-05 Sonntag	frei
+2017-03-05 Sonntag	16:30-00:36
 
 2017-03-06 Montag	16:30-00:36
 
@@ -103,9 +103,9 @@
 
 2017-03-08 Mittwoch	16:30-00:36
 
-2017-03-09 Donnerstag	16:30-00:36
+2017-03-09 Donnerstag	frei
 
-2017-03-10 Freitag	18:00-2:06
+2017-03-10 Freitag	15:00-23:06
 
 2017-03-11 Samstag	Libero
 
@@ -133,9 +133,9 @@
 
 2017-03-14 Dienstag	16:30-00:36
 
-2017-03-15 Mittwoch	16:30-00:36
+2017-03-15 Mittwoch	frei
 
-2017-03-16 Donnerstag	frei
+2017-03-16 Donnerstag	16:30-00:36
 
 2017-03-17 Freitag	15:00-23:06
 
@@ -149,9 +149,9 @@
 
 2017-03-21 Dienstag	16:30-00:36
 
-2017-03-22 Mittwoch	16:30-00:36
+2017-03-22 Mittwoch	frei
 
-2017-03-23 Donnerstag	frei
+2017-03-23 Donnerstag	16:30-00:36
 
 2017-03-24 Freitag	15:00-23:06
 
@@ -165,9 +165,9 @@
 
 2017-03-28 Dienstag	16:30-00:36
 
-2017-03-29 Mittwoch	frei
+2017-03-29 Mittwoch	16:30-00:36
 
-2017-03-30 Donnerstag	16:30-00:36
+2017-03-30 Donnerstag	frei
 
 2017-03-31 Freitag	15:00-23:06
 
@@ -179,9 +179,9 @@
 
 2017-04-03 Montag	16:30-00:36
 
-2017-04-04 Dienstag	frei
+2017-04-04 Dienstag	16:30-00:36
 
-2017-04-05 Mittwoch	16:30-00:36
+2017-04-05 Mittwoch	frei
 
 2017-04-06 Donnerstag	16:30-00:36
 
@@ -197,9 +197,9 @@
 
 2017-04-25 Dienstag	16:30-00:36
 
-2017-04-26 Mittwoch	frei
+2017-04-26 Mittwoch	16:30-00:36
 
-2017-04-27 Donnerstag	16:30-00:36
+2017-04-27 Donnerstag	frei
 
 2017-04-28 Freitag	15:00-23:06
 
@@ -225,13 +225,13 @@
 
 2017-08-13 Sonntag	16:30-00:36
 
-2017-08-14 Montag	16:30-00:36
+2017-08-14 Montag	frei
 
 2017-08-15 Dienstag	16:30-00:36
 
 2017-08-16 Mittwoch	16:30-00:36
 
-2017-08-17 Donnerstag	frei
+2017-08-17 Donnerstag	16:30-00:36
 
 2017-08-18 Freitag	15:00-23:06
 
@@ -239,31 +239,15 @@
 
 
 
-2017-10-29 Sonntag	frei
-
-2017-10-30 Montag	16:30-00:36
-
-2017-10-31 Dienstag	16:30-00:36
-
-2017-11-01 Mittwoch	16:30-00:36
-
-2017-11-02 Donnerstag	16:30-00:36
-
-2017-11-03 Freitag	18:00-2:06
-
-2017-11-04 Samstag	Libero
-
-
-
 2017-03-12 Sonntag	16:30-00:36
 
 2017-03-13 Montag	16:30-00:36
 
-2017-03-14 Dienstag	16:30-00:36
+2017-03-14 Dienstag	frei
 
 2017-03-15 Mittwoch	16:30-00:36
 
-2017-03-16 Donnerstag	frei
+2017-03-16 Donnerstag	16:30-00:36
 
 2017-03-17 Freitag	15:00-23:06
 
@@ -291,9 +275,9 @@
 
 2017-01-02 Montag	16:30-00:36
 
-2017-01-03 Dienstag	16:30-00:36
+2017-01-03 Dienstag	frei
 
-2017-01-04 Mittwoch	frei
+2017-01-04 Mittwoch	16:30-00:36
 
 2017-01-05 Donnerstag	16:30-00:36
 
@@ -325,9 +309,9 @@
 
 2017-01-03 Dienstag	16:30-00:36
 
-2017-01-04 Mittwoch	frei
+2017-01-04 Mittwoch	16:30-00:36
 
-2017-01-05 Donnerstag	16:30-00:36
+2017-01-05 Donnerstag	frei
 
 2017-01-06 Freitag	15:00-23:06
 
@@ -335,17 +319,17 @@
 
 
 
-2017-01-01 Sonntag	16:30-00:36
+2017-01-01 Sonntag	frei
 
 2017-01-02 Montag	16:30-00:36
 
 2017-01-03 Dienstag	16:30-00:36
 
-2017-01-04 Mittwoch	frei
+2017-01-04 Mittwoch	16:30-00:36
 
 2017-01-05 Donnerstag	16:30-00:36
 
-2017-01-06 Freitag	15:00-23:06
+2017-01-06 Freitag	18:00-2:06
 
 2017-01-07 Samstag	Libero
 
@@ -367,17 +351,17 @@
 
 
 
-2017-01-15 Sonntag	frei
+2017-01-15 Sonntag	16:30-00:36
 
 2017-01-16 Montag	16:30-00:36
 
-2017-01-17 Dienstag	16:30-00:36
+2017-01-17 Dienstag	frei
 
 2017-01-18 Mittwoch	16:30-00:36
 
 2017-01-19 Donnerstag	16:30-00:36
 
-2017-01-20 Freitag	18:00-2:06
+2017-01-20 Freitag	15:00-23:06
 
 2017-01-21 Samstag	Libero
 
@@ -389,9 +373,9 @@
 
 2017-08-15 Dienstag	16:30-00:36
 
-2017-08-16 Mittwoch	frei
+2017-08-16 Mittwoch	16:30-00:36
 
-2017-08-17 Donnerstag	16:30-00:36
+2017-08-17 Donnerstag	frei
 
 2017-08-18 Freitag	15:00-23:06
 
@@ -399,7 +383,7 @@
 
 
 
-2017-03-26 Sonntag	frei
+2017-03-26 Sonntag	16:30-00:36
 
 2017-03-27 Montag	16:30-00:36
 
@@ -407,25 +391,25 @@
 
 2017-03-29 Mittwoch	16:30-00:36
 
-2017-03-30 Donnerstag	16:30-00:36
+2017-03-30 Donnerstag	frei
 
-2017-03-31 Freitag	18:00-2:06
+2017-03-31 Freitag	15:00-23:06
 
 2017-04-01 Samstag	Libero
 
 
 
-2017-08-20 Sonntag	16:30-00:36
+2017-08-20 Sonntag	frei
 
 2017-08-21 Montag	16:30-00:36
 
 2017-08-22 Dienstag	16:30-00:36
 
-2017-08-23 Mittwoch	frei
+2017-08-23 Mittwoch	16:30-00:36
 
 2017-08-24 Donnerstag	16:30-00:36
 
-2017-08-25 Freitag	15:00-23:06
+2017-08-25 Freitag	18:00-2:06
 
 2017-08-26 Samstag	Libero
 
@@ -437,9 +421,9 @@
 
 2017-01-03 Dienstag	16:30-00:36
 
-2017-01-04 Mittwoch	16:30-00:36
+2017-01-04 Mittwoch	frei
 
-2017-01-05 Donnerstag	frei
+2017-01-05 Donnerstag	16:30-00:36
 
 2017-01-06 Freitag	15:00-23:06
 

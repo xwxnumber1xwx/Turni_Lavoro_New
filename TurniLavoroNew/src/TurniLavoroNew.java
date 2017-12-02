@@ -1,12 +1,17 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-import java.util.Scanner;
-import java.awt.Font;
-import java.awt.Label;
-import java.io.*;
+/* 
+ * Lo scopo di questo programma è generare turni di lavoro din una zienda specifica, avente 2 turni con ogni turno 2 linee di lavoro
+ * il programma deve tenere conto che tutti i lavoratori (tranne per scelta personale) dovranno alternare i turni tra mattina e sera in base
+ * alla tariffa extra notturna guadagnata nel tempo, in modo che tutti i dipendenti abbiano guadagnato piu o meno le sesse ore notturne in modo totalmente automatico.
+ * il programma inoltre salvera i turni su un foglio di calcolo. Se i turni sul foglio di calcolo vengono cambiati. allora il programma riconoscerà il cambiamento
+ * e aggiungerà o sottrarrà la tariffa notturna lavorata e non.
+ */
+import java.io.IOException;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Random;
+import java.util.Scanner;
+
 
 
 class TurniLavoroNew {
@@ -18,10 +23,7 @@ class TurniLavoroNew {
 				if (Preferenze.FileExist(filenome) == false) {
 					Preferenze.InitFile();
 				}
-				boolean creazioneDipendente = false;
-				Stampa stampa = new Stampa();
 				ArrayList <Dipendente> dipendenteArrayList = new ArrayList<Dipendente>();
-				int LineaLavoro = 1; // da AGGIUNGERE funzione per determinare quale line lavoro
 				int Nacht = 0;
 				int NumMitarbeiterLinee = 1;
 				int minNacht = Integer.parseInt(Preferenze.getOnePreference("NACHT_MIN_MITARBEITER"));
@@ -89,10 +91,8 @@ class TurniLavoroNew {
 							Nacht++;
 							dipendente.setTagNacht(2); //Nacht
 							if (NumMitarbeiterLinee <= NumMitarbeiterNacht) {
-								LineaLavoro = 1;
 								NumMitarbeiterLinee++;
 							} else {
-								LineaLavoro = 2;
 							}
 						} else {
 							dipendente.setTagNacht(1); //TAG
@@ -106,7 +106,8 @@ class TurniLavoroNew {
 				}
 				
 				//GENERAZIONE TURNI E SALVATAGGIO	
-				String directory = "";
+				String directory = "turni_" + date.getYear();
+				save.InitTurni(directory,  String.valueOf(inputWeek+1) + ".txt", date);
 				for (int x = 0; x < dipendenteArrayList.size(); x++) {
 					Dipendente dipendente = dipendenteArrayList.get(x);
 					turnoDipendente = SwitchTurni.generaTurni(dipendente.getGiornoLibero(), dipendente.getTagNacht(), dipendente, dipendente.malattia, date.with(DayOfWeek.SUNDAY));
@@ -114,18 +115,18 @@ class TurniLavoroNew {
 					turniWeek.add(dipendente.getCognome() +  " " + turnoDipendente);
 					dipendente.setWeekShift(turnoDipendente);
 					System.out.println("\n");
-					nomeFile = (dipendente.getCognome() + ".txt");
-					directory = "mitarbeiter";
-					save.ExportShift(directory, nomeFile, dipendente, date);
-					List<String> saved = save.ImportFile(directory, nomeFile);
 					directory = "turni_" + date.getYear();
-					save.ExportTurni(directory, String.valueOf(inputWeek+1) + ".txt", turniWeek);
-					directory = "database";
+					save.ExportTurniDiTutti(directory, String.valueOf(inputWeek+1) + ".txt", turniWeek.get(x));
+					nomeFile = (dipendente.getCognome() + ".txt");
+					save.ExportShift("mitarbeiter", nomeFile, dipendente, date);
+					//List<String> saved = save.ImportFile(directory, nomeFile);
 					nomeFile = (dipendente.getCognome() + ".dbs");
-					save.ExportObjectToFile(directory, nomeFile, dipendente);
+					save.ExportObjectToFile("database", nomeFile, dipendente);
 				}
+				
 				turniWeek.forEach(System.out::println);
 				dipendenteArrayList = getMenoOre.OrdinePerNottiArrayList(dipendenteArrayList);
+				
 				for(int h = 0; h < dipendenteArrayList.size(); h++) {
 					Dipendente dipendenteVar = dipendenteArrayList.get(h);
 					System.out.println(dipendenteVar.getCognome() + " TOT: " + dipendenteVar.getTotZuSchlag());

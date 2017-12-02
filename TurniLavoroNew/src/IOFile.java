@@ -1,4 +1,5 @@
-import java.io.BufferedOutputStream;
+import static java.nio.file.StandardOpenOption.APPEND;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -6,23 +7,70 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.OutputStream;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.format.TextStyle;
 import java.util.ArrayList;
 import java.util.List;
-
-import static java.nio.file.StandardOpenOption.*;
+import java.util.Locale;
 
 public class IOFile {
 	
-	public boolean ExportTurni (String directoryEXT, String nomeFile, ArrayList<String> turniWeek) {
+	public boolean InitTurni(String directoryEXT, String nomeFile, LocalDate date) {
+		boolean yn = false;
+		Charset charset = Charset.forName("UTF-8");
+		Path directory = Paths.get(directoryEXT);
+		Path path = Paths.get(directory + "//" + nomeFile);
+		try {
+			Files.createDirectories(directory);
+			Files.createFile(path);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		try (BufferedWriter writer = Files.newBufferedWriter(path, charset)) {
+			DayOfWeek giorno = DayOfWeek.SUNDAY;
+			TextStyle stileNorm = TextStyle.FULL;
+			Locale deutsch = Locale.GERMAN;
+			writer.write(date.toString());
+			date.plusDays(7);
+			writer.write("<--->");
+			writer.write(date.toString());
+			writer.newLine();
+			writer.write("\t");
+			writer.write(giorno.getDisplayName(stileNorm, deutsch));
+			writer.write("\t");
+			giorno = DayOfWeek.MONDAY;
+			writer.write(giorno.getDisplayName(stileNorm, deutsch));
+			giorno = DayOfWeek.TUESDAY;
+			writer.write(giorno.getDisplayName(stileNorm, deutsch));
+			writer.write("\t");
+			giorno = DayOfWeek.WEDNESDAY;
+			writer.write(giorno.getDisplayName(stileNorm, deutsch));
+			writer.write("\t");
+			giorno = DayOfWeek.THURSDAY;
+			writer.write(giorno.getDisplayName(stileNorm, deutsch));
+			writer.write("\t");
+			giorno = DayOfWeek.WEDNESDAY;
+			writer.write(giorno.getDisplayName(stileNorm, deutsch));
+			writer.write("\t");
+			giorno = DayOfWeek.SATURDAY;
+			writer.write(giorno.getDisplayName(stileNorm, deutsch));
+			writer.newLine();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		return yn;
+	}
+		
+	public boolean ExportTurniDiTutti (String directoryEXT, String nomeFile, String turniWeek) {
 		boolean yn = false;
 		Charset charset = Charset.forName("UTF-8");
 		Path directory = Paths.get(directoryEXT);
@@ -37,7 +85,7 @@ public class IOFile {
 		fileToSave = fileToSave.replace("[", "");
 		fileToSave = fileToSave.replace("]", "");
 		fileToSave = fileToSave.replace(",", "");
-		try (BufferedWriter writer = Files.newBufferedWriter(path, charset)) {
+		try (BufferedWriter writer = Files.newBufferedWriter(path, charset, APPEND)) {
 			try {
 				writer.write(fileToSave, 0, fileToSave.length());
 			} catch (IOException e) {
@@ -53,7 +101,6 @@ public class IOFile {
 	}
 	
 	
-	@SuppressWarnings("static-access")
 	public boolean ExportShift(String directoryEXT, String nomeFile, Dipendente dipendente, LocalDate date) {
 	boolean yn = false;
 	Charset charset = Charset.forName("UTF-8");
@@ -65,7 +112,15 @@ public class IOFile {
 		// TODO Auto-generated catch block
 		e1.printStackTrace();
 	}
-	
+	boolean sn = Files.exists(path);
+	if (sn == false) {
+		try {
+			Files.createFile(path);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	try (BufferedWriter writer = Files.newBufferedWriter(path, charset, APPEND)) {
 		ArrayList<String> fileToSaveArray = (dipendente.getWeekShift());
 		String fileToSave = "";
