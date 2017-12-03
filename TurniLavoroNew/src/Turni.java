@@ -1,10 +1,8 @@
 import java.time.DayOfWeek;
-import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.TextStyle;
-import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Locale;
 
@@ -58,6 +56,10 @@ public class Turni {
 		LocalTime domNacht_inizio = LocalTime.of(Integer.parseInt(Preferenze.getOnePreference("NACHT_DOM_INIZIO_H")), Integer.parseInt(Preferenze.getOnePreference("NACHT_DOM_INIZIO_M")));
 		LocalTime domNacht_Fine = LocalTime.of(Integer.parseInt(Preferenze.getOnePreference("NACHT_DOM_FINE_H")), Integer.parseInt(Preferenze.getOnePreference("NACHT_DOM_FINE_M")));
 		
+		public String[][] getSettimana() {
+			return this.settimana;
+		}
+				
 		public LocalTime getTagInizio () {
 			return tagInizio;
 		}
