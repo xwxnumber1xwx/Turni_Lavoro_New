@@ -1,4 +1,4 @@
-import java.io.BufferedOutputStream;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -6,10 +6,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.OutputStream;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -170,7 +168,7 @@ public class IOFile {
 	}
 	
 	
-	public List<String> ImportFile (String directoryEXT, String nomeFile) {
+	public List<String> ImportShiftFile (String directoryEXT, String nomeFile) {
 		Path directory = Paths.get(directoryEXT);
 		Path path = Paths.get(directory + "//" + nomeFile);
 		List<String> database = null;

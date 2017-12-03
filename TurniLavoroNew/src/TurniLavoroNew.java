@@ -32,7 +32,7 @@ class TurniLavoroNew {
 				String nomeFile = "";
 				int yn;
 				IOFile save = new IOFile();
-				do { //CREAZIONE DIPENDENTE
+				do { //CREAZIONE DIPENDENTE PROVVISORIA
 					Scanner scan = new Scanner (System.in);
 					System.out.print("Volete Aggiungere un nuovo Dipendente? 1 = Y , 2 = N" + "\n");
 					yn = scan.nextInt();
@@ -56,6 +56,11 @@ class TurniLavoroNew {
 						System.out.println("Linee Leiter? es. 0 = N, 1, 2 oppure digitare 3 per entrambe" + "\n");
 						int linieLeiter = scan.nextInt();
 						dipendente.setLinieLeiter(linieLeiter);
+						System.out.println(dipendente.getCognome() + "Vuole lavborare solo la mattina? 1 = Y, 2 = N" + "\n");
+						int soloMattina = scan.nextInt();
+						if (soloMattina == 1) {
+						dipendente.setSoloMattina(true);
+						}
 						System.out.println("Dipendente Salvato!" + "\n");
 						scan.nextLine();
 						nomeFile = (dipendente.getCognome() + ".dbs");
@@ -117,7 +122,6 @@ class TurniLavoroNew {
 					nomeFile = (dipendente.getCognome() + ".txt");
 					directory = "mitarbeiter";
 					save.ExportShift(directory, nomeFile, dipendente, date);
-					List<String> saved = save.ImportFile(directory, nomeFile);
 					directory = "turni_" + date.getYear();
 					save.ExportTurni(directory, String.valueOf(inputWeek+1) + ".txt", turniWeek);
 					directory = "database";
@@ -136,7 +140,6 @@ class TurniLavoroNew {
 				//System.out.println(dipendente.getNome() + dipendente.getCognome());
 				//Inserire inserimento da Tastiera su Database
 				//Chiedere se qualcuno è malato, le OreNotturne, OreFestivita, OreDomeniche le riceverà comunque 
-				//Inserire lettura da Database
 				//Implementare metodo per quanto riguarda: Licenziamenti, azubi o lifeFirma che se ne vanno.
 				//Inserire Matrice con turni di tutti i Dipendenti, poi salvarla su database
 				
