@@ -8,6 +8,7 @@
 import java.io.IOException;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
@@ -18,9 +19,8 @@ class TurniLavoroNew {
 	
 	public static void main(String[] args)
 		throws IOException { //Sicurezza per eventuali errori di Input e Output
-				// Creo 9 dipendenti come prova su un array di dipendenti
-				String filenome = "options.proprieties";
-				if (Preferenze.FileExist(filenome) == false) {
+				String path = "options.proprieties";
+				if (Preferenze.FileExist(path) == false) {
 					Preferenze.InitFile();
 				}
 				ArrayList <Dipendente> dipendenteArrayList = new ArrayList<Dipendente>();
@@ -58,10 +58,20 @@ class TurniLavoroNew {
 						System.out.println("Linee Leiter? es. 0 = N, 1, 2 oppure digitare 3 per entrambe" + "\n");
 						int linieLeiter = scan.nextInt();
 						dipendente.setLinieLeiter(linieLeiter);
-						System.out.println(dipendente.getCognome() + "Vuole lavborare solo la mattina? 1 = Y, 2 = N" + "\n");
+						System.out.println(dipendente.getCognome() + " Vuole lavorare solo la mattina? 1 = Y, 2 = N" + "\n");
 						int soloMattina = scan.nextInt();
 						if (soloMattina == 1) {
 						dipendente.setSoloMattina(true);
+						}
+						System.out.println(dipendente.getCognome() + " quale Giorno Libero? DDMMYY per giorno libero, 1 per NO");
+						long free = scan.nextLong();
+						if (free != 1) {
+							int DD = (int) (free/10000);
+							int MM = (int) (free - (DD*10000));
+							MM = MM /100;
+							int YY = (int) (free - (DD*10000) - (MM*100) + (2000));
+							LocalDate freeDay = LocalDate.of(YY, MM, DD);
+							save.freeday(dipendente, freeDay, "frei_als_wunch");
 						}
 						System.out.println("Dipendente Salvato!" + "\n");
 						scan.nextLine();
@@ -77,8 +87,16 @@ class TurniLavoroNew {
 					Scanner scan = new Scanner (System.in);
 					System.out.print("Welche kalenderWoche wollen Sie?" + "\n");
 					inputWeek = scan.nextInt();
-					if (inputWeek < 0 || inputWeek > 53) {
-						System.out.print("kalenderWoche falsche gescrieben" + "\n");
+					// guardare se la KW e´gia presente 
+					String directory = "turni_" + date.getYear();
+					boolean weekAlredyExist = save.checkWeek(inputWeek, directory);
+					if (weekAlredyExist == true) {
+						System.out.println("This week Alredy Exist");
+						inputWeek = 100;
+					} else {
+						if (inputWeek < 0 || inputWeek > 53) {
+							System.out.print("week´s number is not correct" + "\n");
+						}
 					}
 				} while (inputWeek < 0 || inputWeek > 53);
 				inputWeek -= 1;

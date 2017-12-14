@@ -1,11 +1,5 @@
-<<<<<<< HEAD
-
-||||||| merged common ancestors
 import java.io.BufferedOutputStream;
-=======
 import static java.nio.file.StandardOpenOption.APPEND;
-
->>>>>>> 68d4332059142c418f49ae0d621513a3cc8c02a6
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -17,10 +11,12 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
+import java.nio.file.OpenOption;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.TextStyle;
 import java.util.ArrayList;
 import java.util.List;
@@ -49,6 +45,7 @@ public class IOFile {
 			writer.write("<--->");
 			writer.write(date.toString());
 			writer.newLine();
+			/*
 			writer.write("\t");
 			writer.write(giorno.getDisplayName(stileNorm, deutsch));
 			writer.write("\t");
@@ -69,6 +66,7 @@ public class IOFile {
 			giorno = DayOfWeek.SATURDAY;
 			writer.write(giorno.getDisplayName(stileNorm, deutsch));
 			writer.newLine();
+			*/
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -243,5 +241,55 @@ public class IOFile {
 			e.printStackTrace();
 		}
 		return database;
+	}
+
+	public boolean checkWeek(int inputWeekEXT, String directoryEXT) {
+		// TODO Auto-generated method stub
+		directoryEXT = (directoryEXT + "//" + inputWeekEXT + ".txt");
+		Path directory = Paths.get(directoryEXT);
+		boolean yesNo = Files.exists(directory);
+		return yesNo;
+	}
+	
+	public void freeday (Dipendente dipendente, LocalDate day, String directoryEXT) {
+		Charset charset = Charset.forName("UTF-8");
+		Path directory = Paths.get(directoryEXT);
+		String nomeFile = dipendente.getCognome();
+		Path path = Paths.get(directory + "//" + nomeFile + ".txt");
+		try {
+			Files.createDirectories(directory);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		boolean sn = Files.exists(path);
+		if (sn == false) {
+			try {
+				Files.createFile(path);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		if (sn == false) {
+			try (BufferedWriter writer = Files.newBufferedWriter(path, charset)) {
+				String fileToSave = day.toString();
+						writer.write(fileToSave, 0, fileToSave.length());
+						writer.newLine();
+				} catch (IOException e2) {
+					// TODO Auto-generated catch block
+					e2.printStackTrace();
+				}
+		} else {
+			try (BufferedWriter writer = Files.newBufferedWriter(path, charset, APPEND)) {
+				String fileToSave = day.toString();
+						writer.write(fileToSave, 0, fileToSave.length());
+						writer.newLine();
+				} catch (IOException e2) {
+					// TODO Auto-generated catch block
+					e2.printStackTrace();
+				}
+		}
+	
 	}
 }

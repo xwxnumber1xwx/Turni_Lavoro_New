@@ -1,0 +1,46 @@
+2017-02-05<--->2017-02-05
+akil 
+2017-02-05 Sonntag	16:30-00:36 
+2017-02-06 Montag	frei 
+2017-02-07 Dienstag	16:30-00:36 
+2017-02-08 Mittwoch	16:30-00:36 
+2017-02-09 Donnerstag	16:30-00:36 
+2017-02-10 Freitag	15:00-23:06 
+2017-02-11 Samstag	Libero 
+
+Balicos 
+2017-02-05 Sonntag	16:30-00:36 
+2017-02-06 Montag	frei 
+2017-02-07 Dienstag	16:30-00:36 
+2017-02-08 Mittwoch	16:30-00:36 
+2017-02-09 Donnerstag	16:30-00:36 
+2017-02-10 Freitag	15:00-23:06 
+2017-02-11 Samstag	Libero 
+
+Caputo 
+2017-02-05 Sonntag	16:30-00:36 
+2017-02-06 Montag	16:30-00:36 
+2017-02-07 Dienstag	16:30-00:36 
+2017-02-08 Mittwoch	16:30-00:36 
+2017-02-09 Donnerstag	frei 
+2017-02-10 Freitag	15:00-23:06 
+2017-02-11 Samstag	Libero 
+
+Gurbuy 
+2017-02-05 Sonntag	16:30-00:36 
+2017-02-06 Montag	16:30-00:36 
+2017-02-07 Dienstag	16:30-00:36 
+2017-02-08 Mittwoch	16:30-00:36 
+2017-02-09 Donnerstag	frei 
+2017-02-10 Freitag	15:00-23:06 
+2017-02-11 Samstag	Libero 
+
+Gurbuz 
+2017-02-05 Sonntag	16:30-00:36 
+2017-02-06 Montag	16:30-00:36 
+2017-02-07 Dienstag	frei 
+2017-02-08 Mittwoch	16:30-00:36 
+2017-02-09 Donnerstag	16:30-00:36 
+2017-02-10 Freitag	15:00-23:06 
+2017-02-11 Samstag	Libero 
+
