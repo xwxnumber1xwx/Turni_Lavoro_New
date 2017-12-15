@@ -126,3 +126,835 @@
 2017-03-04 Samstag	Libero
 
 
+
+2017-03-05 Sonntag	frei
+
+2017-03-06 Montag	16:30-00:36
+
+2017-03-07 Dienstag	16:30-00:36
+
+2017-03-08 Mittwoch	16:30-00:36
+
+2017-03-09 Donnerstag	16:30-00:36
+
+2017-03-10 Freitag	18:00-2:06
+
+2017-03-11 Samstag	Libero
+
+
+
+2017-03-05 Sonntag	frei
+
+2017-03-06 Montag	16:30-00:36
+
+2017-03-07 Dienstag	16:30-00:36
+
+2017-03-08 Mittwoch	16:30-00:36
+
+2017-03-09 Donnerstag	16:30-00:36
+
+2017-03-10 Freitag	18:00-2:06
+
+2017-03-11 Samstag	Libero
+
+
+
+2016-12-25 Sonntag	16:30-00:36
+
+2016-12-26 Montag	16:30-00:36
+
+2016-12-27 Dienstag	16:30-00:36
+
+2016-12-28 Mittwoch	frei
+
+2016-12-29 Donnerstag	16:30-00:36
+
+2016-12-30 Freitag	15:00-23:06
+
+2016-12-31 Samstag	Libero
+
+
+
+2016-12-25 Sonntag	16:30-00:36
+
+2016-12-26 Montag	16:30-00:36
+
+2016-12-27 Dienstag	16:30-00:36
+
+2016-12-28 Mittwoch	frei
+
+2016-12-29 Donnerstag	16:30-00:36
+
+2016-12-30 Freitag	15:00-23:06
+
+2016-12-31 Samstag	Libero
+
+
+
+2017-03-19 Sonntag	16:30-00:36
+
+2017-03-20 Montag	16:30-00:36
+
+2017-03-21 Dienstag	16:30-00:36
+
+2017-03-22 Mittwoch	frei
+
+2017-03-23 Donnerstag	16:30-00:36
+
+2017-03-24 Freitag	15:00-23:06
+
+2017-03-25 Samstag	Libero
+
+
+
+2017-03-19 Sonntag	16:30-00:36
+
+2017-03-20 Montag	16:30-00:36
+
+2017-03-21 Dienstag	16:30-00:36
+
+2017-03-22 Mittwoch	frei
+
+2017-03-23 Donnerstag	16:30-00:36
+
+2017-03-24 Freitag	15:00-23:06
+
+2017-03-25 Samstag	Libero
+
+
+
+2017-03-26 Sonntag	16:30-00:36
+
+2017-03-27 Montag	frei
+
+2017-03-28 Dienstag	16:30-00:36
+
+2017-03-29 Mittwoch	16:30-00:36
+
+2017-03-30 Donnerstag	16:30-00:36
+
+2017-03-31 Freitag	15:00-23:06
+
+2017-04-01 Samstag	Libero
+
+
+
+2017-03-26 Sonntag	16:30-00:36
+
+2017-03-27 Montag	frei
+
+2017-03-28 Dienstag	16:30-00:36
+
+2017-03-29 Mittwoch	16:30-00:36
+
+2017-03-30 Donnerstag	16:30-00:36
+
+2017-03-31 Freitag	15:00-23:06
+
+2017-04-01 Samstag	Libero
+
+
+
+2016-12-25 Sonntag	16:30-00:36
+
+2016-12-26 Montag	16:30-00:36
+
+2016-12-27 Dienstag	16:30-00:36
+
+2016-12-28 Mittwoch	frei
+
+2016-12-29 Donnerstag	16:30-00:36
+
+2016-12-30 Freitag	15:00-23:06
+
+2016-12-31 Samstag	Libero
+
+
+
+2016-12-25 Sonntag	16:30-00:36
+
+2016-12-26 Montag	16:30-00:36
+
+2016-12-27 Dienstag	16:30-00:36
+
+2016-12-28 Mittwoch	frei
+
+2016-12-29 Donnerstag	16:30-00:36
+
+2016-12-30 Freitag	15:00-23:06
+
+2016-12-31 Samstag	Libero
+
+
+
+2016-12-25 Sonntag	16:30-00:36
+
+2016-12-26 Montag	16:30-00:36
+
+2016-12-27 Dienstag	16:30-00:36
+
+2016-12-28 Mittwoch	frei
+
+2016-12-29 Donnerstag	16:30-00:36
+
+2016-12-30 Freitag	15:00-23:06
+
+2016-12-31 Samstag	Libero
+
+
+
+2016-12-25 Sonntag	16:30-00:36
+
+2016-12-26 Montag	16:30-00:36
+
+2016-12-27 Dienstag	16:30-00:36
+
+2016-12-28 Mittwoch	frei
+
+2016-12-29 Donnerstag	16:30-00:36
+
+2016-12-30 Freitag	15:00-23:06
+
+2016-12-31 Samstag	Libero
+
+
+
+2016-12-25 Sonntag	16:30-00:36
+
+2016-12-26 Montag	16:30-00:36
+
+2016-12-27 Dienstag	frei
+
+2016-12-28 Mittwoch	16:30-00:36
+
+2016-12-29 Donnerstag	16:30-00:36
+
+2016-12-30 Freitag	15:00-23:06
+
+2016-12-31 Samstag	Libero
+
+
+
+2016-12-25 Sonntag	16:30-00:36
+
+2016-12-26 Montag	16:30-00:36
+
+2016-12-27 Dienstag	frei
+
+2016-12-28 Mittwoch	16:30-00:36
+
+2016-12-29 Donnerstag	16:30-00:36
+
+2016-12-30 Freitag	15:00-23:06
+
+2016-12-31 Samstag	Libero
+
+
+
+2016-12-25 Sonntag	16:30-00:36
+
+2016-12-26 Montag	frei
+
+2016-12-27 Dienstag	16:30-00:36
+
+2016-12-28 Mittwoch	16:30-00:36
+
+2016-12-29 Donnerstag	16:30-00:36
+
+2016-12-30 Freitag	15:00-23:06
+
+2016-12-31 Samstag	Libero
+
+
+
+2016-12-25 Sonntag	16:30-00:36
+
+2016-12-26 Montag	frei
+
+2016-12-27 Dienstag	16:30-00:36
+
+2016-12-28 Mittwoch	16:30-00:36
+
+2016-12-29 Donnerstag	16:30-00:36
+
+2016-12-30 Freitag	15:00-23:06
+
+2016-12-31 Samstag	Libero
+
+
+
+2016-12-25 Sonntag	16:30-00:36
+
+2016-12-26 Montag	frei
+
+2016-12-27 Dienstag	16:30-00:36
+
+2016-12-28 Mittwoch	16:30-00:36
+
+2016-12-29 Donnerstag	16:30-00:36
+
+2016-12-30 Freitag	15:00-23:06
+
+2016-12-31 Samstag	Libero
+
+
+
+2016-12-25 Sonntag	16:30-00:36
+
+2016-12-26 Montag	frei
+
+2016-12-27 Dienstag	16:30-00:36
+
+2016-12-28 Mittwoch	16:30-00:36
+
+2016-12-29 Donnerstag	16:30-00:36
+
+2016-12-30 Freitag	15:00-23:06
+
+2016-12-31 Samstag	Libero
+
+
+
+2017-11-05 Sonntag	16:30-00:36
+
+2017-11-06 Montag	frei
+
+2017-11-07 Dienstag	16:30-00:36
+
+2017-11-08 Mittwoch	16:30-00:36
+
+2017-11-09 Donnerstag	16:30-00:36
+
+2017-11-10 Freitag	15:00-23:06
+
+2017-11-11 Samstag	Libero
+
+
+
+2017-11-05 Sonntag	16:30-00:36
+
+2017-11-06 Montag	frei
+
+2017-11-07 Dienstag	16:30-00:36
+
+2017-11-08 Mittwoch	16:30-00:36
+
+2017-11-09 Donnerstag	16:30-00:36
+
+2017-11-10 Freitag	15:00-23:06
+
+2017-11-11 Samstag	Libero
+
+
+
+2017-05-07 Sonntag	16:30-00:36
+
+2017-05-08 Montag	16:30-00:36
+
+2017-05-09 Dienstag	frei
+
+2017-05-10 Mittwoch	16:30-00:36
+
+2017-05-11 Donnerstag	16:30-00:36
+
+2017-05-12 Freitag	15:00-23:06
+
+2017-05-13 Samstag	Libero
+
+
+
+2017-05-07 Sonntag	16:30-00:36
+
+2017-05-08 Montag	16:30-00:36
+
+2017-05-09 Dienstag	frei
+
+2017-05-10 Mittwoch	16:30-00:36
+
+2017-05-11 Donnerstag	16:30-00:36
+
+2017-05-12 Freitag	15:00-23:06
+
+2017-05-13 Samstag	Libero
+
+
+
+2016-12-25 Sonntag	16:30-00:36
+
+2016-12-26 Montag	frei
+
+2016-12-27 Dienstag	16:30-00:36
+
+2016-12-28 Mittwoch	16:30-00:36
+
+2016-12-29 Donnerstag	16:30-00:36
+
+2016-12-30 Freitag	15:00-23:06
+
+2016-12-31 Samstag	Libero
+
+
+
+2016-12-25 Sonntag	16:30-00:36
+
+2016-12-26 Montag	frei
+
+2016-12-27 Dienstag	16:30-00:36
+
+2016-12-28 Mittwoch	16:30-00:36
+
+2016-12-29 Donnerstag	16:30-00:36
+
+2016-12-30 Freitag	15:00-23:06
+
+2016-12-31 Samstag	Libero
+
+
+
+2017-04-30 Sonntag	16:30-00:36
+
+2017-05-01 Montag	16:30-00:36
+
+2017-05-02 Dienstag	frei
+
+2017-05-03 Mittwoch	16:30-00:36
+
+2017-05-04 Donnerstag	16:30-00:36
+
+2017-05-05 Freitag	15:00-23:06
+
+2017-05-06 Samstag	Libero
+
+
+
+2017-04-30 Sonntag	16:30-00:36
+
+2017-05-01 Montag	16:30-00:36
+
+2017-05-02 Dienstag	frei
+
+2017-05-03 Mittwoch	16:30-00:36
+
+2017-05-04 Donnerstag	16:30-00:36
+
+2017-05-05 Freitag	15:00-23:06
+
+2017-05-06 Samstag	Libero
+
+
+
+2017-08-20 Sonntag	16:30-00:36
+
+2017-08-21 Montag	frei
+
+2017-08-22 Dienstag	16:30-00:36
+
+2017-08-23 Mittwoch	16:30-00:36
+
+2017-08-24 Donnerstag	16:30-00:36
+
+2017-08-25 Freitag	15:00-23:06
+
+2017-08-26 Samstag	Libero
+
+
+
+2017-08-20 Sonntag	16:30-00:36
+
+2017-08-21 Montag	frei
+
+2017-08-22 Dienstag	16:30-00:36
+
+2017-08-23 Mittwoch	16:30-00:36
+
+2017-08-24 Donnerstag	16:30-00:36
+
+2017-08-25 Freitag	15:00-23:06
+
+2017-08-26 Samstag	Libero
+
+
+
+2017-05-21 Sonntag	16:30-00:36
+
+2017-05-22 Montag	frei
+
+2017-05-23 Dienstag	16:30-00:36
+
+2017-05-24 Mittwoch	16:30-00:36
+
+2017-05-25 Donnerstag	16:30-00:36
+
+2017-05-26 Freitag	15:00-23:06
+
+2017-05-27 Samstag	Libero
+
+
+
+2017-05-21 Sonntag	16:30-00:36
+
+2017-05-22 Montag	frei
+
+2017-05-23 Dienstag	16:30-00:36
+
+2017-05-24 Mittwoch	16:30-00:36
+
+2017-05-25 Donnerstag	16:30-00:36
+
+2017-05-26 Freitag	15:00-23:06
+
+2017-05-27 Samstag	Libero
+
+
+
+2017-01-01 Sonntag	16:30-00:36
+
+2017-01-02 Montag	16:30-00:36
+
+2017-01-03 Dienstag	frei
+
+2017-01-04 Mittwoch	16:30-00:36
+
+2017-01-05 Donnerstag	16:30-00:36
+
+2017-01-06 Freitag	15:00-23:06
+
+2017-01-07 Samstag	Libero
+
+
+
+2017-01-01 Sonntag	16:30-00:36
+
+2017-01-02 Montag	16:30-00:36
+
+2017-01-03 Dienstag	frei
+
+2017-01-04 Mittwoch	16:30-00:36
+
+2017-01-05 Donnerstag	16:30-00:36
+
+2017-01-06 Freitag	15:00-23:06
+
+2017-01-07 Samstag	Libero
+
+
+
+2017-01-01 Sonntag	16:30-00:36
+
+2017-01-02 Montag	16:30-00:36
+
+2017-01-03 Dienstag	16:30-00:36
+
+2017-01-04 Mittwoch	frei
+
+2017-01-05 Donnerstag	16:30-00:36
+
+2017-01-06 Freitag	15:00-23:06
+
+2017-01-07 Samstag	Libero
+
+
+
+2017-01-01 Sonntag	16:30-00:36
+
+2017-01-02 Montag	16:30-00:36
+
+2017-01-03 Dienstag	16:30-00:36
+
+2017-01-04 Mittwoch	frei
+
+2017-01-05 Donnerstag	16:30-00:36
+
+2017-01-06 Freitag	15:00-23:06
+
+2017-01-07 Samstag	Libero
+
+
+
+2017-01-01 Sonntag	16:30-00:36
+
+2017-01-02 Montag	16:30-00:36
+
+2017-01-03 Dienstag	16:30-00:36
+
+2017-01-04 Mittwoch	frei
+
+2017-01-05 Donnerstag	16:30-00:36
+
+2017-01-06 Freitag	15:00-23:06
+
+2017-01-07 Samstag	Libero
+
+
+
+2017-01-01 Sonntag	16:30-00:36
+
+2017-01-02 Montag	16:30-00:36
+
+2017-01-03 Dienstag	16:30-00:36
+
+2017-01-04 Mittwoch	frei
+
+2017-01-05 Donnerstag	16:30-00:36
+
+2017-01-06 Freitag	15:00-23:06
+
+2017-01-07 Samstag	Libero
+
+
+
+2017-01-01 Sonntag	16:30-00:36
+
+2017-01-02 Montag	frei
+
+2017-01-03 Dienstag	16:30-00:36
+
+2017-01-04 Mittwoch	16:30-00:36
+
+2017-01-05 Donnerstag	16:30-00:36
+
+2017-01-06 Freitag	15:00-23:06
+
+2017-01-07 Samstag	Libero
+
+
+
+2017-01-01 Sonntag	16:30-00:36
+
+2017-01-02 Montag	frei
+
+2017-01-03 Dienstag	16:30-00:36
+
+2017-01-04 Mittwoch	16:30-00:36
+
+2017-01-05 Donnerstag	16:30-00:36
+
+2017-01-06 Freitag	15:00-23:06
+
+2017-01-07 Samstag	Libero
+
+
+
+2017-01-01 Sonntag	frei
+
+2017-01-02 Montag	16:30-00:36
+
+2017-01-03 Dienstag	16:30-00:36
+
+2017-01-04 Mittwoch	16:30-00:36
+
+2017-01-05 Donnerstag	16:30-00:36
+
+2017-01-06 Freitag	18:00-2:06
+
+2017-01-07 Samstag	Libero
+
+
+
+2017-01-01 Sonntag	frei
+
+2017-01-02 Montag	16:30-00:36
+
+2017-01-03 Dienstag	16:30-00:36
+
+2017-01-04 Mittwoch	16:30-00:36
+
+2017-01-05 Donnerstag	16:30-00:36
+
+2017-01-06 Freitag	18:00-2:06
+
+2017-01-07 Samstag	Libero
+
+
+
+2017-01-01 Sonntag	16:30-00:36
+
+2017-01-02 Montag	16:30-00:36
+
+2017-01-03 Dienstag	frei
+
+2017-01-04 Mittwoch	16:30-00:36
+
+2017-01-05 Donnerstag	16:30-00:36
+
+2017-01-06 Freitag	15:00-23:06
+
+2017-01-07 Samstag	Libero
+
+
+
+2017-01-01 Sonntag	16:30-00:36
+
+2017-01-02 Montag	16:30-00:36
+
+2017-01-03 Dienstag	frei
+
+2017-01-04 Mittwoch	16:30-00:36
+
+2017-01-05 Donnerstag	16:30-00:36
+
+2017-01-06 Freitag	15:00-23:06
+
+2017-01-07 Samstag	Libero
+
+
+
+2017-01-01 Sonntag	16:30-00:36
+
+2017-01-02 Montag	16:30-00:36
+
+2017-01-03 Dienstag	frei
+
+2017-01-04 Mittwoch	16:30-00:36
+
+2017-01-05 Donnerstag	16:30-00:36
+
+2017-01-06 Freitag	15:00-23:06
+
+2017-01-07 Samstag	Libero
+
+
+
+2017-01-01 Sonntag	16:30-00:36
+
+2017-01-02 Montag	16:30-00:36
+
+2017-01-03 Dienstag	frei
+
+2017-01-04 Mittwoch	16:30-00:36
+
+2017-01-05 Donnerstag	16:30-00:36
+
+2017-01-06 Freitag	15:00-23:06
+
+2017-01-07 Samstag	Libero
+
+
+
+2017-01-01 Sonntag	16:30-00:36
+
+2017-01-02 Montag	16:30-00:36
+
+2017-01-03 Dienstag	16:30-00:36
+
+2017-01-04 Mittwoch	frei
+
+2017-01-05 Donnerstag	16:30-00:36
+
+2017-01-06 Freitag	15:00-23:06
+
+2017-01-07 Samstag	Libero
+
+
+
+2017-01-01 Sonntag	16:30-00:36
+
+2017-01-02 Montag	16:30-00:36
+
+2017-01-03 Dienstag	16:30-00:36
+
+2017-01-04 Mittwoch	frei
+
+2017-01-05 Donnerstag	16:30-00:36
+
+2017-01-06 Freitag	15:00-23:06
+
+2017-01-07 Samstag	Libero
+
+
+
+2017-01-01 Sonntag	16:30-00:36
+
+2017-01-02 Montag	16:30-00:36
+
+2017-01-03 Dienstag	16:30-00:36
+
+2017-01-04 Mittwoch	frei
+
+2017-01-05 Donnerstag	16:30-00:36
+
+2017-01-06 Freitag	15:00-23:06
+
+2017-01-07 Samstag	Libero
+
+
+
+2017-01-01 Sonntag	16:30-00:36
+
+2017-01-02 Montag	16:30-00:36
+
+2017-01-03 Dienstag	16:30-00:36
+
+2017-01-04 Mittwoch	frei
+
+2017-01-05 Donnerstag	16:30-00:36
+
+2017-01-06 Freitag	15:00-23:06
+
+2017-01-07 Samstag	Libero
+
+
+
+2017-01-01 Sonntag	16:30-00:36
+
+2017-01-02 Montag	frei
+
+2017-01-03 Dienstag	16:30-00:36
+
+2017-01-04 Mittwoch	16:30-00:36
+
+2017-01-05 Donnerstag	16:30-00:36
+
+2017-01-06 Freitag	15:00-23:06
+
+2017-01-07 Samstag	Libero
+
+
+
+2017-01-01 Sonntag	16:30-00:36
+
+2017-01-02 Montag	frei
+
+2017-01-03 Dienstag	16:30-00:36
+
+2017-01-04 Mittwoch	16:30-00:36
+
+2017-01-05 Donnerstag	16:30-00:36
+
+2017-01-06 Freitag	15:00-23:06
+
+2017-01-07 Samstag	Libero
+
+
+
+2017-01-01 Sonntag	16:30-00:36
+
+2017-01-02 Montag	16:30-00:36
+
+2017-01-03 Dienstag	16:30-00:36
+
+2017-01-04 Mittwoch	16:30-00:36
+
+2017-01-05 Donnerstag	frei
+
+2017-01-06 Freitag	15:00-23:06
+
+2017-01-07 Samstag	Libero
+
+
+
+2017-01-01 Sonntag	16:30-00:36
+
+2017-01-02 Montag	16:30-00:36
+
+2017-01-03 Dienstag	16:30-00:36
+
+2017-01-04 Mittwoch	16:30-00:36
+
+2017-01-05 Donnerstag	frei
+
+2017-01-06 Freitag	15:00-23:06
+
+2017-01-07 Samstag	Libero
+
+

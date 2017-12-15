@@ -251,6 +251,34 @@ public class IOFile {
 		return yesNo;
 	}
 	
+	public ArrayList<LocalDate> checkFreeDay (Dipendente dipendente, String directoryEXT) {
+		
+		directoryEXT = (directoryEXT + "//" + dipendente.cognome + ".txt");
+		Path directory = Paths.get(directoryEXT);
+		boolean yesNo = Files.exists(directory);
+		ArrayList<LocalDate> days = new ArrayList<LocalDate>();
+		int YY, MM, DD;
+		long date;
+		if (yesNo == true) {
+			List<String> day = new ArrayList<String>();
+			try {
+				day = Files.readAllLines(directory);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			for (int x=0; x<day.size(); x++) {
+				date = Long.parseLong(day.get(x).replaceAll("-", ""));
+				 YY = (int) (date/10000);
+				 MM = (int) ((date - YY*10000) / 100);
+				 DD = (int) ((date - YY*10000) - (MM*100));					
+				days.add(LocalDate.of(YY, MM, DD));
+			}
+		}
+		
+		return days;
+	}
+	
 	public void freeday (Dipendente dipendente, LocalDate day, String directoryEXT) {
 		Charset charset = Charset.forName("UTF-8");
 		Path directory = Paths.get(directoryEXT);

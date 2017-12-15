@@ -1,6 +1,50 @@
 2017-01-01<--->2017-01-01
-	Sonntag	MontagDienstag	Mittwoch	Donnerstag	Mittwoch	Samstag
+akil 
+2017-01-01 Sonntag	16:30-00:36 
+2017-01-02 Montag	16:30-00:36 
+2017-01-03 Dienstag	16:30-00:36 
+2017-01-04 Mittwoch	frei 
+2017-01-05 Donnerstag	16:30-00:36 
+2017-01-06 Freitag	15:00-23:06 
+2017-01-07 Samstag	Libero 
+
+Balicos 
+2017-01-01 Sonntag	16:30-00:36 
+2017-01-02 Montag	16:30-00:36 
+2017-01-03 Dienstag	16:30-00:36 
+2017-01-04 Mittwoch	16:30-00:36 
+2017-01-05 Donnerstag	frei 
+2017-01-06 Freitag	15:00-23:06 
+2017-01-07 Samstag	Libero 
+
+Baudo 
+2017-01-01 Sonntag	frei 
+2017-01-02 Montag	16:30-00:36 
+2017-01-03 Dienstag	16:30-00:36 
+2017-01-04 Mittwoch	16:30-00:36 
+2017-01-05 Donnerstag	16:30-00:36 
+2017-01-06 Freitag	18:00-2:06 
+2017-01-07 Samstag	Libero 
+
+bulent 
+2017-01-01 Sonntag	16:30-00:36 
+2017-01-02 Montag	16:30-00:36 
+2017-01-03 Dienstag	frei 
+2017-01-04 Mittwoch	16:30-00:36 
+2017-01-05 Donnerstag	16:30-00:36 
+2017-01-06 Freitag	15:00-23:06 
+2017-01-07 Samstag	Libero 
+
 Caputo 
+2017-01-01 Sonntag	16:30-00:36 
+2017-01-02 Montag	16:30-00:36 
+2017-01-03 Dienstag	frei 
+2017-01-04 Mittwoch	16:30-00:36 
+2017-01-05 Donnerstag	16:30-00:36 
+2017-01-06 Freitag	15:00-23:06 
+2017-01-07 Samstag	Libero 
+
+Cyrus 
 2017-01-01 Sonntag	16:30-00:36 
 2017-01-02 Montag	frei 
 2017-01-03 Dienstag	16:30-00:36 
@@ -10,20 +54,20 @@ Caputo
 2017-01-07 Samstag	Libero 
 
 Gurbuy 
-2017-01-01 Sonntag	16:30-00:36 
+2017-01-01 Sonntag	frei 
 2017-01-02 Montag	16:30-00:36 
-2017-01-03 Dienstag	16:30-00:36 
-2017-01-04 Mittwoch	frei 
-2017-01-05 Donnerstag	16:30-00:36 
-2017-01-06 Freitag	15:00-23:06 
-2017-01-07 Samstag	Libero 
-
-Gurbuz 
-2017-01-01 Sonntag	16:30-00:36 
-2017-01-02 Montag	frei 
 2017-01-03 Dienstag	16:30-00:36 
 2017-01-04 Mittwoch	16:30-00:36 
 2017-01-05 Donnerstag	16:30-00:36 
-2017-01-06 Freitag	15:00-23:06 
+2017-01-06 Freitag	18:00-2:06 
+2017-01-07 Samstag	Libero 
+
+Gurbuz 
+2017-01-01 Sonntag	frei 
+2017-01-02 Montag	2:30-10:36 
+2017-01-03 Dienstag	2:30-10:36 
+2017-01-04 Mittwoch	2:30-10:36 
+2017-01-05 Donnerstag	2:30-10:36 
+2017-01-06 Freitag	2:00-10:06 
 2017-01-07 Samstag	Libero 
 
