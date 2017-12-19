@@ -1,5 +1,6 @@
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
 
@@ -15,6 +16,7 @@ public class Dipendente implements Serializable{
 	int lineaLavoro = 0;
 	int linieLeiter = 0;
 	boolean soloMattina = false;
+	boolean FreeThisWeek = false;
 	private double OreNotturne = 0;
 	private double OreFestivita = 0;
 	private double OreDomenica = 0;
@@ -22,6 +24,7 @@ public class Dipendente implements Serializable{
 	boolean malattia = false;
 	double TotZuSchlag = 0D;
 	int giornoLibero = 0;
+	LocalDate giornoLiberoLD;
 	int TagNacht = 1; //1 = TAG default
 	ArrayList<String> weekShift = new ArrayList<String>();
 	
@@ -105,6 +108,12 @@ public class Dipendente implements Serializable{
 	public double getOreDomenica() {
 		return OreDomenica;
 	}
+	public void setGiornoLiberoLD (LocalDate giornoLiberoLD) {
+		this.giornoLiberoLD = giornoLiberoLD;
+	}
+	public LocalDate getGiornoLiberoLD() {
+		return giornoLiberoLD;
+	}
 	public void setGiornoLibero (int giornoLibero) {
 		this.giornoLibero = giornoLibero;
 	}
@@ -134,5 +143,13 @@ public class Dipendente implements Serializable{
 	}
 	public int getlinieLeiter () {
 		return this.linieLeiter;
+	}
+	
+	public void setFreeThisWeek (boolean FreeThisWeek) {
+		this.FreeThisWeek = FreeThisWeek;
+	}
+	
+	public boolean getFreeThisWeek () {
+		return FreeThisWeek;
 	}
 }

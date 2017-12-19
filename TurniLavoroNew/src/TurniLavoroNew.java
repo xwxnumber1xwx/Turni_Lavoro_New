@@ -27,6 +27,7 @@ class TurniLavoroNew {
 				}
 				ArrayList <Dipendente> dipendenteArrayList = new ArrayList<Dipendente>();
 				int Nacht = 0;
+				int[] DoVe = new int[4];
 				int NumMitarbeiterLinee = 1;
 				int minNacht = Integer.parseInt(Preferenze.getOnePreference("NACHT_MIN_MITARBEITER"));
 				int NumMitarbeiterNacht = Integer.parseInt(Preferenze.getOnePreference("NUM_MITARBEITER_LINEE1_NACHT"));
@@ -41,44 +42,7 @@ class TurniLavoroNew {
 					System.out.print("Volete Aggiungere un nuovo Dipendente? 1 = Y , 2 = N" + "\n");
 					yn = scan.nextInt();
 					if (yn == 1) {
-						String var;
-						Dipendente dipendente  = new Dipendente();
-						scan.nextLine();
-						System.out.println("Personalnummer: " + "\n");
-						long personalnummer = (long)scan.nextInt();
-						dipendente.setPersonalnummer(personalnummer);
-						scan.nextLine();
-						System.out.println("Nome: " + "\n");
-						var = scan.nextLine();
-						dipendente.setNome(var);
-						System.out.println("Cognome: " + "\n");
-						var = scan.nextLine();
-						dipendente.setCognome(var);
-						System.out.println("capacita linee: es. 1, 2 oppure digitare 3 per entrambe" + "\n");
-						int Capacitalinea = scan.nextInt();
-						dipendente.setLineaLavoro(Capacitalinea);
-						System.out.println("Linee Leiter? es. 0 = N, 1, 2 oppure digitare 3 per entrambe" + "\n");
-						int linieLeiter = scan.nextInt();
-						dipendente.setLinieLeiter(linieLeiter);
-						System.out.println(dipendente.getCognome() + " Vuole lavorare solo la mattina? 1 = Y, 2 = N" + "\n");
-						int soloMattina = scan.nextInt();
-						if (soloMattina == 1) {
-						dipendente.setSoloMattina(true);
-						}
-						System.out.println(dipendente.getCognome() + " quale Giorno Libero? DDMMYY per giorno libero, 1 per NO");
-						long free = scan.nextLong();
-						if (free != 1) {
-							int DD = (int) (free/10000);
-							int MM = (int) (free - (DD*10000));
-							MM = MM /100;
-							int YY = (int) (free - (DD*10000) - (MM*100) + (2000));
-							LocalDate freeDay = LocalDate.of(YY, MM, DD);
-							save.freeday(dipendente, freeDay, "frei_als_wunch");
-						}
-						System.out.println("Dipendente Salvato!" + "\n");
-						scan.nextLine();
-						nomeFile = (dipendente.getCognome() + ".dbs");
-						save.ExportObjectToFile("database", nomeFile, dipendente);
+						createDipendente();
 					}
 				} while (yn == 1);
 				
@@ -88,32 +52,37 @@ class TurniLavoroNew {
 				System.out.println("volete aggiungere un giorno libero ad un dipendente? 1 si, 2 no");
 				int z = scan.nextInt();
 				if (z == 1) {
-					System.out.println("inserire cognome dipendente");
-					String surname = scan.nextLine();
-					surname = scan.nextLine();
-						Dipendente dipendente;
-						for (int x=0; x < dipendenteArrayList.size(); x++) {
-							dipendente = dipendenteArrayList.get(x);
-							String cognome = dipendente.getCognome().toLowerCase();
-							System.out.println(dipendente.getCognome());
-							if (cognome.compareTo(surname.toLowerCase()) == 0) {
-								System.out.println(dipendente.getCognome() + " quale Giorno Libero? DDMMYY per giorno libero, 1 per NO");
-								long free = scan.nextLong();
-								if (free != 1) {
-									int DD = (int) (free/10000);
-									int MM = (int) (free - (DD*10000));
-									MM = MM /100;
-									int YY = (int) (free - (DD*10000) - (MM*100) + (2000));
-									LocalDate freeDay = LocalDate.of(YY, MM, DD);
-									save.freeday(dipendente, freeDay, "frei_als_wunch");
+					boolean finded = false;
+					do {
+						System.out.println("inserire cognome dipendente");
+						String surname = scan.nextLine();
+						surname = scan.nextLine();
+							Dipendente dipendente;
+							for (int x=0; x < dipendenteArrayList.size(); x++) {
+								dipendente = dipendenteArrayList.get(x);
+								String cognome = dipendente.getCognome().toLowerCase();
+								if (cognome.compareTo(surname.toLowerCase()) == 0) {
+										finded = true;
+									System.out.println(dipendente.getCognome() + " quale Giorno Libero? DDMMYY per giorno libero, 1 per uscire");
+										long free = scan.nextLong();
+										if (free != 1) {
+												int DD = (int) (free/10000);
+												int MM = (int) (free - (DD*10000));
+												MM = MM /100;
+												int YY = (int) (free - (DD*10000) - (MM*100) + (2000));
+												LocalDate freeDay = LocalDate.of(YY, MM, DD);
+												save.freeday(dipendente, freeDay, "frei_als_wunch");
+												
+										}
 								}
-							} else {
-								System.out.println("cognome non trovato");
 							}
+							if (finded == false) {
+								System.out.println("dipendente non trovato");
 						}
+					} while (finded == false);
 				}
 				
-				
+				// chooses which week the program should process
 				do {
 					//Scanner scan = new Scanner (System.in);
 					System.out.print("Welche kalenderWoche wollen Sie?" + "\n");
@@ -130,12 +99,18 @@ class TurniLavoroNew {
 						}
 					}
 				} while (inputWeek < 1 || inputWeek > 53);
+				
 				inputWeek -= 1;
 				date = date.plusWeeks(inputWeek);
 				ArrayList <String> turniWeek = new ArrayList<String>();
 				ArrayList <String> turnoDipendente = new ArrayList<String>();
 				
-				//SCELTA DI CHI LAVORA LA MATTINA O LA SERA
+				//sort the workers based on the accumulated night hours
+				dipendenteArrayList = getMenoOre.OrdinePerNottiArrayList(dipendenteArrayList);
+				
+				//CHOICE OF WHO WORKS THE MORNING OR THE EVENING
+				
+				//spostare la funzione su genera turni. da un errore quando il lavoratore ha un giorno libero al wunsch ma viene messo al TAG allora il programma gli calcola la domenica come tag nonostante sia libero
 					for (int x = 0 ; x < dipendenteArrayList.size(); x++) {
 					Dipendente dipendente = dipendenteArrayList.get(x);
 					if (dipendente.getSoloMattina() == true) {
@@ -153,30 +128,56 @@ class TurniLavoroNew {
 						}
 					}
 					int giornoLibero = 0;
-					ArrayList <LocalDate> giornoLiberoDT;
-						if (dipendente.getTagNacht() == 2) { 
-							giornoLibero = new  Random() .nextInt(5) ; // 0 per DOM, 1 per LUN, 2 per MAR, 3 ... VEN non si è mai liberi.
-							giornoLiberoDT = save.checkFreeDay(dipendente, "frei_als_wunch");
-							for (int y = 0; y < giornoLiberoDT.size(); y++) {
-									if (giornoLiberoDT.get(y).isAfter(date) && giornoLiberoDT.get(y).isBefore(date.plusDays(7)) || giornoLiberoDT.get(y).isEqual(date)) {
-										DayOfWeek DoW = DayOfWeek.from(giornoLiberoDT.get(y));
+					ArrayList <LocalDate> giornoLiberoArray = new ArrayList<LocalDate>();
+					LocalDate giornoLiberoLD = date;
+						//if (dipendente.getTagNacht() == 2) { 
+							giornoLiberoArray = save.checkFreeDay(dipendente, "frei_als_wunch");
+							for (int y = 0; y < giornoLiberoArray.size(); y++) {
+									if (giornoLiberoArray.get(y).isAfter(date) && giornoLiberoArray.get(y).isBefore(date.plusDays(7)) || giornoLiberoArray.get(y).isEqual(date)) {
+										dipendente.setFreeThisWeek(true);
+										giornoLiberoLD = giornoLiberoArray.get(y);
+										DayOfWeek DoW = DayOfWeek.from(giornoLiberoArray.get(y));
 										if (DoW == DayOfWeek.SUNDAY) {
 											giornoLibero = 0;
+											DoVe[0] ++;
 										} else if (DoW == DayOfWeek.MONDAY) {
 											giornoLibero = 1;
+											DoVe[1] ++;
 										} else if (DoW == DayOfWeek.TUESDAY) {
 											giornoLibero = 2;
+											DoVe[2] ++;
 										} else if (DoW == DayOfWeek.WEDNESDAY) {
 											giornoLibero = 3;
+											DoVe[3] ++;
 										} else if (DoW == DayOfWeek.THURSDAY) {
 											giornoLibero = 4;
+											DoVe[4] ++;
 										} else if (DoW == DayOfWeek.WEDNESDAY) {
 											giornoLibero = 5;
 										}
+										dipendente.setGiornoLibero(giornoLibero);
+										giornoLiberoLD = date.plusDays(giornoLibero);
+										dipendente.setGiornoLiberoLD(giornoLiberoLD);
+									} else if (dipendente.getTagNacht() == 2){
+										for (int u = 0; u < DoVe.length-1; u++) {
+											if (DoVe[u] > DoVe[u+1]) {
+												giornoLibero = u+1;
+												for (int i=u+2; i < DoVe.length-1; i++) {
+													if (DoVe[u+1]>DoVe[i]) {
+														u = i;
+														giornoLibero = u+1;
+													}
+												}
+									
+											}
+										}
+										DoVe[giornoLibero]++;
 									}
-								}	
-						}
-					dipendente.setGiornoLibero(giornoLibero);
+									dipendente.setGiornoLibero(giornoLibero);
+									giornoLiberoLD = date.plusDays(giornoLibero);
+									dipendente.setGiornoLiberoLD(giornoLiberoLD);
+							}
+						//}
 				}
 				
 				//GENERAZIONE TURNI E SALVATAGGIO	
@@ -184,7 +185,7 @@ class TurniLavoroNew {
 				save.InitTurni(directory,  String.valueOf(inputWeek+1) + ".txt", date);
 				for (int x = 0; x < dipendenteArrayList.size(); x++) {
 					Dipendente dipendente = dipendenteArrayList.get(x);
-					turnoDipendente = SwitchTurni.generaTurni(dipendente.getGiornoLibero(), dipendente.getTagNacht(), dipendente, dipendente.malattia, date.with(DayOfWeek.SUNDAY));
+					turnoDipendente = SwitchTurni.generaTurni(dipendente.getGiornoLiberoLD(), dipendente.getGiornoLibero(), dipendente.getTagNacht(), dipendente, dipendente.malattia, date.with(DayOfWeek.SUNDAY));
 					turnoDipendente.add("\n");
 					turniWeek.add(dipendente.getCognome() +  " " + turnoDipendente);
 					dipendente.setWeekShift(turnoDipendente);
@@ -194,8 +195,6 @@ class TurniLavoroNew {
 					save.ExportShift(directory, nomeFile, dipendente, date);
 					directory = "turni_" + date.getYear();
 					save.ExportTurniDiTutti(directory, String.valueOf(inputWeek+1) + ".txt", turniWeek.get(x));
-					nomeFile = (dipendente.getCognome() + ".txt");
-					save.ExportShift("mitarbeiter", nomeFile, dipendente, date);
 					//List<String> saved = save.ImportFile(directory, nomeFile);
 					nomeFile = (dipendente.getCognome() + ".dbs");
 					save.ExportObjectToFile("database", nomeFile, dipendente);
@@ -208,15 +207,37 @@ class TurniLavoroNew {
 					Dipendente dipendenteVar = dipendenteArrayList.get(h);
 					System.out.println(dipendenteVar.getCognome() + " TOT: " + dipendenteVar.getTotZuSchlag());
 				}
-				directory = "database";
-				dipendenteArrayList = save.ImportObjectFromFile(directory); //.forEach(System.out::println);
-				//Dipendente dipendente = dipendenteArrayList.get(1);
-				//System.out.println(dipendente.getNome() + dipendente.getCognome());
-				//Inserire inserimento da Tastiera su Database
-				//Chiedere se qualcuno è malato, le OreNotturne, OreFestivita, OreDomeniche le riceverà comunque 
-				//Implementare metodo per quanto riguarda: Licenziamenti, azubi o lifeFirma che se ne vanno.
-				//Inserire Matrice con turni di tutti i Dipendenti, poi salvarla su database
-				
 				}
+	public static void createDipendente () {
+		IOFile save = new IOFile();
+		Scanner scan = new Scanner (System.in);
+		String var;
+		Dipendente dipendente  = new Dipendente();
+		System.out.println("Personalnummer: " + "\n");
+		long personalnummer = (long)scan.nextInt();
+		dipendente.setPersonalnummer(personalnummer);
+		scan.nextLine();
+		System.out.println("Nome: " + "\n");
+		var = scan.nextLine();
+		dipendente.setNome(var);
+		System.out.println("Cognome: " + "\n");
+		var = scan.nextLine();
+		dipendente.setCognome(var);
+		System.out.println("capacita linee: es. 1, 2 oppure digitare 3 per entrambe" + "\n");
+		int Capacitalinea = scan.nextInt();
+		dipendente.setLineaLavoro(Capacitalinea);
+		System.out.println("Linee Leiter? es. 0 = N, 1, 2 oppure digitare 3 per entrambe" + "\n");
+		int linieLeiter = scan.nextInt();
+		dipendente.setLinieLeiter(linieLeiter);
+		System.out.println(dipendente.getCognome() + " Vuole lavorare solo la mattina? 1 = Y, 2 = N" + "\n");
+		int soloMattina = scan.nextInt();
+		if (soloMattina == 1) {
+		dipendente.setSoloMattina(true);
+		}
+		System.out.println("Dipendente Salvato!" + "\n");
+		scan.nextLine();
+		String nomeFile = (dipendente.getCognome() + ".dbs");
+		save.ExportObjectToFile("database", nomeFile, dipendente);
+	}
 
 }

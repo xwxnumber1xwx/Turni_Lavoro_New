@@ -1630,3 +1630,835 @@
 2017-01-07 Samstag	Libero
 
 
+
+2017-01-08 Sonntag	16:30-00:36
+
+2017-01-09 Montag	16:30-00:36
+
+2017-01-10 Dienstag	16:30-00:36
+
+2017-01-11 Mittwoch	frei
+
+2017-01-12 Donnerstag	16:30-00:36
+
+2017-01-13 Freitag	15:00-23:06
+
+2017-01-14 Samstag	Libero
+
+
+
+2017-01-08 Sonntag	16:30-00:36
+
+2017-01-09 Montag	16:30-00:36
+
+2017-01-10 Dienstag	16:30-00:36
+
+2017-01-11 Mittwoch	frei
+
+2017-01-12 Donnerstag	16:30-00:36
+
+2017-01-13 Freitag	15:00-23:06
+
+2017-01-14 Samstag	Libero
+
+
+
+2017-01-15 Sonntag	frei
+
+2017-01-16 Montag	2:30-10:36
+
+2017-01-17 Dienstag	2:30-10:36
+
+2017-01-18 Mittwoch	2:30-10:36
+
+2017-01-19 Donnerstag	2:30-10:36
+
+2017-01-20 Freitag	2:00-10:06
+
+2017-01-21 Samstag	Libero
+
+
+
+2017-01-15 Sonntag	frei
+
+2017-01-16 Montag	2:30-10:36
+
+2017-01-17 Dienstag	2:30-10:36
+
+2017-01-18 Mittwoch	2:30-10:36
+
+2017-01-19 Donnerstag	2:30-10:36
+
+2017-01-20 Freitag	2:00-10:06
+
+2017-01-21 Samstag	Libero
+
+
+
+2017-01-22 Sonntag	frei
+
+2017-01-23 Montag	2:30-10:36
+
+2017-01-24 Dienstag	2:30-10:36
+
+2017-01-25 Mittwoch	2:30-10:36
+
+2017-01-26 Donnerstag	2:30-10:36
+
+2017-01-27 Freitag	2:00-10:06
+
+2017-01-28 Samstag	Libero
+
+
+
+2017-01-22 Sonntag	frei
+
+2017-01-23 Montag	2:30-10:36
+
+2017-01-24 Dienstag	2:30-10:36
+
+2017-01-25 Mittwoch	2:30-10:36
+
+2017-01-26 Donnerstag	2:30-10:36
+
+2017-01-27 Freitag	2:00-10:06
+
+2017-01-28 Samstag	Libero
+
+
+
+2017-12-31 Sonntag	frei
+
+2018-01-01 Montag	2:30-10:36
+
+2018-01-02 Dienstag	2:30-10:36
+
+2018-01-03 Mittwoch	2:30-10:36
+
+2018-01-04 Donnerstag	2:30-10:36
+
+2018-01-05 Freitag	2:00-10:06
+
+2018-01-06 Samstag	Libero
+
+
+
+2017-12-31 Sonntag	frei
+
+2018-01-01 Montag	2:30-10:36
+
+2018-01-02 Dienstag	2:30-10:36
+
+2018-01-03 Mittwoch	2:30-10:36
+
+2018-01-04 Donnerstag	2:30-10:36
+
+2018-01-05 Freitag	2:00-10:06
+
+2018-01-06 Samstag	Libero
+
+
+
+2017-04-02 Sonntag	frei
+
+2017-04-03 Montag	2:30-10:36
+
+2017-04-04 Dienstag	2:30-10:36
+
+2017-04-05 Mittwoch	2:30-10:36
+
+2017-04-06 Donnerstag	2:30-10:36
+
+2017-04-07 Freitag	2:00-10:06
+
+2017-04-08 Samstag	Libero
+
+
+
+2017-04-02 Sonntag	frei
+
+2017-04-03 Montag	2:30-10:36
+
+2017-04-04 Dienstag	2:30-10:36
+
+2017-04-05 Mittwoch	2:30-10:36
+
+2017-04-06 Donnerstag	2:30-10:36
+
+2017-04-07 Freitag	2:00-10:06
+
+2017-04-08 Samstag	Libero
+
+
+
+2017-01-29 Sonntag	frei
+
+2017-01-30 Montag	2:30-10:36
+
+2017-01-31 Dienstag	2:30-10:36
+
+2017-02-01 Mittwoch	2:30-10:36
+
+2017-02-02 Donnerstag	2:30-10:36
+
+2017-02-03 Freitag	2:00-10:06
+
+2017-02-04 Samstag	Libero
+
+
+
+2017-01-29 Sonntag	frei
+
+2017-01-30 Montag	2:30-10:36
+
+2017-01-31 Dienstag	2:30-10:36
+
+2017-02-01 Mittwoch	2:30-10:36
+
+2017-02-02 Donnerstag	2:30-10:36
+
+2017-02-03 Freitag	2:00-10:06
+
+2017-02-04 Samstag	Libero
+
+
+
+2017-10-22 Sonntag	frei
+
+2017-10-23 Montag	2:30-10:36
+
+2017-10-24 Dienstag	2:30-10:36
+
+2017-10-25 Mittwoch	2:30-10:36
+
+2017-10-26 Donnerstag	2:30-10:36
+
+2017-10-27 Freitag	2:00-10:06
+
+2017-10-28 Samstag	Libero
+
+
+
+2017-10-22 Sonntag	frei
+
+2017-10-23 Montag	2:30-10:36
+
+2017-10-24 Dienstag	2:30-10:36
+
+2017-10-25 Mittwoch	2:30-10:36
+
+2017-10-26 Donnerstag	2:30-10:36
+
+2017-10-27 Freitag	2:00-10:06
+
+2017-10-28 Samstag	Libero
+
+
+
+2017-08-20 Sonntag	frei
+
+2017-08-21 Montag	2:30-10:36
+
+2017-08-22 Dienstag	2:30-10:36
+
+2017-08-23 Mittwoch	2:30-10:36
+
+2017-08-24 Donnerstag	2:30-10:36
+
+2017-08-25 Freitag	2:00-10:06
+
+2017-08-26 Samstag	Libero
+
+
+
+2017-08-20 Sonntag	frei
+
+2017-08-21 Montag	2:30-10:36
+
+2017-08-22 Dienstag	2:30-10:36
+
+2017-08-23 Mittwoch	2:30-10:36
+
+2017-08-24 Donnerstag	2:30-10:36
+
+2017-08-25 Freitag	2:00-10:06
+
+2017-08-26 Samstag	Libero
+
+
+
+2017-06-04 Sonntag	frei
+
+2017-06-05 Montag	2:30-10:36
+
+2017-06-06 Dienstag	2:30-10:36
+
+2017-06-07 Mittwoch	2:30-10:36
+
+2017-06-08 Donnerstag	2:30-10:36
+
+2017-06-09 Freitag	2:00-10:06
+
+2017-06-10 Samstag	Libero
+
+
+
+2017-06-04 Sonntag	frei
+
+2017-06-05 Montag	2:30-10:36
+
+2017-06-06 Dienstag	2:30-10:36
+
+2017-06-07 Mittwoch	2:30-10:36
+
+2017-06-08 Donnerstag	2:30-10:36
+
+2017-06-09 Freitag	2:00-10:06
+
+2017-06-10 Samstag	Libero
+
+
+
+2017-06-11 Sonntag	frei
+
+2017-06-12 Montag	2:30-10:36
+
+2017-06-13 Dienstag	2:30-10:36
+
+2017-06-14 Mittwoch	2:30-10:36
+
+2017-06-15 Donnerstag	2:30-10:36
+
+2017-06-16 Freitag	2:00-10:06
+
+2017-06-17 Samstag	Libero
+
+
+
+2017-06-11 Sonntag	frei
+
+2017-06-12 Montag	2:30-10:36
+
+2017-06-13 Dienstag	2:30-10:36
+
+2017-06-14 Mittwoch	2:30-10:36
+
+2017-06-15 Donnerstag	2:30-10:36
+
+2017-06-16 Freitag	2:00-10:06
+
+2017-06-17 Samstag	Libero
+
+
+
+2017-03-19 Sonntag	frei
+
+2017-03-20 Montag	2:30-10:36
+
+2017-03-21 Dienstag	2:30-10:36
+
+2017-03-22 Mittwoch	2:30-10:36
+
+2017-03-23 Donnerstag	2:30-10:36
+
+2017-03-24 Freitag	2:00-10:06
+
+2017-03-25 Samstag	Libero
+
+
+
+2017-09-03 Sonntag	frei
+
+2017-09-04 Montag	2:30-10:36
+
+2017-09-05 Dienstag	2:30-10:36
+
+2017-09-06 Mittwoch	2:30-10:36
+
+2017-09-07 Donnerstag	2:30-10:36
+
+2017-09-08 Freitag	2:00-10:06
+
+2017-09-09 Samstag	Libero
+
+
+
+2017-09-10 Sonntag	frei
+
+2017-09-11 Montag	2:30-10:36
+
+2017-09-12 Dienstag	2:30-10:36
+
+2017-09-13 Mittwoch	2:30-10:36
+
+2017-09-14 Donnerstag	2:30-10:36
+
+2017-09-15 Freitag	2:00-10:06
+
+2017-09-16 Samstag	Libero
+
+
+
+2017-09-17 Sonntag	frei
+
+2017-09-18 Montag	16:30-00:36
+
+2017-09-19 Dienstag	16:30-00:36
+
+2017-09-20 Mittwoch	16:30-00:36
+
+2017-09-21 Donnerstag	16:30-00:36
+
+2017-09-22 Freitag	18:00-2:06
+
+2017-09-23 Samstag	Libero
+
+
+
+2017-06-25 Sonntag	Libero
+
+2017-06-26 Montag	frei
+
+2017-06-27 Dienstag	2:30-10:36
+
+2017-06-28 Mittwoch	2:30-10:36
+
+2017-06-29 Donnerstag	2:30-10:36
+
+2017-06-30 Freitag	2:00-10:06
+
+2017-07-01 Samstag	Libero
+
+
+
+2017-05-21 Sonntag	16:30-00:36
+
+2017-05-22 Montag	16:30-00:36
+
+2017-05-23 Dienstag	16:30-00:36
+
+2017-05-24 Mittwoch	frei
+
+2017-05-25 Donnerstag	16:30-00:36
+
+2017-05-26 Freitag	15:00-23:06
+
+2017-05-27 Samstag	Libero
+
+
+
+2017-05-28 Sonntag	Libero
+
+2017-05-29 Montag	2:30-10:36
+
+2017-05-30 Dienstag	2:30-10:36
+
+2017-05-31 Mittwoch	frei
+
+2017-06-01 Donnerstag	2:30-10:36
+
+2017-06-02 Freitag	2:00-10:06
+
+2017-06-03 Samstag	Libero
+
+
+
+2017-12-17 Sonntag	16:30-00:36
+
+2017-12-18 Montag	16:30-00:36
+
+2017-12-19 Dienstag	16:30-00:36
+
+2017-12-20 Mittwoch	frei
+
+2017-12-21 Donnerstag	16:30-00:36
+
+2017-12-22 Freitag	15:00-23:06
+
+2017-12-23 Samstag	Libero
+
+
+
+2017-08-27 Sonntag	Libero
+
+2017-08-28 Montag	2:30-10:36
+
+2017-08-29 Dienstag	2:30-10:36
+
+2017-08-30 Mittwoch	frei
+
+2017-08-31 Donnerstag	2:30-10:36
+
+2017-09-01 Freitag	2:00-10:06
+
+2017-09-02 Samstag	Libero
+
+
+
+2017-08-06 Sonntag	Libero
+
+2017-08-07 Montag	2:30-10:36
+
+2017-08-08 Dienstag	2:30-10:36
+
+2017-08-09 Mittwoch	frei
+
+2017-08-10 Donnerstag	2:30-10:36
+
+2017-08-11 Freitag	2:00-10:06
+
+2017-08-12 Samstag	Libero
+
+
+
+2017-11-05 Sonntag	frei
+
+2017-11-06 Montag	16:30-00:36
+
+2017-11-07 Dienstag	16:30-00:36
+
+2017-11-08 Mittwoch	16:30-00:36
+
+2017-11-09 Donnerstag	16:30-00:36
+
+2017-11-10 Freitag	18:00-2:06
+
+2017-11-11 Samstag	Libero
+
+
+
+2017-01-01 Sonntag	frei
+
+2017-01-02 Montag	2:30-10:36
+
+2017-01-03 Dienstag	2:30-10:36
+
+2017-01-04 Mittwoch	2:30-10:36
+
+2017-01-05 Donnerstag	2:30-10:36
+
+2017-01-06 Freitag	2:00-10:06
+
+2017-01-07 Samstag	Libero
+
+
+
+2017-01-29 Sonntag	16:30-00:36
+
+2017-01-30 Montag	16:30-00:36
+
+2017-01-31 Dienstag	16:30-00:36
+
+2017-02-01 Mittwoch	frei
+
+2017-02-02 Donnerstag	16:30-00:36
+
+2017-02-03 Freitag	15:00-23:06
+
+2017-02-04 Samstag	Libero
+
+
+
+2017-01-15 Sonntag	Libero
+
+2017-01-16 Montag	2:30-10:36
+
+2017-01-17 Dienstag	2:30-10:36
+
+2017-01-18 Mittwoch	frei
+
+2017-01-19 Donnerstag	2:30-10:36
+
+2017-01-20 Freitag	2:00-10:06
+
+2017-01-21 Samstag	Libero
+
+
+
+2017-01-22 Sonntag	Libero
+
+2017-01-23 Montag	2:30-10:36
+
+2017-01-24 Dienstag	2:30-10:36
+
+2017-01-25 Mittwoch	frei
+
+2017-01-26 Donnerstag	2:30-10:36
+
+2017-01-27 Freitag	2:00-10:06
+
+2017-01-28 Samstag	Libero
+
+
+
+2017-01-08 Sonntag	frei
+
+2017-01-09 Montag	16:30-00:36
+
+2017-01-10 Dienstag	16:30-00:36
+
+2017-01-11 Mittwoch	16:30-00:36
+
+2017-01-12 Donnerstag	16:30-00:36
+
+2017-01-13 Freitag	18:00-2:06
+
+2017-01-14 Samstag	Libero
+
+
+
+2017-02-05 Sonntag	frei
+
+2017-02-06 Montag	2:30-10:36
+
+2017-02-07 Dienstag	2:30-10:36
+
+2017-02-08 Mittwoch	2:30-10:36
+
+2017-02-09 Donnerstag	2:30-10:36
+
+2017-02-10 Freitag	2:00-10:06
+
+2017-02-11 Samstag	Libero
+
+
+
+2017-02-12 Sonntag	frei
+
+2017-02-13 Montag	16:30-00:36
+
+2017-02-14 Dienstag	16:30-00:36
+
+2017-02-15 Mittwoch	16:30-00:36
+
+2017-02-16 Donnerstag	16:30-00:36
+
+2017-02-17 Freitag	18:00-2:06
+
+2017-02-18 Samstag	Libero
+
+
+
+2017-02-19 Sonntag	frei
+
+2017-02-20 Montag	2:30-10:36
+
+2017-02-21 Dienstag	2:30-10:36
+
+2017-02-22 Mittwoch	2:30-10:36
+
+2017-02-23 Donnerstag	2:30-10:36
+
+2017-02-24 Freitag	2:00-10:06
+
+2017-02-25 Samstag	Libero
+
+
+
+2017-01-01 Sonntag	16:30-00:36
+
+2017-01-02 Montag	16:30-00:36
+
+2017-01-03 Dienstag	frei
+
+2017-01-03 Mittwoch	16:30-00:36
+
+2017-01-04 Donnerstag	16:30-00:36
+
+2017-01-05 Freitag	15:00-23:06
+
+2017-01-06 Samstag	Libero
+
+
+
+2017-01-01 Sonntag	Libero
+
+2017-01-02 Montag	2:30-10:36
+
+2017-01-03 Dienstag	frei
+
+2017-01-03 Mittwoch	2:30-10:36
+
+2017-01-04 Donnerstag	2:30-10:36
+
+2017-01-05 Freitag	2:00-10:06
+
+2017-01-06 Samstag	Libero
+
+
+
+2017-01-08 Sonntag	frei
+
+2017-01-09 Montag	16:30-00:36
+
+2017-01-10 Dienstag	16:30-00:36
+
+2017-01-11 Mittwoch	16:30-00:36
+
+2017-01-12 Donnerstag	16:30-00:36
+
+2017-01-13 Freitag	18:00-2:06
+
+2017-01-14 Samstag	Libero
+
+
+
+2017-01-01 Sonntag	frei
+
+2017-01-02 Montag	2:30-10:36
+
+2017-01-03 Dienstag	2:30-10:36
+
+2017-01-04 Mittwoch	2:30-10:36
+
+2017-01-05 Donnerstag	2:30-10:36
+
+2017-01-06 Freitag	2:00-10:06
+
+2017-01-07 Samstag	Libero
+
+
+
+2017-01-01 Sonntag	16:30-00:36
+
+2017-01-02 Montag	16:30-00:36
+
+2017-01-03 Dienstag	frei
+
+2017-01-04 Mittwoch	16:30-00:36
+
+2017-01-05 Donnerstag	16:30-00:36
+
+2017-01-06 Freitag	15:00-23:06
+
+2017-01-07 Samstag	Libero
+
+
+
+2017-01-01 Sonntag	Libero
+
+2017-01-02 Montag	2:30-10:36
+
+2017-01-03 Dienstag	frei
+
+2017-01-04 Mittwoch	2:30-10:36
+
+2017-01-05 Donnerstag	2:30-10:36
+
+2017-01-06 Freitag	2:00-10:06
+
+2017-01-07 Samstag	Libero
+
+
+
+2017-01-01 Sonntag	16:30-00:36
+
+2017-01-02 Montag	16:30-00:36
+
+2017-01-03 Dienstag	frei
+
+2017-01-04 Mittwoch	16:30-00:36
+
+2017-01-05 Donnerstag	16:30-00:36
+
+2017-01-06 Freitag	15:00-23:06
+
+2017-01-07 Samstag	Libero
+
+
+
+2017-01-01 Sonntag	Libero
+
+2017-01-02 Montag	2:30-10:36
+
+2017-01-03 Dienstag	frei
+
+2017-01-04 Mittwoch	2:30-10:36
+
+2017-01-05 Donnerstag	2:30-10:36
+
+2017-01-06 Freitag	2:00-10:06
+
+2017-01-07 Samstag	Libero
+
+
+
+2017-01-08 Sonntag	frei
+
+2017-01-09 Montag	2:30-10:36
+
+2017-01-10 Dienstag	2:30-10:36
+
+2017-01-11 Mittwoch	2:30-10:36
+
+2017-01-12 Donnerstag	2:30-10:36
+
+2017-01-13 Freitag	2:00-10:06
+
+2017-01-14 Samstag	Libero
+
+
+
+2017-01-15 Sonntag	frei
+
+2017-01-16 Montag	16:30-00:36
+
+2017-01-17 Dienstag	16:30-00:36
+
+2017-01-18 Mittwoch	16:30-00:36
+
+2017-01-19 Donnerstag	16:30-00:36
+
+2017-01-20 Freitag	18:00-2:06
+
+2017-01-21 Samstag	Libero
+
+
+
+2017-01-01 Sonntag	Libero
+
+2017-01-02 Montag	2:30-10:36
+
+2017-01-03 Dienstag	frei
+
+2017-01-04 Mittwoch	2:30-10:36
+
+2017-01-05 Donnerstag	2:30-10:36
+
+2017-01-06 Freitag	2:00-10:06
+
+2017-01-07 Samstag	Libero
+
+
+
+2017-01-01 Sonntag	16:30-00:36
+
+2017-01-02 Montag	16:30-00:36
+
+2017-01-03 Dienstag	frei
+
+2017-01-04 Mittwoch	16:30-00:36
+
+2017-01-05 Donnerstag	16:30-00:36
+
+2017-01-06 Freitag	15:00-23:06
+
+2017-01-07 Samstag	Libero
+
+
+
+2017-01-01 Sonntag	Libero
+
+2017-01-02 Montag	2:30-10:36
+
+2017-01-03 Dienstag	frei
+
+2017-01-04 Mittwoch	2:30-10:36
+
+2017-01-05 Donnerstag	2:30-10:36
+
+2017-01-06 Freitag	2:00-10:06
+
+2017-01-07 Samstag	Libero
+
+

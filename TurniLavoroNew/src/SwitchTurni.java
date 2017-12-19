@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 
 public class SwitchTurni {
-	public static ArrayList<String> generaTurni (int giornoLibero, int MattSera, Dipendente dipendente, boolean malattia, LocalDate date) {
+	public static ArrayList<String> generaTurni (LocalDate giornoLiberoLD, int giornoLibero, int MattSera, Dipendente dipendente, boolean malattia, LocalDate date) {
 		/*Inserire:
 			- Calcolare la malattia per pochi giorni
 		*/
@@ -31,8 +31,6 @@ public class SwitchTurni {
 		DayOfWeek day = DayOfWeek.SUNDAY;
 		
 		//implementare qualcosa se il Dipendente non ha giorni libero per quella settimana
-		
-		
 		for (x = 0; x < 7; x++) {
 			if (x == giornoLibero) {
 				turniLavoratoreArrayList.add(giornoLibero, "\n" + date + " " + sett.settimana[giornoLibero][0] + "\t" + "frei");
@@ -79,17 +77,18 @@ public class SwitchTurni {
 						continue;
 					}
 				}
-				
+
+
 				turniLavoratoreArrayList.add(x, "\n" + date + " " + sett.settimana[x][0] + "\t" + sett.settimana[x][MattSera]); //Scrive il resto dei giorni non scritti "domenica, lunedi, ecc.." oppure "libero"
 				
-				if (MattSera == 1 & x != 6) { //mattina
+				if (MattSera == 1 & x != 6 & x != 0) { //mattina
 					OreNotturneTot = Turni.calcoloZuSchlag(dipendente, inizioTAG, fineTAG, ZUSCHLAG_INIZIO, ZUSCHLAG_FINE, date, day);
 					dipendente.setOreNotturne(OreNotturneTot.get(0));
 					dipendente.setOreDomenica(OreNotturneTot.get(1));
 					dipendente.setOreFestivita(OreNotturneTot.get(2));
 					System.out.println("ore tag aggiunte " + sett.settimana[x][0] + " : " + Turni.calcoloZuSchlag(dipendente, inizioTAG, fineTAG, ZUSCHLAG_INIZIO, ZUSCHLAG_FINE, date, day));
 				}
-				if (MattSera == 2 & x != 6) {
+				if (MattSera == 2 & x != 6 & x != giornoLibero) {
 					OreNotturneTot = Turni.calcoloZuSchlag(dipendente, inizioNACHT, fineNACHT, ZUSCHLAG_INIZIO, ZUSCHLAG_FINE, date, day);
 					dipendente.setOreNotturne(OreNotturneTot.get(0));
 					dipendente.setOreDomenica(OreNotturneTot.get(1));

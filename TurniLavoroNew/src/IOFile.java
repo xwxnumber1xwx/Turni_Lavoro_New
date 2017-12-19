@@ -134,7 +134,6 @@ public class IOFile {
 			writer.newLine();
 		}
 		yn = true;
-		System.out.println("File " + nomeFile + " creato correttamente" + " \n");
 	} catch (IOException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
