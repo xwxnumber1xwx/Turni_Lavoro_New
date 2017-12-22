@@ -27,6 +27,7 @@ public class Dipendente implements Serializable{
 	LocalDate giornoLiberoLD;
 	int TagNacht = 1; //1 = TAG default
 	ArrayList<String> weekShift = new ArrayList<String>();
+	ArrayList<LocalTime> weekShiftLD = new ArrayList<LocalTime>();
 	
 	public void setPersonalnummer (long personalnummer) {
 		this.personalnummer = personalnummer;
@@ -132,6 +133,14 @@ public class Dipendente implements Serializable{
 	public ArrayList<String> getWeekShift() {
 		return weekShift;
 	}
+	public void setWeekShiftLD(ArrayList<LocalDate> weekShiftLD) {
+		this.weekShiftLD = weekShiftLD;
+	}
+	public ArrayList<LocalDate> getWeekShiftLD() {
+		return weekShiftLD;
+	}
+	
+	
 	public void setSoloMattina (boolean soloMattina) {
 		this.soloMattina = soloMattina;
 	}

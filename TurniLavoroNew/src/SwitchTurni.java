@@ -12,6 +12,7 @@ public class SwitchTurni {
 		*/
 		Turni sett = new Turni();
 		ArrayList <String> turniLavoratoreArrayList = new ArrayList<String>(6);
+		ArrayList <LocalTime> turniLavoratoreArrayListLD = new ArrayList<LocalTime>(6);
 		int x = 0;
 		LocalTime inizioTAG = sett.getTagInizio();
 		LocalTime fineTAG = sett.getTagFine();
@@ -34,6 +35,8 @@ public class SwitchTurni {
 		for (x = 0; x < 7; x++) {
 			if (x == giornoLibero) {
 				turniLavoratoreArrayList.add(giornoLibero, "\n" + date + " " + sett.settimana[giornoLibero][0] + "\t" + "frei");
+				//una prova
+				//turniLavoratoreArrayListLD.add(LocalTime.of(sett., minute))
 			} else {
 				if (malattia == true) {
 					turniLavoratoreArrayList.add(x, "\n" + date + " " + sett.settimana[giornoLibero][0] + "\t" + " krank"); //scrive krank per quel giorno
