@@ -1,0 +1,37 @@
+2017-01-15<--->2017-01-15
+Unser 
+2017-01-15 Sonntag	frei 
+2017-01-16 Montag	2:30-10:36 
+2017-01-17 Dienstag	2:30-10:36 
+2017-01-18 Mittwoch	2:30-10:36 
+2017-01-19 Donnerstag	2:30-10:36 
+2017-01-20 Freitag	2:00-10:06 
+2017-01-21 Samstag	Libero 
+
+Balicos 
+2017-01-15 Sonntag	frei 
+2017-01-16 Montag	16:30-00:36 
+2017-01-17 Dienstag	16:30-00:36 
+2017-01-18 Mittwoch	16:30-00:36 
+2017-01-19 Donnerstag	16:30-00:36 
+2017-01-20 Freitag	18:00-2:06 
+2017-01-21 Samstag	Libero 
+
+Caputo 
+2017-01-15 Sonntag	16:30-00:36 
+2017-01-16 Montag	frei 
+2017-01-17 Dienstag	16:30-00:36 
+2017-01-18 Mittwoch	16:30-00:36 
+2017-01-19 Donnerstag	16:30-00:36 
+2017-01-20 Freitag	15:00-23:06 
+2017-01-21 Samstag	Libero 
+
+Swabool 
+2017-01-15 Sonntag	frei 
+2017-01-16 Montag	16:30-00:36 
+2017-01-17 Dienstag	16:30-00:36 
+2017-01-18 Mittwoch	16:30-00:36 
+2017-01-19 Donnerstag	16:30-00:36 
+2017-01-20 Freitag	18:00-2:06 
+2017-01-21 Samstag	Libero 
+

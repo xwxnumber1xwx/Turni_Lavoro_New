@@ -141,6 +141,49 @@ public class IOFile {
 	return yn;
 	}
 	
+	public boolean ExportShiftLT(String directoryEXT, String nomeFile, Dipendente dipendente, LocalDate date) {
+		DayOfWeek dayWeek = DayOfWeek.from(date);
+		TextStyle stileNorm = TextStyle.FULL;
+		Locale deutsch = Locale.GERMAN;
+		boolean yn = false;
+		Charset charset = Charset.forName("UTF-8");
+		Path directory = Paths.get(directoryEXT);
+		Path path = Paths.get(directory + "//" + nomeFile);
+		try {
+			Files.createDirectories(directory);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		boolean sn = Files.exists(path);
+		if (sn == false) {
+			try {
+				Files.createFile(path);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		try (BufferedWriter writer = Files.newBufferedWriter(path, charset, APPEND)) {
+			String fileToSave = "";
+			for (int x = 0; x < 7; x++) {
+				if (dipendente.giornoLibero != x & x != 6) {
+					fileToSave = dipendente.getTime(x).toLocalDate().toString() + " " +  dayWeek.getDisplayName(stileNorm, deutsch).toString().toLowerCase() + " " + dipendente.getTime(x).toLocalTime().toString() + "-"+ dipendente.getTime(x).plusHours(8).plusMinutes(6).toLocalTime();
+				} else {
+					fileToSave = dipendente.getTime(x).toLocalDate().toString() + " " + dayWeek.getDisplayName(stileNorm, deutsch).toString().toLowerCase() + " " + "frei";
+				}
+				writer.write(fileToSave, 0, fileToSave.length());
+				writer.newLine();
+				dayWeek = dayWeek.plus(1);
+			}
+			yn = true;
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return yn;
+		}
+	
 	public boolean ExportObjectToFile(String directoryEXT, String nomeFile, Dipendente dipendente) {
 		
 		boolean yn = false;

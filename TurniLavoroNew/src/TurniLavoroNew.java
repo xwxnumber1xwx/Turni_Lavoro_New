@@ -127,13 +127,15 @@ class TurniLavoroNew {
 							dipendente.setTagNacht(1); //TAG
 						}
 					}
+					
 					int giornoLibero = 0;
 					ArrayList <LocalDate> giornoLiberoArray = new ArrayList<LocalDate>();
 					LocalDate giornoLiberoLD = date;
-						//if (dipendente.getTagNacht() == 2) { 
 							giornoLiberoArray = save.checkFreeDay(dipendente, "frei_als_wunch");
-							for (int y = 0; y < giornoLiberoArray.size(); y++) {
+							if (giornoLiberoArray.size() != 0) { 
+								for (int y = 0; y < giornoLiberoArray.size(); y++)
 									if (giornoLiberoArray.get(y).isAfter(date) && giornoLiberoArray.get(y).isBefore(date.plusDays(7)) || giornoLiberoArray.get(y).isEqual(date)) {
+									//	for (int y = 0; y < giornoLiberoArray.size(); y++) {
 										dipendente.setFreeThisWeek(true);
 										giornoLiberoLD = giornoLiberoArray.get(y);
 										DayOfWeek DoW = DayOfWeek.from(giornoLiberoArray.get(y));
@@ -158,27 +160,25 @@ class TurniLavoroNew {
 										dipendente.setGiornoLibero(giornoLibero);
 										giornoLiberoLD = date.plusDays(giornoLibero);
 										dipendente.setGiornoLiberoLD(giornoLiberoLD);
-									} else if (dipendente.getTagNacht() == 2){
-										for (int u = 0; u < DoVe.length-1; u++) {
-											if (DoVe[u] > DoVe[u+1]) {
-												giornoLibero = u+1;
-												for (int i=u+2; i < DoVe.length-1; i++) {
-													if (DoVe[u+1]>DoVe[i]) {
-														u = i;
-														giornoLibero = u+1;
-													}
+									}
+								} else if (dipendente.getTagNacht() == 2) { 
+								for (int u = 0; u < DoVe.length-1; u++) {
+										if (DoVe[u] > DoVe[u+1]) {
+											giornoLibero = u+1;
+											for (int i=u+2; i < DoVe.length-1; i++) {
+												if (DoVe[u+1]>DoVe[i]) {
+													u = i;
+													giornoLibero = u+1;
 												}
-									
 											}
 										}
-										DoVe[giornoLibero]++;
-									}
-									dipendente.setGiornoLibero(giornoLibero);
-									giornoLiberoLD = date.plusDays(giornoLibero);
-									dipendente.setGiornoLiberoLD(giornoLiberoLD);
-							}
-						//}
-				}
+								}		
+									DoVe[giornoLibero]++;
+								}
+							dipendente.setGiornoLibero(giornoLibero);
+							giornoLiberoLD = date.plusDays(giornoLibero);
+							dipendente.setGiornoLiberoLD(giornoLiberoLD);
+						}
 				
 				//GENERAZIONE TURNI E SALVATAGGIO	
 				String directory = "turni_" + date.getYear();
@@ -191,8 +191,11 @@ class TurniLavoroNew {
 					dipendente.setWeekShift(turnoDipendente);
 					System.out.println("\n");
 					nomeFile = (dipendente.getCognome() + ".txt");
-					directory = "mitarbeiter";
-					save.ExportShift(directory, nomeFile, dipendente, date);
+					//DEPRECATED
+					//directory = "Shift_mitarbeiter";
+					//save.ExportShift(directory, nomeFile, dipendente, date);
+					directory = "Shift_mitarbeiter_LD";
+					save.ExportShiftLT(directory, nomeFile, dipendente, date);
 					directory = "turni_" + date.getYear();
 					save.ExportTurniDiTutti(directory, String.valueOf(inputWeek+1) + ".txt", turniWeek.get(x));
 					//List<String> saved = save.ImportFile(directory, nomeFile);

@@ -1,14 +1,15 @@
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
 
-public class Dipendente implements Serializable{
+public class Dipendente implements Serializable {
 	//  azubi, nuovoArrivato, lifeFirma devo metterli una una classe estesa?
 	// Oppure devo mettere Dipendente come superclasse e poi Mitarbeirer, azubi, nuovoArrivato, lifeFirma?
 	// cambiare i valori OreNotturne, ecc... da double a LocalTime e le relative funzioni
-	private static final long serialVersionUID = 00000001L;
+	private static final long serialVersionUID = 00000002L;
 	long personalnummer = 0;
 	String nome;
 	String cognome;
@@ -27,7 +28,15 @@ public class Dipendente implements Serializable{
 	LocalDate giornoLiberoLD;
 	int TagNacht = 1; //1 = TAG default
 	ArrayList<String> weekShift = new ArrayList<String>();
-	ArrayList<LocalTime> weekShiftLD = new ArrayList<LocalTime>();
+	LocalDate dd = LocalDate.MIN;
+	LocalTime tt = LocalTime.MIN;
+	LocalDateTime Sunday = LocalDateTime.of(dd, tt);
+	LocalDateTime Monday = LocalDateTime.of(dd, tt);
+	LocalDateTime Tuesday = LocalDateTime.of(dd, tt);
+	LocalDateTime Wednesday = LocalDateTime.of(dd, tt);
+	LocalDateTime Thursday = LocalDateTime.of(dd, tt);
+	LocalDateTime Friday = LocalDateTime.of(dd, tt);
+	LocalDateTime Saturday = LocalDateTime.of(dd, tt);
 	
 	public void setPersonalnummer (long personalnummer) {
 		this.personalnummer = personalnummer;
@@ -132,14 +141,7 @@ public class Dipendente implements Serializable{
 	}
 	public ArrayList<String> getWeekShift() {
 		return weekShift;
-	}
-	public void setWeekShiftLD(ArrayList<LocalDate> weekShiftLD) {
-		this.weekShiftLD = weekShiftLD;
-	}
-	public ArrayList<LocalDate> getWeekShiftLD() {
-		return weekShiftLD;
-	}
-	
+	}	
 	
 	public void setSoloMattina (boolean soloMattina) {
 		this.soloMattina = soloMattina;
@@ -160,5 +162,57 @@ public class Dipendente implements Serializable{
 	
 	public boolean getFreeThisWeek () {
 		return FreeThisWeek;
+	}
+	public void setTime (LocalDate date, LocalTime dayLT, int dayINT) {
+		switch (dayINT) {
+			case 0: this.Sunday = LocalDateTime.of(date, dayLT);
+			break;
+			
+			case 1: this.Monday = LocalDateTime.of(date, dayLT);
+			break;
+			
+			case 2: this.Tuesday = LocalDateTime.of(date, dayLT);
+			break;
+			
+			case 3: this.Wednesday = LocalDateTime.of(date, dayLT);
+			break;
+			
+			case 4: this.Thursday = LocalDateTime.of(date, dayLT);
+			break;
+			
+			case 5: this.Friday = LocalDateTime.of(date, dayLT);
+			break;
+			
+			case 6: this.Saturday = LocalDateTime.of(date, dayLT);
+			break;
+		}
+	}
+	
+	public LocalDateTime getTime (int day) {
+		LocalDateTime dayLDT = LocalDateTime.MIN;
+		switch (day) {
+			case 0: dayLDT = Sunday;
+			break;
+			
+			case 1: dayLDT = Monday;
+			break;
+			
+			case 2: dayLDT = Tuesday;
+			break;
+			
+			case 3: dayLDT = Wednesday;
+			break;
+			
+			case 4: dayLDT = Thursday;
+			break;
+			
+			case 5: dayLDT = Friday;
+			break;
+			
+			case 6: dayLDT = Saturday;
+			break;
+			
+		}
+		return dayLDT;
 	}
 }
