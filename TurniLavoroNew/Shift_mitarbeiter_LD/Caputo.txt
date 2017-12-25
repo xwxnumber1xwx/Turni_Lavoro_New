@@ -82,3 +82,10 @@
 2017-06-15 donnerstag 16:30-00:36
 2017-06-16 freitag 18:00-02:06
 2017-06-17 samstag frei
+2017-09-24 sonntag frei
+2017-09-25 montag 16:30-00:36
+2017-09-26 dienstag 16:30-00:36
+2017-09-27 mittwoch 16:30-00:36
+2017-09-28 donnerstag 16:30-00:36
+2017-09-29 freitag 18:00-02:06
+2017-09-30 samstag frei

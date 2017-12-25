@@ -54,3 +54,10 @@
 2017-08-03 donnerstag 16:30-00:36
 2017-08-04 freitag 15:00-23:06
 2017-08-05 samstag frei
+2017-09-24 sonntag frei
+2017-09-25 montag 16:30-00:36
+2017-09-26 dienstag 16:30-00:36
+2017-09-27 mittwoch 16:30-00:36
+2017-09-28 donnerstag 16:30-00:36
+2017-09-29 freitag 18:00-02:06
+2017-09-30 samstag frei

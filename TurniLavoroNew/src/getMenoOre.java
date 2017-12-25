@@ -43,56 +43,79 @@ public class getMenoOre {
 		
 		ArrayList <Dipendente> ArrayLeiter = new ArrayList<Dipendente>();
 		int NumeroLinieLeiterL1 = NumeroLinieLeiter;
+		int o = 0;
 			for (int h = 1; h < 2; h++) { //NACHT
+				o=0;
 				for (int x = 0; x < dipendenti.size(); x++) {
-					Dipendente dip1 = dipendenti.get(0);
+					if (o > dipendenti.size()) {
+						o = dipendenti.size();
+					}
+					Dipendente dip1 = dipendenti.get(o);
 					if (dip1.getlinieLeiter() == h || dip1.getlinieLeiter() == 3 && NumeroLinieLeiterL1 != 0 && dip1.getTagNacht() == 2) {
 						dip1.setLineaTurnoLeiter(h);
 						dip1.setLineaTurno(h);
 						ArrayLeiter.add(dip1);
-						dipendenti.remove(0);
+						dipendenti.remove(o);
 						NumeroLinieLeiterL1--;
+					} else {
+						o++;
 					}
 				}
 				NumeroLinieLeiterL1 = NumeroLinieLeiter;
+				o=0;
 				for (int x = 0; x < dipendenti.size(); x++) {
-					Dipendente dip1 = dipendenti.get(0);
+					if (o > dipendenti.size()) {
+						o = dipendenti.size();
+					}
+					Dipendente dip1 = dipendenti.get(o);
 					if (dip1.getlinieLeiter() == h || dip1.getlinieLeiter() == 3 && NumeroLinieLeiterL1 != 0 && dip1.getTagNacht() == 1) {
 						dip1.setLineaTurnoLeiter(h);
 						dip1.setLineaTurno(h);
 						ArrayLeiter.add(dip1);
-						dipendenti.remove(0);
+						dipendenti.remove(o);
 						NumeroLinieLeiterL1--;
+					} else {
+						o++;
 					}
 				}
+				o=0;
 				for (int x = 0; x < dipendenti.size(); x++) {
-					Dipendente dip1 = dipendenti.get(0);
+					if (o > dipendenti.size()) {
+						o = dipendenti.size();
+					}
+					Dipendente dip1 = dipendenti.get(o);
 					if (dip1.getLineaLavoro() == h || dip1.getLineaLavoro() == 3 && dip1.getTagNacht() == 2) {
 						if (NumeroDipendentiPerLinee1NACHT != 0) {
 							dip1.setLineaTurno(1);
 							ArrayLeiter.add(dip1);
-							dipendenti.remove(0);
+							dipendenti.remove(o);
 							NumeroDipendentiPerLinee1NACHT--;
 						} else if (NumeroDipendentiPerLinee2NACHT != 0 && dip1.getLineaLavoro() == 2) {
 							dip1.setLineaTurno(2);
 							ArrayLeiter.add(dip1);
-							dipendenti.remove(0);
+							dipendenti.remove(o);
 							NumeroDipendentiPerLinee2NACHT--;
+						} else {
+							o++;
 						}
 					}
 				}
+				o=0;
 				for (int x = 0; x < dipendenti.size(); x++) {
-					Dipendente dip1 = dipendenti.get(0);
+					if (o > dipendenti.size()) {
+						o = dipendenti.size();
+					}
+					Dipendente dip1 = dipendenti.get(o);
 					if (dip1.getLineaLavoro() == h || dip1.getLineaLavoro() == 3 && dip1.getTagNacht() == 1) {
 						if (h == 1 && NumeroDipendentiPerLinee1TAG != 0) {
 							dip1.setLineaTurno(1);
 							ArrayLeiter.add(dip1);
-							dipendenti.remove(0);
+							dipendenti.remove(o);
 							NumeroDipendentiPerLinee1TAG--;
 						} else {
 							dip1.setLineaTurno(2);
 							ArrayLeiter.add(dip1);
-							dipendenti.remove(0);
+							dipendenti.remove(o);
 						}
 					}
 				}
