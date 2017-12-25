@@ -1,0 +1,55 @@
+2017-03-26<--->2017-03-26
+Termin 
+2017-03-26 Sonntag	frei 
+2017-03-27 Montag	16:30-00:36 
+2017-03-28 Dienstag	16:30-00:36 
+2017-03-29 Mittwoch	16:30-00:36 
+2017-03-30 Donnerstag	16:30-00:36 
+2017-03-31 Freitag	18:00-2:06 
+2017-04-01 Samstag	Libero 
+
+Unser 
+2017-03-26 Sonntag	frei 
+2017-03-27 Montag	2:30-10:36 
+2017-03-28 Dienstag	2:30-10:36 
+2017-03-29 Mittwoch	2:30-10:36 
+2017-03-30 Donnerstag	2:30-10:36 
+2017-03-31 Freitag	2:00-10:06 
+2017-04-01 Samstag	Libero 
+
+Swabool 
+2017-03-26 Sonntag	frei 
+2017-03-27 Montag	16:30-00:36 
+2017-03-28 Dienstag	16:30-00:36 
+2017-03-29 Mittwoch	16:30-00:36 
+2017-03-30 Donnerstag	16:30-00:36 
+2017-03-31 Freitag	18:00-2:06 
+2017-04-01 Samstag	Libero 
+
+Termin 
+2017-03-26 Sonntag	frei 
+2017-03-27 Montag	16:30-00:36 
+2017-03-28 Dienstag	16:30-00:36 
+2017-03-29 Mittwoch	16:30-00:36 
+2017-03-30 Donnerstag	16:30-00:36 
+2017-03-31 Freitag	18:00-2:06 
+2017-04-01 Samstag	Libero 
+
+Unser 
+2017-03-26 Sonntag	frei 
+2017-03-27 Montag	2:30-10:36 
+2017-03-28 Dienstag	2:30-10:36 
+2017-03-29 Mittwoch	2:30-10:36 
+2017-03-30 Donnerstag	2:30-10:36 
+2017-03-31 Freitag	2:00-10:06 
+2017-04-01 Samstag	Libero 
+
+Caputo 
+2017-03-26 Sonntag	frei 
+2017-03-27 Montag	2:30-10:36 
+2017-03-28 Dienstag	2:30-10:36 
+2017-03-29 Mittwoch	2:30-10:36 
+2017-03-30 Donnerstag	2:30-10:36 
+2017-03-31 Freitag	2:00-10:06 
+2017-04-01 Samstag	Libero 
+

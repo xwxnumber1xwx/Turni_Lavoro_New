@@ -1,0 +1,37 @@
+2017-06-04<--->2017-06-04
+Gurbuz Linie Leiter: 1 Linie: 1 
+2017-06-04 Sonntag	16:30-00:36 
+2017-06-05 Montag	frei 
+2017-06-06 Dienstag	16:30-00:36 
+2017-06-07 Mittwoch	16:30-00:36 
+2017-06-08 Donnerstag	16:30-00:36 
+2017-06-09 Freitag	15:00-23:06 
+2017-06-10 Samstag	Libero 
+
+Unser Linie Leiter: 1 Linie: 1 
+2017-06-04 Sonntag	frei 
+2017-06-05 Montag	2:30-10:36 
+2017-06-06 Dienstag	2:30-10:36 
+2017-06-07 Mittwoch	2:30-10:36 
+2017-06-08 Donnerstag	2:30-10:36 
+2017-06-09 Freitag	2:00-10:06 
+2017-06-10 Samstag	Libero 
+
+Termin Linie Leiter: 1 Linie: 1 
+2017-06-04 Sonntag	16:30-00:36 
+2017-06-05 Montag	16:30-00:36 
+2017-06-06 Dienstag	16:30-00:36 
+2017-06-07 Mittwoch	frei 
+2017-06-08 Donnerstag	16:30-00:36 
+2017-06-09 Freitag	15:00-23:06 
+2017-06-10 Samstag	Libero 
+
+Swabool Linie Leiter: 0 Linie: 1 
+2017-06-04 Sonntag	frei 
+2017-06-05 Montag	16:30-00:36 
+2017-06-06 Dienstag	16:30-00:36 
+2017-06-07 Mittwoch	16:30-00:36 
+2017-06-08 Donnerstag	16:30-00:36 
+2017-06-09 Freitag	18:00-2:06 
+2017-06-10 Samstag	Libero 
+

@@ -15,6 +15,8 @@ public class Dipendente implements Serializable {
 	String cognome;
 	int livello = 0;
 	int lineaLavoro = 0;
+	int lineaTurno = 0;
+	int LineaTurnoLeiter = 0;
 	int linieLeiter = 0;
 	boolean soloMattina = false;
 	boolean FreeThisWeek = false;
@@ -72,7 +74,19 @@ public class Dipendente implements Serializable {
 	public void setLineaLavoro (int i) {
 		this.lineaLavoro = i;
 	}
-
+	
+	public int getLineaTurno () {
+		return lineaTurno;
+	}
+	public void setLineaTurnoLeiter (int i) {
+		this.LineaTurnoLeiter = i;
+	}
+	public int getLineaTurnoLeiter () {
+		return LineaTurnoLeiter;
+	}
+	public void setLineaTurno (int i) {
+		this.lineaTurno = i;
+	}
 	public void setGiorniMalattia (int giorniMalattia) {
 		this.giorniMalattia += giorniMalattia;
 	}

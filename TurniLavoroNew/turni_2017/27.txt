@@ -1,0 +1,64 @@
+2017-07-02<--->2017-07-02
+Akille Linie Leiter: 1 Linie: 1 
+2017-07-02 Sonntag	frei 
+2017-07-03 Montag	16:30-00:36 
+2017-07-04 Dienstag	16:30-00:36 
+2017-07-05 Mittwoch	16:30-00:36 
+2017-07-06 Donnerstag	16:30-00:36 
+2017-07-07 Freitag	18:00-2:06 
+2017-07-08 Samstag	Libero 
+
+Gurbuz Linie Leiter: 1 Linie: 1 
+2017-07-02 Sonntag	16:30-00:36 
+2017-07-03 Montag	16:30-00:36 
+2017-07-04 Dienstag	16:30-00:36 
+2017-07-05 Mittwoch	frei 
+2017-07-06 Donnerstag	16:30-00:36 
+2017-07-07 Freitag	15:00-23:06 
+2017-07-08 Samstag	Libero 
+
+Unser Linie Leiter: 1 Linie: 1 
+2017-07-02 Sonntag	frei 
+2017-07-03 Montag	2:30-10:36 
+2017-07-04 Dienstag	2:30-10:36 
+2017-07-05 Mittwoch	2:30-10:36 
+2017-07-06 Donnerstag	2:30-10:36 
+2017-07-07 Freitag	2:00-10:06 
+2017-07-08 Samstag	Libero 
+
+Termin Linie Leiter: 1 Linie: 1 
+2017-07-02 Sonntag	frei 
+2017-07-03 Montag	16:30-00:36 
+2017-07-04 Dienstag	16:30-00:36 
+2017-07-05 Mittwoch	16:30-00:36 
+2017-07-06 Donnerstag	16:30-00:36 
+2017-07-07 Freitag	18:00-2:06 
+2017-07-08 Samstag	Libero 
+
+Balicos Linie Leiter: 0 Linie: 1 
+2017-07-02 Sonntag	16:30-00:36 
+2017-07-03 Montag	16:30-00:36 
+2017-07-04 Dienstag	frei 
+2017-07-05 Mittwoch	16:30-00:36 
+2017-07-06 Donnerstag	16:30-00:36 
+2017-07-07 Freitag	15:00-23:06 
+2017-07-08 Samstag	Libero 
+
+Swabool Linie Leiter: 0 Linie: 1 
+2017-07-02 Sonntag	frei 
+2017-07-03 Montag	16:30-00:36 
+2017-07-04 Dienstag	16:30-00:36 
+2017-07-05 Mittwoch	16:30-00:36 
+2017-07-06 Donnerstag	16:30-00:36 
+2017-07-07 Freitag	18:00-2:06 
+2017-07-08 Samstag	Libero 
+
+Muzaqi Linie Leiter: 0 Linie: 2 
+2017-07-02 Sonntag	16:30-00:36 
+2017-07-03 Montag	frei 
+2017-07-04 Dienstag	16:30-00:36 
+2017-07-05 Mittwoch	16:30-00:36 
+2017-07-06 Donnerstag	16:30-00:36 
+2017-07-07 Freitag	15:00-23:06 
+2017-07-08 Samstag	Libero 
+

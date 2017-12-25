@@ -8,11 +8,7 @@
 import java.io.IOException;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
 import java.util.Scanner;
 
 
@@ -30,25 +26,25 @@ class TurniLavoroNew {
 				int[] DoVe = new int[4];
 				int NumMitarbeiterLinee = 1;
 				int minNacht = Integer.parseInt(Preferenze.getOnePreference("NACHT_MIN_MITARBEITER"));
-				int NumMitarbeiterNacht = Integer.parseInt(Preferenze.getOnePreference("NUM_MITARBEITER_LINEE1_NACHT"));
+				int NumMitarbeiterNachtL1 = Integer.parseInt(Preferenze.getOnePreference("NUM_MITARBEITER_LINEE1_NACHT"));
+				int NumMitarbeiterTagL1 = Integer.parseInt(Preferenze.getOnePreference("NUM_MITARBEITER_LINEE1_TAG"));
 				//IMPUT KalenderWoche
 				LocalDate date = LocalDate.of(2017, 1, 1);
 				int inputWeek = 0;
 				String nomeFile = "";
 				int yn;
 				IOFile save = new IOFile();
+				Scanner scan = new Scanner (System.in);
 				do { //CREAZIONE DIPENDENTE PROVVISORIA
-					Scanner scan = new Scanner (System.in);
 					System.out.print("Volete Aggiungere un nuovo Dipendente? 1 = Y , 2 = N" + "\n");
 					yn = scan.nextInt();
 					if (yn == 1) {
-						createDipendente();
+						Create.createDipendente();
 					}
 				} while (yn == 1);
 				
 				//Carico i Dipendenti dal Database
 				dipendenteArrayList = save.ImportObjectFromFile("database");
-				Scanner scan = new Scanner (System.in);
 				System.out.println("volete aggiungere un giorno libero ad un dipendente? 1 si, 2 no");
 				int z = scan.nextInt();
 				if (z == 1) {
@@ -81,6 +77,7 @@ class TurniLavoroNew {
 						}
 					} while (finded == false);
 				}
+		
 				
 				// chooses which week the program should process
 				do {
@@ -107,27 +104,49 @@ class TurniLavoroNew {
 				
 				//sort the workers based on the accumulated night hours
 				dipendenteArrayList = getMenoOre.OrdinePerNottiArrayList(dipendenteArrayList);
-				
-				//CHOICE OF WHO WORKS THE MORNING OR THE EVENING
-				
-				//spostare la funzione su genera turni. da un errore quando il lavoratore ha un giorno libero al wunsch ma viene messo al TAG allora il programma gli calcola la domenica come tag nonostante sia libero
+
+				//CHOICE WHO WORKS IN THE MORNING OR IN THE EVENING
 					for (int x = 0 ; x < dipendenteArrayList.size(); x++) {
 					Dipendente dipendente = dipendenteArrayList.get(x);
+
+					// Mattina o sera
 					if (dipendente.getSoloMattina() == true) {
+						if (dipendente.getLineaLavoro() == 1 || dipendente.getLineaLavoro() == 3) {
+							dipendente.setLineaTurno(1);
+						} else {
+							dipendente.setLineaTurno(2);
+						}
 						dipendente.setTagNacht(1); //TAG
 					} else {
-						if (Nacht <= minNacht) {
-							Nacht++;
-							dipendente.setTagNacht(2); //Nacht
-							if (NumMitarbeiterLinee <= NumMitarbeiterNacht) {
-								NumMitarbeiterLinee++;
+						if (dipendente.getLineaLavoro() == 1 || dipendente.getLineaLavoro() == 3) {
+							if (Nacht <= minNacht) {
+								if (NumMitarbeiterLinee <= NumMitarbeiterNachtL1) {
+									Nacht++;
+									NumMitarbeiterLinee++;
+									dipendente.setLineaTurno(1);
+									dipendente.setTagNacht(2); //Nacht
+								} else if (dipendente.getLineaLavoro() == 2) {
+										Nacht++;
+										dipendente.setLineaTurno(2);
+										dipendente.setTagNacht(2); //Nacht									
+								}
 							} else {
+								dipendente.setLineaTurno(1);
+								dipendente.setTagNacht(1); //TAG
 							}
-						} else {
-							dipendente.setTagNacht(1); //TAG
+						} else if (dipendente.getLineaLavoro() == 2 || dipendente.getLineaLavoro() == 3) {
+							if (Nacht <= minNacht) {
+								Nacht++;
+								dipendente.setLineaTurno(2);
+								dipendente.setTagNacht(2); //Nacht
+							} else {
+								dipendente.setLineaTurno(2);
+								dipendente.setTagNacht(1); //TAG
+							}
 						}
 					}
-					
+						
+					// Giorno Libero
 					int giornoLibero = 0;
 					ArrayList <LocalDate> giornoLiberoArray = new ArrayList<LocalDate>();
 					LocalDate giornoLiberoLD = date;
@@ -180,14 +199,16 @@ class TurniLavoroNew {
 							dipendente.setGiornoLiberoLD(giornoLiberoLD);
 						}
 				
+					
 				//GENERAZIONE TURNI E SALVATAGGIO	
 				String directory = "turni_" + date.getYear();
 				save.InitTurni(directory,  String.valueOf(inputWeek+1) + ".txt", date);
+				dipendenteArrayList = getMenoOre.OrdinePerLinieLeiter(dipendenteArrayList, 2, NumMitarbeiterTagL1, NumMitarbeiterNachtL1, (minNacht-NumMitarbeiterNachtL1));
 				for (int x = 0; x < dipendenteArrayList.size(); x++) {
 					Dipendente dipendente = dipendenteArrayList.get(x);
 					turnoDipendente = SwitchTurni.generaTurni(dipendente.getGiornoLiberoLD(), dipendente.getGiornoLibero(), dipendente.getTagNacht(), dipendente, dipendente.malattia, date.with(DayOfWeek.SUNDAY));
 					turnoDipendente.add("\n");
-					turniWeek.add(dipendente.getCognome() +  " " + turnoDipendente);
+					turniWeek.add(dipendente.getCognome() +" Linie Leiter: " + dipendente.getLineaTurnoLeiter() + " Linie: " + dipendente.getLineaTurno() +  " " + turnoDipendente);
 					dipendente.setWeekShift(turnoDipendente);
 					System.out.println("\n");
 					nomeFile = (dipendente.getCognome() + ".txt");
@@ -211,36 +232,4 @@ class TurniLavoroNew {
 					System.out.println(dipendenteVar.getCognome() + " TOT: " + dipendenteVar.getTotZuSchlag());
 				}
 				}
-	public static void createDipendente () {
-		IOFile save = new IOFile();
-		Scanner scan = new Scanner (System.in);
-		String var;
-		Dipendente dipendente  = new Dipendente();
-		System.out.println("Personalnummer: " + "\n");
-		long personalnummer = (long)scan.nextInt();
-		dipendente.setPersonalnummer(personalnummer);
-		scan.nextLine();
-		System.out.println("Nome: " + "\n");
-		var = scan.nextLine();
-		dipendente.setNome(var);
-		System.out.println("Cognome: " + "\n");
-		var = scan.nextLine();
-		dipendente.setCognome(var);
-		System.out.println("capacita linee: es. 1, 2 oppure digitare 3 per entrambe" + "\n");
-		int Capacitalinea = scan.nextInt();
-		dipendente.setLineaLavoro(Capacitalinea);
-		System.out.println("Linee Leiter? es. 0 = N, 1, 2 oppure digitare 3 per entrambe" + "\n");
-		int linieLeiter = scan.nextInt();
-		dipendente.setLinieLeiter(linieLeiter);
-		System.out.println(dipendente.getCognome() + " Vuole lavorare solo la mattina? 1 = Y, 2 = N" + "\n");
-		int soloMattina = scan.nextInt();
-		if (soloMattina == 1) {
-		dipendente.setSoloMattina(true);
-		}
-		System.out.println("Dipendente Salvato!" + "\n");
-		scan.nextLine();
-		String nomeFile = (dipendente.getCognome() + ".dbs");
-		save.ExportObjectToFile("database", nomeFile, dipendente);
-	}
-
 }

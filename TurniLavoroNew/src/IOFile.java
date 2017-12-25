@@ -1,4 +1,4 @@
-import java.io.BufferedOutputStream;
+
 import static java.nio.file.StandardOpenOption.APPEND;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -11,12 +11,10 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
-import java.nio.file.OpenOption;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.format.TextStyle;
 import java.util.ArrayList;
 import java.util.List;
@@ -37,9 +35,9 @@ public class IOFile {
 			e1.printStackTrace();
 		}
 		try (BufferedWriter writer = Files.newBufferedWriter(path, charset)) {
-			DayOfWeek giorno = DayOfWeek.SUNDAY;
-			TextStyle stileNorm = TextStyle.FULL;
-			Locale deutsch = Locale.GERMAN;
+			//DayOfWeek giorno = DayOfWeek.SUNDAY;
+			//TextStyle stileNorm = TextStyle.FULL;
+			//Locale deutsch = Locale.GERMAN;
 			writer.write(date.toString());
 			date.plusDays(7);
 			writer.write("<--->");

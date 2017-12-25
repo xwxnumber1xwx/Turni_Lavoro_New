@@ -1,0 +1,73 @@
+2017-04-09<--->2017-04-09
+Termin 
+2017-04-09 Sonntag	16:30-00:36 
+2017-04-10 Montag	frei 
+2017-04-11 Dienstag	16:30-00:36 
+2017-04-12 Mittwoch	16:30-00:36 
+2017-04-13 Donnerstag	16:30-00:36 
+2017-04-14 Freitag	15:00-23:06 
+2017-04-15 Samstag	Libero 
+
+Unser 
+2017-04-09 Sonntag	frei 
+2017-04-10 Montag	2:30-10:36 
+2017-04-11 Dienstag	2:30-10:36 
+2017-04-12 Mittwoch	2:30-10:36 
+2017-04-13 Donnerstag	2:30-10:36 
+2017-04-14 Freitag	2:00-10:06 
+2017-04-15 Samstag	Libero 
+
+Unser 
+2017-04-09 Sonntag	frei 
+2017-04-10 Montag	2:30-10:36 
+2017-04-11 Dienstag	2:30-10:36 
+2017-04-12 Mittwoch	2:30-10:36 
+2017-04-13 Donnerstag	2:30-10:36 
+2017-04-14 Freitag	2:00-10:06 
+2017-04-15 Samstag	Libero 
+
+Swabool 
+2017-04-09 Sonntag	frei 
+2017-04-10 Montag	16:30-00:36 
+2017-04-11 Dienstag	16:30-00:36 
+2017-04-12 Mittwoch	16:30-00:36 
+2017-04-13 Donnerstag	16:30-00:36 
+2017-04-14 Freitag	18:00-2:06 
+2017-04-15 Samstag	Libero 
+
+Termin 
+2017-04-09 Sonntag	16:30-00:36 
+2017-04-10 Montag	frei 
+2017-04-11 Dienstag	16:30-00:36 
+2017-04-12 Mittwoch	16:30-00:36 
+2017-04-13 Donnerstag	16:30-00:36 
+2017-04-14 Freitag	15:00-23:06 
+2017-04-15 Samstag	Libero 
+
+Unser 
+2017-04-09 Sonntag	frei 
+2017-04-10 Montag	2:30-10:36 
+2017-04-11 Dienstag	2:30-10:36 
+2017-04-12 Mittwoch	2:30-10:36 
+2017-04-13 Donnerstag	2:30-10:36 
+2017-04-14 Freitag	2:00-10:06 
+2017-04-15 Samstag	Libero 
+
+Unser 
+2017-04-09 Sonntag	frei 
+2017-04-10 Montag	2:30-10:36 
+2017-04-11 Dienstag	2:30-10:36 
+2017-04-12 Mittwoch	2:30-10:36 
+2017-04-13 Donnerstag	2:30-10:36 
+2017-04-14 Freitag	2:00-10:06 
+2017-04-15 Samstag	Libero 
+
+Caputo 
+2017-04-09 Sonntag	frei 
+2017-04-10 Montag	2:30-10:36 
+2017-04-11 Dienstag	2:30-10:36 
+2017-04-12 Mittwoch	2:30-10:36 
+2017-04-13 Donnerstag	2:30-10:36 
+2017-04-14 Freitag	2:00-10:06 
+2017-04-15 Samstag	Libero 
+
