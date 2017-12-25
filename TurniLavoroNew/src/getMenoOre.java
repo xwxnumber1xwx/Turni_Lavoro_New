@@ -42,33 +42,41 @@ public class getMenoOre {
 	//ERRORE
 		
 		ArrayList <Dipendente> ArrayLeiter = new ArrayList<Dipendente>();
-		int NumeroLinieLeiterL1 = NumeroLinieLeiter;
+		
 		int o = 0;
-			for (int h = 1; h < 2; h++) { //NACHT
+			for (int h = 1; h < 3; h++) { //NACHT
+				int NumeroLinieLeiterL1 = NumeroLinieLeiter;
 				o=0;
-				for (int x = 0; x < dipendenti.size(); x++) {
+				int size = dipendenti.size();
+				for (int x = 0; x < size; x++) {
 					if (o > dipendenti.size()) {
 						o = dipendenti.size();
 					}
 					Dipendente dip1 = dipendenti.get(o);
-					if (dip1.getlinieLeiter() == h || dip1.getlinieLeiter() == 3 && NumeroLinieLeiterL1 != 0 && dip1.getTagNacht() == 2) {
-						dip1.setLineaTurnoLeiter(h);
-						dip1.setLineaTurno(h);
-						ArrayLeiter.add(dip1);
-						dipendenti.remove(o);
-						NumeroLinieLeiterL1--;
+					if (NumeroLinieLeiterL1 != 0 && dip1.getTagNacht() == 2) {
+						if (dip1.getlinieLeiter() == h || dip1.getlinieLeiter() == 3) {
+							dip1.setLineaTurnoLeiter(h);
+							dip1.setLineaTurno(h);
+							ArrayLeiter.add(dip1);
+							dipendenti.remove(o);
+							NumeroLinieLeiterL1--;
+						} else {
+							o++;
+						}
 					} else {
 						o++;
 					}
 				}
 				NumeroLinieLeiterL1 = NumeroLinieLeiter;
 				o=0;
-				for (int x = 0; x < dipendenti.size(); x++) {
+				size = dipendenti.size();
+				for (int x = 0; x < size; x++) {
 					if (o > dipendenti.size()) {
 						o = dipendenti.size();
 					}
 					Dipendente dip1 = dipendenti.get(o);
-					if (dip1.getlinieLeiter() == h || dip1.getlinieLeiter() == 3 && NumeroLinieLeiterL1 != 0 && dip1.getTagNacht() == 1) {
+					if (NumeroLinieLeiterL1 != 0 && dip1.getTagNacht() == 1) {
+					if (dip1.getlinieLeiter() == h || dip1.getlinieLeiter() == 3) {
 						dip1.setLineaTurnoLeiter(h);
 						dip1.setLineaTurno(h);
 						ArrayLeiter.add(dip1);
@@ -77,20 +85,29 @@ public class getMenoOre {
 					} else {
 						o++;
 					}
+				} else {
+					o++;
 				}
+			}
+			}
+			for (int h = 1; h < 3; h++) {
 				o=0;
-				for (int x = 0; x < dipendenti.size(); x++) {
+				int size = dipendenti.size();
+				for (int x = 0; x < size; x++) {
 					if (o > dipendenti.size()) {
 						o = dipendenti.size();
 					}
 					Dipendente dip1 = dipendenti.get(o);
-					if (dip1.getLineaLavoro() == h || dip1.getLineaLavoro() == 3 && dip1.getTagNacht() == 2) {
+					if (dip1.getTagNacht() == 2) {
+					if (dip1.getLineaLavoro() == h || dip1.getLineaLavoro() == 3) {
 						if (NumeroDipendentiPerLinee1NACHT != 0) {
+							dip1.setLineaTurnoLeiter(0);
 							dip1.setLineaTurno(1);
 							ArrayLeiter.add(dip1);
 							dipendenti.remove(o);
 							NumeroDipendentiPerLinee1NACHT--;
-						} else if (NumeroDipendentiPerLinee2NACHT != 0 && dip1.getLineaLavoro() == 2) {
+						} else if (NumeroDipendentiPerLinee2NACHT != 0) {
+							dip1.setLineaTurnoLeiter(0);
 							dip1.setLineaTurno(2);
 							ArrayLeiter.add(dip1);
 							dipendenti.remove(o);
@@ -98,40 +115,103 @@ public class getMenoOre {
 						} else {
 							o++;
 						}
+					} else {
+						o++;
 					}
+				} else {
+					o++;
+				}
 				}
 				o=0;
-				for (int x = 0; x < dipendenti.size(); x++) {
+				size = dipendenti.size();
+				for (int x = 0; x < size; x++) {
 					if (o > dipendenti.size()) {
 						o = dipendenti.size();
 					}
 					Dipendente dip1 = dipendenti.get(o);
-					if (dip1.getLineaLavoro() == h || dip1.getLineaLavoro() == 3 && dip1.getTagNacht() == 1) {
+					if (dip1.getTagNacht() == 1) {
+					if (dip1.getLineaLavoro() == h || dip1.getLineaLavoro() == 3) {
 						if (h == 1 && NumeroDipendentiPerLinee1TAG != 0) {
+							dip1.setLineaTurnoLeiter(0);
 							dip1.setLineaTurno(1);
 							ArrayLeiter.add(dip1);
 							dipendenti.remove(o);
 							NumeroDipendentiPerLinee1TAG--;
 						} else {
+							dip1.setLineaTurnoLeiter(0);
 							dip1.setLineaTurno(2);
 							ArrayLeiter.add(dip1);
 							dipendenti.remove(o);
 						}
 					}
+					} else {
+						o++;
+					}
 				}
 			}
 			for (int x = 0; x < dipendenti.size(); x++) {
 				Dipendente dip2 = dipendenti.get(x);
+				dip2.setLineaTurnoLeiter(0);
 				dip2.setLineaTurno(2);
+				dip2.setTagNacht(1); // Dato extra La mattina perche ha superato il numero massimo di persone di sera
 				ArrayLeiter.add(dip2);
 				dipendenti.remove(x);
 			}
 			
+			
+			
+			// ORDINAMENTO ARRAY
+			//LeiterL1TAG
+			
+			ArrayList <Dipendente> L1Tag = new ArrayList<Dipendente>();
+			ArrayList <Dipendente> L1Nacht = new ArrayList<Dipendente>();
+			ArrayList <Dipendente> L2Tag = new ArrayList<Dipendente>();
+			ArrayList <Dipendente> L2Nacht = new ArrayList<Dipendente>();
+			
 			for (int x = 0; x < ArrayLeiter.size(); x++) {
-				Dipendente temp1 = ArrayLeiter.get(x);
-				System.out.println(temp1.nome + " Linie Leiter: " + temp1.getLineaTurnoLeiter() +  " Linie: "  + temp1.getLineaTurno() + " TAG=1, NACHT=2: " + temp1.getTagNacht());
+				Dipendente dip = ArrayLeiter.get(x);
+				if (dip.getLineaTurnoLeiter() == 1) {
+					if(dip.getTagNacht() == 1) {
+						L1Tag.add(0, dip);
+					} else {
+						L1Nacht.add(0, dip);
+					}
+				} else if (dip.getLineaTurno() == 1) {
+					if(dip.getTagNacht() == 1) {
+						L1Tag.add(dip);
+					} else {
+						L1Nacht.add(dip);
+					}
+				} else if (dip.getLineaTurnoLeiter() == 2) {
+					if(dip.getTagNacht() == 1) {
+						L2Tag.add(0, dip);
+					} else {
+						L2Nacht.add(0, dip);
+					}
+				} else if (dip.getLineaTurno() == 2) {
+					if(dip.getTagNacht() == 1) {
+						L2Tag.add(dip);
+					} else {
+						L2Nacht.add(dip);
+					}
+				}
 			}
-		return ArrayLeiter;
+			dipendenti.clear();
+			dipendenti.addAll(L1Tag);
+			dipendenti.addAll(L2Tag);
+			dipendenti.addAll(L1Nacht);
+			dipendenti.addAll(L2Nacht);
+			
+			for (int x = 0; x < dipendenti.size(); x++) {
+				Dipendente temp1 = dipendenti.get(x);
+				System.out.print(temp1.nome + " Linie Leiter: " + temp1.getLineaTurnoLeiter() +  " Linie: "  + temp1.getLineaTurno());
+				if (temp1.getTagNacht() == 1) {
+					System.out.println("TAG");
+				} else  {
+					System.out.println("NACHT");
+				}
+			}
+		return dipendenti;
 	}
 	
 }
