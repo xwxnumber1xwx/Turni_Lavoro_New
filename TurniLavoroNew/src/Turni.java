@@ -31,19 +31,8 @@ public class Turni {
 			{venerdi.getDisplayName(stileNorm, deutsch),VEN_TAG, VEN_NACHT, VEN_NACHT_DOM},
 			{sabato.getDisplayName(stileNorm, deutsch), "Libero", "Libero"}
 			};
-	/*	double oreNotturne [][] = { //DEPRECATED
-				{0, 8}, // DOM
-				{1.5, 3}, // LUN
-				{1.5, 3}, // MAR
-				{1.5, 3}, // MER
-				{1.5, 3}, // GIO
-				{2, 2, 5}, // VEN
-				{0, 0}, //SAB
-		};
-		*/
-		//LocalDate data; // solo una prova
+
 		LocalTime tagInizio = LocalTime.of( Integer.parseInt(Preferenze.getOnePreference("TAG_INIZIO_H")), Integer.parseInt(Preferenze.getOnePreference("TAG_INIZIO_M")));
-		//LocalDateTime tagInizioData = LocalDateTime.of(data, tagInizio); //solo una prova
 		LocalTime tagFine = LocalTime.of(Integer.parseInt(Preferenze.getOnePreference("TAG_FINE_H")), Integer.parseInt(Preferenze.getOnePreference("TAG_FINE_M")));
 		LocalTime nachtInizio = LocalTime.of(Integer.parseInt(Preferenze.getOnePreference("NACHT_INIZIO_H")), Integer.parseInt(Preferenze.getOnePreference("NACHT_INIZIO_M")));
 		LocalTime nachtFine = LocalTime.of(Integer.parseInt(Preferenze.getOnePreference("NACHT_FINE_H")), Integer.parseInt(Preferenze.getOnePreference("NACHT_FINE_M")));

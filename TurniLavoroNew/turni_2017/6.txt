@@ -1,22 +1,4 @@
-2017-02-05<--->2017-02-05
-Akille Linie Leiter: 1 Linie: 1 
-2017-02-05 Sonntag	16:30-00:36 
-2017-02-06 Montag	frei 
-2017-02-07 Dienstag	16:30-00:36 
-2017-02-08 Mittwoch	16:30-00:36 
-2017-02-09 Donnerstag	16:30-00:36 
-2017-02-10 Freitag	15:00-23:06 
-2017-02-11 Samstag	Libero 
-
-Gurbuz Linie Leiter: 1 Linie: 1 
-2017-02-05 Sonntag	frei 
-2017-02-06 Montag	16:30-00:36 
-2017-02-07 Dienstag	16:30-00:36 
-2017-02-08 Mittwoch	16:30-00:36 
-2017-02-09 Donnerstag	16:30-00:36 
-2017-02-10 Freitag	18:00-2:06 
-2017-02-11 Samstag	Libero 
-
+2017-02-05<--->2017-02-12
 Unser Linie Leiter: 1 Linie: 1 
 2017-02-05 Sonntag	frei 
 2017-02-06 Montag	2:30-10:36 
@@ -26,7 +8,142 @@ Unser Linie Leiter: 1 Linie: 1
 2017-02-10 Freitag	2:00-10:06 
 2017-02-11 Samstag	Libero 
 
-Plana Linie Leiter: 2 Linie: 2 
+Sitter Linie Leiter: 1 Linie: 1 
+2017-02-05 Sonntag	frei 
+2017-02-06 Montag	2:30-10:36 
+2017-02-07 Dienstag	2:30-10:36 
+2017-02-08 Mittwoch	2:30-10:36 
+2017-02-09 Donnerstag	2:30-10:36 
+2017-02-10 Freitag	2:00-10:06 
+2017-02-11 Samstag	Libero 
+
+Hussein Linie Leiter: 0 Linie: 1 
+2017-02-05 Sonntag	frei 
+2017-02-06 Montag	2:30-10:36 
+2017-02-07 Dienstag	2:30-10:36 
+2017-02-08 Mittwoch	2:30-10:36 
+2017-02-09 Donnerstag	2:30-10:36 
+2017-02-10 Freitag	2:00-10:06 
+2017-02-11 Samstag	Libero 
+
+Plana Linie Leiter: 0 Linie: 1 
+2017-02-05 Sonntag	frei 
+2017-02-06 Montag	2:30-10:36 
+2017-02-07 Dienstag	2:30-10:36 
+2017-02-08 Mittwoch	2:30-10:36 
+2017-02-09 Donnerstag	2:30-10:36 
+2017-02-10 Freitag	2:00-10:06 
+2017-02-11 Samstag	Libero 
+
+Schikenberg Linie Leiter: 2 Linie: 2 
+2017-02-05 Sonntag	frei 
+2017-02-06 Montag	2:30-10:36 
+2017-02-07 Dienstag	2:30-10:36 
+2017-02-08 Mittwoch	2:30-10:36 
+2017-02-09 Donnerstag	2:30-10:36 
+2017-02-10 Freitag	2:00-10:06 
+2017-02-11 Samstag	Libero 
+
+korfu Linie Leiter: 2 Linie: 2 
+2017-02-05 Sonntag	frei 
+2017-02-06 Montag	2:30-10:36 
+2017-02-07 Dienstag	2:30-10:36 
+2017-02-08 Mittwoch	2:30-10:36 
+2017-02-09 Donnerstag	2:30-10:36 
+2017-02-10 Freitag	2:00-10:06 
+2017-02-11 Samstag	Libero 
+
+Gurbuz_H Linie Leiter: 0 Linie: 2 
+2017-02-05 Sonntag	frei 
+2017-02-06 Montag	2:30-10:36 
+2017-02-07 Dienstag	2:30-10:36 
+2017-02-08 Mittwoch	2:30-10:36 
+2017-02-09 Donnerstag	2:30-10:36 
+2017-02-10 Freitag	2:00-10:06 
+2017-02-11 Samstag	Libero 
+
+Andreas Linie Leiter: 0 Linie: 2 
+2017-02-05 Sonntag	frei 
+2017-02-06 Montag	2:30-10:36 
+2017-02-07 Dienstag	2:30-10:36 
+2017-02-08 Mittwoch	2:30-10:36 
+2017-02-09 Donnerstag	2:30-10:36 
+2017-02-10 Freitag	2:00-10:06 
+2017-02-11 Samstag	Libero 
+
+Glaskov Linie Leiter: 0 Linie: 2 
+2017-02-05 Sonntag	frei 
+2017-02-06 Montag	2:30-10:36 
+2017-02-07 Dienstag	2:30-10:36 
+2017-02-08 Mittwoch	2:30-10:36 
+2017-02-09 Donnerstag	2:30-10:36 
+2017-02-10 Freitag	2:00-10:06 
+2017-02-11 Samstag	Libero 
+
+HusseinDemir Linie Leiter: 0 Linie: 2 
+2017-02-05 Sonntag	frei 
+2017-02-06 Montag	2:30-10:36 
+2017-02-07 Dienstag	2:30-10:36 
+2017-02-08 Mittwoch	2:30-10:36 
+2017-02-09 Donnerstag	2:30-10:36 
+2017-02-10 Freitag	2:00-10:06 
+2017-02-11 Samstag	Libero 
+
+Akille Linie Leiter: 0 Linie: 2 
+2017-02-05 Sonntag	frei 
+2017-02-06 Montag	2:30-10:36 
+2017-02-07 Dienstag	2:30-10:36 
+2017-02-08 Mittwoch	2:30-10:36 
+2017-02-09 Donnerstag	2:30-10:36 
+2017-02-10 Freitag	2:00-10:06 
+2017-02-11 Samstag	Libero 
+
+Musa Linie Leiter: 0 Linie: 2 
+2017-02-05 Sonntag	frei 
+2017-02-06 Montag	2:30-10:36 
+2017-02-07 Dienstag	2:30-10:36 
+2017-02-08 Mittwoch	2:30-10:36 
+2017-02-09 Donnerstag	2:30-10:36 
+2017-02-10 Freitag	2:00-10:06 
+2017-02-11 Samstag	Libero 
+
+Termin Linie Leiter: 1 Linie: 1 
+2017-02-05 Sonntag	16:30-00:36 
+2017-02-06 Montag	16:30-00:36 
+2017-02-07 Dienstag	frei 
+2017-02-08 Mittwoch	16:30-00:36 
+2017-02-09 Donnerstag	16:30-00:36 
+2017-02-10 Freitag	15:00-23:06 
+2017-02-11 Samstag	Libero 
+
+Gurbuz Linie Leiter: 1 Linie: 1 
+2017-02-05 Sonntag	16:30-00:36 
+2017-02-06 Montag	frei 
+2017-02-07 Dienstag	16:30-00:36 
+2017-02-08 Mittwoch	16:30-00:36 
+2017-02-09 Donnerstag	16:30-00:36 
+2017-02-10 Freitag	15:00-23:06 
+2017-02-11 Samstag	Libero 
+
+Balicos Linie Leiter: 0 Linie: 1 
+2017-02-05 Sonntag	frei 
+2017-02-06 Montag	16:30-00:36 
+2017-02-07 Dienstag	16:30-00:36 
+2017-02-08 Mittwoch	16:30-00:36 
+2017-02-09 Donnerstag	16:30-00:36 
+2017-02-10 Freitag	18:00-2:06 
+2017-02-11 Samstag	Libero 
+
+Weber Linie Leiter: 0 Linie: 1 
+2017-02-05 Sonntag	16:30-00:36 
+2017-02-06 Montag	16:30-00:36 
+2017-02-07 Dienstag	16:30-00:36 
+2017-02-08 Mittwoch	frei 
+2017-02-09 Donnerstag	16:30-00:36 
+2017-02-10 Freitag	15:00-23:06 
+2017-02-11 Samstag	Libero 
+
+Gruner Linie Leiter: 2 Linie: 2 
 2017-02-05 Sonntag	frei 
 2017-02-06 Montag	16:30-00:36 
 2017-02-07 Dienstag	16:30-00:36 
@@ -44,25 +161,7 @@ Muzaqi Linie Leiter: 2 Linie: 2
 2017-02-10 Freitag	15:00-23:06 
 2017-02-11 Samstag	Libero 
 
-Schikenberg Linie Leiter: 2 Linie: 2 
-2017-02-05 Sonntag	frei 
-2017-02-06 Montag	2:30-10:36 
-2017-02-07 Dienstag	2:30-10:36 
-2017-02-08 Mittwoch	2:30-10:36 
-2017-02-09 Donnerstag	2:30-10:36 
-2017-02-10 Freitag	2:00-10:06 
-2017-02-11 Samstag	Libero 
-
-Balicos Linie Leiter: 0 Linie: 1 
-2017-02-05 Sonntag	16:30-00:36 
-2017-02-06 Montag	16:30-00:36 
-2017-02-07 Dienstag	16:30-00:36 
-2017-02-08 Mittwoch	frei 
-2017-02-09 Donnerstag	16:30-00:36 
-2017-02-10 Freitag	15:00-23:06 
-2017-02-11 Samstag	Libero 
-
-Swabool Linie Leiter: 0 Linie: 1 
+Swabool Linie Leiter: 0 Linie: 2 
 2017-02-05 Sonntag	frei 
 2017-02-06 Montag	16:30-00:36 
 2017-02-07 Dienstag	16:30-00:36 
@@ -71,7 +170,7 @@ Swabool Linie Leiter: 0 Linie: 1
 2017-02-10 Freitag	18:00-2:06 
 2017-02-11 Samstag	Libero 
 
-Termin Linie Leiter: 0 Linie: 2 
+Bigol Linie Leiter: 0 Linie: 2 
 2017-02-05 Sonntag	16:30-00:36 
 2017-02-06 Montag	frei 
 2017-02-07 Dienstag	16:30-00:36 
@@ -81,6 +180,15 @@ Termin Linie Leiter: 0 Linie: 2
 2017-02-11 Samstag	Libero 
 
 Caputo Linie Leiter: 0 Linie: 2 
+2017-02-05 Sonntag	frei 
+2017-02-06 Montag	16:30-00:36 
+2017-02-07 Dienstag	16:30-00:36 
+2017-02-08 Mittwoch	16:30-00:36 
+2017-02-09 Donnerstag	16:30-00:36 
+2017-02-10 Freitag	18:00-2:06 
+2017-02-11 Samstag	Libero 
+
+Herbele Linie Leiter: 0 Linie: 2 
 2017-02-05 Sonntag	frei 
 2017-02-06 Montag	16:30-00:36 
 2017-02-07 Dienstag	16:30-00:36 

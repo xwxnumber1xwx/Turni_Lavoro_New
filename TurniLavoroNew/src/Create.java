@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Create {
@@ -31,5 +33,26 @@ public class Create {
 		scan.nextLine();
 		String nomeFile = (dipendente.getCognome() + ".dbs");
 		save.ExportObjectToFile("database", nomeFile, dipendente);
+	}
+	
+	public static int setWeekToElaborate(int inputWeek, IOFile save, LocalDate date) {
+		do {
+			Scanner scan = new Scanner (System.in);
+			System.out.print("Welche kalenderWoche wollen Sie?" + "\n");
+			inputWeek = scan.nextInt();
+			// guardare se la KW e´gia presente 
+			String directory = "turni_" + date.getYear();
+			boolean weekAlredyExist = save.checkWeek(inputWeek, directory);
+			if (weekAlredyExist == true) {
+				System.out.println("This week Alredy Exist");
+				inputWeek = 100;
+			} else {
+				if (inputWeek < 1 || inputWeek > 53) {
+					System.out.print("week's number is not correct" + "\n");
+				}
+			}
+		} while (inputWeek < 1 || inputWeek > 53);
+		
+		return inputWeek;
 	}
 }

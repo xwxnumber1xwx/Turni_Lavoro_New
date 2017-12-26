@@ -39,7 +39,7 @@ public class IOFile {
 			//TextStyle stileNorm = TextStyle.FULL;
 			//Locale deutsch = Locale.GERMAN;
 			writer.write(date.toString());
-			date.plusDays(7);
+			date = date.plusDays(7);
 			writer.write("<--->");
 			writer.write(date.toString());
 			writer.newLine();
@@ -102,7 +102,7 @@ public class IOFile {
 		return yn;
 	}
 	
-	
+	/*
 	public boolean ExportShift(String directoryEXT, String nomeFile, Dipendente dipendente, LocalDate date) {
 	boolean yn = false;
 	Charset charset = Charset.forName("UTF-8");
@@ -138,6 +138,7 @@ public class IOFile {
 	}
 	return yn;
 	}
+	*/
 	
 	public boolean ExportShiftLT(String directoryEXT, String nomeFile, Dipendente dipendente, LocalDate date) {
 		DayOfWeek dayWeek = DayOfWeek.from(date);
@@ -164,9 +165,10 @@ public class IOFile {
 		}
 		try (BufferedWriter writer = Files.newBufferedWriter(path, charset, APPEND)) {
 			String fileToSave = "";
+			int plusMinutes = Integer.parseInt(Preferenze.getOnePreference("HOW_MANY_MINUTES_TO_WORK"));
 			for (int x = 0; x < 7; x++) {
 				if (dipendente.giornoLibero != x & x != 6) {
-					fileToSave = dipendente.getTime(x).toLocalDate().toString() + " " +  dayWeek.getDisplayName(stileNorm, deutsch).toString().toLowerCase() + " " + dipendente.getTime(x).toLocalTime().toString() + "-"+ dipendente.getTime(x).plusHours(8).plusMinutes(6).toLocalTime();
+					fileToSave = dipendente.getTime(x).toLocalDate().toString() + " " +  dayWeek.getDisplayName(stileNorm, deutsch).toString().toLowerCase() + " " + dipendente.getTime(x).toLocalTime().toString() + "-"+ dipendente.getTime(x).plusMinutes(plusMinutes).toLocalTime();
 				} else {
 					fileToSave = dipendente.getTime(x).toLocalDate().toString() + " " + dayWeek.getDisplayName(stileNorm, deutsch).toString().toLowerCase() + " " + "frei";
 				}

@@ -1,4 +1,4 @@
-2017-03-26<--->2017-03-26
+2017-03-26<--->2017-04-02
 Unser Linie Leiter: 1 Linie: 1 
 2017-03-26 Sonntag	frei 
 2017-03-27 Montag	2:30-10:36 
@@ -17,7 +17,7 @@ Sitter Linie Leiter: 1 Linie: 1
 2017-03-31 Freitag	2:00-10:06 
 2017-04-01 Samstag	Libero 
 
-Gurbuz Linie Leiter: 0 Linie: 1 
+Plana Linie Leiter: 0 Linie: 1 
 2017-03-26 Sonntag	frei 
 2017-03-27 Montag	2:30-10:36 
 2017-03-28 Dienstag	2:30-10:36 
@@ -26,7 +26,7 @@ Gurbuz Linie Leiter: 0 Linie: 1
 2017-03-31 Freitag	2:00-10:06 
 2017-04-01 Samstag	Libero 
 
-Balicos Linie Leiter: 0 Linie: 1 
+Gurbuz Linie Leiter: 0 Linie: 1 
 2017-03-26 Sonntag	frei 
 2017-03-27 Montag	2:30-10:36 
 2017-03-28 Dienstag	2:30-10:36 
@@ -53,7 +53,7 @@ korfu Linie Leiter: 2 Linie: 2
 2017-03-31 Freitag	2:00-10:06 
 2017-04-01 Samstag	Libero 
 
-Swabool Linie Leiter: 0 Linie: 2 
+Balicos Linie Leiter: 0 Linie: 2 
 2017-03-26 Sonntag	frei 
 2017-03-27 Montag	2:30-10:36 
 2017-03-28 Dienstag	2:30-10:36 
@@ -62,7 +62,25 @@ Swabool Linie Leiter: 0 Linie: 2
 2017-03-31 Freitag	2:00-10:06 
 2017-04-01 Samstag	Libero 
 
-Termin Linie Leiter: 0 Linie: 2 
+Gruner Linie Leiter: 0 Linie: 2 
+2017-03-26 Sonntag	frei 
+2017-03-27 Montag	2:30-10:36 
+2017-03-28 Dienstag	2:30-10:36 
+2017-03-29 Mittwoch	2:30-10:36 
+2017-03-30 Donnerstag	2:30-10:36 
+2017-03-31 Freitag	2:00-10:06 
+2017-04-01 Samstag	Libero 
+
+Hussein Linie Leiter: 0 Linie: 2 
+2017-03-26 Sonntag	frei 
+2017-03-27 Montag	2:30-10:36 
+2017-03-28 Dienstag	2:30-10:36 
+2017-03-29 Mittwoch	2:30-10:36 
+2017-03-30 Donnerstag	2:30-10:36 
+2017-03-31 Freitag	2:00-10:06 
+2017-04-01 Samstag	Libero 
+
+Caputo Linie Leiter: 0 Linie: 2 
 2017-03-26 Sonntag	frei 
 2017-03-27 Montag	2:30-10:36 
 2017-03-28 Dienstag	2:30-10:36 
@@ -80,7 +98,7 @@ Herbele Linie Leiter: 0 Linie: 2
 2017-03-31 Freitag	2:00-10:06 
 2017-04-01 Samstag	Libero 
 
-Caputo Linie Leiter: 0 Linie: 2 
+Musa Linie Leiter: 0 Linie: 2 
 2017-03-26 Sonntag	frei 
 2017-03-27 Montag	2:30-10:36 
 2017-03-28 Dienstag	2:30-10:36 
@@ -98,7 +116,7 @@ Akille Linie Leiter: 1 Linie: 1
 2017-03-31 Freitag	15:00-23:06 
 2017-04-01 Samstag	Libero 
 
-Andreas Linie Leiter: 1 Linie: 1 
+Termin Linie Leiter: 1 Linie: 1 
 2017-03-26 Sonntag	frei 
 2017-03-27 Montag	16:30-00:36 
 2017-03-28 Dienstag	16:30-00:36 
@@ -107,7 +125,7 @@ Andreas Linie Leiter: 1 Linie: 1
 2017-03-31 Freitag	18:00-2:06 
 2017-04-01 Samstag	Libero 
 
-HusseinDemir Linie Leiter: 0 Linie: 1 
+Swabool Linie Leiter: 0 Linie: 1 
 2017-03-26 Sonntag	frei 
 2017-03-27 Montag	16:30-00:36 
 2017-03-28 Dienstag	16:30-00:36 
@@ -116,7 +134,7 @@ HusseinDemir Linie Leiter: 0 Linie: 1
 2017-03-31 Freitag	18:00-2:06 
 2017-04-01 Samstag	Libero 
 
-Hussein Linie Leiter: 0 Linie: 1 
+Bigol Linie Leiter: 0 Linie: 1 
 2017-03-26 Sonntag	16:30-00:36 
 2017-03-27 Montag	frei 
 2017-03-28 Dienstag	16:30-00:36 
@@ -126,20 +144,20 @@ Hussein Linie Leiter: 0 Linie: 1
 2017-04-01 Samstag	Libero 
 
 Glaskov Linie Leiter: 2 Linie: 2 
-2017-03-26 Sonntag	frei 
-2017-03-27 Montag	16:30-00:36 
-2017-03-28 Dienstag	16:30-00:36 
-2017-03-29 Mittwoch	16:30-00:36 
-2017-03-30 Donnerstag	16:30-00:36 
-2017-03-31 Freitag	18:00-2:06 
-2017-04-01 Samstag	Libero 
-
-Gruner Linie Leiter: 2 Linie: 2 
 2017-03-26 Sonntag	16:30-00:36 
 2017-03-27 Montag	16:30-00:36 
 2017-03-28 Dienstag	16:30-00:36 
 2017-03-29 Mittwoch	frei 
 2017-03-30 Donnerstag	16:30-00:36 
+2017-03-31 Freitag	15:00-23:06 
+2017-04-01 Samstag	Libero 
+
+Muzaqi Linie Leiter: 2 Linie: 2 
+2017-03-26 Sonntag	16:30-00:36 
+2017-03-27 Montag	16:30-00:36 
+2017-03-28 Dienstag	16:30-00:36 
+2017-03-29 Mittwoch	16:30-00:36 
+2017-03-30 Donnerstag	frei 
 2017-03-31 Freitag	15:00-23:06 
 2017-04-01 Samstag	Libero 
 
@@ -152,7 +170,16 @@ Weber Linie Leiter: 0 Linie: 2
 2017-03-31 Freitag	15:00-23:06 
 2017-04-01 Samstag	Libero 
 
-Gurbuz_H Linie Leiter: 0 Linie: 2 
+Andreas Linie Leiter: 0 Linie: 2 
+2017-03-26 Sonntag	frei 
+2017-03-27 Montag	16:30-00:36 
+2017-03-28 Dienstag	16:30-00:36 
+2017-03-29 Mittwoch	16:30-00:36 
+2017-03-30 Donnerstag	16:30-00:36 
+2017-03-31 Freitag	18:00-2:06 
+2017-04-01 Samstag	Libero 
+
+HusseinDemir Linie Leiter: 0 Linie: 2 
 2017-03-26 Sonntag	16:30-00:36 
 2017-03-27 Montag	frei 
 2017-03-28 Dienstag	16:30-00:36 
@@ -161,21 +188,12 @@ Gurbuz_H Linie Leiter: 0 Linie: 2
 2017-03-31 Freitag	15:00-23:06 
 2017-04-01 Samstag	Libero 
 
-Bigol Linie Leiter: 0 Linie: 2 
+Gurbuz_H Linie Leiter: 0 Linie: 2 
 2017-03-26 Sonntag	16:30-00:36 
 2017-03-27 Montag	16:30-00:36 
 2017-03-28 Dienstag	16:30-00:36 
-2017-03-29 Mittwoch	frei 
-2017-03-30 Donnerstag	16:30-00:36 
-2017-03-31 Freitag	15:00-23:06 
-2017-04-01 Samstag	Libero 
-
-Plana Linie Leiter: 0 Linie: 2 
-2017-03-26 Sonntag	16:30-00:36 
-2017-03-27 Montag	frei 
-2017-03-28 Dienstag	16:30-00:36 
 2017-03-29 Mittwoch	16:30-00:36 
-2017-03-30 Donnerstag	16:30-00:36 
+2017-03-30 Donnerstag	frei 
 2017-03-31 Freitag	15:00-23:06 
 2017-04-01 Samstag	Libero 
 

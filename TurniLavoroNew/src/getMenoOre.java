@@ -1,3 +1,4 @@
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -149,16 +150,16 @@ public class getMenoOre {
 					}
 				}
 			}
-			for (int x = 0; x < dipendenti.size(); x++) {
+			int size = dipendenti.size();
+			for (int x = 0; x < size; x++) {
 				Dipendente dip2 = dipendenti.get(x);
 				dip2.setLineaTurnoLeiter(0);
 				dip2.setLineaTurno(2);
 				dip2.setTagNacht(1); // Dato extra La mattina perche ha superato il numero massimo di persone di sera
 				ArrayLeiter.add(dip2);
-				dipendenti.remove(x);
 			}
 			
-			
+			dipendenti.clear();
 			
 			// ORDINAMENTO ARRAY
 			//LeiterL1TAG
@@ -167,7 +168,7 @@ public class getMenoOre {
 			ArrayList <Dipendente> L1Nacht = new ArrayList<Dipendente>();
 			ArrayList <Dipendente> L2Tag = new ArrayList<Dipendente>();
 			ArrayList <Dipendente> L2Nacht = new ArrayList<Dipendente>();
-			
+
 			for (int x = 0; x < ArrayLeiter.size(); x++) {
 				Dipendente dip = ArrayLeiter.get(x);
 				if (dip.getLineaTurnoLeiter() == 1) {
@@ -204,11 +205,11 @@ public class getMenoOre {
 			
 			for (int x = 0; x < dipendenti.size(); x++) {
 				Dipendente temp1 = dipendenti.get(x);
-				System.out.print(temp1.nome + " Linie Leiter: " + temp1.getLineaTurnoLeiter() +  " Linie: "  + temp1.getLineaTurno());
+				System.out.print(temp1.getCognome() + " Linie Leiter: " + temp1.getLineaTurnoLeiter() +  " Linie: "  + temp1.getLineaTurno());
 				if (temp1.getTagNacht() == 1) {
-					System.out.println("TAG");
+					System.out.println(" TAG");
 				} else  {
-					System.out.println("NACHT");
+					System.out.println(" NACHT");
 				}
 			}
 		return dipendenti;

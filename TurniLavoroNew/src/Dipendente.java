@@ -99,12 +99,19 @@ public class Dipendente implements Serializable {
 	public void setTotZuSchlag (Double TotZuSchlag) {
 		this.TotZuSchlag += TotZuSchlag;
 	}
+	public void initZuSchlag () {
+		this.TotZuSchlag = 0;
+		this.OreDomenica = 0;
+		this.OreFestivita = 0;
+		this.OreNotturne = 0;
+	}
+	
 	public void setOreNotturne(LocalTime OreNotturne) {
 	int OreNotturneInt = ((OreNotturne.getHour() * 60) + OreNotturne.getMinute());
-	this.OreNotturne += OreNotturneInt;
+	this.OreNotturne = OreNotturneInt;
 	double percentuale = (double)(Integer.parseInt(Preferenze.getOnePreference("ZUSCHLAG_NACHT")));
 	double setTotZuSchlag = 0D;
-	setTotZuSchlag += (percentuale/100)*OreNotturneInt;
+	setTotZuSchlag = (percentuale/100)*OreNotturneInt;
 	setTotZuSchlag(setTotZuSchlag);
 	}
 	public Double getOreNotturne() {
@@ -112,10 +119,10 @@ public class Dipendente implements Serializable {
 	}
 	public void setOreFestivita(LocalTime OreFestivita) {
 		int OreFestivitaInt = ((OreFestivita.getHour() * 60) + OreFestivita.getMinute());
-		this.OreFestivita += OreFestivitaInt;
+		this.OreFestivita = OreFestivitaInt;
 		double percentuale = (double)(Integer.parseInt(Preferenze.getOnePreference("ZUSCHLAG_FEIERTAG")));
 		double setTotZuSchlag = 0D;
-			setTotZuSchlag += (percentuale/100)*OreFestivitaInt;
+			setTotZuSchlag = (percentuale/100)*OreFestivitaInt;
 		setTotZuSchlag(setTotZuSchlag);
 	}
 	public double getOreFestivita() {
@@ -123,7 +130,7 @@ public class Dipendente implements Serializable {
 	}
 	public void setOreDomenica(LocalTime OreDomenica) {
 		int OreDomenicaInt = ((OreDomenica.getHour() * 60) + OreDomenica.getMinute());
-		this.OreDomenica += OreDomenicaInt;
+		this.OreDomenica = OreDomenicaInt;
 		double percentuale = (double)(Integer.parseInt(Preferenze.getOnePreference("ZUSCHLAG_SONNTAG")));
 		double setTotZuSchlag = 0D;
 		setTotZuSchlag = (percentuale/100)*OreDomenicaInt;

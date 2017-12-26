@@ -38,8 +38,7 @@ public class Preferenze {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		proprieties.setProperty("TAG_Y_N", "Y");
-		proprieties.setProperty("NACHT_Y_N", "Y");
+		proprieties.setProperty("HOW_MANY_MINUTES_TO_WORK", "486");
 		proprieties.setProperty("TAG_MIN_MITARBEITER", "3");
 		proprieties.setProperty("NACHT_MIN_MITARBEITER", "6");
 		proprieties.setProperty("NUM_MITARBEITER_LINEE1_NACHT", "2");

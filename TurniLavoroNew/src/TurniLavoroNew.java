@@ -1,9 +1,19 @@
 /* 
- * Lo scopo di questo programma Ã¨ generare turni di lavoro din una zienda specifica, avente 2 turni con ogni turno 2 linee di lavoro
- * il programma deve tenere conto che tutti i lavoratori (tranne per scelta personale) dovranno alternare i turni tra mattina e sera in base
- * alla tariffa extra notturna guadagnata nel tempo, in modo che tutti i dipendenti abbiano guadagnato piu o meno le sesse ore notturne in modo totalmente automatico.
- * il programma inoltre salvera i turni su un foglio di calcolo. Se i turni sul foglio di calcolo vengono cambiati. allora il programma riconoscerÃ  il cambiamento
- * e aggiungerÃ  o sottrarrÃ  la tariffa notturna lavorata e non.
+ * Lo scopo di questo programma è generare turni di lavoro di una azienda specifica, avente due turni (mattina e sera) e con ogni turno 2 linee di lavoro (Linea 1 e Linea 2)
+ * il programma deve tenere conto che tutti i lavoratori dovranno alternare i turni tra mattina e sera (tranne per scelta personale in caso il Dipendente voglia lavorare solo di mattina) in base
+ * alla tariffa notturna guadagnata nel tempo, in modo che tutti i dipendenti abbiano guadagnato piu o meno le sesse ore notturne e festive in modo totalmente automatico.
+ * il programma terrà conto che ogni Linea abbia bisogno di due capo-macchina/capo-Linea e dei lavoratori a sulla stessa linea. Ogni lavoratore Lavorerà su una Linea o meno in base alle proprie
+ * capacità e sarà capo-macchina solo se avrà la capacità nel farlo.
+ * inoltre il programma salvera su file:
+ * - i turni personali di ogni Dipendente su un foglio .txt nella cartella Shift_mitarbeiter_LD. 
+ * - i turni di tutti i Dipendenti diviso in più file .txt avente come nome il numero delle settimane dell'anno.
+ * - i giorni liberi futuri richiesti esplecitamente dal dipendente. I files sono sotto la cartella frei_als_wunch e ogni file ha il nome del dipendente. I giorni liberi a richiesta  possono essere 
+ * 			aggiunti direttamente sul file .txt. Il programma leggerà il file e ne terrà conto.
+ * 
+ * FUTURI AGGIORNAMENTI:
+ * funzione per la gestione delle ferie
+ * funzione per la gestione delle malattie
+ * funzione per Lavorare una settimana di mattina o sera su richiesta
  */
 import java.io.IOException;
 import java.time.DayOfWeek;
@@ -23,7 +33,7 @@ class TurniLavoroNew {
 				}
 				ArrayList <Dipendente> dipendenteArrayList = new ArrayList<Dipendente>();
 				int Nacht = 0;
-				int[] DoVe = new int[4];
+				int[] DoVe = new int[5];
 				int NumMitarbeiterLinee = 1;
 				int minNacht = Integer.parseInt(Preferenze.getOnePreference("NACHT_MIN_MITARBEITER"));
 				int NumMitarbeiterNachtL1 = Integer.parseInt(Preferenze.getOnePreference("NUM_MITARBEITER_LINEE1_NACHT"));
@@ -43,60 +53,19 @@ class TurniLavoroNew {
 					}
 				} while (yn == 1);
 				
-				//Carico i Dipendenti dal Database
+				//Carico i Dipendenti dal "Database"
 				dipendenteArrayList = save.ImportObjectFromFile("database");
 				System.out.println("volete aggiungere un giorno libero ad un dipendente? 1 si, 2 no");
 				int z = scan.nextInt();
+				
 				if (z == 1) {
-					boolean finded = false;
-					do {
-						System.out.println("inserire cognome dipendente");
-						String surname = scan.nextLine();
-						surname = scan.nextLine();
-							Dipendente dipendente;
-							for (int x=0; x < dipendenteArrayList.size(); x++) {
-								dipendente = dipendenteArrayList.get(x);
-								String cognome = dipendente.getCognome().toLowerCase();
-								if (cognome.compareTo(surname.toLowerCase()) == 0) {
-										finded = true;
-									System.out.println(dipendente.getCognome() + " quale Giorno Libero? DDMMYY per giorno libero, 1 per uscire");
-										long free = scan.nextLong();
-										if (free != 1) {
-												int DD = (int) (free/10000);
-												int MM = (int) (free - (DD*10000));
-												MM = MM /100;
-												int YY = (int) (free - (DD*10000) - (MM*100) + (2000));
-												LocalDate freeDay = LocalDate.of(YY, MM, DD);
-												save.freeday(dipendente, freeDay, "frei_als_wunch");
-												
-										}
-								}
-							}
-							if (finded == false) {
-								System.out.println("dipendente non trovato");
-						}
-					} while (finded == false);
+					FreeDay.addFreeDay(dipendenteArrayList, save);
+					
 				}
 		
-				
+				//
 				// chooses which week the program should process
-				do {
-					//Scanner scan = new Scanner (System.in);
-					System.out.print("Welche kalenderWoche wollen Sie?" + "\n");
-					inputWeek = scan.nextInt();
-					// guardare se la KW eÂ´gia presente 
-					String directory = "turni_" + date.getYear();
-					boolean weekAlredyExist = save.checkWeek(inputWeek, directory);
-					if (weekAlredyExist == true) {
-						System.out.println("This week Alredy Exist");
-						inputWeek = 100;
-					} else {
-						if (inputWeek < 1 || inputWeek > 53) {
-							System.out.print("weekÂ´s number is not correct" + "\n");
-						}
-					}
-				} while (inputWeek < 1 || inputWeek > 53);
-				
+				inputWeek = Create.setWeekToElaborate(inputWeek, save, date);
 				inputWeek -= 1;
 				date = date.plusWeeks(inputWeek);
 				ArrayList <String> turniWeek = new ArrayList<String>();
@@ -108,8 +77,12 @@ class TurniLavoroNew {
 				//CHOICE WHO WORKS IN THE MORNING OR IN THE EVENING
 					for (int x = 0 ; x < dipendenteArrayList.size(); x++) {
 					Dipendente dipendente = dipendenteArrayList.get(x);
+					
+					if (inputWeek == 0) {
+						dipendente.initZuSchlag();
+					}
 
-					// Mattina o sera
+					// Morning or Evening
 					if (dipendente.getSoloMattina() == true) {
 						if (dipendente.getLineaLavoro() == 1 || dipendente.getLineaLavoro() == 3) {
 							dipendente.setLineaTurno(1);
@@ -212,14 +185,10 @@ class TurniLavoroNew {
 					dipendente.setWeekShift(turnoDipendente);
 					System.out.println("\n");
 					nomeFile = (dipendente.getCognome() + ".txt");
-					//DEPRECATED
-					//directory = "Shift_mitarbeiter";
-					//save.ExportShift(directory, nomeFile, dipendente, date);
 					directory = "Shift_mitarbeiter_LD";
 					save.ExportShiftLT(directory, nomeFile, dipendente, date);
 					directory = "turni_" + date.getYear();
 					save.ExportTurniDiTutti(directory, String.valueOf(inputWeek+1) + ".txt", turniWeek.get(x));
-					//List<String> saved = save.ImportFile(directory, nomeFile);
 					nomeFile = (dipendente.getCognome() + ".dbs");
 					save.ExportObjectToFile("database", nomeFile, dipendente);
 				}
