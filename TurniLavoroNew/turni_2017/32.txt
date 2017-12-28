@@ -1,0 +1,199 @@
+2017-08-06<--->2017-08-13
+Unser Linie Leiter: 1 Linie: 1 
+2017-08-06 Sonntag	frei 
+2017-08-07 Montag	2:30-10:36 
+2017-08-08 Dienstag	2:30-10:36 
+2017-08-09 Mittwoch	2:30-10:36 
+2017-08-10 Donnerstag	2:30-10:36 
+2017-08-11 Freitag	2:00-10:06 
+2017-08-12 Samstag	Libero 
+
+Sitter Linie Leiter: 1 Linie: 1 
+2017-08-06 Sonntag	frei 
+2017-08-07 Montag	2:30-10:36 
+2017-08-08 Dienstag	2:30-10:36 
+2017-08-09 Mittwoch	2:30-10:36 
+2017-08-10 Donnerstag	2:30-10:36 
+2017-08-11 Freitag	2:00-10:06 
+2017-08-12 Samstag	Libero 
+
+Weber Linie Leiter: 0 Linie: 1 
+2017-08-06 Sonntag	Libero 
+2017-08-07 Montag	2:30-10:36 
+2017-08-08 Dienstag	2:30-10:36 
+2017-08-09 Mittwoch	2:30-10:36 
+2017-08-10 Donnerstag	frei 
+2017-08-11 Freitag	2:00-10:06 
+2017-08-12 Samstag	Libero 
+
+Andreas Linie Leiter: 0 Linie: 1 
+2017-08-06 Sonntag	Libero 
+2017-08-07 Montag	2:30-10:36 
+2017-08-08 Dienstag	2:30-10:36 
+2017-08-09 Mittwoch	frei 
+2017-08-10 Donnerstag	2:30-10:36 
+2017-08-11 Freitag	2:00-10:06 
+2017-08-12 Samstag	Libero 
+
+Schikenberg Linie Leiter: 2 Linie: 2 
+2017-08-06 Sonntag	frei 
+2017-08-07 Montag	2:30-10:36 
+2017-08-08 Dienstag	2:30-10:36 
+2017-08-09 Mittwoch	2:30-10:36 
+2017-08-10 Donnerstag	2:30-10:36 
+2017-08-11 Freitag	2:00-10:06 
+2017-08-12 Samstag	Libero 
+
+korfu Linie Leiter: 2 Linie: 2 
+2017-08-06 Sonntag	frei 
+2017-08-07 Montag	2:30-10:36 
+2017-08-08 Dienstag	2:30-10:36 
+2017-08-09 Mittwoch	2:30-10:36 
+2017-08-10 Donnerstag	2:30-10:36 
+2017-08-11 Freitag	2:00-10:06 
+2017-08-12 Samstag	Libero 
+
+Gurbuz_H Linie Leiter: 0 Linie: 2 
+2017-08-06 Sonntag	Libero 
+2017-08-07 Montag	2:30-10:36 
+2017-08-08 Dienstag	frei 
+2017-08-09 Mittwoch	2:30-10:36 
+2017-08-10 Donnerstag	2:30-10:36 
+2017-08-11 Freitag	2:00-10:06 
+2017-08-12 Samstag	Libero 
+
+Bigol Linie Leiter: 0 Linie: 2 
+2017-08-06 Sonntag	Libero 
+2017-08-07 Montag	2:30-10:36 
+2017-08-08 Dienstag	frei 
+2017-08-09 Mittwoch	2:30-10:36 
+2017-08-10 Donnerstag	2:30-10:36 
+2017-08-11 Freitag	2:00-10:06 
+2017-08-12 Samstag	Libero 
+
+Termin Linie Leiter: 0 Linie: 2 
+2017-08-06 Sonntag	frei 
+2017-08-07 Montag	2:30-10:36 
+2017-08-08 Dienstag	2:30-10:36 
+2017-08-09 Mittwoch	2:30-10:36 
+2017-08-10 Donnerstag	2:30-10:36 
+2017-08-11 Freitag	2:00-10:06 
+2017-08-12 Samstag	Libero 
+
+Akille Linie Leiter: 0 Linie: 2 
+2017-08-06 Sonntag	Libero 
+2017-08-07 Montag	2:30-10:36 
+2017-08-08 Dienstag	2:30-10:36 
+2017-08-09 Mittwoch	2:30-10:36 
+2017-08-10 Donnerstag	frei 
+2017-08-11 Freitag	2:00-10:06 
+2017-08-12 Samstag	Libero 
+
+Gurbuz Linie Leiter: 0 Linie: 2 
+2017-08-06 Sonntag	Libero 
+2017-08-07 Montag	2:30-10:36 
+2017-08-08 Dienstag	2:30-10:36 
+2017-08-09 Mittwoch	frei 
+2017-08-10 Donnerstag	2:30-10:36 
+2017-08-11 Freitag	2:00-10:06 
+2017-08-12 Samstag	Libero 
+
+Muzaqi Linie Leiter: 0 Linie: 2 
+2017-08-06 Sonntag	Libero 
+2017-08-07 Montag	frei 
+2017-08-08 Dienstag	2:30-10:36 
+2017-08-09 Mittwoch	2:30-10:36 
+2017-08-10 Donnerstag	2:30-10:36 
+2017-08-11 Freitag	2:00-10:06 
+2017-08-12 Samstag	Libero 
+
+Herbele Linie Leiter: 0 Linie: 2 
+2017-08-06 Sonntag	frei 
+2017-08-07 Montag	2:30-10:36 
+2017-08-08 Dienstag	2:30-10:36 
+2017-08-09 Mittwoch	2:30-10:36 
+2017-08-10 Donnerstag	2:30-10:36 
+2017-08-11 Freitag	2:00-10:06 
+2017-08-12 Samstag	Libero 
+
+Caputo Linie Leiter: 0 Linie: 2 
+2017-08-06 Sonntag	frei 
+2017-08-07 Montag	2:30-10:36 
+2017-08-08 Dienstag	2:30-10:36 
+2017-08-09 Mittwoch	2:30-10:36 
+2017-08-10 Donnerstag	2:30-10:36 
+2017-08-11 Freitag	2:00-10:06 
+2017-08-12 Samstag	Libero 
+
+Balicos Linie Leiter: 0 Linie: 1 
+2017-08-06 Sonntag	16:30-00:36 
+2017-08-07 Montag	16:30-00:36 
+2017-08-08 Dienstag	16:30-00:36 
+2017-08-09 Mittwoch	16:30-00:36 
+2017-08-10 Donnerstag	frei 
+2017-08-11 Freitag	15:00-23:06 
+2017-08-12 Samstag	Libero 
+
+HusseinDemir Linie Leiter: 0 Linie: 1 
+2017-08-06 Sonntag	16:30-00:36 
+2017-08-07 Montag	16:30-00:36 
+2017-08-08 Dienstag	16:30-00:36 
+2017-08-09 Mittwoch	frei 
+2017-08-10 Donnerstag	16:30-00:36 
+2017-08-11 Freitag	15:00-23:06 
+2017-08-12 Samstag	Libero 
+
+Gruner Linie Leiter: 2 Linie: 2 
+2017-08-06 Sonntag	16:30-00:36 
+2017-08-07 Montag	16:30-00:36 
+2017-08-08 Dienstag	16:30-00:36 
+2017-08-09 Mittwoch	frei 
+2017-08-10 Donnerstag	16:30-00:36 
+2017-08-11 Freitag	15:00-23:06 
+2017-08-12 Samstag	Libero 
+
+Glaskov Linie Leiter: 2 Linie: 2 
+2017-08-06 Sonntag	frei 
+2017-08-07 Montag	16:30-00:36 
+2017-08-08 Dienstag	16:30-00:36 
+2017-08-09 Mittwoch	16:30-00:36 
+2017-08-10 Donnerstag	16:30-00:36 
+2017-08-11 Freitag	18:00-2:06 
+2017-08-12 Samstag	Libero 
+
+Hussein Linie Leiter: 0 Linie: 2 
+2017-08-06 Sonntag	16:30-00:36 
+2017-08-07 Montag	16:30-00:36 
+2017-08-08 Dienstag	frei 
+2017-08-09 Mittwoch	16:30-00:36 
+2017-08-10 Donnerstag	16:30-00:36 
+2017-08-11 Freitag	15:00-23:06 
+2017-08-12 Samstag	Libero 
+
+Swabool Linie Leiter: 0 Linie: 2 
+2017-08-06 Sonntag	16:30-00:36 
+2017-08-07 Montag	frei 
+2017-08-08 Dienstag	16:30-00:36 
+2017-08-09 Mittwoch	16:30-00:36 
+2017-08-10 Donnerstag	16:30-00:36 
+2017-08-11 Freitag	15:00-23:06 
+2017-08-12 Samstag	Libero 
+
+Plana Linie Leiter: 0 Linie: 2 
+2017-08-06 Sonntag	16:30-00:36 
+2017-08-07 Montag	frei 
+2017-08-08 Dienstag	16:30-00:36 
+2017-08-09 Mittwoch	16:30-00:36 
+2017-08-10 Donnerstag	16:30-00:36 
+2017-08-11 Freitag	15:00-23:06 
+2017-08-12 Samstag	Libero 
+
+Musa Linie Leiter: 0 Linie: 2 
+2017-08-06 Sonntag	16:30-00:36 
+2017-08-07 Montag	16:30-00:36 
+2017-08-08 Dienstag	16:30-00:36 
+2017-08-09 Mittwoch	16:30-00:36 
+2017-08-10 Donnerstag	frei 
+2017-08-11 Freitag	15:00-23:06 
+2017-08-12 Samstag	Libero 
+

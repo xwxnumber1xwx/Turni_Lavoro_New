@@ -32,6 +32,7 @@ public class SwitchTurni {
 		DayOfWeek dayWeek = DayOfWeek.SUNDAY;
 		
 		//implementare qualcosa se il Dipendente non ha giorni libero per quella settimana
+		System.out.println(dipendente.getNome() + " " + dipendente.getCognome());
 		for (x = 0; x < 7; x++) {
 			if (x == giornoLibero) {
 				turniLavoratoreArrayList.add(giornoLibero, "\n" + date + " " + sett.settimana[giornoLibero][0] + "\t" + "frei");

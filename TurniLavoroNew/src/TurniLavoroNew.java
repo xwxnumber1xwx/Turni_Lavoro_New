@@ -14,6 +14,12 @@
  * funzione per la gestione delle ferie
  * funzione per la gestione delle malattie
  * funzione per Lavorare una settimana di mattina o sera su richiesta
+ * 
+ * DA CORREGGERE: 
+ * - Giorno Libero in base alla linea di lavoro e non in generale
+ * - a volte chi ha la mattina riceve un giorno libero durante la settimana
+ * - Metodi max 100 righe
+ * 
  */
 import java.io.IOException;
 import java.time.DayOfWeek;
@@ -25,6 +31,8 @@ import java.util.Scanner;
 
 class TurniLavoroNew {
 	
+
+	
 	public static void main(String[] args)
 		throws IOException { //Sicurezza per eventuali errori di Input e Output
 				String path = "options.proprieties";
@@ -33,11 +41,12 @@ class TurniLavoroNew {
 				}
 				ArrayList <Dipendente> dipendenteArrayList = new ArrayList<Dipendente>();
 				int Nacht = 0;
-				int[] DoVe = new int[5];
+				//int[] DoVe = new int[5];
 				int NumMitarbeiterLinee = 1;
 				int minNacht = Integer.parseInt(Preferenze.getOnePreference("NACHT_MIN_MITARBEITER"));
 				int NumMitarbeiterNachtL1 = Integer.parseInt(Preferenze.getOnePreference("NUM_MITARBEITER_LINEE1_NACHT"));
 				int NumMitarbeiterTagL1 = Integer.parseInt(Preferenze.getOnePreference("NUM_MITARBEITER_LINEE1_TAG"));
+				
 				//IMPUT KalenderWoche
 				LocalDate date = LocalDate.of(2017, 1, 1);
 				int inputWeek = 0;
@@ -75,7 +84,7 @@ class TurniLavoroNew {
 				dipendenteArrayList = getMenoOre.OrdinePerNottiArrayList(dipendenteArrayList);
 
 				//CHOICE WHO WORKS IN THE MORNING OR IN THE EVENING
-					for (int x = 0 ; x < dipendenteArrayList.size(); x++) {
+				for (int x = 0 ; x < dipendenteArrayList.size(); x++) {
 					Dipendente dipendente = dipendenteArrayList.get(x);
 					
 					if (inputWeek == 0) {
@@ -119,64 +128,18 @@ class TurniLavoroNew {
 						}
 					}
 						
-					// Giorno Libero
-					int giornoLibero = 0;
-					ArrayList <LocalDate> giornoLiberoArray = new ArrayList<LocalDate>();
-					LocalDate giornoLiberoLD = date;
-							giornoLiberoArray = save.checkFreeDay(dipendente, "frei_als_wunch");
-							if (giornoLiberoArray.size() != 0) { 
-								for (int y = 0; y < giornoLiberoArray.size(); y++)
-									if (giornoLiberoArray.get(y).isAfter(date) && giornoLiberoArray.get(y).isBefore(date.plusDays(7)) || giornoLiberoArray.get(y).isEqual(date)) {
-									//	for (int y = 0; y < giornoLiberoArray.size(); y++) {
-										dipendente.setFreeThisWeek(true);
-										giornoLiberoLD = giornoLiberoArray.get(y);
-										DayOfWeek DoW = DayOfWeek.from(giornoLiberoArray.get(y));
-										if (DoW == DayOfWeek.SUNDAY) {
-											giornoLibero = 0;
-											DoVe[0] ++;
-										} else if (DoW == DayOfWeek.MONDAY) {
-											giornoLibero = 1;
-											DoVe[1] ++;
-										} else if (DoW == DayOfWeek.TUESDAY) {
-											giornoLibero = 2;
-											DoVe[2] ++;
-										} else if (DoW == DayOfWeek.WEDNESDAY) {
-											giornoLibero = 3;
-											DoVe[3] ++;
-										} else if (DoW == DayOfWeek.THURSDAY) {
-											giornoLibero = 4;
-											DoVe[4] ++;
-										} else if (DoW == DayOfWeek.WEDNESDAY) {
-											giornoLibero = 5;
-										}
-										dipendente.setGiornoLibero(giornoLibero);
-										giornoLiberoLD = date.plusDays(giornoLibero);
-										dipendente.setGiornoLiberoLD(giornoLiberoLD);
-									}
-								} else if (dipendente.getTagNacht() == 2) { 
-								for (int u = 0; u < DoVe.length-1; u++) {
-										if (DoVe[u] > DoVe[u+1]) {
-											giornoLibero = u+1;
-											for (int i=u+2; i < DoVe.length-1; i++) {
-												if (DoVe[u+1]>DoVe[i]) {
-													u = i;
-													giornoLibero = u+1;
-												}
-											}
-										}
-								}		
-									DoVe[giornoLibero]++;
-								}
-							dipendente.setGiornoLibero(giornoLibero);
-							giornoLiberoLD = date.plusDays(giornoLibero);
-							dipendente.setGiornoLiberoLD(giornoLiberoLD);
-						}
+					// Set a Free Day
+					// spostato su GetMenoOre
+					//DoVe = FreeDay.setFreeDay(dipendente, save, date, DoVe);
+					
+					}
 				
+					
 					
 				//GENERAZIONE TURNI E SALVATAGGIO	
 				String directory = "turni_" + date.getYear();
 				save.InitTurni(directory,  String.valueOf(inputWeek+1) + ".txt", date);
-				dipendenteArrayList = getMenoOre.OrdinePerLinieLeiter(dipendenteArrayList, 2, NumMitarbeiterTagL1, NumMitarbeiterNachtL1, (minNacht-NumMitarbeiterNachtL1));
+				dipendenteArrayList = getMenoOre.OrdinePerLinieLeiter(dipendenteArrayList, 2, NumMitarbeiterTagL1, NumMitarbeiterNachtL1, (minNacht-NumMitarbeiterNachtL1), date, save);
 				for (int x = 0; x < dipendenteArrayList.size(); x++) {
 					Dipendente dipendente = dipendenteArrayList.get(x);
 					turnoDipendente = SwitchTurni.generaTurni(dipendente.getGiornoLiberoLD(), dipendente.getGiornoLibero(), dipendente.getTagNacht(), dipendente, dipendente.malattia, date.with(DayOfWeek.SUNDAY));
@@ -200,5 +163,7 @@ class TurniLavoroNew {
 					Dipendente dipendenteVar = dipendenteArrayList.get(h);
 					System.out.println(dipendenteVar.getCognome() + " TOT: " + dipendenteVar.getTotZuSchlag());
 				}
+				
+				
 				}
 }
