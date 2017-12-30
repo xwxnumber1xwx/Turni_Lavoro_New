@@ -1,0 +1,401 @@
+File options.proprieties created
+added dayOffsundayFriday[4] selman Plana
+added dayOffsundayFriday[3] Akil Akil
+added dayOffsundayFriday[2] arnel balicos
+added dayOffsundayFriday[1] Memet Muzaqi
+added dayOffsundayFriday[0] Bulent Bigol
+added dayOffsundayFriday[4] Andreas Andreas
+added dayOffsundayFriday[3] Miralay Zorlu
+added dayOffsundayFriday[2] Heiko Gruner
+added dayOffsundayFriday[1] Katrin Fassin
+leadersAndEmployee is empty? true
+Sitter Line Leader: 1 Line: 1 Morning
+Gurbuz Line Leader: 1 Line: 1 Morning
+caputo Line Leader: 0 Line: 1 Morning
+GurbuzH Line Leader: 0 Line: 1 Morning
+Schickenberg Line Leader: 2 Line: 2 Morning
+Saki Line Leader: 2 Line: 2 Morning
+HusseinD Line Leader: 0 Line: 2 Morning
+swabool Line Leader: 0 Line: 2 Morning
+Termin Line Leader: 0 Line: 2 Morning
+Unser Line Leader: 0 Line: 2 Morning
+Weber Line Leader: 0 Line: 2 Morning
+Glaskov Line Leader: 0 Line: 2 Morning
+Herbele Line Leader: 0 Line: 2 Morning
+HusseinH Line Leader: 0 Line: 2 Morning
+Akil Line Leader: 1 Line: 1 Night
+Plana Line Leader: 1 Line: 1 Night
+Bigol Line Leader: 0 Line: 1 Night
+Andreas Line Leader: 0 Line: 1 Night
+Muzaqi Line Leader: 2 Line: 2 Night
+balicos Line Leader: 2 Line: 2 Night
+Zorlu Line Leader: 0 Line: 2 Night
+Gruner Line Leader: 0 Line: 2 Night
+Fassin Line Leader: 0 Line: 2 Night
+Giorni Liberi aggiunti X: 0: 1
+Giorni Liberi aggiunti X: 1: 2
+Giorni Liberi aggiunti X: 2: 2
+Giorni Liberi aggiunti X: 3: 2
+Giorni Liberi aggiunti X: 4: 2
+Sibille Sitter
+Night Rate added (Morning)Montag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Dienstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Mittwoch : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Donnerstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Freitag : [00:01, 00:00, 00:00]
+Ramazan Gurbuz
+Night Rate added (Morning)Montag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Dienstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Mittwoch : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Donnerstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Freitag : [00:01, 00:00, 00:00]
+daniele caputo
+Night Rate added (Morning)Montag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Dienstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Mittwoch : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Donnerstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Freitag : [00:01, 00:00, 00:00]
+Hassan GurbuzH
+Night Rate added (Morning)Montag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Dienstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Mittwoch : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Donnerstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Freitag : [00:01, 00:00, 00:00]
+Ralf Schickenberg
+Night Rate added (Morning)Montag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Dienstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Mittwoch : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Donnerstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Freitag : [00:01, 00:00, 00:00]
+Saki Saki
+Night Rate added (Morning)Montag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Dienstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Mittwoch : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Donnerstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Freitag : [00:01, 00:00, 00:00]
+Demir HusseinD
+Night Rate added (Morning)Montag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Dienstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Mittwoch : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Donnerstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Freitag : [00:01, 00:00, 00:00]
+kitty swabool
+Night Rate added (Morning)Montag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Dienstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Mittwoch : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Donnerstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Freitag : [00:01, 00:00, 00:00]
+Joakim Termin
+Night Rate added (Morning)Montag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Dienstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Mittwoch : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Donnerstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Freitag : [00:01, 00:00, 00:00]
+Steven Unser
+Night Rate added (Morning)Montag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Dienstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Mittwoch : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Donnerstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Freitag : [00:01, 00:00, 00:00]
+Gherard Weber
+Night Rate added (Morning)Montag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Dienstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Mittwoch : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Donnerstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Freitag : [00:01, 00:00, 00:00]
+Markus Glaskov
+Night Rate added (Morning)Montag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Dienstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Mittwoch : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Donnerstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Freitag : [00:01, 00:00, 00:00]
+Jessica Herbele
+Night Rate added (Morning)Montag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Dienstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Mittwoch : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Donnerstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Freitag : [00:01, 00:00, 00:00]
+Hussein HusseinH
+Night Rate added (Morning)Montag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Dienstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Mittwoch : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Donnerstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Freitag : [00:01, 00:00, 00:00]
+Akil Akil
+Night Rate added (Night)Sonntag : [00:07, 08:00, 00:00]
+Night Rate added (Night)Montag : [03:36, 00:00, 00:00]
+Night Rate added (Night)Dienstag : [03:36, 00:00, 00:00]
+Night Rate added (Night)Donnerstag : [03:36, 00:00, 00:00]
+Night Rate added (Night)Freitag : [02:06, 00:00, 00:00]
+selman Plana
+Night Rate added (Night)Sonntag : [00:07, 08:00, 00:00]
+Night Rate added (Night)Montag : [03:36, 00:00, 00:00]
+Night Rate added (Night)Dienstag : [03:36, 00:00, 00:00]
+Night Rate added (Night)Mittwoch : [03:36, 00:00, 00:00]
+Night Rate added (Night)Freitag : [02:06, 00:00, 00:00]
+Bulent Bigol
+Night Rate added (Night)Montag : [03:36, 00:00, 00:00]
+Night Rate added (Night)Dienstag : [03:36, 00:00, 00:00]
+Night Rate added (Night)Mittwoch : [03:36, 00:00, 00:00]
+Night Rate added (Night)Donnerstag : [03:36, 00:00, 00:00]
+Night Rate added (Night)Freitag : [05:06, 00:00, 00:00]
+Andreas Andreas
+Night Rate added (Night)Sonntag : [00:07, 08:00, 00:00]
+Night Rate added (Night)Montag : [03:36, 00:00, 00:00]
+Night Rate added (Night)Dienstag : [03:36, 00:00, 00:00]
+Night Rate added (Night)Mittwoch : [03:36, 00:00, 00:00]
+Night Rate added (Night)Freitag : [02:06, 00:00, 00:00]
+Memet Muzaqi
+Night Rate added (Night)Sonntag : [00:07, 08:00, 00:00]
+Night Rate added (Night)Dienstag : [03:36, 00:00, 00:00]
+Night Rate added (Night)Mittwoch : [03:36, 00:00, 00:00]
+Night Rate added (Night)Donnerstag : [03:36, 00:00, 00:00]
+Night Rate added (Night)Freitag : [02:06, 00:00, 00:00]
+arnel balicos
+Night Rate added (Night)Sonntag : [00:07, 08:00, 00:00]
+Night Rate added (Night)Montag : [03:36, 00:00, 00:00]
+Night Rate added (Night)Mittwoch : [03:36, 00:00, 00:00]
+Night Rate added (Night)Donnerstag : [03:36, 00:00, 00:00]
+Night Rate added (Night)Freitag : [02:06, 00:00, 00:00]
+Miralay Zorlu
+Night Rate added (Night)Sonntag : [00:07, 08:00, 00:00]
+Night Rate added (Night)Montag : [03:36, 00:00, 00:00]
+Night Rate added (Night)Dienstag : [03:36, 00:00, 00:00]
+Night Rate added (Night)Donnerstag : [03:36, 00:00, 00:00]
+Night Rate added (Night)Freitag : [02:06, 00:00, 00:00]
+Heiko Gruner
+Night Rate added (Night)Sonntag : [00:07, 08:00, 00:00]
+Night Rate added (Night)Montag : [03:36, 00:00, 00:00]
+Night Rate added (Night)Mittwoch : [03:36, 00:00, 00:00]
+Night Rate added (Night)Donnerstag : [03:36, 00:00, 00:00]
+Night Rate added (Night)Freitag : [02:06, 00:00, 00:00]
+Katrin Fassin
+Night Rate added (Night)Sonntag : [00:07, 08:00, 00:00]
+Night Rate added (Night)Dienstag : [03:36, 00:00, 00:00]
+Night Rate added (Night)Mittwoch : [03:36, 00:00, 00:00]
+Night Rate added (Night)Donnerstag : [03:36, 00:00, 00:00]
+Night Rate added (Night)Freitag : [02:06, 00:00, 00:00]
+Sitter TOT: 180.5
+Gurbuz TOT: 180.5
+caputo TOT: 180.5
+GurbuzH TOT: 180.5
+Schickenberg TOT: 180.5
+Saki TOT: 180.5
+HusseinD TOT: 180.5
+swabool TOT: 180.5
+Termin TOT: 180.5
+Unser TOT: 180.5
+Weber TOT: 180.5
+Glaskov TOT: 180.5
+Herbele TOT: 180.5
+HusseinH TOT: 180.5
+Bigol TOT: 585.0
+Akil TOT: 750.5
+Plana TOT: 750.5
+Andreas TOT: 750.5
+Muzaqi TOT: 750.5
+balicos TOT: 750.5
+Zorlu TOT: 750.5
+Gruner TOT: 750.5
+Fassin TOT: 750.5
+File options.proprieties created
+File options.proprieties alredy exist
+added dayOffsundayFriday[4] Akil Akil
+added dayOffsundayFriday[3] Markus Glaskov
+added dayOffsundayFriday[2] Katrin Fassin
+added dayOffsundayFriday[1] Arnel Balicos
+added dayOffsundayFriday[0] daniele caputo
+added dayOffsundayFriday[4] Bulent Bigol
+added dayOffsundayFriday[3] Andreas Andreas
+added dayOffsundayFriday[2] Jessica Herbele
+added dayOffsundayFriday[1] Hussein HusseinH
+leadersAndEmployee is empty? true
+Sitter Line Leader: 1 Line: 1 Morning
+Gurbuz Line Leader: 1 Line: 1 Morning
+GurbuzH Line Leader: 0 Line: 1 Morning
+HusseinD Line Leader: 0 Line: 1 Morning
+Schickenberg Line Leader: 2 Line: 2 Morning
+Saki Line Leader: 2 Line: 2 Morning
+swabool Line Leader: 0 Line: 2 Morning
+Termin Line Leader: 0 Line: 2 Morning
+Unser Line Leader: 0 Line: 2 Morning
+Weber Line Leader: 0 Line: 2 Morning
+Muzaqi Line Leader: 0 Line: 2 Morning
+Plana Line Leader: 0 Line: 2 Morning
+Zorlu Line Leader: 0 Line: 2 Morning
+Gruner Line Leader: 0 Line: 2 Morning
+Akil Line Leader: 1 Line: 1 Night
+Balicos Line Leader: 0 Line: 1 Night
+caputo Line Leader: 0 Line: 1 Night
+Fassin Line Leader: 2 Line: 2 Night
+Glaskov Line Leader: 2 Line: 2 Night
+Bigol Line Leader: 0 Line: 2 Night
+Andreas Line Leader: 0 Line: 2 Night
+Herbele Line Leader: 0 Line: 2 Night
+HusseinH Line Leader: 0 Line: 2 Night
+Giorni Liberi aggiunti X: 0: 1
+Giorni Liberi aggiunti X: 1: 2
+Giorni Liberi aggiunti X: 2: 2
+Giorni Liberi aggiunti X: 3: 2
+Giorni Liberi aggiunti X: 4: 2
+Sibille Sitter
+Night Rate added (Morning)Montag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Dienstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Mittwoch : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Donnerstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Freitag : [00:01, 00:00, 00:00]
+Ramazan Gurbuz
+Night Rate added (Morning)Montag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Dienstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Mittwoch : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Donnerstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Freitag : [00:01, 00:00, 00:00]
+Hassan GurbuzH
+Night Rate added (Morning)Montag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Dienstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Mittwoch : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Donnerstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Freitag : [00:01, 00:00, 00:00]
+Demir HusseinD
+Night Rate added (Morning)Montag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Dienstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Mittwoch : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Donnerstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Freitag : [00:01, 00:00, 00:00]
+Ralf Schickenberg
+Night Rate added (Morning)Montag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Dienstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Mittwoch : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Donnerstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Freitag : [00:01, 00:00, 00:00]
+Saki Saki
+Night Rate added (Morning)Montag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Dienstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Mittwoch : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Donnerstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Freitag : [00:01, 00:00, 00:00]
+kitty swabool
+Night Rate added (Morning)Montag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Dienstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Mittwoch : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Donnerstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Freitag : [00:01, 00:00, 00:00]
+Joakim Termin
+Night Rate added (Morning)Montag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Dienstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Mittwoch : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Donnerstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Freitag : [00:01, 00:00, 00:00]
+Steven Unser
+Night Rate added (Morning)Montag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Dienstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Mittwoch : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Donnerstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Freitag : [00:01, 00:00, 00:00]
+Gherard Weber
+Night Rate added (Morning)Montag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Dienstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Mittwoch : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Donnerstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Freitag : [00:01, 00:00, 00:00]
+Memet Muzaqi
+Night Rate added (Morning)Montag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Dienstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Mittwoch : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Donnerstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Freitag : [00:01, 00:00, 00:00]
+selman Plana
+Night Rate added (Morning)Montag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Dienstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Mittwoch : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Donnerstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Freitag : [00:01, 00:00, 00:00]
+Miralay Zorlu
+Night Rate added (Morning)Montag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Dienstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Mittwoch : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Donnerstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Freitag : [00:01, 00:00, 00:00]
+Heiko Gruner
+Night Rate added (Morning)Montag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Dienstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Mittwoch : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Donnerstag : [01:30, 00:00, 00:00]
+Night Rate added (Morning)Freitag : [00:01, 00:00, 00:00]
+Akil Akil
+Night Rate added (Night)Sonntag : [00:07, 08:00, 00:00]
+Night Rate added (Night)Montag : [03:36, 00:00, 00:00]
+Night Rate added (Night)Dienstag : [03:36, 00:00, 00:00]
+Night Rate added (Night)Mittwoch : [03:36, 00:00, 00:00]
+Night Rate added (Night)Freitag : [02:06, 00:00, 00:00]
+Arnel Balicos
+Night Rate added (Night)Sonntag : [00:07, 08:00, 00:00]
+Night Rate added (Night)Dienstag : [03:36, 00:00, 00:00]
+Night Rate added (Night)Mittwoch : [03:36, 00:00, 00:00]
+Night Rate added (Night)Donnerstag : [03:36, 00:00, 00:00]
+Night Rate added (Night)Freitag : [02:06, 00:00, 00:00]
+daniele caputo
+Night Rate added (Night)Montag : [03:36, 00:00, 00:00]
+Night Rate added (Night)Dienstag : [03:36, 00:00, 00:00]
+Night Rate added (Night)Mittwoch : [03:36, 00:00, 00:00]
+Night Rate added (Night)Donnerstag : [03:36, 00:00, 00:00]
+Night Rate added (Night)Freitag : [05:06, 00:00, 00:00]
+Katrin Fassin
+Night Rate added (Night)Sonntag : [00:07, 08:00, 00:00]
+Night Rate added (Night)Montag : [03:36, 00:00, 00:00]
+Night Rate added (Night)Mittwoch : [03:36, 00:00, 00:00]
+Night Rate added (Night)Donnerstag : [03:36, 00:00, 00:00]
+Night Rate added (Night)Freitag : [02:06, 00:00, 00:00]
+Markus Glaskov
+Night Rate added (Night)Sonntag : [00:07, 08:00, 00:00]
+Night Rate added (Night)Montag : [03:36, 00:00, 00:00]
+Night Rate added (Night)Dienstag : [03:36, 00:00, 00:00]
+Night Rate added (Night)Donnerstag : [03:36, 00:00, 00:00]
+Night Rate added (Night)Freitag : [02:06, 00:00, 00:00]
+Bulent Bigol
+Night Rate added (Night)Sonntag : [00:07, 08:00, 00:00]
+Night Rate added (Night)Montag : [03:36, 00:00, 00:00]
+Night Rate added (Night)Dienstag : [03:36, 00:00, 00:00]
+Night Rate added (Night)Mittwoch : [03:36, 00:00, 00:00]
+Night Rate added (Night)Freitag : [02:06, 00:00, 00:00]
+Andreas Andreas
+Night Rate added (Night)Sonntag : [00:07, 08:00, 00:00]
+Night Rate added (Night)Montag : [03:36, 00:00, 00:00]
+Night Rate added (Night)Dienstag : [03:36, 00:00, 00:00]
+Night Rate added (Night)Donnerstag : [03:36, 00:00, 00:00]
+Night Rate added (Night)Freitag : [02:06, 00:00, 00:00]
+Jessica Herbele
+Night Rate added (Night)Sonntag : [00:07, 08:00, 00:00]
+Night Rate added (Night)Montag : [03:36, 00:00, 00:00]
+Night Rate added (Night)Mittwoch : [03:36, 00:00, 00:00]
+Night Rate added (Night)Donnerstag : [03:36, 00:00, 00:00]
+Night Rate added (Night)Freitag : [02:06, 00:00, 00:00]
+Hussein HusseinH
+Night Rate added (Night)Sonntag : [00:07, 08:00, 00:00]
+Night Rate added (Night)Dienstag : [03:36, 00:00, 00:00]
+Night Rate added (Night)Mittwoch : [03:36, 00:00, 00:00]
+Night Rate added (Night)Donnerstag : [03:36, 00:00, 00:00]
+Night Rate added (Night)Freitag : [02:06, 00:00, 00:00]
+Sitter TOT: 180.5
+Gurbuz TOT: 180.5
+GurbuzH TOT: 180.5
+HusseinD TOT: 180.5
+Schickenberg TOT: 180.5
+Saki TOT: 180.5
+swabool TOT: 180.5
+Termin TOT: 180.5
+Unser TOT: 180.5
+Weber TOT: 180.5
+Muzaqi TOT: 180.5
+Plana TOT: 180.5
+Zorlu TOT: 180.5
+Gruner TOT: 180.5
+caputo TOT: 585.0
+Akil TOT: 750.5
+Balicos TOT: 750.5
+Fassin TOT: 750.5
+Glaskov TOT: 750.5
+Bigol TOT: 750.5
+Andreas TOT: 750.5
+Herbele TOT: 750.5
+HusseinH TOT: 750.5

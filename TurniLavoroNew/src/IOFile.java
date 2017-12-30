@@ -15,6 +15,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.TextStyle;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,11 +23,11 @@ import java.util.Locale;
 
 public class IOFile {
 	
-	public boolean InitTurni(String directoryEXT, String nomeFile, LocalDate date) {
+	public boolean initShifts(String directoryEXT, String nameFile, LocalDate date) {
 		boolean yn = false;
 		Charset charset = Charset.forName("UTF-8");
 		Path directory = Paths.get(directoryEXT);
-		Path path = Paths.get(directory + "//" + nomeFile);
+		Path path = Paths.get(directory + "//" + nameFile);
 		try {
 			Files.createDirectories(directory);
 			Files.createFile(path);
@@ -35,36 +36,11 @@ public class IOFile {
 			e1.printStackTrace();
 		}
 		try (BufferedWriter writer = Files.newBufferedWriter(path, charset)) {
-			//DayOfWeek giorno = DayOfWeek.SUNDAY;
-			//TextStyle stileNorm = TextStyle.FULL;
-			//Locale deutsch = Locale.GERMAN;
 			writer.write(date.toString());
 			date = date.plusDays(7);
 			writer.write("<--->");
 			writer.write(date.toString());
 			writer.newLine();
-			/*
-			writer.write("\t");
-			writer.write(giorno.getDisplayName(stileNorm, deutsch));
-			writer.write("\t");
-			giorno = DayOfWeek.MONDAY;
-			writer.write(giorno.getDisplayName(stileNorm, deutsch));
-			giorno = DayOfWeek.TUESDAY;
-			writer.write(giorno.getDisplayName(stileNorm, deutsch));
-			writer.write("\t");
-			giorno = DayOfWeek.WEDNESDAY;
-			writer.write(giorno.getDisplayName(stileNorm, deutsch));
-			writer.write("\t");
-			giorno = DayOfWeek.THURSDAY;
-			writer.write(giorno.getDisplayName(stileNorm, deutsch));
-			writer.write("\t");
-			giorno = DayOfWeek.WEDNESDAY;
-			writer.write(giorno.getDisplayName(stileNorm, deutsch));
-			writer.write("\t");
-			giorno = DayOfWeek.SATURDAY;
-			writer.write(giorno.getDisplayName(stileNorm, deutsch));
-			writer.newLine();
-			*/
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -72,18 +48,18 @@ public class IOFile {
 		return yn;
 	}
 		
-	public boolean ExportTurniDiTutti (String directoryEXT, String nomeFile, String turniWeek) {
+	public boolean saveAllShifts (String directoryEXT, String nameFile, String shiftWeek) {
 		boolean yn = false;
 		Charset charset = Charset.forName("UTF-8");
 		Path directory = Paths.get(directoryEXT);
-		Path path = Paths.get(directory + "//" + nomeFile);
+		Path path = Paths.get(directory + "//" + nameFile);
 		try {
 			Files.createDirectories(directory);
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		String fileToSave = (turniWeek.toString());
+		String fileToSave = (shiftWeek.toString());
 		fileToSave = fileToSave.replace("[", "");
 		fileToSave = fileToSave.replace("]", "");
 		fileToSave = fileToSave.replace(",", "");
@@ -101,53 +77,15 @@ public class IOFile {
 		}
 		return yn;
 	}
-	
-	/*
-	public boolean ExportShift(String directoryEXT, String nomeFile, Dipendente dipendente, LocalDate date) {
-	boolean yn = false;
-	Charset charset = Charset.forName("UTF-8");
-	Path directory = Paths.get(directoryEXT);
-	Path path = Paths.get(directory + "//" + nomeFile);
-	try {
-		Files.createDirectories(directory);
-	} catch (IOException e1) {
-		// TODO Auto-generated catch block
-		e1.printStackTrace();
-	}
-	boolean sn = Files.exists(path);
-	if (sn == false) {
-		try {
-			Files.createFile(path);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-	try (BufferedWriter writer = Files.newBufferedWriter(path, charset, APPEND)) {
-		ArrayList<String> fileToSaveArray = (dipendente.getWeekShift());
-		String fileToSave = "";
-		for (int x = 0; x < fileToSaveArray.size(); x++) {
-			fileToSave = fileToSaveArray.get(x);
-			writer.write(fileToSave, 0, fileToSave.length());
-			writer.newLine();
-		}
-		yn = true;
-	} catch (IOException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
-	return yn;
-	}
-	*/
-	
-	public boolean ExportShiftLT(String directoryEXT, String nomeFile, Dipendente dipendente, LocalDate date) {
+		
+	public boolean ExportShiftLT(String directoryEXT, String nameFile, Employee employee, LocalDate date) {
 		DayOfWeek dayWeek = DayOfWeek.from(date);
 		TextStyle stileNorm = TextStyle.FULL;
 		Locale deutsch = Locale.GERMAN;
 		boolean yn = false;
 		Charset charset = Charset.forName("UTF-8");
 		Path directory = Paths.get(directoryEXT);
-		Path path = Paths.get(directory + "//" + nomeFile);
+		Path path = Paths.get(directory + "//" + nameFile);
 		try {
 			Files.createDirectories(directory);
 		} catch (IOException e1) {
@@ -165,12 +103,12 @@ public class IOFile {
 		}
 		try (BufferedWriter writer = Files.newBufferedWriter(path, charset, APPEND)) {
 			String fileToSave = "";
-			int plusMinutes = Integer.parseInt(Preferenze.getOnePreference("HOW_MANY_MINUTES_TO_WORK"));
+			int plusMinutes = Integer.parseInt(Proprieties.getOnePropriety("HOW_MANY_MINUTES_TO_WORK"));
 			for (int x = 0; x < 7; x++) {
-				if (dipendente.giornoLibero != x & x != 6) {
-					fileToSave = dipendente.getTime(x).toLocalDate().toString() + " " +  dayWeek.getDisplayName(stileNorm, deutsch).toString().toLowerCase() + " " + dipendente.getTime(x).toLocalTime().toString() + "-"+ dipendente.getTime(x).plusMinutes(plusMinutes).toLocalTime();
+				if (employee.getDayOff() != x & x != 6) {
+					fileToSave = employee.getTime(x).toLocalDate().toString() + " " +  dayWeek.getDisplayName(stileNorm, deutsch).toString().toLowerCase() + " " + employee.getTime(x).toLocalTime().toString() + "-"+ employee.getTime(x).plusMinutes(plusMinutes).toLocalTime();
 				} else {
-					fileToSave = dipendente.getTime(x).toLocalDate().toString() + " " + dayWeek.getDisplayName(stileNorm, deutsch).toString().toLowerCase() + " " + "frei";
+					fileToSave = employee.getTime(x).toLocalDate().toString() + " " + dayWeek.getDisplayName(stileNorm, deutsch).toString().toLowerCase() + " " + "frei";
 				}
 				writer.write(fileToSave, 0, fileToSave.length());
 				writer.newLine();
@@ -184,7 +122,7 @@ public class IOFile {
 		return yn;
 		}
 	
-	public boolean ExportObjectToFile(String directoryEXT, String nomeFile, Dipendente dipendente) {
+	public boolean ExportObjectToFile(String directoryEXT, String nameFile, Employee employee) {
 		
 		boolean yn = false;
 		FileOutputStream fos = null;
@@ -198,7 +136,7 @@ public class IOFile {
 		}
 		
 		try {
-			fos = new FileOutputStream(directoryEXT + "//" + nomeFile);
+			fos = new FileOutputStream(directoryEXT + "//" + nameFile);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -211,7 +149,7 @@ public class IOFile {
 			e.printStackTrace();
 		}
 		try {
-			oos.writeObject(dipendente);
+			oos.writeObject(employee);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -229,17 +167,17 @@ public class IOFile {
 		return yn;
 	}
 	
-	public ArrayList<Dipendente> ImportObjectFromFile (String directoryEXT) {
-		String nomeFile = "";
+	public ArrayList<Employee> ImportObjectFromFile (String directoryEXT) {
+		String nameFile = "";
 		File file = new File(directoryEXT);
-		File[] listaFile = file.listFiles();
-		ArrayList <Dipendente> dipendente = new ArrayList<Dipendente>();
+		File[] listOfFile = file.listFiles();
+		ArrayList <Employee> employee = new ArrayList<Employee>();
 		FileInputStream fis = null;
-		for (int x = 0; x < listaFile.length; x++) {
-			if(listaFile[x].isFile()) {
-				nomeFile = listaFile[x].toString();
+		for (int x = 0; x < listOfFile.length; x++) {
+			if(listOfFile[x].isFile()) {
+				nameFile = listOfFile[x].toString();
 			try {
-				fis = new FileInputStream(nomeFile);
+				fis = new FileInputStream(nameFile);
 			} catch (FileNotFoundException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
@@ -254,7 +192,7 @@ public class IOFile {
 			}
 			
 			try {
-				dipendente.add((Dipendente)ois.readObject());
+				employee.add((Employee)ois.readObject());
 			} catch (ClassNotFoundException | IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -267,13 +205,12 @@ public class IOFile {
 			}
 		}
 	}
-	return dipendente;
+	return employee;
 	}
 	
-	
-	public List<String> ImportShiftFile (String directoryEXT, String nomeFile) {
+	public List<String> ImportShiftFile (String directoryEXT, String nameFile) {
 		Path directory = Paths.get(directoryEXT);
-		Path path = Paths.get(directory + "//" + nomeFile);
+		Path path = Paths.get(directory + "//" + nameFile);
 		List<String> database = null;
 		try (BufferedReader ins =  Files.newBufferedReader(path)) {
 			database = Files.readAllLines(path);
@@ -293,9 +230,9 @@ public class IOFile {
 		return yesNo;
 	}
 	
-	public ArrayList<LocalDate> checkFreeDay (Dipendente dipendente, String directoryEXT) {
+	public ArrayList<LocalDate> checkFreeDay (Employee employee, String directoryEXT) {
 		
-		directoryEXT = (directoryEXT + "//" + dipendente.cognome + ".txt");
+		directoryEXT = (directoryEXT + "//" + employee.surname + ".txt");
 		Path directory = Paths.get(directoryEXT);
 		boolean yesNo = Files.exists(directory);
 		ArrayList<LocalDate> days = new ArrayList<LocalDate>();
@@ -321,11 +258,11 @@ public class IOFile {
 		return days;
 	}
 	
-	public void freeday (Dipendente dipendente, LocalDate day, String directoryEXT) {
+	public void freeday (Employee employee, LocalDate day, String directoryEXT) {
 		Charset charset = Charset.forName("UTF-8");
 		Path directory = Paths.get(directoryEXT);
-		String nomeFile = dipendente.getCognome();
-		Path path = Paths.get(directory + "//" + nomeFile + ".txt");
+		String nameFile = employee.getSurname();
+		Path path = Paths.get(directory + "//" + nameFile + ".txt");
 		try {
 			Files.createDirectories(directory);
 		} catch (IOException e1) {
@@ -361,5 +298,42 @@ public class IOFile {
 				}
 		}
 	
+	}
+
+	public static boolean writeLog(String directoryEXT, String nameFile, String LogText) {
+		LocalDate dateTime = LocalDate.now();
+		boolean yn = false;
+		Charset charset = Charset.forName("UTF-8");
+		Path directory = Paths.get(directoryEXT);
+		Path path = Paths.get(directory + "//" + nameFile + dateTime.toString().replaceAll("-", "") + ".txt");
+		try {
+			Files.createDirectories(directory);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		boolean sn = Files.exists(path);
+		if (sn == false) {
+			try {
+				Files.createFile(path);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		String fileToSave = LogText;
+		try (BufferedWriter writer = Files.newBufferedWriter(path, charset, APPEND)) {
+			try {
+				writer.write(fileToSave, 0, fileToSave.length());
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			writer.newLine();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		return yn;
 	}
 }

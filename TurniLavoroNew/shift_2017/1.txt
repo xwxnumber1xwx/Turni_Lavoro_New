@@ -1,0 +1,208 @@
+2017-01-01<--->2017-01-08
+Sitter Line Leader: 1 Line: 1 
+2017-01-01 Sonntag	frei 
+2017-01-02 Montag	02:30-10:06 
+2017-01-03 Dienstag	02:30-10:06 
+2017-01-04 Mittwoch	02:30-10:06 
+2017-01-05 Donnerstag	02:30-10:06 
+2017-01-06 Freitag	02:00-02:00 
+2017-01-07 Samstag	frei 
+
+Gurbuz Line Leader: 1 Line: 1 
+2017-01-01 Sonntag	frei 
+2017-01-02 Montag	02:30-10:06 
+2017-01-03 Dienstag	02:30-10:06 
+2017-01-04 Mittwoch	02:30-10:06 
+2017-01-05 Donnerstag	02:30-10:06 
+2017-01-06 Freitag	02:00-02:00 
+2017-01-07 Samstag	frei 
+
+GurbuzH Line Leader: 0 Line: 1 
+2017-01-01 Sonntag	frei 
+2017-01-02 Montag	02:30-10:06 
+2017-01-03 Dienstag	02:30-10:06 
+2017-01-04 Mittwoch	02:30-10:06 
+2017-01-05 Donnerstag	02:30-10:06 
+2017-01-06 Freitag	02:00-02:00 
+2017-01-07 Samstag	frei 
+
+HusseinD Line Leader: 0 Line: 1 
+2017-01-01 Sonntag	frei 
+2017-01-02 Montag	02:30-10:06 
+2017-01-03 Dienstag	02:30-10:06 
+2017-01-04 Mittwoch	02:30-10:06 
+2017-01-05 Donnerstag	02:30-10:06 
+2017-01-06 Freitag	02:00-02:00 
+2017-01-07 Samstag	frei 
+
+Schickenberg Line Leader: 2 Line: 2 
+2017-01-01 Sonntag	frei 
+2017-01-02 Montag	02:30-10:06 
+2017-01-03 Dienstag	02:30-10:06 
+2017-01-04 Mittwoch	02:30-10:06 
+2017-01-05 Donnerstag	02:30-10:06 
+2017-01-06 Freitag	02:00-02:00 
+2017-01-07 Samstag	frei 
+
+Saki Line Leader: 2 Line: 2 
+2017-01-01 Sonntag	frei 
+2017-01-02 Montag	02:30-10:06 
+2017-01-03 Dienstag	02:30-10:06 
+2017-01-04 Mittwoch	02:30-10:06 
+2017-01-05 Donnerstag	02:30-10:06 
+2017-01-06 Freitag	02:00-02:00 
+2017-01-07 Samstag	frei 
+
+swabool Line Leader: 0 Line: 2 
+2017-01-01 Sonntag	frei 
+2017-01-02 Montag	02:30-10:06 
+2017-01-03 Dienstag	02:30-10:06 
+2017-01-04 Mittwoch	02:30-10:06 
+2017-01-05 Donnerstag	02:30-10:06 
+2017-01-06 Freitag	02:00-02:00 
+2017-01-07 Samstag	frei 
+
+Termin Line Leader: 0 Line: 2 
+2017-01-01 Sonntag	frei 
+2017-01-02 Montag	02:30-10:06 
+2017-01-03 Dienstag	02:30-10:06 
+2017-01-04 Mittwoch	02:30-10:06 
+2017-01-05 Donnerstag	02:30-10:06 
+2017-01-06 Freitag	02:00-02:00 
+2017-01-07 Samstag	frei 
+
+Unser Line Leader: 0 Line: 2 
+2017-01-01 Sonntag	frei 
+2017-01-02 Montag	02:30-10:06 
+2017-01-03 Dienstag	02:30-10:06 
+2017-01-04 Mittwoch	02:30-10:06 
+2017-01-05 Donnerstag	02:30-10:06 
+2017-01-06 Freitag	02:00-02:00 
+2017-01-07 Samstag	frei 
+
+Weber Line Leader: 0 Line: 2 
+2017-01-01 Sonntag	frei 
+2017-01-02 Montag	02:30-10:06 
+2017-01-03 Dienstag	02:30-10:06 
+2017-01-04 Mittwoch	02:30-10:06 
+2017-01-05 Donnerstag	02:30-10:06 
+2017-01-06 Freitag	02:00-02:00 
+2017-01-07 Samstag	frei 
+
+Muzaqi Line Leader: 0 Line: 2 
+2017-01-01 Sonntag	frei 
+2017-01-02 Montag	02:30-10:06 
+2017-01-03 Dienstag	02:30-10:06 
+2017-01-04 Mittwoch	02:30-10:06 
+2017-01-05 Donnerstag	02:30-10:06 
+2017-01-06 Freitag	02:00-02:00 
+2017-01-07 Samstag	frei 
+
+Plana Line Leader: 0 Line: 2 
+2017-01-01 Sonntag	frei 
+2017-01-02 Montag	02:30-10:06 
+2017-01-03 Dienstag	02:30-10:06 
+2017-01-04 Mittwoch	02:30-10:06 
+2017-01-05 Donnerstag	02:30-10:06 
+2017-01-06 Freitag	02:00-02:00 
+2017-01-07 Samstag	frei 
+
+Zorlu Line Leader: 0 Line: 2 
+2017-01-01 Sonntag	frei 
+2017-01-02 Montag	02:30-10:06 
+2017-01-03 Dienstag	02:30-10:06 
+2017-01-04 Mittwoch	02:30-10:06 
+2017-01-05 Donnerstag	02:30-10:06 
+2017-01-06 Freitag	02:00-02:00 
+2017-01-07 Samstag	frei 
+
+Gruner Line Leader: 0 Line: 2 
+2017-01-01 Sonntag	frei 
+2017-01-02 Montag	02:30-10:06 
+2017-01-03 Dienstag	02:30-10:06 
+2017-01-04 Mittwoch	02:30-10:06 
+2017-01-05 Donnerstag	02:30-10:06 
+2017-01-06 Freitag	02:00-02:00 
+2017-01-07 Samstag	frei 
+
+Akil Line Leader: 1 Line: 1 
+2017-01-01 Sonntag	16:00-00:06 
+2017-01-02 Montag	16:30-00:36 
+2017-01-03 Dienstag	16:30-00:36 
+2017-01-04 Mittwoch	16:30-00:36 
+2017-01-05 Donnerstag	frei 
+2017-01-06 Freitag	15:00-23:06 
+2017-01-07 Samstag	frei 
+
+Balicos Line Leader: 0 Line: 1 
+2017-01-01 Sonntag	16:00-00:06 
+2017-01-02 Montag	frei 
+2017-01-03 Dienstag	16:30-00:36 
+2017-01-04 Mittwoch	16:30-00:36 
+2017-01-05 Donnerstag	16:30-00:36 
+2017-01-06 Freitag	15:00-23:06 
+2017-01-07 Samstag	frei 
+
+caputo Line Leader: 0 Line: 1 
+2017-01-01 Sonntag	frei 
+2017-01-02 Montag	16:30-00:36 
+2017-01-03 Dienstag	16:30-00:36 
+2017-01-04 Mittwoch	16:30-00:36 
+2017-01-05 Donnerstag	16:30-00:36 
+2017-01-06 Freitag	18:00-02:06 
+2017-01-07 Samstag	frei 
+
+Fassin Line Leader: 2 Line: 2 
+2017-01-01 Sonntag	16:00-00:06 
+2017-01-02 Montag	16:30-00:36 
+2017-01-03 Dienstag	frei 
+2017-01-04 Mittwoch	16:30-00:36 
+2017-01-05 Donnerstag	16:30-00:36 
+2017-01-06 Freitag	15:00-23:06 
+2017-01-07 Samstag	frei 
+
+Glaskov Line Leader: 2 Line: 2 
+2017-01-01 Sonntag	16:00-00:06 
+2017-01-02 Montag	16:30-00:36 
+2017-01-03 Dienstag	16:30-00:36 
+2017-01-04 Mittwoch	frei 
+2017-01-05 Donnerstag	16:30-00:36 
+2017-01-06 Freitag	15:00-23:06 
+2017-01-07 Samstag	frei 
+
+Bigol Line Leader: 0 Line: 2 
+2017-01-01 Sonntag	16:00-00:06 
+2017-01-02 Montag	16:30-00:36 
+2017-01-03 Dienstag	16:30-00:36 
+2017-01-04 Mittwoch	16:30-00:36 
+2017-01-05 Donnerstag	frei 
+2017-01-06 Freitag	15:00-23:06 
+2017-01-07 Samstag	frei 
+
+Andreas Line Leader: 0 Line: 2 
+2017-01-01 Sonntag	16:00-00:06 
+2017-01-02 Montag	16:30-00:36 
+2017-01-03 Dienstag	16:30-00:36 
+2017-01-04 Mittwoch	frei 
+2017-01-05 Donnerstag	16:30-00:36 
+2017-01-06 Freitag	15:00-23:06 
+2017-01-07 Samstag	frei 
+
+Herbele Line Leader: 0 Line: 2 
+2017-01-01 Sonntag	16:00-00:06 
+2017-01-02 Montag	16:30-00:36 
+2017-01-03 Dienstag	frei 
+2017-01-04 Mittwoch	16:30-00:36 
+2017-01-05 Donnerstag	16:30-00:36 
+2017-01-06 Freitag	15:00-23:06 
+2017-01-07 Samstag	frei 
+
+HusseinH Line Leader: 0 Line: 2 
+2017-01-01 Sonntag	16:00-00:06 
+2017-01-02 Montag	frei 
+2017-01-03 Dienstag	16:30-00:36 
+2017-01-04 Mittwoch	16:30-00:36 
+2017-01-05 Donnerstag	16:30-00:36 
+2017-01-06 Freitag	15:00-23:06 
+2017-01-07 Samstag	frei 
+

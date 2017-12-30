@@ -3,45 +3,44 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Create {
-	public static void createDipendente () {
+	public static void createEmployee() {
 		IOFile save = new IOFile();
 		Scanner scan = new Scanner (System.in);
 		String var;
-		Dipendente dipendente  = new Dipendente();
-		System.out.println("Personalnummer: " + "\n");
-		long personalnummer = (long)scan.nextInt();
-		dipendente.setPersonalnummer(personalnummer);
+		Employee employee  = new Employee();
+		System.out.println("Employee Code: " + "\n");
+		long employeeCode = (long)scan.nextInt();
+		employee.setEmployeeCode(employeeCode);
 		scan.nextLine();
-		System.out.println("Nome: " + "\n");
+		System.out.println("Name: " + "\n");
 		var = scan.nextLine();
-		dipendente.setNome(var);
-		System.out.println("Cognome: " + "\n");
+		employee.setName(var);
+		System.out.println("Surname: " + "\n");
 		var = scan.nextLine();
-		dipendente.setCognome(var);
-		System.out.println("capacita linee: es. 1, 2 oppure digitare 3 per entrambe" + "\n");
-		int Capacitalinea = scan.nextInt();
-		dipendente.setLineaLavoro(Capacitalinea);
-		System.out.println("Linee Leiter? es. 0 = N, 1, 2 oppure digitare 3 per entrambe" + "\n");
-		int linieLeiter = scan.nextInt();
-		dipendente.setLinieLeiter(linieLeiter);
-		System.out.println(dipendente.getCognome() + " Vuole lavorare solo la mattina? 1 = Y, 2 = N" + "\n");
-		int soloMattina = scan.nextInt();
-		if (soloMattina == 1) {
-		dipendente.setSoloMattina(true);
+		employee.setSurname(var);
+		System.out.println("Line ability: ex. 1, 2 or 3 for both" + "\n");
+		int lineAbility = scan.nextInt();
+		employee.setWorkLine(lineAbility);
+		System.out.println("Line Leader? ex. 0 = N, 1, 2 or 3 for both" + "\n");
+		int lineLeader = scan.nextInt();
+		employee.setLinieLeiter(lineLeader);
+		System.out.println(employee.getSurname() + " whant to work only in the morning? 1 = Y, 2 = N" + "\n");
+		int onlyMorning = scan.nextInt();
+		if (onlyMorning == 1) {
+			employee.setOnlyMorning(true);
 		}
-		System.out.println("Dipendente Salvato!" + "\n");
+		System.out.println("Employee saved!" + "\n");
 		scan.nextLine();
-		String nomeFile = (dipendente.getCognome() + ".dbs");
-		save.ExportObjectToFile("database", nomeFile, dipendente);
+		String nameFile = (employee.getSurname() + ".dbs");
+		save.ExportObjectToFile("database", nameFile, employee);
 	}
 	
-	public static int setWeekToElaborate(int inputWeek, IOFile save, LocalDate date) {
+	public static int setWeekToElaborate(int inputWeek, IOFile save, LocalDate date, String directory) {
 		do {
 			Scanner scan = new Scanner (System.in);
 			System.out.print("Welche kalenderWoche wollen Sie?" + "\n");
 			inputWeek = scan.nextInt();
-			// guardare se la KW e´gia presente 
-			String directory = "turni_" + date.getYear();
+			// Look if the Week already exist
 			boolean weekAlredyExist = save.checkWeek(inputWeek, directory);
 			if (weekAlredyExist == true) {
 				System.out.println("This week Alredy Exist");
