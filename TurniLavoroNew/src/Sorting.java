@@ -19,25 +19,24 @@ public class Sorting {
 		});
 		return dipendenti;
 	}
-	
-	public static ArrayList<Employee> sortingByWorkDepartment(ArrayList<Employee> employee, int numberOfLeaders, int numberOfEmployeeforLine1Morning, int numberOfEmployeeforLine1Night, int numberOfEmployeeforLine2Night, LocalDate date, IOFile save) {
 		
+	public static ArrayList<Employee> sortingByWorkDepartment(ArrayList<Employee> employee, int numberOfLeaders, int numberOfEmployeeforLine1Morning, int numberOfEmployeeforLine1Night, int numberOfEmployeeforLine2Night, LocalDate date, IOFile save) {
+		numberOfEmployeeforLine1Night  -= numberOfLeaders;
+		numberOfEmployeeforLine2Night -= numberOfLeaders;
 		ArrayList <Employee> leadersAndEmployee = new ArrayList<Employee>();
 		int[] dayOffsundayFriday = new int[5];
 		int o = 0;
-			for (int h = 1; h < 3; h++) { //NACHT
+			for (int numberOfLine = 1; numberOfLine < 3; numberOfLine++) { //NACHT
 				int numberOfLeadersL1 = numberOfLeaders;
 				o=0;
 				int size = employee.size();
 				for (int x = 0; x < size; x++) {
 					//LinieLeiter NACHT
-					
-					// ERRORE: a volte trova solo un leader nella linea 1, probabilemnte perché tutti gli altri sono messi di mattina
 					Employee employeeTemp = employee.get(o);
 					if (numberOfLeadersL1 != 0 && employeeTemp.getMorningNight() == 2) {
-						if (employeeTemp.getlinieLeiter() == h || employeeTemp.getlinieLeiter() == 3) {
+						if (employeeTemp.getlinieLeiter() == numberOfLine || employeeTemp.getlinieLeiter() == 3) {
 							dayOffsundayFriday = DayOff.setDayOff(employeeTemp, save, date, dayOffsundayFriday);
-							setEmployeeOnShift(employeeTemp, h, h);
+							setEmployeeOnShift(employeeTemp, numberOfLine, numberOfLine);
 							leadersAndEmployee.add(employeeTemp);
 							employee.remove(o);
 							numberOfLeadersL1--;
@@ -49,6 +48,25 @@ public class Sorting {
 					}
 				}
 				
+				// 
+				//take a leader from Morning if it has not been added before
+				if (numberOfLeadersL1 > 0) {
+					size = employee.size();
+					for (int x = 0; x < size; x++) {
+						Employee employeeTemp = employee.get(x);
+						if (numberOfLeadersL1 != 0) {
+							if (employeeTemp.getlinieLeiter() == numberOfLine || employeeTemp.getlinieLeiter() == 3) {
+								employeeTemp.setMorningNight(2);
+								dayOffsundayFriday = DayOff.setDayOff(employeeTemp, save, date, dayOffsundayFriday);
+								setEmployeeOnShift(employeeTemp, numberOfLine, numberOfLine);
+								leadersAndEmployee.add(employeeTemp);
+								employee.remove(x);
+								numberOfLeadersL1--;
+								x = size;
+							}
+						}
+					}
+				}
 				numberOfLeadersL1 = numberOfLeaders;
 				o=0;
 				size = employee.size();
@@ -56,9 +74,9 @@ public class Sorting {
 					//LinieLeiter TAG
 					Employee employeeTemp = employee.get(o);
 					if (numberOfLeadersL1 != 0 && employeeTemp.getMorningNight() == 1) {
-					if (employeeTemp.getlinieLeiter() == h || employeeTemp.getlinieLeiter() == 3) {
+					if (employeeTemp.getlinieLeiter() == numberOfLine || employeeTemp.getlinieLeiter() == 3) {
 						dayOffsundayFriday = DayOff.setDayOff(employeeTemp, save, date, dayOffsundayFriday);
-						setEmployeeOnShift(employeeTemp, h, h);
+						setEmployeeOnShift(employeeTemp, numberOfLine, numberOfLine);
 						leadersAndEmployee.add(employeeTemp);
 						employee.remove(o);
 						numberOfLeadersL1--;
@@ -75,19 +93,19 @@ public class Sorting {
 				int size = employee.size();
 				for (int x = 0; x < size; x++) {
 					// Linie NACHT
-					Employee dip1 = employee.get(o);
-					if (dip1.getMorningNight() == 2) {
-					if (dip1.getWorkLine() == h || dip1.getWorkLine() == 3) {
+					Employee employeeTemp = employee.get(o);
+					if (employeeTemp.getMorningNight() == 2) {
+					if (employeeTemp.getWorkLine() == h || employeeTemp.getWorkLine() == 3) {
 						if (numberOfEmployeeforLine1Night != 0) {
-							dayOffsundayFriday = DayOff.setDayOff(dip1, save, date, dayOffsundayFriday);
-							setEmployeeOnShift(dip1, 0, 1);
-							leadersAndEmployee.add(dip1);
+							dayOffsundayFriday = DayOff.setDayOff(employeeTemp, save, date, dayOffsundayFriday);
+							setEmployeeOnShift(employeeTemp, 0, 1);
+							leadersAndEmployee.add(employeeTemp);
 							employee.remove(o);
 							numberOfEmployeeforLine1Night--;
 						} else if (numberOfEmployeeforLine2Night != 0) {
-							dayOffsundayFriday = DayOff.setDayOff(dip1, save, date, dayOffsundayFriday);
-							setEmployeeOnShift(dip1, 0, 2);
-							leadersAndEmployee.add(dip1);
+							dayOffsundayFriday = DayOff.setDayOff(employeeTemp, save, date, dayOffsundayFriday);
+							setEmployeeOnShift(employeeTemp, 0, 2);
+							leadersAndEmployee.add(employeeTemp);
 							employee.remove(o);
 							numberOfEmployeeforLine2Night--;
 						} else {
@@ -131,10 +149,10 @@ public class Sorting {
 			}
 			int size = employee.size();
 			for (int x = 0; x < size; x++) {
-				Employee emplozeeTemp = employee.get(0);
-				setEmployeeOnShift(emplozeeTemp, 0, 2, 1); // Dato extra La mattina perche ha superato il numero massimo di persone di sera
-				dayOffsundayFriday = DayOff.setDayOff(emplozeeTemp, save, date, dayOffsundayFriday);
-				leadersAndEmployee.add(emplozeeTemp);
+				Employee employeeTemp = employee.get(0);
+				setEmployeeOnShift(employeeTemp, 0, 2, 1); // Dato extra La mattina perche ha superato il numero massimo di persone di sera
+				dayOffsundayFriday = DayOff.setDayOff(employeeTemp, save, date, dayOffsundayFriday);
+				leadersAndEmployee.add(employeeTemp);
 				employee.remove(0);
 				
 

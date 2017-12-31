@@ -8,7 +8,7 @@ import java.util.Locale;
 
 public class Shift {
 	LocalTime startFridayMorning = LocalTime.of(Integer.parseInt(Proprieties.getOnePropriety("MORNING_FRIDAY_START_H")), Integer.parseInt(Proprieties.getOnePropriety("MORNING_FRIDAY_START_M")));
-	LocalTime endFridayMorning = LocalTime.of(Integer.parseInt(Proprieties.getOnePropriety("MORNING_FRIDAY_START_H")), Integer.parseInt(Proprieties.getOnePropriety("MORNING_FRIDAY_START_M")));
+	LocalTime endFridayMorning = LocalTime.of(Integer.parseInt(Proprieties.getOnePropriety("MORNING_FRIDAY_END_H")), Integer.parseInt(Proprieties.getOnePropriety("MORNING_FRIDAY_END_M")));
 	LocalTime startMorning = LocalTime.of(Integer.parseInt(Proprieties.getOnePropriety("MORNING_START_H")), Integer.parseInt(Proprieties.getOnePropriety("MORNING_START_M")));
 	LocalTime endMorning = LocalTime.of(Integer.parseInt(Proprieties.getOnePropriety("MORNING_FRIDAY_END_H")), Integer.parseInt(Proprieties.getOnePropriety("MORNING_FRIDAY_END_M")));
 	LocalTime startNight = LocalTime.of(Integer.parseInt(Proprieties.getOnePropriety("NIGHT_START_H")), Integer.parseInt(Proprieties.getOnePropriety("NIGHT_START_M")));

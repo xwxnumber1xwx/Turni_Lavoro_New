@@ -41,8 +41,8 @@ public class Proprieties {
 			e1.printStackTrace();
 		}
 		proprieties.setProperty("HOW_MANY_MINUTES_TO_WORK", "486");
-		proprieties.setProperty("NIGHT_MINIMUM_EMPLOYEE", "6");
-		proprieties.setProperty("NIGHT_LINE1_NUMBER_EMPLOYEE", "2");
+		proprieties.setProperty("NIGHT_MINIMUM_EMPLOYEE", "8");
+		proprieties.setProperty("NIGHT_LINE1_NUMBER_EMPLOYEE", "4");
 		proprieties.setProperty("MORNING_LINE1_NUMBER_EMPLOYEE", "2");
 		proprieties.setProperty("NIGHT_RATE", "50");
 		proprieties.setProperty("HOLIDAY_RATE", "150");
