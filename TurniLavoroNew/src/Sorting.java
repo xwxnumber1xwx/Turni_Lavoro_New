@@ -34,7 +34,7 @@ public class Sorting {
 					//LinieLeiter NACHT
 					Employee employeeTemp = employee.get(o);
 					if (numberOfLeadersL1 != 0 && employeeTemp.getMorningNight() == 2) {
-						if (employeeTemp.getlinieLeiter() == numberOfLine || employeeTemp.getlinieLeiter() == 3) {
+						if (employeeTemp.getlinneLeader() == numberOfLine || employeeTemp.getlinneLeader() == 3) {
 							dayOffsundayFriday = DayOff.setDayOff(employeeTemp, save, date, dayOffsundayFriday);
 							setEmployeeOnShift(employeeTemp, numberOfLine, numberOfLine);
 							leadersAndEmployee.add(employeeTemp);
@@ -55,7 +55,7 @@ public class Sorting {
 					for (int x = 0; x < size; x++) {
 						Employee employeeTemp = employee.get(x);
 						if (numberOfLeadersL1 != 0) {
-							if (employeeTemp.getlinieLeiter() == numberOfLine || employeeTemp.getlinieLeiter() == 3) {
+							if (employeeTemp.getlinneLeader() == numberOfLine || employeeTemp.getlinneLeader() == 3) {
 								employeeTemp.setMorningNight(2);
 								dayOffsundayFriday = DayOff.setDayOff(employeeTemp, save, date, dayOffsundayFriday);
 								setEmployeeOnShift(employeeTemp, numberOfLine, numberOfLine);
@@ -74,7 +74,7 @@ public class Sorting {
 					//LinieLeiter TAG
 					Employee employeeTemp = employee.get(o);
 					if (numberOfLeadersL1 != 0 && employeeTemp.getMorningNight() == 1) {
-					if (employeeTemp.getlinieLeiter() == numberOfLine || employeeTemp.getlinieLeiter() == 3) {
+					if (employeeTemp.getlinneLeader() == numberOfLine || employeeTemp.getlinneLeader() == 3) {
 						dayOffsundayFriday = DayOff.setDayOff(employeeTemp, save, date, dayOffsundayFriday);
 						setEmployeeOnShift(employeeTemp, numberOfLine, numberOfLine);
 						leadersAndEmployee.add(employeeTemp);

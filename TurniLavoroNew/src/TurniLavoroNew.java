@@ -6,7 +6,8 @@ import java.util.Scanner;
 
 class TurniLavoroNew {
 	
-	public static void main(String[] args)
+	//public static void main(String[] args)
+	public static void Elaborate()	
 		throws IOException {
 				String path = "options.proprieties";
 				if (Proprieties.FileExist(path) == false) {
@@ -25,13 +26,6 @@ class TurniLavoroNew {
 				int yn;
 				IOFile save = new IOFile();
 				Scanner scan = new Scanner (System.in);
-				do { //temporary method
-					System.out.print("you want to add an employee? 1 = Y , 2 = N" + "\n");
-					yn = scan.nextInt();
-					if (yn == 1) {
-						Create.createEmployee();
-					}
-				} while (yn == 1);
 				
 				// load employees from database
 				employeeArrayList = save.ImportObjectFromFile("database");
@@ -89,7 +83,7 @@ class TurniLavoroNew {
 					IOFile.writeLog("log", "log", logText);
 				}
 				scan.close();
-				System.out.println("DONE");
+				AlertBox.Display("Done", "You can find the shift´s file on shift" + date.getYear());
 				}
 	
 }

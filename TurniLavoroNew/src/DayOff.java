@@ -12,12 +12,12 @@ public class DayOff {
 		boolean found = false;
 		do {
 			System.out.println("enter the employee's surname");
-			String surname = scan.nextLine();
+			String surnameScan = scan.nextLine();
 			Employee employee;
 				for (int x=0; x < employeeArrayList.size(); x++) {
 					employee = employeeArrayList.get(x);
-					String cognome = employee.getSurname().toLowerCase();
-					if (cognome.compareTo(surname.toLowerCase()) == 0) {
+					String surnameFromDatabase = employee.getSurname().toLowerCase();
+					if (surnameFromDatabase.compareTo(surnameScan.toLowerCase()) == 0) {
 							found = true;
 						System.out.println(employee.getSurname() + " Which day off? DDMMYY, 1 for EXIT");
 							long dayOff = scan.nextLong();

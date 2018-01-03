@@ -14,7 +14,7 @@ public class Employee implements Serializable {
 	int workLine = 0;
 	int shiftLine = 0;
 	int shiftLineLeader = 0;
-	int linieLeiter = 0;
+	int lineLeader = 0;
 	boolean onlyMorning = false;
 	boolean dayOffThisWeek = false;
 	private double nightRate = 0;
@@ -161,11 +161,11 @@ public class Employee implements Serializable {
 	public boolean getOnlyMorning () {
 		return this.onlyMorning;
 	}
-	public void setLinieLeiter (int linieLeiter) {
-		this.linieLeiter = linieLeiter;
+	public void setLineLeader (int lineLeader) {
+		this.lineLeader = lineLeader;
 	}
-	public int getlinieLeiter () {
-		return this.linieLeiter;
+	public int getlinneLeader () {
+		return this.lineLeader;
 	}
 	
 	public void setDayOffThisWeek (boolean dayOffThisWeek) {
