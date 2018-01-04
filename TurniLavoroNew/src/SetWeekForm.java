@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.time.LocalDate;
 
 import javafx.geometry.Pos;
@@ -42,7 +43,14 @@ public class SetWeekForm {
 		
 		Label label = new Label("Which week do you want to elaborate?");
 		Button buttonExit = new Button("Ok");
-		buttonExit.setOnAction(e -> window.close());
+		buttonExit.setOnAction(e -> {
+		try {
+			ElaborateShift.Elaborate(choiceWeek.getValue());
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		window.close();
+		});
 		
 		VBox layout = new VBox(20);
 		layout.getChildren().addAll(label, choiceWeek, buttonExit);

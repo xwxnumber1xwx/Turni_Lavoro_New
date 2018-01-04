@@ -82,7 +82,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 				newEmployeeForm.addEmployeeForm();
 			}
 			if (event.getSource()==buttonAddDayOff) {
-				DayOff.addDayOff(null, null);
+				DayOffForm.SetDayOff();
 			}
 						
 		}

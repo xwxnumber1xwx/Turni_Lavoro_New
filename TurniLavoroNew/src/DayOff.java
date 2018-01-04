@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class DayOff {
 	static String directoryDayOff = "requestedDaysOff";
 	static int numberOfEmployeersLine = 1;
+	
 	public static ArrayList<Employee> addDayOff(ArrayList<Employee> employeeArrayList, IOFile save) {
 		Scanner scan = new Scanner (System.in);
 		boolean found = false;
@@ -37,6 +38,11 @@ public class DayOff {
 			}
 		} while (found == false);
 		return employeeArrayList;
+	}
+	
+	public static void AddDayOffromForm(Employee employee, LocalDate dayOff) {
+		IOFile save = new IOFile();
+		save.freeday(employee, dayOff, directoryDayOff);
 	}
 	
 	public static int[] setDayOff(Employee employee, IOFile save, LocalDate date, int[] dayOffsundayFriday) {

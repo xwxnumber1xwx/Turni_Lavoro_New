@@ -1,0 +1,208 @@
+2018-01-08<--->2018-01-15
+Sitter Line Leader: 0 Line: 1 
+2018-01-14 Sonntag	frei 
+2018-01-15 Montag	02:30-10:06 
+2018-01-16 Dienstag	02:30-10:06 
+2018-01-17 Mittwoch	02:30-10:06 
+2018-01-18 Donnerstag	02:30-10:06 
+2018-01-19 Freitag	02:00-10:06 
+2018-01-20 Samstag	frei 
+
+Termin Line Leader: 0 Line: 1 
+2018-01-14 Sonntag	frei 
+2018-01-15 Montag	02:30-10:06 
+2018-01-16 Dienstag	02:30-10:06 
+2018-01-17 Mittwoch	02:30-10:06 
+2018-01-18 Donnerstag	02:30-10:06 
+2018-01-19 Freitag	02:00-10:06 
+2018-01-20 Samstag	frei 
+
+Unser Line Leader: 0 Line: 2 
+2018-01-14 Sonntag	frei 
+2018-01-15 Montag	02:30-10:06 
+2018-01-16 Dienstag	02:30-10:06 
+2018-01-17 Mittwoch	02:30-10:06 
+2018-01-18 Donnerstag	02:30-10:06 
+2018-01-19 Freitag	02:00-10:06 
+2018-01-20 Samstag	frei 
+
+Weber Line Leader: 0 Line: 2 
+2018-01-14 Sonntag	frei 
+2018-01-15 Montag	02:30-10:06 
+2018-01-16 Dienstag	02:30-10:06 
+2018-01-17 Mittwoch	02:30-10:06 
+2018-01-18 Donnerstag	02:30-10:06 
+2018-01-19 Freitag	02:00-10:06 
+2018-01-20 Samstag	frei 
+
+caputo Line Leader: 0 Line: 2 
+2018-01-14 Sonntag	frei 
+2018-01-15 Montag	02:30-10:06 
+2018-01-16 Dienstag	02:30-10:06 
+2018-01-17 Mittwoch	02:30-10:06 
+2018-01-18 Donnerstag	02:30-10:06 
+2018-01-19 Freitag	02:00-10:06 
+2018-01-20 Samstag	frei 
+
+Akil Line Leader: 0 Line: 2 
+2018-01-14 Sonntag	frei 
+2018-01-15 Montag	02:30-10:06 
+2018-01-16 Dienstag	02:30-10:06 
+2018-01-17 Mittwoch	02:30-10:06 
+2018-01-18 Donnerstag	02:30-10:06 
+2018-01-19 Freitag	02:00-10:06 
+2018-01-20 Samstag	frei 
+
+GurbuzH Line Leader: 0 Line: 2 
+2018-01-14 Sonntag	frei 
+2018-01-15 Montag	02:30-10:06 
+2018-01-16 Dienstag	02:30-10:06 
+2018-01-17 Mittwoch	02:30-10:06 
+2018-01-18 Donnerstag	02:30-10:06 
+2018-01-19 Freitag	02:00-10:06 
+2018-01-20 Samstag	frei 
+
+HusseinD Line Leader: 0 Line: 2 
+2018-01-14 Sonntag	frei 
+2018-01-15 Montag	02:30-10:06 
+2018-01-16 Dienstag	02:30-10:06 
+2018-01-17 Mittwoch	02:30-10:06 
+2018-01-18 Donnerstag	02:30-10:06 
+2018-01-19 Freitag	02:00-10:06 
+2018-01-20 Samstag	frei 
+
+swabool Line Leader: 0 Line: 2 
+2018-01-14 Sonntag	frei 
+2018-01-15 Montag	02:30-10:06 
+2018-01-16 Dienstag	02:30-10:06 
+2018-01-17 Mittwoch	02:30-10:06 
+2018-01-18 Donnerstag	02:30-10:06 
+2018-01-19 Freitag	02:00-10:06 
+2018-01-20 Samstag	frei 
+
+Saki Line Leader: 0 Line: 2 
+2018-01-14 Sonntag	frei 
+2018-01-15 Montag	02:30-10:06 
+2018-01-16 Dienstag	02:30-10:06 
+2018-01-17 Mittwoch	02:30-10:06 
+2018-01-18 Donnerstag	02:30-10:06 
+2018-01-19 Freitag	02:00-10:06 
+2018-01-20 Samstag	frei 
+
+Schickenberg Line Leader: 0 Line: 2 
+2018-01-14 Sonntag	frei 
+2018-01-15 Montag	02:30-10:06 
+2018-01-16 Dienstag	02:30-10:06 
+2018-01-17 Mittwoch	02:30-10:06 
+2018-01-18 Donnerstag	02:30-10:06 
+2018-01-19 Freitag	02:00-10:06 
+2018-01-20 Samstag	frei 
+
+Gruner Line Leader: 0 Line: 2 
+2018-01-14 Sonntag	frei 
+2018-01-15 Montag	02:30-10:06 
+2018-01-16 Dienstag	02:30-10:06 
+2018-01-17 Mittwoch	02:30-10:06 
+2018-01-18 Donnerstag	02:30-10:06 
+2018-01-19 Freitag	02:00-10:06 
+2018-01-20 Samstag	frei 
+
+Muzaqi Line Leader: 0 Line: 2 
+2018-01-14 Sonntag	frei 
+2018-01-15 Montag	02:30-10:06 
+2018-01-16 Dienstag	02:30-10:06 
+2018-01-17 Mittwoch	02:30-10:06 
+2018-01-18 Donnerstag	02:30-10:06 
+2018-01-19 Freitag	02:00-10:06 
+2018-01-20 Samstag	frei 
+
+Plana Line Leader: 0 Line: 2 
+2018-01-14 Sonntag	frei 
+2018-01-15 Montag	02:30-10:06 
+2018-01-16 Dienstag	02:30-10:06 
+2018-01-17 Mittwoch	02:30-10:06 
+2018-01-18 Donnerstag	02:30-10:06 
+2018-01-19 Freitag	02:00-10:06 
+2018-01-20 Samstag	frei 
+
+Fassin Line Leader: 0 Line: 2 
+2018-01-14 Sonntag	frei 
+2018-01-15 Montag	02:30-10:06 
+2018-01-16 Dienstag	02:30-10:06 
+2018-01-17 Mittwoch	02:30-10:06 
+2018-01-18 Donnerstag	02:30-10:06 
+2018-01-19 Freitag	02:00-10:06 
+2018-01-20 Samstag	frei 
+
+Glaskov Line Leader: 0 Line: 2 
+2018-01-14 Sonntag	frei 
+2018-01-15 Montag	02:30-10:06 
+2018-01-16 Dienstag	02:30-10:06 
+2018-01-17 Mittwoch	02:30-10:06 
+2018-01-18 Donnerstag	02:30-10:06 
+2018-01-19 Freitag	02:00-10:06 
+2018-01-20 Samstag	frei 
+
+Herbele Line Leader: 0 Line: 2 
+2018-01-14 Sonntag	frei 
+2018-01-15 Montag	02:30-10:06 
+2018-01-16 Dienstag	02:30-10:06 
+2018-01-17 Mittwoch	02:30-10:06 
+2018-01-18 Donnerstag	02:30-10:06 
+2018-01-19 Freitag	02:00-10:06 
+2018-01-20 Samstag	frei 
+
+HusseinH Line Leader: 0 Line: 2 
+2018-01-14 Sonntag	frei 
+2018-01-15 Montag	02:30-10:06 
+2018-01-16 Dienstag	02:30-10:06 
+2018-01-17 Mittwoch	02:30-10:06 
+2018-01-18 Donnerstag	02:30-10:06 
+2018-01-19 Freitag	02:00-10:06 
+2018-01-20 Samstag	frei 
+
+Zorlu Line Leader: 0 Line: 2 
+2018-01-14 Sonntag	frei 
+2018-01-15 Montag	02:30-10:06 
+2018-01-16 Dienstag	02:30-10:06 
+2018-01-17 Mittwoch	02:30-10:06 
+2018-01-18 Donnerstag	02:30-10:06 
+2018-01-19 Freitag	02:00-10:06 
+2018-01-20 Samstag	frei 
+
+Andreas Line Leader: 0 Line: 1 
+2018-01-14 Sonntag	16:00-00:06 
+2018-01-15 Montag	16:30-00:36 
+2018-01-16 Dienstag	16:30-00:36 
+2018-01-17 Mittwoch	16:30-00:36 
+2018-01-18 Donnerstag	frei 
+2018-01-19 Freitag	15:00-23:06 
+2018-01-20 Samstag	frei 
+
+Balicos Line Leader: 0 Line: 1 
+2018-01-14 Sonntag	16:00-00:06 
+2018-01-15 Montag	16:30-00:36 
+2018-01-16 Dienstag	16:30-00:36 
+2018-01-17 Mittwoch	frei 
+2018-01-18 Donnerstag	16:30-00:36 
+2018-01-19 Freitag	15:00-23:06 
+2018-01-20 Samstag	frei 
+
+Bigol Line Leader: 0 Line: 2 
+2018-01-14 Sonntag	16:00-00:06 
+2018-01-15 Montag	16:30-00:36 
+2018-01-16 Dienstag	frei 
+2018-01-17 Mittwoch	16:30-00:36 
+2018-01-18 Donnerstag	16:30-00:36 
+2018-01-19 Freitag	15:00-23:06 
+2018-01-20 Samstag	frei 
+
+Gurbuz Line Leader: 0 Line: 2 
+2018-01-14 Sonntag	16:00-00:06 
+2018-01-15 Montag	frei 
+2018-01-16 Dienstag	16:30-00:36 
+2018-01-17 Mittwoch	16:30-00:36 
+2018-01-18 Donnerstag	16:30-00:36 
+2018-01-19 Freitag	15:00-23:06 
+2018-01-20 Samstag	frei 
+

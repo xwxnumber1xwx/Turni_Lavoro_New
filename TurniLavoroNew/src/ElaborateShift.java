@@ -4,10 +4,10 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-class TurniLavoroNew {
+class ElaborateShift {
 	
 	//public static void main(String[] args)
-	public static void Elaborate()	
+	public static void Elaborate(int weekToElaborate)	
 		throws IOException {
 				String path = "options.proprieties";
 				if (Proprieties.FileExist(path) == false) {
@@ -20,8 +20,7 @@ class TurniLavoroNew {
 				int numberOfEmployeeMorningLine1 = Integer.parseInt(Proprieties.getOnePropriety("MORNING_LINE1_NUMBER_EMPLOYEE"));
 				
 				//IMPUT KalenderWoche
-				LocalDate date = LocalDate.of(2017, 1, 1);
-				int inputWeek = 0;
+				LocalDate date = LocalDate.of(LocalDate.now().getYear(), 1, 1);
 				String nameFile = "";
 				int yn;
 				IOFile save = new IOFile();
@@ -29,20 +28,11 @@ class TurniLavoroNew {
 				
 				// load employees from database
 				employeeArrayList = save.ImportObjectFromFile("database");
-				System.out.println("you want to add a day off to an employee? 1 = Y, 2 = N");
-				int z = scan.nextInt();
 				
-				if (z == 1) {
-					DayOff.addDayOff(employeeArrayList, save);
-					
-				}
-		
-				//
 				// chooses which week the program should process
 				String directory = "shift_" + date.getYear();
-				inputWeek = Create.setWeekToElaborate(inputWeek, save, date, directory);
-				inputWeek -= 1;
-				date = date.plusWeeks(inputWeek);
+				weekToElaborate -= 1;
+				date = date.plusWeeks(weekToElaborate);
 				ArrayList <String> shiftWeek = new ArrayList<String>();
 				ArrayList <String> shiftEmployee = new ArrayList<String>();
 				
@@ -52,7 +42,7 @@ class TurniLavoroNew {
 				//CHOICE WHO WORKS IN THE MORNING OR IN THE EVENING
 				for (int x = 0 ; x < employeeArrayList.size(); x++) {
 					Employee employee = employeeArrayList.get(x);
-					if (inputWeek == 0) {
+					if (weekToElaborate == 0) {
 						employee.initNightRates();
 					}
 					// Morning or Night
@@ -60,7 +50,7 @@ class TurniLavoroNew {
 					}
 				//generates Shift and Save it 
 				directory = "shift_" + date.getYear();
-				save.initShifts(directory,  String.valueOf(inputWeek+1) + ".txt", date);
+				save.initShifts(directory,  String.valueOf(weekToElaborate+1) + ".txt", date);
 				employeeArrayList = Sorting.sortingByWorkDepartment(employeeArrayList, 2, numberOfEmployeeMorningLine1, numberOfEmployeeNightLine1, (minEmployeeNight-numberOfEmployeeNightLine1), date, save);
 				for (int x = 0; x < employeeArrayList.size(); x++) {
 					Employee employee = employeeArrayList.get(x);
@@ -72,7 +62,7 @@ class TurniLavoroNew {
 					directory = "shift_employee";
 					save.ExportShiftLT(directory, nameFile, employee, date);
 					directory = "shift_" + date.getYear();
-					save.saveAllShifts(directory, String.valueOf(inputWeek+1) + ".txt", shiftWeek.get(x));
+					save.saveAllShifts(directory, String.valueOf(weekToElaborate+1) + ".txt", shiftWeek.get(x));
 					nameFile = (employee.getSurname() + ".dbs");
 					save.ExportObjectToFile("database", nameFile, employee);
 				}
@@ -83,7 +73,7 @@ class TurniLavoroNew {
 					IOFile.writeLog("log", "log", logText);
 				}
 				scan.close();
-				AlertBox.Display("Done", "You can find the shift´s file on shift" + date.getYear());
+				AlertBox.Display("Done", "DONE! You can find the shift´s file on shift_" + date.getYear());
 				}
 	
 }
