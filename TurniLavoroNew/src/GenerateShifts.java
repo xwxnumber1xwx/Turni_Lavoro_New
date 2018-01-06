@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 
 public class GenerateShifts {
-	public static ArrayList<String> generateShift (Employee employee, LocalDate date) {
+	public static ArrayList<String> generateShift (Employee employee, LocalDate date, ArrayList<LocalDate> holiday) {
 		/*Inserire:
 			- Calcolare la malattia per pochi giorni
 		*/
@@ -32,12 +32,14 @@ public class GenerateShifts {
 		ArrayList<LocalTime> nightRates = new ArrayList<LocalTime>(3);
 		LocalTime zero = LocalTime.of(0, 0);
 		DayOfWeek dayWeek = DayOfWeek.SUNDAY;
+		boolean holidayAdded = false;
 		
 		String logText = (employee.getName() + " " + employee.getSurname());
 		IOFile.writeLog("log", "log", logText);
 		for (x = 0; x < 7; x++) {
+			holidayAdded = false;
 			if (x == employee.getDayOff()) {
-				shiftEmployeeArrayList.add(employee.getDayOff(), "\n" + date + " " + sett.getWeek()[employee.getDayOff()][0] + "\t" + "frei");
+				shiftEmployeeArrayList.add(employee.getDayOff(), "\n" + date + " " + sett.getWeek()[employee.getDayOff()][0] + "\t" + "dayOff");
 				employee.setTime(date, zero, x);
 			} else {
 				if (employee.getDisease() == true) {
@@ -91,41 +93,52 @@ public class GenerateShifts {
 						continue;
 					}
 				}
-
-				// x = 1, 2, 3, 4, 5, 6; M, T, W, T, S
-				shiftEmployeeArrayList.add(x, "\n" + date + " " + sett.getWeek()[x][0] + "\t" + sett.getWeek()[x][employee.getMorningNight()]); //Scrive il resto dei giorni non scritti "domenica, lunedi, ecc.." oppure "libero"
-				
-				if (employee.getMorningNight() == 1 & x != 6 & x != 0) { //mattina
-					if (x != 5) {
-					nightRates = Shift.calculateNightRates(startMorning, endMorning, startNightRate, endNightRate, date, dayWeek);
-					employee.setTime(date, startMorning, x);
-					setNightTariffEmployee(employee, nightRates);
-					
-					//log
-					logText = ("Night Rate added (Morning)" + sett.getWeek()[x][0] + " : " + Shift.calculateNightRates(startMorning, endMorning, startNightRate, endNightRate, date, dayWeek));
-					IOFile.writeLog("log", "log", logText);
-					} else { // Friday 2:00
-						nightRates = Shift.calculateNightRates(startFridayMorning, endFridayMorning, startNightRate, endNightRate, date, dayWeek);
-						employee.setTime(date, startMorning, x);
-						setNightTariffEmployee(employee, nightRates);
-						//log
-						logText = ("Night Rate added (Morning)" + sett.getWeek()[x][0] + " : " + Shift.calculateNightRates(startFridayMorning, endFridayMorning, startNightRate, endNightRate, date, dayWeek));
+				if (employee.getHolidayThisWeek() == true) {
+					for (int z = 0; z < holiday.size(); z++) {
+						if (date.isEqual(holiday.get(z)) == true) {
+						shiftEmployeeArrayList.add(x, "\n" + date + " " + sett.getWeek()[x][0] + "\t" + "holiday");
+						holidayAdded = true;
+						logText = ("holiday Added to " + employee.getSurname() + " " + employee.getName() + " on " + date);
 						IOFile.writeLog("log", "log", logText);
+						}
 					}
 				}
-				if (employee.getMorningNight() == 2 & x != 6 & x != employee.getDayOff()) {
-					nightRates = Shift.calculateNightRates(startNight, endNight, startNightRate, endNightRate, date, dayWeek);
-					employee.setTime(date, startNight, x);
-					setNightTariffEmployee(employee, nightRates);
+				if (holidayAdded == false) {
+					// x = 1, 2, 3, 4, 5, 6; M, T, W, T, S
+					shiftEmployeeArrayList.add(x, "\n" + date + " " + sett.getWeek()[x][0] + "\t" + sett.getWeek()[x][employee.getMorningNight()]); //Scrive il resto dei giorni non scritti "domenica, lunedi, ecc.." oppure "libero"
 					
-					//log
-					logText = ("Night Rate added (Night)"  + sett.getWeek()[x][0] + " : " + Shift.calculateNightRates(startNight, endNight, startNightRate, endNightRate, date, dayWeek));
-					IOFile.writeLog("log", "log", logText);
-					
-				}
-				if (x == 6) { //Sabato
-					employee.setTime(date, zero, x);
-				}
+					if (employee.getMorningNight() == 1 & x != 6 & x != 0) { //mattina
+						if (x != 5) {
+						nightRates = Shift.calculateNightRates(startMorning, endMorning, startNightRate, endNightRate, date, dayWeek);
+						employee.setTime(date, startMorning, x);
+						setNightTariffEmployee(employee, nightRates);
+						
+						//log
+						logText = ("Night Rate added (Morning)" + sett.getWeek()[x][0] + " : " + Shift.calculateNightRates(startMorning, endMorning, startNightRate, endNightRate, date, dayWeek));
+						IOFile.writeLog("log", "log", logText);
+						} else { // Friday 2:00
+							nightRates = Shift.calculateNightRates(startFridayMorning, endFridayMorning, startNightRate, endNightRate, date, dayWeek);
+							employee.setTime(date, startMorning, x);
+							setNightTariffEmployee(employee, nightRates);
+							//log
+							logText = ("Night Rate added (Morning)" + sett.getWeek()[x][0] + " : " + Shift.calculateNightRates(startFridayMorning, endFridayMorning, startNightRate, endNightRate, date, dayWeek));
+							IOFile.writeLog("log", "log", logText);
+						}
+					}
+					if (employee.getMorningNight() == 2 & x != 6 & x != employee.getDayOff()) {
+						nightRates = Shift.calculateNightRates(startNight, endNight, startNightRate, endNightRate, date, dayWeek);
+						employee.setTime(date, startNight, x);
+						setNightTariffEmployee(employee, nightRates);
+						
+						//log
+						logText = ("Night Rate added (Night)"  + sett.getWeek()[x][0] + " : " + Shift.calculateNightRates(startNight, endNight, startNightRate, endNightRate, date, dayWeek));
+						IOFile.writeLog("log", "log", logText);
+						
+					}
+					}
+					if (x == 6) { //Sabato
+						employee.setTime(date, zero, x);
+					}
 			}
 			date = date.plusDays(1);
 			dayWeek = dayWeek.plus(1);

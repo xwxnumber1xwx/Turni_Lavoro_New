@@ -17,7 +17,7 @@ import javafx.stage.Stage;
 public class Main extends Application implements EventHandler<ActionEvent>{
 
 
-		Button buttonElaborate, buttonAddEmployee, buttonAddDayOff, buttonBackToMain, buttonExcemple1, buttonExit, buttonInsertEmployee;
+		Button buttonElaborate, buttonAddEmployee, buttonAddDayOff, buttonBackToMain, buttonSetHolidays, buttonExit, buttonInsertEmployee;
 		Stage window;
 		Scene sceneMain, sceneAddEmployee;
 		
@@ -42,10 +42,11 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 			buttonAddDayOff = new Button();
 			buttonAddDayOff.setText("Add DayOff");
 			buttonAddDayOff.setOnAction(this);
-									
 			
-			
-			
+			buttonSetHolidays = new Button();
+			buttonSetHolidays.setText("Add Holidays");
+			buttonSetHolidays.setOnAction(e -> SetHolidayForm.SetHoliday());
+		
 			buttonExit = new Button();
 			buttonExit.setOnAction(e -> {
 				e.consume();
@@ -62,7 +63,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 			
 			// Layout 1 (layoutMainWindow)
 			VBox  layoutMainWindow = new VBox(20);
-			layoutMainWindow.getChildren().addAll(labelMain, buttonElaborate, buttonAddEmployee, buttonAddDayOff, buttonExit);
+			layoutMainWindow.getChildren().addAll(labelMain, buttonElaborate, buttonAddEmployee, buttonAddDayOff, buttonSetHolidays, buttonExit);
 			layoutMainWindow.setAlignment(Pos.CENTER);
 			sceneMain = new Scene (layoutMainWindow, 400, 300); 
 			

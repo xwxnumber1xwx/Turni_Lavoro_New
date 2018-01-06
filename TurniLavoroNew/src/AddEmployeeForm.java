@@ -88,7 +88,6 @@ public class AddEmployeeForm {
 	public void employeeInput(TextField employeeCode, TextField Surname, TextField Name, CheckBox line1CheckBox, CheckBox line2CheckBox, CheckBox Line1LeaderCheckBox, CheckBox Line2LeaderCheckBox, CheckBox onlyMorningCheckBox) {
 		int lineAbility = 0;
 		int lineLeader = 0;
-		Boolean onyMorning = false;
 		long employeeCodeLong;
 		try {
 			Long.parseLong(employeeCode.getText());
@@ -103,7 +102,7 @@ public class AddEmployeeForm {
 		lineAbility = 3;
 		} else if (line1CheckBox.isSelected() == true) {
 			lineAbility = 1;
-		} else {
+		} else if (line2CheckBox.isSelected() == true) {
 			lineAbility = 2;
 		}
 	
@@ -111,16 +110,11 @@ public class AddEmployeeForm {
 		lineLeader = 3;
 		} else if (Line1LeaderCheckBox.isSelected() == true) {
 			lineLeader = 1;
-		} else {
+		} else if ((Line2LeaderCheckBox.isSelected() == true)){
 			lineLeader = 2;
 		}
 	
-	
-	if (onlyMorningCheckBox.isSelected() == true) {
-		onyMorning = true;
-	}
-	
-	Create.createEmployeeFromForm(employeeCodeLong, Surname.getText(), Name.getText(), lineAbility, lineLeader, onlyMorningCheckBox.isSelected());
+	AddEmployee.addEmployeeFromForm(employeeCodeLong, Surname.getText(), Name.getText(), lineAbility, lineLeader, onlyMorningCheckBox.isSelected());
 		String str = Surname.getText() + " " + Name.getText();
 		System.out.println(str);
 	}

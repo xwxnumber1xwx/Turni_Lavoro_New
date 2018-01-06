@@ -48,7 +48,7 @@ public class IOFile {
 		return yn;
 	}
 		
-	public boolean saveAllShifts (String directoryEXT, String nameFile, String shiftWeek) {
+	public boolean exportAllShifts (String directoryEXT, String nameFile, String shiftWeek) {
 		boolean yn = false;
 		Charset charset = Charset.forName("UTF-8");
 		Path directory = Paths.get(directoryEXT);
@@ -78,10 +78,11 @@ public class IOFile {
 		return yn;
 	}
 		
-	public boolean ExportShiftLT(String directoryEXT, String nameFile, Employee employee, LocalDate date) {
+	public boolean exportOneEmployeeShift(String directoryEXT, String nameFile, Employee employee, LocalDate date) {
 		DayOfWeek dayWeek = DayOfWeek.from(date);
+		
 		TextStyle stileNorm = TextStyle.FULL;
-		Locale deutsch = Locale.GERMAN;
+		Locale language = Locale.ENGLISH;
 		boolean yn = false;
 		Charset charset = Charset.forName("UTF-8");
 		Path directory = Paths.get(directoryEXT);
@@ -106,10 +107,11 @@ public class IOFile {
 			int plusMinutes = Integer.parseInt(Proprieties.getOnePropriety("HOW_MANY_MINUTES_TO_WORK"));
 			for (int x = 0; x < 7; x++) {
 				if (employee.getDayOff() != x & x != 6) {
-					fileToSave = employee.getTime(x).toLocalDate().toString() + " " +  dayWeek.getDisplayName(stileNorm, deutsch).toString().toLowerCase() + " " + employee.getTime(x).toLocalTime().toString() + "-"+ employee.getTime(x).plusMinutes(plusMinutes).toLocalTime();
+					fileToSave = employee.getTime(x).toLocalDate().toString() + " " +  dayWeek.getDisplayName(stileNorm, language).toString().toLowerCase() + " " + employee.getTime(x).toLocalTime().toString() + "-"+ employee.getTime(x).plusMinutes(plusMinutes).toLocalTime();
 				} else {
-					fileToSave = employee.getTime(x).toLocalDate().toString() + " " + dayWeek.getDisplayName(stileNorm, deutsch).toString().toLowerCase() + " " + "frei";
+					fileToSave = employee.getTime(x).toLocalDate().toString() + " " + dayWeek.getDisplayName(stileNorm, language).toString().toLowerCase() + " " + "DayOff";
 				}
+				fileToSave = fileToSave.toLowerCase();
 				writer.write(fileToSave, 0, fileToSave.length());
 				writer.newLine();
 				dayWeek = dayWeek.plus(1);
@@ -230,9 +232,10 @@ public class IOFile {
 		return yesNo;
 	}
 	
-	public ArrayList<LocalDate> checkFreeDay (Employee employee, String directoryEXT) {
+	public ArrayList<LocalDate> checkDayOffOrHoliday (Employee employee, String directoryEXT) {
 		
-		directoryEXT = (directoryEXT + "//" + employee.surname + ".txt");
+		directoryEXT = (directoryEXT + "//" + employee.getSurname()  + "_" + employee.getName() + ".txt");
+		directoryEXT = directoryEXT.toLowerCase();
 		Path directory = Paths.get(directoryEXT);
 		boolean yesNo = Files.exists(directory);
 		ArrayList<LocalDate> days = new ArrayList<LocalDate>();
@@ -258,10 +261,11 @@ public class IOFile {
 		return days;
 	}
 	
-	public void freeday (Employee employee, LocalDate day, String directoryEXT) {
+	public void dayOff (Employee employee, LocalDate day, String directoryEXT) {
 		Charset charset = Charset.forName("UTF-8");
 		Path directory = Paths.get(directoryEXT);
-		String nameFile = employee.getSurname();
+		String nameFile = (employee.getSurname()  + "_" + employee.getName());;
+		nameFile = nameFile.toLowerCase();
 		Path path = Paths.get(directory + "//" + nameFile + ".txt");
 		try {
 			Files.createDirectories(directory);

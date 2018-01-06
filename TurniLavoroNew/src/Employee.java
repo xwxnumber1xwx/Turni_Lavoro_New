@@ -17,6 +17,7 @@ public class Employee implements Serializable {
 	int lineLeader = 0;
 	boolean onlyMorning = false;
 	boolean dayOffThisWeek = false;
+	private boolean holidayThisWeek = false;
 	private double nightRate = 0;
 	private double holidayRate = 0;
 	private double sundayRate = 0;
@@ -164,7 +165,7 @@ public class Employee implements Serializable {
 	public void setLineLeader (int lineLeader) {
 		this.lineLeader = lineLeader;
 	}
-	public int getlinneLeader () {
+	public int getlineLeader () {
 		return this.lineLeader;
 	}
 	
@@ -234,5 +235,13 @@ public class Employee implements Serializable {
 			
 		}
 		return dayLDT;
+	}
+
+	public boolean getHolidayThisWeek() {
+		return holidayThisWeek;
+	}
+
+	public void setHolidayThisWeek(boolean holidayThisWeek) {
+		this.holidayThisWeek = holidayThisWeek;
 	}
 }

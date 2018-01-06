@@ -39,14 +39,15 @@ public class Shift {
 	DayOfWeek saturday = DayOfWeek.SATURDAY;
 	TextStyle stileNorm = TextStyle.FULL;
 	Locale deutsch = Locale.GERMAN;
+	Locale english = Locale.ENGLISH;
 	String week [][] = {
-		{sunday.getDisplayName(stileNorm, deutsch), "frei", sundayNight},	
-		{monday.getDisplayName(stileNorm, deutsch), morning, night},
-		{tuesday.getDisplayName(stileNorm, deutsch), morning, night},
-		{wednesday.getDisplayName(stileNorm, deutsch), morning, night},
-		{thursday.getDisplayName(stileNorm, deutsch), morning, night},
-		{friday.getDisplayName(stileNorm, deutsch),fridayMorning, fridayNight, fridayNightSundayOff},
-		{saturday.getDisplayName(stileNorm, deutsch), "frei", "frei"}
+		{sunday.getDisplayName(stileNorm, english), "dayOff", sundayNight},	
+		{monday.getDisplayName(stileNorm, english), morning, night},
+		{tuesday.getDisplayName(stileNorm, english), morning, night},
+		{wednesday.getDisplayName(stileNorm, english), morning, night},
+		{thursday.getDisplayName(stileNorm, english), morning, night},
+		{friday.getDisplayName(stileNorm, english),fridayMorning, fridayNight, fridayNightSundayOff},
+		{saturday.getDisplayName(stileNorm, english), "dayOff", "dayOff"}
 		};
 	
 	public String[][] getWeek() {

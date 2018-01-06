@@ -1,4 +1,6 @@
 import java.time.LocalDate;
+import java.time.Period;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -10,18 +12,22 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class DayOffForm {
+public class SetHolidayForm {
 	
-	public static void SetDayOff() {
+	public static void SetHoliday() {
 		Stage window = new Stage();
 		window.initModality(Modality.APPLICATION_MODAL);
-		window.setTitle("Set DayOff");
+		window.setTitle("Set Holiday");
 		window.setMinWidth(250);
 		IOFile save = new IOFile();
 		final ArrayList <Employee> employeeArrayList = save.ImportObjectFromFile("database");
-		DatePicker checkInDatePicker = new DatePicker();
-		checkInDatePicker.setValue(LocalDate.now().plusWeeks(1));
-		checkInDatePicker.setShowWeekNumbers(true);
+		DatePicker checkInDatePickerStart = new DatePicker();
+		DatePicker checkInDatePickerEnd = new DatePicker();
+		checkInDatePickerStart.setValue(LocalDate.now().plusWeeks(1));
+		checkInDatePickerStart.setShowWeekNumbers(true);
+		checkInDatePickerEnd.setValue(checkInDatePickerStart.getValue().plusDays(1));
+		checkInDatePickerEnd.setShowWeekNumbers(true);
+		
 				
 		ChoiceBox <String> choiceEmployee = new ChoiceBox<>();
 		Employee employee;
@@ -31,21 +37,28 @@ public class DayOffForm {
 			}
 		
 		
-		Label label = new Label("Which employee need a Day off?");
+		Label label = new Label("Which employee need Holidays");
+		Label labelStart = new Label("From");
+		Label labelEnd = new Label("To");
+		
 		Button buttonExit = new Button("Ok");
 		buttonExit.setOnAction(e -> {
 			final Employee employeeTemp2 = SelectedEmployee(employeeArrayList, choiceEmployee);
-			DayOff.AddDayOffromForm(employeeTemp2, checkInDatePicker.getValue());
-			AlertBox.Display("Done", "Day Off Added");
+			LocalDate holidaysDate = checkInDatePickerStart.getValue();
+			Period dayBetween = holidaysDate.until(checkInDatePickerEnd.getValue());
+			for (int x = 0; x < dayBetween.get(ChronoUnit.DAYS); x++) {
+				save.dayOff(employeeTemp2, holidaysDate, "holiday");
+				holidaysDate = holidaysDate.plusDays(1);
+			}
+			AlertBox.Display("Done", "Holiday Added");
 			//log
-			String logText = (employeeTemp2.getSurname() + " " + employeeTemp2.getName() + "Added a Day Off on " + checkInDatePicker.getValue());
+			String logText = (employeeTemp2.getSurname() + " " + employeeTemp2.getName() + "Added a Day Off on " + checkInDatePickerStart.getValue());
 			IOFile.writeLog("log", "log", logText);
 			
-			window.close();
 		});
 		
 		VBox layout = new VBox(20);
-		layout.getChildren().addAll(label, choiceEmployee, checkInDatePicker, buttonExit);
+		layout.getChildren().addAll(label, choiceEmployee, labelStart, checkInDatePickerStart, labelEnd, checkInDatePickerEnd, buttonExit);
 		layout.setAlignment(Pos.CENTER);
 		
 		Scene scene = new Scene(layout, 400, 300);
