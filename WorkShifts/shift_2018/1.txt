@@ -1,0 +1,181 @@
+2018-01-01<--->2018-01-08
+Unser Steave Line Leader: 1 Line: 1 
+2018-01-07 Sunday	dayOff 
+2018-01-08 Monday	02:30-10:06 
+2018-01-09 Tuesday	02:30-10:06 
+2018-01-10 Wednesday	02:30-10:06 
+2018-01-11 Thursday	02:30-10:06 
+2018-01-12 Friday	02:00-10:06 
+2018-01-13 Saturday	dayOff 
+
+Sitter Sibille Line Leader: 1 Line: 1 
+2018-01-07 Sunday	dayOff 
+2018-01-08 Monday	02:30-10:06 
+2018-01-09 Tuesday	02:30-10:06 
+2018-01-10 Wednesday	02:30-10:06 
+2018-01-11 Thursday	02:30-10:06 
+2018-01-12 Friday	02:00-10:06 
+2018-01-13 Saturday	dayOff 
+
+Termin Joakim Line Leader: 0 Line: 1 
+2018-01-07 Sunday	dayOff 
+2018-01-08 Monday	02:30-10:06 
+2018-01-09 Tuesday	02:30-10:06 
+2018-01-10 Wednesday	02:30-10:06 
+2018-01-11 Thursday	02:30-10:06 
+2018-01-12 Friday	02:00-10:06 
+2018-01-13 Saturday	dayOff 
+
+Plana Selman Line Leader: 2 Line: 2 
+2018-01-07 Sunday	dayOff 
+2018-01-08 Monday	02:30-10:06 
+2018-01-09 Tuesday	02:30-10:06 
+2018-01-10 Wednesday	02:30-10:06 
+2018-01-11 Thursday	02:30-10:06 
+2018-01-12 Friday	02:00-10:06 
+2018-01-13 Saturday	dayOff 
+
+Schikember Ralf Line Leader: 2 Line: 2 
+2018-01-07 Sunday	dayOff 
+2018-01-08 Monday	02:30-10:06 
+2018-01-09 Tuesday	02:30-10:06 
+2018-01-10 Wednesday	02:30-10:06 
+2018-01-11 Thursday	02:30-10:06 
+2018-01-12 Friday	02:00-10:06 
+2018-01-13 Saturday	dayOff 
+
+Saki Saki Line Leader: 0 Line: 2 
+2018-01-07 Sunday	dayOff 
+2018-01-08 Monday	02:30-10:06 
+2018-01-09 Tuesday	02:30-10:06 
+2018-01-10 Wednesday	02:30-10:06 
+2018-01-11 Thursday	02:30-10:06 
+2018-01-12 Friday	02:00-10:06 
+2018-01-13 Saturday	dayOff 
+
+Caputo Daniele Line Leader: 0 Line: 2 
+2018-01-07 Sunday	dayOff 
+2018-01-08 Monday	holiday 
+2018-01-09 Tuesday	holiday 
+2018-01-10 Wednesday	holiday 
+2018-01-11 Thursday	holiday 
+2018-01-12 Friday	holiday 
+2018-01-13 Saturday	holiday 
+
+Glaskov Markus Line Leader: 0 Line: 2 
+2018-01-07 Sunday	dayOff 
+2018-01-08 Monday	holiday 
+2018-01-09 Tuesday	holiday 
+2018-01-10 Wednesday	holiday 
+2018-01-11 Thursday	holiday 
+2018-01-12 Friday	holiday 
+2018-01-13 Saturday	dayOff 
+
+Hussein Hussein Line Leader: 0 Line: 2 
+2018-01-07 Sunday	dayOff 
+2018-01-08 Monday	02:30-10:06 
+2018-01-09 Tuesday	02:30-10:06 
+2018-01-10 Wednesday	02:30-10:06 
+2018-01-11 Thursday	02:30-10:06 
+2018-01-12 Friday	02:00-10:06 
+2018-01-13 Saturday	dayOff 
+
+Zorlu Miralay Line Leader: 0 Line: 2 
+2018-01-07 Sunday	dayOff 
+2018-01-08 Monday	02:30-10:06 
+2018-01-09 Tuesday	02:30-10:06 
+2018-01-10 Wednesday	02:30-10:06 
+2018-01-11 Thursday	02:30-10:06 
+2018-01-12 Friday	02:00-10:06 
+2018-01-13 Saturday	dayOff 
+
+Gurbuz Hassan Line Leader: 0 Line: 2 
+2018-01-07 Sunday	dayOff 
+2018-01-08 Monday	02:30-10:06 
+2018-01-09 Tuesday	02:30-10:06 
+2018-01-10 Wednesday	02:30-10:06 
+2018-01-11 Thursday	02:30-10:06 
+2018-01-12 Friday	02:00-10:06 
+2018-01-13 Saturday	dayOff 
+
+Herbele Jessica Line Leader: 0 Line: 2 
+2018-01-07 Sunday	dayOff 
+2018-01-08 Monday	02:30-10:06 
+2018-01-09 Tuesday	02:30-10:06 
+2018-01-10 Wednesday	02:30-10:06 
+2018-01-11 Thursday	02:30-10:06 
+2018-01-12 Friday	02:00-10:06 
+2018-01-13 Saturday	dayOff 
+
+Hussein Akil Line Leader: 1 Line: 1 
+2018-01-07 Sunday	16:00-00:06 
+2018-01-08 Monday	16:30-00:36 
+2018-01-09 Tuesday	16:30-00:36 
+2018-01-10 Wednesday	dayOff 
+2018-01-11 Thursday	16:30-00:36 
+2018-01-12 Friday	15:00-23:06 
+2018-01-13 Saturday	dayOff 
+
+Gurbuz Ramazan Line Leader: 1 Line: 1 
+2018-01-07 Sunday	16:00-00:06 
+2018-01-08 Monday	16:30-00:36 
+2018-01-09 Tuesday	16:30-00:36 
+2018-01-10 Wednesday	16:30-00:36 
+2018-01-11 Thursday	dayOff 
+2018-01-12 Friday	15:00-23:06 
+2018-01-13 Saturday	dayOff 
+
+Hussein Demir Line Leader: 0 Line: 1 
+2018-01-07 Sunday	dayOff 
+2018-01-08 Monday	16:30-00:36 
+2018-01-09 Tuesday	16:30-00:36 
+2018-01-10 Wednesday	16:30-00:36 
+2018-01-11 Thursday	16:30-00:36 
+2018-01-12 Friday	18:00-02:06 
+2018-01-13 Saturday	dayOff 
+
+Swabool Kitty Line Leader: 0 Line: 1 
+2018-01-07 Sunday	16:00-00:06 
+2018-01-08 Monday	16:30-00:36 
+2018-01-09 Tuesday	16:30-00:36 
+2018-01-10 Wednesday	16:30-00:36 
+2018-01-11 Thursday	dayOff 
+2018-01-12 Friday	15:00-23:06 
+2018-01-13 Saturday	dayOff 
+
+Gruner Heiko Line Leader: 2 Line: 2 
+2018-01-07 Sunday	16:00-00:06 
+2018-01-08 Monday	dayOff 
+2018-01-09 Tuesday	16:30-00:36 
+2018-01-10 Wednesday	16:30-00:36 
+2018-01-11 Thursday	16:30-00:36 
+2018-01-12 Friday	15:00-23:06 
+2018-01-13 Saturday	dayOff 
+
+Muzaqi Memet Line Leader: 2 Line: 2 
+2018-01-07 Sunday	16:00-00:06 
+2018-01-08 Monday	16:30-00:36 
+2018-01-09 Tuesday	dayOff 
+2018-01-10 Wednesday	16:30-00:36 
+2018-01-11 Thursday	16:30-00:36 
+2018-01-12 Friday	15:00-23:06 
+2018-01-13 Saturday	dayOff 
+
+Bigol Bulent Line Leader: 0 Line: 2 
+2018-01-07 Sunday	16:00-00:06 
+2018-01-08 Monday	16:30-00:36 
+2018-01-09 Tuesday	16:30-00:36 
+2018-01-10 Wednesday	dayOff 
+2018-01-11 Thursday	16:30-00:36 
+2018-01-12 Friday	15:00-23:06 
+2018-01-13 Saturday	dayOff 
+
+Balicos Arnel Line Leader: 0 Line: 2 
+2018-01-07 Sunday	16:00-00:06 
+2018-01-08 Monday	16:30-00:36 
+2018-01-09 Tuesday	dayOff 
+2018-01-10 Wednesday	16:30-00:36 
+2018-01-11 Thursday	16:30-00:36 
+2018-01-12 Friday	15:00-23:06 
+2018-01-13 Saturday	dayOff 
+
