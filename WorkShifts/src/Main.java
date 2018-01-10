@@ -35,10 +35,6 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 			buttonElaborate.setText("Elaborate Shifts");
 			buttonElaborate.setOnAction(this);
 			
-			buttonAddEmployee = new Button();
-			buttonAddEmployee.setText("Add Employee");
-			buttonAddEmployee.setOnAction(this);
-			
 			buttonAddDayOff = new Button();
 			buttonAddDayOff.setText("Add DayOff");
 			buttonAddDayOff.setOnAction(this);
