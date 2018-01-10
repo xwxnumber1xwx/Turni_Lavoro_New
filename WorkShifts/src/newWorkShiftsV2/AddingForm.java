@@ -10,7 +10,6 @@ public class AddingForm {
 	Button buttonBackToMain, buttonAddEmployee;
 	Stage window = new Stage();
 	Scene scene;
-	AllEmployee allEmployee;
 
 	public void add() {
 
@@ -22,7 +21,7 @@ public class AddingForm {
 		buttonAddEmployee.setText("Add Employee");
 		buttonAddEmployee.setOnAction(e -> {
 			AddEmployeeForm newEmployeeForm = new AddEmployeeForm();
-			newEmployeeForm.addEmployeeForm(allEmployee);
+			newEmployeeForm.addEmployeeForm();
 		});
 		VBox vbox = new VBox(20);
 		vbox.getChildren().addAll(buttonAddEmployee, buttonBackToMain);

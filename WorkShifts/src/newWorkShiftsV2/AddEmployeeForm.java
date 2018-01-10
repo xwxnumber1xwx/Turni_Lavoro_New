@@ -15,14 +15,20 @@ public class AddEmployeeForm {
 	Scene sceneAddEmployee;
 	IOFileV2 ioFile = new IOFileV2();
 	ToJson toJson = new ToJson();
-	//AllEmployee allEmployee = toJson.JsonToAllEmployee(ioFile.ImportJson("database", "database"));
-	AllEmployee allEmployee = new AllEmployee();
+	AllEmployee allEmployee;
+	//AllEmployee allEmployee = new AllEmployee();
 	
-	public AllEmployee addEmployeeForm(AllEmployee allEmployee) {
+	public AllEmployee addEmployeeForm() {
+		
+		if (IOFileV2.initFile("databaseV2", "database") == false) {
+		allEmployee = toJson.JsonToAllEmployee(ioFile.ImportJson("databaseV2", "database"));
+		} else
+			allEmployee = new AllEmployee();
+		
 		
 		buttonBackToMain = new Button();
 		buttonBackToMain.setOnAction(e -> {
-			IOFileV2.exportJson("database", "database", toJson.AllEmployeeToJson(allEmployee));
+			IOFileV2.exportJson("databaseV2", "database", toJson.AllEmployeeToJson(allEmployee));
 		window.close();
 		});
 		buttonBackToMain.setText("Back to Main");

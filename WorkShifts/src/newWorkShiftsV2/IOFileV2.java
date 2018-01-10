@@ -7,6 +7,7 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -30,8 +31,7 @@ public class IOFileV2 {
 		return yn;
 	}
 
-	public static boolean exportJson(String directoryEXT, String nameFile, String jsonString) {
-		boolean yn = false;
+	public static void exportJson(String directoryEXT, String nameFile, String jsonString) {
 		Charset charset = Charset.forName("UTF-8");
 		Path directory = Paths.get(directoryEXT);
 		Path path = Paths.get(directory + "//" + nameFile + ".json");
@@ -56,18 +56,16 @@ public class IOFileV2 {
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
-		return yn;
 	}
 
 	public String ImportJson(String directoryEXT, String nameFile) {
 		IOFileV2.initFile(directoryEXT, nameFile);
-		Path directory = Paths.get(directoryEXT);
-		Path path = Paths.get(directory + "//" + nameFile + ".json");
-		List<String> fileJson = null;
+		directoryEXT = (directoryEXT + "//" + nameFile + ".json");
+		Path path = Paths.get(directoryEXT);
+		List<String> fileJson = new ArrayList<String>();
 		try (BufferedReader ins = Files.newBufferedReader(path)) {
-			fileJson = Files.readAllLines(directory);
+			fileJson = Files.readAllLines(path);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		StringBuilder builder = new StringBuilder();
@@ -75,6 +73,7 @@ public class IOFileV2 {
 		    builder.append(s);
 		}
 		String str = builder.toString();
+		
 		return str;
 	}
 }
