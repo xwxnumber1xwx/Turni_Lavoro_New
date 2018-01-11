@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Employee{
 	
-	private long employeeCode = 0;
+	private long employeeID = 0;
 	private String name;
 	private String surname;
 	private int rank = 0;
@@ -12,14 +12,14 @@ public class Employee{
 	private ArrayList<Integer> leaderAbility = new ArrayList<Integer>();
 	private Statistics stats = new Statistics();
 	private ConditionEmployee condition= new ConditionEmployee();
-	
-	public void setEmployeeCode (long employeeCode) {
-		this.employeeCode = employeeCode;
+	public void setEmployeeID (long employeeID) {
+		this.employeeID = employeeID;
 	}
 	
-	public long getEmployeeCode () {
-		return this.employeeCode;
+	public long getEmployeeID () {
+		return this.employeeID;
 	}
+	
 	
 	public String getName() {
 		return name;
@@ -96,6 +96,4 @@ public class Employee{
 	public void setCondition(ConditionEmployee condition) {
 		this.condition = condition;
 	}
-
-	
 }

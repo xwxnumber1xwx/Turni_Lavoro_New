@@ -27,10 +27,10 @@ public class Main extends Application {
 		Label labelMain = new Label("Work Shifts");
 
 		buttonNew = new Button();
-		buttonNew.setText("New...");
+		buttonNew.setText("Employee...");
 		
 		buttonNew.setOnAction(e-> {
-		AddingForm addForm = new AddingForm();	
+		EmployeeForm addForm = new EmployeeForm();	
 		addForm.add();
 		});
 
