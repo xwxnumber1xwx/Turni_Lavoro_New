@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="708.0" prefWidth="1201.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="newWorkShiftsV2.ViewAllEmployeeTab">
+	<children>
+		<AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="640.0" prefWidth="664.0" VBox.vgrow="ALWAYS">
+			<children>
+				<Button layoutX="35.0" layoutY="225.0" mnemonicParsing="false" text="Add Work Department" />
+				<Button layoutX="47.0" layoutY="261.0" mnemonicParsing="false" text="Add Working Line" />
+				<Button layoutX="65.0" layoutY="297.0" mnemonicParsing="false" text="Set Day Off" />
+				<Button layoutX="83.0" layoutY="329.0" mnemonicParsing="false" text="Save" />
+				<TableView layoutX="199.0" layoutY="64.0" onSort="#ViewAllEmployee" prefHeight="593.0" prefWidth="933.0">
+					<columns>
+						<TableColumn maxWidth="100.0" text="ID" />
+						<TableColumn maxWidth="100.0" text="Surname" />
+						<TableColumn maxWidth="100.0" text="Name" />
+						<TableColumn maxWidth="100.0" prefWidth="90.0" text="Sunday" />
+						<TableColumn maxWidth="100.0" prefWidth="90.0" text="Monday" />
+						<TableColumn maxWidth="100.0" prefWidth="90.0" text="Tuesday" />
+						<TableColumn maxWidth="100.0" prefWidth="90.0" text="Wednesday" />
+						<TableColumn maxWidth="100.0" prefWidth="90.0" text="Thursday" />
+						<TableColumn maxWidth="100.0" prefWidth="90.0" text="Friday" />
+						<TableColumn maxWidth="100.0" prefWidth="90.0" text="Saturday" />
+					</columns>
+				</TableView>
+				<ListView layoutX="14.0" layoutY="65.0" prefHeight="136.0" prefWidth="178.0" />
+				<Label layoutX="55.0" layoutY="29.0" text="Work Department" />
+				<Label layoutX="571.0" layoutY="29.0" text="Shifts" />
+			</children>
+		</AnchorPane>
+	</children>
+</VBox>

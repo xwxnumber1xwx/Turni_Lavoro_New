@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class WorkDepartment {
 	private String nameOfDepartment = "";
-	private ArrayList<WorkingLine> department = new ArrayList<WorkingLine>();
+	private ArrayList<WorkingLine> workingLines = new ArrayList<WorkingLine>();
 
 	/**
 	 * @return the nameOfDepartment
@@ -23,14 +23,18 @@ public class WorkDepartment {
 	/**
 	 * @return the department
 	 */
-	public ArrayList<WorkingLine> getDepartment() {
-		return department;
+	public ArrayList<WorkingLine> getWorkingLines() {
+		return workingLines;
 	}
 
 	/**
 	 * @param department the department to set
 	 */
 	public void setDepartment(ArrayList<WorkingLine> department) {
-		this.department = department;
+		this.workingLines = department;
+	}
+	
+	public void addWorkingLine(WorkingLine workingLine) {
+		this.workingLines.add(workingLine);
 	}
 }

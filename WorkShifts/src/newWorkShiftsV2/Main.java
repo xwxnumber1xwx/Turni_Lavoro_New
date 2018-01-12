@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
-	Button buttonExit, buttonNew;
+	Button buttonExit, buttonNew, buttonShifts;
 	Stage window;
 	Scene sceneMain, sceneAddEmployee;
 
@@ -26,6 +26,13 @@ public class Main extends Application {
 
 		Label labelMain = new Label("Work Shifts");
 
+		buttonShifts = new Button();
+		buttonShifts.setText("Show Shifts");
+		buttonShifts.setOnAction(e->{
+			ViewShifts shifts = new ViewShifts();
+			shifts.ViewWorkingLine();
+		});
+		
 		buttonNew = new Button();
 		buttonNew.setText("Employee...");
 		
@@ -47,7 +54,7 @@ public class Main extends Application {
 
 		// Layout 1 (layoutMainWindow)
 		VBox layoutMainWindow = new VBox(20);
-		layoutMainWindow.getChildren().addAll(labelMain, buttonNew, buttonExit);
+		layoutMainWindow.getChildren().addAll(labelMain, buttonShifts, buttonNew, buttonExit);
 		layoutMainWindow.setAlignment(Pos.CENTER);
 		sceneMain = new Scene(layoutMainWindow, 400, 300);
 
