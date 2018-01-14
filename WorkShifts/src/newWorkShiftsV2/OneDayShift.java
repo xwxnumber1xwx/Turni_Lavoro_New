@@ -4,8 +4,8 @@ import java.time.LocalDateTime;
 public class OneDayShift {
 
 		private boolean dayOff = false;
-		private LocalDateTime startWorkTime;
-		private LocalDateTime endWorkTime;
+		private LocalDateTime startWorkTime = LocalDateTime.MIN;
+		private LocalDateTime endWorkTime = LocalDateTime.MIN;
 
 
 		/**

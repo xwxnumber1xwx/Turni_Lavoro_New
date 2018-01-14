@@ -35,6 +35,18 @@ public class WorkDepartment {
 	}
 	
 	public void addWorkingLine(WorkingLine workingLine) {
-		this.workingLines.add(workingLine);
+		workingLines.add(workingLine);
+	}
+	
+	public void deleteWorkingLine(String nameOfWorkingLine) {
+		int x = 0;
+		int size = workingLines.size() -1 ;
+		for (x = 0; x < size;  x++); {
+			if (workingLines.get(x).getNameLine().compareTo(nameOfWorkingLine) == 0) {
+					workingLines.remove(x);
+			} else {
+				AlertBox.Display("ERROR!", "Nothings to delete");
+			}
+		}
 	}
 }
