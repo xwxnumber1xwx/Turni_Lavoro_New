@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Statistics {
+	
+	private long employeeID = 0;
 	private ArrayList<Double> nightRates = new ArrayList<Double>();
 	private ArrayList<Double> sundayRates = new ArrayList<Double>();
 	private ArrayList<Double> holidayRates = new ArrayList<Double>();
@@ -55,6 +57,18 @@ public class Statistics {
 	 */
 	public void setDisease(LocalDate disease) {
 		this.disease.add(disease);
+	}
+	/**
+	 * @return the employeeID
+	 */
+	public long getEmployeeID() {
+		return employeeID;
+	}
+	/**
+	 * @param employeeID the employeeID to set
+	 */
+	public void setEmployeeID(long employeeID) {
+		this.employeeID = employeeID;
 	}
 	
 

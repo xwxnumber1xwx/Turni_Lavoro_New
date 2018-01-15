@@ -1,10 +1,7 @@
 package newWorkShiftsV2;
 
-import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.ArrayList;
-
-import javax.swing.plaf.basic.BasicInternalFrameTitlePane.SystemMenuBar;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -28,16 +25,24 @@ public class ViewShifts {
 	ArrayList<TreeItem<String>> arrayLineTree = new ArrayList<TreeItem<String>>();
 	TreeItem<String> root;
 	TreeView<String> rootWorkDepartment;
-	Button buttonBackToMain, buttonAddNewWorkingLine, buttonDeleteNewWorkingLine;
+	Button buttonBackToMain, buttonAddNewWorkingLine, buttonAddLineTimes, buttonDeleteNewWorkingLine;
 	Scene scene;
 	WorkingLine workingLine;
 	TableView<OneDayShift> tableShiftsWeekShifts;
-	WeekShifts weekShifts;
+	ArrayList<WeekShifts> weekShifts;
 	TextField lineField;
 
 	@SuppressWarnings("unchecked")
 	public void ViewWorkingLine() {
 		// Buttons
+
+		buttonAddLineTimes = new Button();
+		buttonAddLineTimes.setOnAction(e -> {
+			AddShiftTime.addTimes(workDepartment);
+			window.close();
+		});
+		buttonAddLineTimes.setText("Add Start/End Working Time");
+
 		buttonAddNewWorkingLine = new Button();
 		buttonAddNewWorkingLine.setOnAction(e -> {
 			addLineButton();
@@ -97,45 +102,45 @@ public class ViewShifts {
 		 * surname.setMinWidth(100); surname.setCellValueFactory(new
 		 * PropertyValueFactory<>("surname"));
 		 */
-		// One Day Shift
+
+		// One Day Shift Table
+		//ERROR
 		int tableWidth = 70;
-		TableColumn<OneDayShift, LocalDateTime> Sunday = new TableColumn<>("Sunday");
+		TableColumn<OneDayShift, LocalTime> Sunday = new TableColumn<>("Sunday");
 		Sunday.setMinWidth(tableWidth);
-		Sunday.setCellValueFactory(new PropertyValueFactory<OneDayShift, LocalDateTime>("startWorkTime"));
-
-		TableColumn<OneDayShift, LocalDateTime> Monday = new TableColumn<>("Monday");
+		Sunday.setCellValueFactory(new PropertyValueFactory<OneDayShift, LocalTime>("startWorkTime")); // <- ERROR mi prende tutti gl startworkTime di tutti
+		TableColumn<OneDayShift, LocalTime> Monday = new TableColumn<>("Monday");
 		Monday.setMinWidth(tableWidth);
-		Monday.setCellValueFactory(new PropertyValueFactory<OneDayShift, LocalDateTime>("startWorkTime"));
-
-		TableColumn<OneDayShift, LocalDateTime> Tuesday = new TableColumn<>("Tuesday");
+		Monday.setCellValueFactory(new PropertyValueFactory<OneDayShift, LocalTime>("startWorkTime"));
+		TableColumn<OneDayShift, LocalTime> Tuesday = new TableColumn<>("Tuesday");
 		Tuesday.setMinWidth(tableWidth);
-		Tuesday.setCellValueFactory(new PropertyValueFactory<OneDayShift, LocalDateTime>("startWorkTime"));
-
-		TableColumn<OneDayShift, LocalDateTime> Wednesday = new TableColumn<>("Wednesday");
+		Tuesday.setCellValueFactory(new PropertyValueFactory<OneDayShift, LocalTime>("startWorkTime"));
+		TableColumn<OneDayShift, LocalTime> Wednesday = new TableColumn<>("Wednesday");
 		Wednesday.setMinWidth(tableWidth);
-		Wednesday.setCellValueFactory(new PropertyValueFactory<OneDayShift, LocalDateTime>("startWorkTime"));
-
-		TableColumn<OneDayShift, LocalDateTime> Thursday = new TableColumn<>("Thursday");
+		Wednesday.setCellValueFactory(new PropertyValueFactory<OneDayShift, LocalTime>("startWorkTime"));
+		TableColumn<OneDayShift, LocalTime> Thursday = new TableColumn<>("Thursday");
 		Thursday.setMinWidth(tableWidth);
-		Thursday.setCellValueFactory(new PropertyValueFactory<OneDayShift, LocalDateTime>("startWorkTime"));
-
-		TableColumn<OneDayShift, LocalDateTime> Friday = new TableColumn<>("Friday");
+		Thursday.setCellValueFactory(new PropertyValueFactory<OneDayShift, LocalTime>("startWorkTime"));
+		TableColumn<OneDayShift, LocalTime> Friday = new TableColumn<>("Friday");
 		Friday.setMinWidth(tableWidth);
-		Friday.setCellValueFactory(new PropertyValueFactory<OneDayShift, LocalDateTime>("startWorkTime"));
-
-		TableColumn<OneDayShift, LocalDateTime> Saturday = new TableColumn<>("Saturday");
+		Friday.setCellValueFactory(new PropertyValueFactory<OneDayShift, LocalTime>("startWorkTime"));
+		TableColumn<OneDayShift, LocalTime> Saturday = new TableColumn<>("Saturday");
 		Saturday.setMinWidth(tableWidth);
-		Saturday.setCellValueFactory(new PropertyValueFactory<OneDayShift, LocalDateTime>("startWorkTime"));
+		Saturday.setCellValueFactory(new PropertyValueFactory<OneDayShift, LocalTime>("startWorkTime"));
 
 		// Table shifts
 		tableShiftsWeekShifts = new TableView<OneDayShift>();
 		if (workDepartment.getWorkingLines().size() != 0) {
-			weekShifts = workingLine.getShift().get(0); // Just an example
-			tableShiftsWeekShifts.setItems(getAllOneDayWeekShifts(weekShifts));
+			workingLine = workDepartment.getWorkingLines().get(0);
+			weekShifts = workingLine.getShift(); // Just an example
+			//tableShiftsWeekShifts.setItems(getAllOneDayWeekShifts(weekShifts.get(0)));
+			tableShiftsWeekShifts.setItems(getOneDayWeekShifts(weekShifts.get(0).getOneDayWeekShifts(0))); //Sunday -ERROR
+			
 		}
 		tableShiftsWeekShifts.setMinWidth(tableWidth * 7);
 		tableShiftsWeekShifts.getColumns().addAll(Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday);
 
+		// Layout Gridpane
 		GridPane gridShifts = new GridPane();
 		GridPane.setConstraints(buttonBackToMain, 2, 2);
 		GridPane.setConstraints(rootWorkDepartment, 0, 0);
@@ -143,11 +148,12 @@ public class ViewShifts {
 		GridPane.setConstraints(tableShiftsWeekShifts, 1, 0);
 		GridPane.setConstraints(lineField, 0, 2);
 		GridPane.setConstraints(buttonDeleteNewWorkingLine, 0, 4);
+		GridPane.setConstraints(buttonAddLineTimes, 1, 1);
 
 		gridShifts.setPadding(new Insets(10, 10, 10, 10));
 		gridShifts.setVgap(8);
 		gridShifts.setHgap(10);
-		gridShifts.getChildren().addAll(rootWorkDepartment, lineField, buttonDeleteNewWorkingLine,
+		gridShifts.getChildren().addAll(rootWorkDepartment, lineField, buttonAddLineTimes, buttonDeleteNewWorkingLine,
 				buttonAddNewWorkingLine, tableShiftsWeekShifts, buttonBackToMain);
 		gridShifts.setAlignment(Pos.CENTER);
 		scene = new Scene(gridShifts, 1024, 720);
@@ -169,6 +175,14 @@ public class ViewShifts {
 		ObservableList<OneDayShift> allWeekShifts = FXCollections.observableArrayList();
 		allWeekShifts.addAll(weekShifts.getWeekShifts());
 		return allWeekShifts;
+
+	}
+	
+	public ObservableList<OneDayShift> getOneDayWeekShifts(OneDayShift oneDayShift) {
+
+		ObservableList<OneDayShift> oneDayShiftList = FXCollections.observableArrayList();
+		oneDayShiftList.add(oneDayShift);
+		return oneDayShiftList;
 
 	}
 

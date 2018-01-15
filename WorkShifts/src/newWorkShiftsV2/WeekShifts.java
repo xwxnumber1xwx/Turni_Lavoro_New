@@ -3,7 +3,7 @@ package newWorkShiftsV2;
 import java.util.ArrayList;
 
 public class WeekShifts {
-	private ArrayList<OneDayShift> weekShifts = new ArrayList<>();
+	private ArrayList<OneDayShift> weekShifts = new ArrayList<>(6);
 
 	/**
 	 * @return the weekShifts
@@ -22,5 +22,9 @@ public class WeekShifts {
 
 	public OneDayShift getOneDayWeekShifts(int index) {
 		return weekShifts.get(index);
+	}
+	
+	public void setOneDayShift (OneDayShift oneDayShift) {
+		this.weekShifts.add(oneDayShift);
 	}
 }

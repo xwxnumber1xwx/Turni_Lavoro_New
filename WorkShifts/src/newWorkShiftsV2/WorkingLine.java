@@ -29,5 +29,11 @@ public class WorkingLine {
 	public void setShift(ArrayList <WeekShifts> shift) {
 		this.shift = shift;
 	}
+	
+	
+	public void addOneShift (WeekShifts shift) {
+		this.shift.add(shift);
+		
+	}
 
 }

@@ -10,8 +10,8 @@ public class Employee{
 	private int rank = 0;
 	private ArrayList<Integer> workAbility = new ArrayList<Integer>();
 	private ArrayList<Integer> leaderAbility = new ArrayList<Integer>();
-	private Statistics stats = new Statistics();
 	private ConditionEmployee condition= new ConditionEmployee();
+	
 	public void setEmployeeID (long employeeID) {
 		this.employeeID = employeeID;
 	}
@@ -68,21 +68,6 @@ public class Employee{
 	public void setLeaderAbility(ArrayList<Integer> leaderAbility) {
 		this.leaderAbility = leaderAbility;
 	}
-
-	/**
-	 * @return the stats
-	 */
-	public Statistics getStats() {
-		return stats;
-	}
-
-	/**
-	 * @param stats the stats to set
-	 */
-	public void setStats(Statistics stats) {
-		this.stats = stats;
-	}
-
 	/**
 	 * @return the condition
 	 */
