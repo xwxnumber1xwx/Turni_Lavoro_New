@@ -50,10 +50,10 @@ public class AddShiftTime {
 			oneDayShift = addOneDayShift(LocalTime.parse(fieldSaturdayStart.getText()), LocalTime.parse(fieldSaturdayEnd.getText()));
 			weekShifts.add(oneDayShift);
 			
-			WorkingLine workingLine = workDepartment.getWorkingLineFromName(choiceWeek.getValue());
+			//WorkingLine workingLine = workDepartment.getWorkingLineFromName(choiceWeek.getValue());
 			WeekShifts weekSh = new WeekShifts();
 			weekSh.setWeekShifts(weekShifts);
-			workingLine.addOneShift(weekSh);
+			workDepartment.getWorkingLineFromName(choiceWeek.getValue()).addOneShift(weekSh);
 			IOFileV2.exportJson("databaseV2", "department_database", toJson.WorkDepartmentToJson(workDepartment));
 			window.close();
 			ViewShifts shifts = new ViewShifts();

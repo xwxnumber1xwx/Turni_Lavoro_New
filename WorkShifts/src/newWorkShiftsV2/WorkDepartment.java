@@ -50,6 +50,18 @@ public class WorkDepartment {
 		return Wkline;
 	}
 	
+	public int getIndexLineFromName(String nameOfWorkingLine) {
+		int index = 0;
+		int size = this.workingLines.size();
+		for (int x = 0; x < size;  x++) {
+			if (this.workingLines.get(x).getNameLine().compareTo(nameOfWorkingLine) == 0) {
+				index = x;
+			}
+		}
+		return index;
+	}
+	
+	
 	public void deleteWorkingLine(String nameOfWorkingLine) {
 		int x = 0;
 		int size = workingLines.size() -1 ;
