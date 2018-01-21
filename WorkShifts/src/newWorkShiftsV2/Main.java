@@ -29,7 +29,7 @@ public class Main extends Application {
 		buttonShifts = new Button();
 		buttonShifts.setText("Show Shifts");
 		buttonShifts.setOnAction(e->{
-			ViewShifts shifts = new ViewShifts();
+			ViewShiftsTab shifts = new ViewShiftsTab();
 			shifts.ViewWorkingLine();
 		});
 		

@@ -3,7 +3,7 @@ package newWorkShiftsV2;
 import java.util.ArrayList;
 
 public class WorkDepartment {
-	private String nameOfDepartment = "";
+	private String nameOfDepartment = "unknow";
 	private ArrayList<WorkingLine> workingLines = new ArrayList<WorkingLine>();
 
 	/**
@@ -62,16 +62,16 @@ public class WorkDepartment {
 	}
 	
 	
-	public void deleteWorkingLine(String nameOfWorkingLine) {
-		int x = 0;
-		int size = workingLines.size() -1 ;
-		for (x = 0; x < size;  x++); {
+	public boolean deleteWorkingLine(String nameOfWorkingLine) {
+		boolean yesNo = false;
+		int size = workingLines.size() -1;
+		for (int x = 0; x < size;  x++) {
 			if (workingLines.get(x).getNameLine().compareTo(nameOfWorkingLine) == 0) {
 					workingLines.remove(x);
-			} else {
-				AlertBox.Display("ERROR!", "Nothings to delete");
+					yesNo = true;
 			}
 		}
+		return yesNo;
 	}
 
 }

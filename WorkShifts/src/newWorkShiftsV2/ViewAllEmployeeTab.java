@@ -135,8 +135,9 @@ public class ViewAllEmployeeTab {
 		allEmployeeTable = table.getItems();
 		employeeSelected = table.getSelectionModel().getSelectedItems();
 		//employeeSelected.forEach(allEmployeeTable::remove);
-		allEmployeeTable.removeAll(employeeSelected);
 		allEmployee.getAllEmployee().removeAll(employeeSelected);
+		allEmployeeTable.removeAll(employeeSelected);
+		
 	}
 
 }

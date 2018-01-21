@@ -7,6 +7,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -16,15 +17,16 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
-public class ViewShifts {
+public class ViewShiftsTab {
 	IOFileV2 ioFile = new IOFileV2();
 	ToJson toJson = new ToJson();
 	WorkDepartment workDepartment;
-	Stage window = new Stage();
+	Stage window;
 	ArrayList<TreeItem<String>> arrayLineTree = new ArrayList<TreeItem<String>>();
 	TreeItem<String> root;
 	TreeView<String> rootWorkDepartment;
-	Button buttonBackToMain, buttonAddNewWorkingLine, buttonAddLineTimes, buttonDeleteNewWorkingLine, buttonDeleteWeekShift;
+	Button buttonBackToMain, buttonAddNewWorkingLine, buttonAddLineTimes, buttonDeleteNewWorkingLine,
+			buttonDeleteWeekShift;
 	Scene scene;
 	WorkingLine workingLine;
 	TableView<WeekShifts> tableShiftsWeekShifts;
@@ -32,54 +34,58 @@ public class ViewShifts {
 	TextField lineField;
 	ObservableList<WeekShifts> oneDayShiftList = FXCollections.observableArrayList();
 	int index = 0;
+	AllEmployee allEmployee;
 
 	@SuppressWarnings("unchecked")
 	public void ViewWorkingLine() {
 		// Buttons
-		
+		window = new Stage();
+
 		buttonDeleteWeekShift = new Button();
+		buttonDeleteWeekShift.setText("Delete shift");
 		buttonDeleteWeekShift.setOnAction(e -> {
-			boolean yesno = false;
-			yesno = ConfirmBox.Confirm("SURE?", "Do You want to delete this shift?");
-			if (yesno = true) {
+			if (ConfirmBox.Confirm("SURE?", "Do you want to delete this shift?")) {
 				deleteButton();
 			}
 
 		});
-		buttonDeleteWeekShift.setText("Delete shift");
+
 		buttonAddLineTimes = new Button();
-		buttonAddLineTimes.setOnAction(e -> {
-			AddShiftTime.addTimes(workDepartment);
-			window.close();
-		});
 		buttonAddLineTimes.setText("Add Start/End Working Time");
+		buttonAddLineTimes.setOnAction(e -> {
+			//rootWorkDepartment.getSelectionModel().clearSelection();
+			workDepartment = AddShiftTime.addTimes(workDepartment);
+			tableShiftsWeekShifts.refresh();
+		});
+
 		buttonAddNewWorkingLine = new Button();
+		buttonAddNewWorkingLine.setText("Add new working Line");
 		buttonAddNewWorkingLine.setOnAction(e -> {
 			addLineButton();
 		});
-		buttonAddNewWorkingLine.setText("Add new working Line");
+
 		buttonDeleteNewWorkingLine = new Button();
-		buttonDeleteNewWorkingLine.setOnAction(e -> {
-			deleteLineButton();
-		});
 		buttonDeleteNewWorkingLine.setText("Delete working Line");
+		buttonDeleteNewWorkingLine.setOnAction(e -> {
+			if (ConfirmBox.Confirm("SURE?", "Do You want to delete this shift?"))
+				deleteLineButton();
+		});
+
 		buttonBackToMain = new Button();
+		buttonBackToMain.setText("Back to Main");
 		buttonBackToMain.setOnAction(e -> {
 			IOFileV2.exportJson("databaseV2", "department_database", toJson.WorkDepartmentToJson(workDepartment));
 			window.close();
 		});
-		buttonBackToMain.setText("Back to Main");
 
 		// line TextField
 		lineField = new TextField();
-		lineField.setPromptText("name");
+		lineField.setPromptText("Write the name");
 		lineField.setMinWidth(100);
 
 		if (IOFileV2.initFile("databaseV2", "department_database") == false) {
 			workDepartment = toJson.JsonToWorkDepartment(ioFile.ImportJson("databaseV2", "department_database"));
 		} else {
-			window.close();
-			AlertBox.Display("ERROR!", "Data not found");
 			workDepartment = new WorkDepartment();
 		}
 
@@ -103,23 +109,20 @@ public class ViewShifts {
 			tableShiftsWeekShifts.refresh();
 		});
 
-		/*
-		 * TableColumn<Employee, Long> idEmployee = new TableColumn<>("EmployeeID");
-		 * idEmployee.setMinWidth(50); idEmployee.setCellValueFactory(new
-		 * PropertyValueFactory<>("employeeID"));
-		 * 
-		 * // Name TableColumn<Employee, String> name = new TableColumn<>("Name");
-		 * name.setMinWidth(100); name.setCellValueFactory(new
-		 * PropertyValueFactory<>("name"));
-		 * 
-		 * 
-		 * TableColumn<Employee, String> surname = new TableColumn<>("Surname");
-		 * surname.setMinWidth(100); surname.setCellValueFactory(new
-		 * PropertyValueFactory<>("surname"));
-		 */
 
 		// One Day Shift Table
 		int tableWidth = 50;
+		
+
+		ChoiceBox<String> choiceEmployee = new ChoiceBox<>();
+		if (IOFileV2.initFile("databaseV2", "database") == false) {
+			allEmployee = toJson.JsonToAllEmployee(ioFile.ImportJson("databaseV2", "database"));
+		for (int x = 0; x < allEmployee.getAllEmployee().size(); x++)
+			choiceEmployee.getItems().add(allEmployee.getAllEmployee().get(x).getSurname() + " " + allEmployee.getAllEmployee().get(x).getName());
+		}
+		
+		choiceEmployee.setMinWidth(100);
+		
 		TableColumn<WeekShifts, String> Sunday = new TableColumn<>("Sunday");
 		Sunday.setMinWidth(tableWidth);
 		Sunday.setCellValueFactory(new PropertyValueFactory<WeekShifts, String>("Sunday"));
@@ -153,16 +156,17 @@ public class ViewShifts {
 		GridPane.setConstraints(rootWorkDepartment, 0, 0);
 		GridPane.setConstraints(buttonAddNewWorkingLine, 0, 3);
 		GridPane.setConstraints(tableShiftsWeekShifts, 1, 0);
+		GridPane.setConstraints(choiceEmployee, 2, 0);
 		GridPane.setConstraints(lineField, 0, 2);
 		GridPane.setConstraints(buttonDeleteNewWorkingLine, 0, 4);
 		GridPane.setConstraints(buttonAddLineTimes, 1, 1);
-		GridPane.setConstraints(buttonDeleteWeekShift, 2, 0);
+		GridPane.setConstraints(buttonDeleteWeekShift, 1, 3);
 
 		gridShifts.setPadding(new Insets(10, 10, 10, 10));
 		gridShifts.setVgap(8);
 		gridShifts.setHgap(10);
 		gridShifts.getChildren().addAll(rootWorkDepartment, lineField, buttonAddLineTimes, buttonDeleteNewWorkingLine,
-				buttonAddNewWorkingLine, tableShiftsWeekShifts, buttonDeleteWeekShift, buttonBackToMain);
+				buttonAddNewWorkingLine, choiceEmployee, tableShiftsWeekShifts, buttonDeleteWeekShift, buttonBackToMain);
 		gridShifts.setAlignment(Pos.CENTER);
 		scene = new Scene(gridShifts, 1024, 720);
 
@@ -175,13 +179,10 @@ public class ViewShifts {
 		ObservableList<WeekShifts> shiftsSelected, allShiftsTable;
 		allShiftsTable = tableShiftsWeekShifts.getItems();
 		shiftsSelected = tableShiftsWeekShifts.getSelectionModel().getSelectedItems();
-		//employeeSelected.forEach(allEmployeeTable::remove);
-		allShiftsTable.removeAll(shiftsSelected);
 		workingLine.getShift().removeAll(shiftsSelected);
-	//	allEmployee.getAllEmployee().removeAll(employeeSelected);
-		
-	}
+		allShiftsTable.removeAll(shiftsSelected);
 
+	}
 
 	private TreeItem<String> lineTree(String title, TreeItem<String> parent) {
 		TreeItem<String> item = new TreeItem<>(title);
@@ -209,41 +210,29 @@ public class ViewShifts {
 		}
 	}
 
-	/*
-	 * public ObservableList<OneDayShift> getOneDayWeekShifts(OneDayShift
-	 * oneDayShift) { oneDayShiftList.add(oneDayShift); return oneDayShiftList;
-	 * 
-	 * }
-	 */
 	public void addLineButton() {
-		arrayLineTree.add(lineTree(lineField.getText(), root));
-		WorkingLine workLine = new WorkingLine();
-		workLine.setNameLine(lineField.getText());
-		workDepartment.addWorkingLine(workLine);
-		AlertBox.Display("Done", "Working Line succesfully added");
-		lineField.clear();
+		if (lineField.getText().isEmpty() || lineField.getText() == "") {
+			AlertBox.Display("ERROR", "Please write a name");
+		} else {
+			arrayLineTree.add(lineTree(lineField.getText(), root));
+			WorkingLine workLine = new WorkingLine();
+			workLine.setNameLine(lineField.getText());
+			workDepartment.addWorkingLine(workLine);
+			AlertBox.Display("Done", "Working Line succesfully added");
+			lineField.clear();
+		}
 	}
 
-	// ERROR
 	public void deleteLineButton() {
-
-		workDepartment.deleteWorkingLine(lineField.getText());
-		IOFileV2.exportJson("databaseV2", "department_database", toJson.WorkDepartmentToJson(workDepartment));
-		AlertBox.Display(lineField.getText(), "Deleted");
-		lineField.clear();
-		window.close();
-		ViewWorkingLine();
-		/*
-		 * rootWorkDepartment.getSelectionModel().clearSelection();
-		 * rootWorkDepartment.getSelectionModel().selectedItemProperty().addListener((v,
-		 * oldValue, newValue) -> { if (newValue != null) {
-		 * root.getParent().getChildren().remove(newValue); // ERROR!!!
-		 * workDepartment.deleteWorkingLine(newValue.getValue());
-		 * IOFileV2.exportJson("databaseV2", "department_database",
-		 * toJson.WorkDepartmentToJson(workDepartment));
-		 * AlertBox.Display(newValue.getValue(), "Deleted"); } });
-		 * rootWorkDepartment.getSelectionModel().clearSelection();
-		 */
+		boolean yesno = workDepartment.deleteWorkingLine(lineField.getText());
+		if (yesno == true) {
+			IOFileV2.exportJson("databaseV2", "department_database", toJson.WorkDepartmentToJson(workDepartment));
+			AlertBox.Display(lineField.getText(), "Deleted");
+			lineField.clear();
+			window.close();
+			ViewWorkingLine();
+		} else
+			AlertBox.Display("ERROR", lineField.getText() + " non found into the database");
 	}
 
 	public ObservableList<WeekShifts> getWeek(WeekShifts weekShifts) {

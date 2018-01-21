@@ -7,22 +7,25 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class EmployeeForm {
-	Button buttonBackToMain, buttonAddEmployee, viewAllEmployee;
+	Button buttonBackToMain, buttonAddEmployee, viewAllEmployee, buttonAddHolidays;
 	Stage window = new Stage();
 	Scene scene;
 	ViewAllEmployeeTab  viewAllEmployeeTab = new ViewAllEmployeeTab();;
 
 	public void add() {
 		
-		
+		buttonAddHolidays = new Button("addHolidays");
+		buttonAddHolidays.setOnAction(e-> SetHolidayFormV2.SetHoliday());
 
 		buttonBackToMain = new Button();
-		buttonBackToMain.setOnAction(e -> window.close());
 		buttonBackToMain.setText("Back to Main");
+		buttonBackToMain.setOnAction(e -> window.close());
+		
 		
 		viewAllEmployee = new Button();
-		viewAllEmployee.setOnAction(e -> viewAllEmployeeTab.ViewAllEmployee());
 		viewAllEmployee.setText("View All Employee");
+		viewAllEmployee.setOnAction(e -> viewAllEmployeeTab.ViewAllEmployee());
+		
 
 		buttonAddEmployee = new Button();
 		buttonAddEmployee.setText("Add Employee");
@@ -31,12 +34,12 @@ public class EmployeeForm {
 			newEmployeeForm.addEmployeeForm();
 		});
 		VBox vbox = new VBox(20);
-		vbox.getChildren().addAll(buttonAddEmployee, viewAllEmployee, buttonBackToMain);
+		vbox.getChildren().addAll(buttonAddEmployee, viewAllEmployee, buttonAddHolidays, buttonBackToMain);
 		vbox.setAlignment(Pos.CENTER);
 		scene = new Scene(vbox, 400, 300);
 
 		window.setScene(scene);
-		window.setTitle("New...");
+		window.setTitle("Employee...");
 		window.show();
 
 	}

@@ -16,7 +16,7 @@ public class addWorkOganization {
 	IOFileV2 ioFile = new IOFileV2();
 	ToJson toJson = new ToJson();
 	AllEmployee allEmployee;
-	ViewShifts shifts = new ViewShifts();
+	ViewShiftsTab shifts = new ViewShiftsTab();
 
 	public void addEmployeeForm(WorkDepartment workDepartment) {
 

@@ -1,24 +1,14 @@
 package newWorkShiftsV2;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
 public class ConditionEmployee {
-	private boolean onlyMorning = false;
+	private long idEmployee;
 	private ArrayList<LocalDate> holiday = new ArrayList<LocalDate>();
 	private ArrayList<LocalDate> disease = new ArrayList<LocalDate>();
-	/**
-	 * @return the onlyMorning
-	 */
-	public boolean isOnlyMorning() {
-		return onlyMorning;
-	}
-	/**
-	 * @param onlyMorning the onlyMorning to set
-	 */
-	public void setOnlyMorning(boolean onlyMorning) {
-		this.onlyMorning = onlyMorning;
-	}
+
 	/**
 	 * @return the holiday
 	 */
@@ -28,8 +18,13 @@ public class ConditionEmployee {
 	/**
 	 * @param holiday the holiday to set
 	 */
-	public void setHoliday(ArrayList<LocalDate> holiday) {
-		this.holiday = holiday;
+	public void setHoliday(LocalDate holidayStart, LocalDate holidayEnd) {
+		long until =  holidayStart.until(holidayEnd, ChronoUnit.DAYS) + 1;
+		for (int x = 0; x < until; x++) {
+			this.holiday.add(holidayStart);
+			holidayStart = holidayStart.plusDays(1);
+		}
+		
 	}
 	/**
 	 * @return the disease
@@ -42,6 +37,18 @@ public class ConditionEmployee {
 	 */
 	public void setDisease(ArrayList<LocalDate> disease) {
 		this.disease = disease;
+	}
+	/**
+	 * @return the idEmployee
+	 */
+	public long getIdEmployee() {
+		return idEmployee;
+	}
+	/**
+	 * @param idEmployee the idEmployee to set
+	 */
+	public void setIdEmployee(long idEmployee) {
+		this.idEmployee = idEmployee;
 	}
 	
 

@@ -73,7 +73,7 @@ public class WeekShifts {
 	
 	public String getSaturday () {
 		String day = "";
-		day = setdayOff(5, weekShifts);
+		day = setdayOff(6, weekShifts);
 		this.Saturday = day;
 		return day;
 	}
