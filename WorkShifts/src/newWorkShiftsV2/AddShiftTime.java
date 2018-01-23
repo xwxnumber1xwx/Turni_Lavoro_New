@@ -20,7 +20,7 @@ public class AddShiftTime {
 	static OneDayShift oneDayShift;
 	static WeekShifts weekShifts;
 
-	public static WorkDepartment addTimes(WorkDepartment workDepartment) {
+	public static WorkDepartment addTimes(WorkDepartment workDepartment, int idWeek) {
 		weekShifts = new WeekShifts();
 		Stage window = new Stage();
 		window.initModality(Modality.APPLICATION_MODAL);
@@ -59,10 +59,10 @@ public class AddShiftTime {
 			oneDayShift = addOneDayShift(LocalTime.parse(fieldSaturdayStart.getText()),
 					LocalTime.parse(fieldSaturdayEnd.getText()));
 			weekShifts.setOneDayShift(oneDayShift);
-
+			
 			// workDepartment.getWorkingLineFromName(choiceWeek.getValue());
 			//workDepartment.getWorkingLineFromName(choiceWeek.getValue()).addOneShift(weekShifts);
-			
+			weekShifts.setIdWeek(idWeek);
 			workDepartment.getWorkingLineFromName(choiceWeek.getValue()).getShift().add(weekShifts);
 			//IOFileV2.exportJson("databaseV2", "department_database", toJson.WorkDepartmentToJson(workDepartment));
 			//ViewShiftsTab shifts = new ViewShiftsTab();
@@ -170,7 +170,7 @@ public class AddShiftTime {
 
 	public static OneDayShift addOneDayShift(LocalTime start, LocalTime end) {
 		OneDayShift oneDayShift = new OneDayShift();
-		if (start.compareTo(end) == 0) {
+		if (start.equals(end) == true) {
 			oneDayShift.setDayOff(true);
 		}
 		oneDayShift.setStartWorkTime(start);

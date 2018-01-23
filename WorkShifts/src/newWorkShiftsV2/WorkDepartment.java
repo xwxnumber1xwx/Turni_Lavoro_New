@@ -39,10 +39,8 @@ public class WorkDepartment {
 	}
 	
 	public WorkingLine getWorkingLineFromName(String nameOfWorkingLine) {
-		int x = 0;
 		WorkingLine Wkline = this.workingLines.get(0);
-		int size = this.workingLines.size() -1 ;
-		for (x = 0; x < size;  x++); {
+		for (int x = 0; x < this.workingLines.size();  x++) {
 			if (this.workingLines.get(x).getNameLine().compareTo(nameOfWorkingLine) == 0) {
 				Wkline = this.workingLines.get(x);
 			}
@@ -52,8 +50,7 @@ public class WorkDepartment {
 	
 	public int getIndexLineFromName(String nameOfWorkingLine) {
 		int index = 0;
-		int size = this.workingLines.size();
-		for (int x = 0; x < size;  x++) {
+		for (int x = 0; x < this.workingLines.size();  x++) {
 			if (this.workingLines.get(x).getNameLine().compareTo(nameOfWorkingLine) == 0) {
 				index = x;
 			}
@@ -64,10 +61,9 @@ public class WorkDepartment {
 	
 	public boolean deleteWorkingLine(String nameOfWorkingLine) {
 		boolean yesNo = false;
-		int size = workingLines.size() -1;
-		for (int x = 0; x < size;  x++) {
-			if (workingLines.get(x).getNameLine().compareTo(nameOfWorkingLine) == 0) {
-					workingLines.remove(x);
+		for (int x = 0; x < this.workingLines.size();  x++) {
+			if (this.workingLines.get(x).getNameLine().compareTo(nameOfWorkingLine) == 0) {
+					this.workingLines.remove(x);
 					yesNo = true;
 			}
 		}

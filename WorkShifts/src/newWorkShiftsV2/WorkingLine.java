@@ -35,5 +35,17 @@ public class WorkingLine {
 		this.shift.add(shift);
 		
 	}
+	
+	public boolean deleteWeekShift(int idWeekShift) {
+		boolean yesNo = false;
+		int size = shift.size();
+		for (int x = 0; x < size;  x++) {
+			if (shift.get(x).getIdWeek() == idWeekShift) {
+				shift.remove(x);
+				yesNo = true;
+			}
+		}
+		return yesNo;
+	}
 
 }
