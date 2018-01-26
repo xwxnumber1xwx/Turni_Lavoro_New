@@ -24,4 +24,15 @@ public class AllEmployee {
 		this.allEmployee.add(employee);
 	}
 	
+	public Employee findEmployeeFromID (long id) {
+		for (int x = 0; x < allEmployee.size(); x++) {
+			Employee employee = allEmployee.get(x);
+			if (employee.getEmployeeID() == id) {
+				return employee;
+			}
+				
+		}
+		return null;
+	}
+	
 }

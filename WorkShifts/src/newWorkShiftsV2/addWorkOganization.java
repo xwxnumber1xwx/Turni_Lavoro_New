@@ -62,7 +62,6 @@ public class addWorkOganization {
 	public void addWorkingLine(WorkDepartment workDepartment, TextField workingLineInput) {
 		WorkingLine workingLine = new WorkingLine();
 		workingLine.setNameLine(workingLineInput.getText());
-		workDepartment.setNameOfDepartment("Backerei");
 		workDepartment.addWorkingLine(workingLine);
 		IOFileV2.exportJson("databaseV2", "department_database", toJson.WorkDepartmentToJson(workDepartment));
 		shifts.ViewWorkingLine();

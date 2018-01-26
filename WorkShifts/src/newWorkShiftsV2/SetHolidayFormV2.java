@@ -18,6 +18,9 @@ public class SetHolidayFormV2 {
 	static AllConditionsEmployee allconditionsEmployee;
 	static ToJson toJson = new ToJson();
 	static AllEmployee allEmployee;
+	static DatePicker holidayInDatePickerStart;
+	static DatePicker holidayInDatePickerEnd;
+	
 
 	public static void SetHoliday() {
 		Stage window = new Stage();
@@ -32,8 +35,8 @@ public class SetHolidayFormV2 {
 		} else
 			allconditionsEmployee = new AllConditionsEmployee();
 
-		DatePicker holidayInDatePickerStart = new DatePicker();
-		DatePicker holidayInDatePickerEnd = new DatePicker();
+		holidayInDatePickerStart = new DatePicker();
+		holidayInDatePickerEnd = new DatePicker();
 		holidayInDatePickerStart.setValue(LocalDate.now().plusWeeks(1));
 		holidayInDatePickerStart.setShowWeekNumbers(true);
 		holidayInDatePickerEnd.setValue(holidayInDatePickerStart.getValue().plusDays(1));

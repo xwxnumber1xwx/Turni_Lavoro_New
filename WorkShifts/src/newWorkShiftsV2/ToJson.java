@@ -18,16 +18,16 @@ public class ToJson {
 		return allEmployee;
 	}
 
-	public String WorkDepartmentToJson(WorkDepartment workdepartment) {
+	public String AllWorkDepartmentToJson(AllWorkDepartment allWorkdepartment) {
 
-		String gsonString = gson.toJson(workdepartment);
+		String gsonString = gson.toJson(allWorkdepartment);
 		return gsonString;
 	}
 
-	public WorkDepartment JsonToWorkDepartment(String jsonString) {
-		WorkDepartment workDepartment = null;
-		workDepartment = gson.fromJson(jsonString, WorkDepartment.class);
-		return workDepartment;
+	public AllWorkDepartment JsonToAllWorkDepartment(String jsonString) {
+		AllWorkDepartment allWorkDepartment = null;
+		allWorkDepartment = gson.fromJson(jsonString, AllWorkDepartment.class);
+		return allWorkDepartment;
 	}
 	
 	public String ConditionEmployeeToJson(AllConditionsEmployee allConditionsEmployee) {
@@ -39,6 +39,17 @@ public class ToJson {
 		AllConditionsEmployee allConditionsEmployee = null;
 		allConditionsEmployee = gson.fromJson(jsonString, AllConditionsEmployee.class);
 		return allConditionsEmployee;
+	}
+	
+	public String GenericObjectToJson(Object object) {
+		String gsonString = gson.toJson(object);
+		return gsonString;
+	}
+	
+	public AllShiftsEmployeeAssociation JsonToAllShiftsEmployeeAssociation(String jsonString) {
+		AllShiftsEmployeeAssociation allShiftsEmployeeAssociation;
+		allShiftsEmployeeAssociation = gson.fromJson(jsonString, AllShiftsEmployeeAssociation.class);
+		return allShiftsEmployeeAssociation;
 	}
 
 

@@ -1,25 +1,15 @@
 package newWorkShiftsV2;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class WorkDepartment {
-	private String nameOfDepartment = "unknow";
 	private ArrayList<WorkingLine> workingLines = new ArrayList<WorkingLine>();
+	private LocalDate date;
 
 	/**
 	 * @return the nameOfDepartment
 	 */
-	public String getNameOfDepartment() {
-		return nameOfDepartment;
-	}
-
-	/**
-	 * @param nameOfDepartment the nameOfDepartment to set
-	 */
-	public void setNameOfDepartment(String nameOfDepartment) {
-		this.nameOfDepartment = nameOfDepartment;
-	}
-
 	/**
 	 * @return the department
 	 */
@@ -49,7 +39,7 @@ public class WorkDepartment {
 	}
 	
 	public int getIndexLineFromName(String nameOfWorkingLine) {
-		int index = 0;
+		int index = -1;
 		for (int x = 0; x < this.workingLines.size();  x++) {
 			if (this.workingLines.get(x).getNameLine().compareTo(nameOfWorkingLine) == 0) {
 				index = x;
@@ -68,6 +58,20 @@ public class WorkDepartment {
 			}
 		}
 		return yesNo;
+	}
+
+	/**
+	 * @return the date
+	 */
+	public LocalDate getDate() {
+		return date;
+	}
+
+	/**
+	 * @param date the date to set
+	 */
+	public void setDate(LocalDate date) {
+		this.date = date;
 	}
 
 }

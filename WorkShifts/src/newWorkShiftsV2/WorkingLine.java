@@ -36,12 +36,13 @@ public class WorkingLine {
 		
 	}
 	
-	public boolean deleteWeekShift(int idWeekShift) {
+	public boolean deleteWeekShift(String idWeekShift) {
 		boolean yesNo = false;
 		int size = shift.size();
 		for (int x = 0; x < size;  x++) {
 			if (shift.get(x).getIdWeek() == idWeekShift) {
 				shift.remove(x);
+				size = shift.size();
 				yesNo = true;
 			}
 		}

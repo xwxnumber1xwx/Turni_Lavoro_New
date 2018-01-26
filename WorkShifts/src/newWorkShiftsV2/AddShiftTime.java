@@ -20,7 +20,7 @@ public class AddShiftTime {
 	static OneDayShift oneDayShift;
 	static WeekShifts weekShifts;
 
-	public static WorkDepartment addTimes(WorkDepartment workDepartment, int idWeek) {
+	public static WorkDepartment addTimes(WorkDepartment workDepartment, String idWeek) {
 		weekShifts = new WeekShifts();
 		Stage window = new Stage();
 		window.initModality(Modality.APPLICATION_MODAL);

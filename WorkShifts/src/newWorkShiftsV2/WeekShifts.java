@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class WeekShifts {
 	private ArrayList<OneDayShift> weekShifts = new ArrayList<>(6);
-	private int idWeek = 0;
+	private String idWeek = "";
 
 	/**
 	 * @return the weekShifts
@@ -32,14 +32,14 @@ public class WeekShifts {
 	/**
 	 * @return the idWeek
 	 */
-	public int getIdWeek() {
+	public String getIdWeek() {
 		return idWeek;
 	}
 
 	/**
 	 * @param idWeek the idWeek to set
 	 */
-	public void setIdWeek(int idWeek) {
+	public void setIdWeek(String idWeek) {
 		this.idWeek = idWeek;
 	}
 
