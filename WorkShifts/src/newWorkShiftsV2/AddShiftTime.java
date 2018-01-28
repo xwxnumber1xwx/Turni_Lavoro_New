@@ -40,30 +40,30 @@ public class AddShiftTime {
 			} else {
 			oneDayShift = addOneDayShift(LocalTime.parse(fieldSundayStart.getText()),
 					LocalTime.parse(fieldSundayEnd.getText()));
-			weekShifts.setOneDayShift(oneDayShift);
+			weekShifts.addOneDayShift(oneDayShift);
 			oneDayShift = addOneDayShift(LocalTime.parse(fieldMondayStart.getText()),
 					LocalTime.parse(fieldMondayEnd.getText()));
-			weekShifts.setOneDayShift(oneDayShift);
+			weekShifts.addOneDayShift(oneDayShift);
 			oneDayShift = addOneDayShift(LocalTime.parse(fieldTuesdayStart.getText()),
 					LocalTime.parse(fieldTuesdayEnd.getText()));
-			weekShifts.setOneDayShift(oneDayShift);
+			weekShifts.addOneDayShift(oneDayShift);
 			oneDayShift = addOneDayShift(LocalTime.parse(fieldWednesdayStart.getText()),
 					LocalTime.parse(fieldWednesdayEnd.getText()));
-			weekShifts.setOneDayShift(oneDayShift);
+			weekShifts.addOneDayShift(oneDayShift);
 			oneDayShift = addOneDayShift(LocalTime.parse(fieldThursdayStart.getText()),
 					LocalTime.parse(fieldThursdayEnd.getText()));
-			weekShifts.setOneDayShift(oneDayShift);
+			weekShifts.addOneDayShift(oneDayShift);
 			oneDayShift = addOneDayShift(LocalTime.parse(fieldFridayStart.getText()),
 					LocalTime.parse(fieldFridayEnd.getText()));
-			weekShifts.setOneDayShift(oneDayShift);
+			weekShifts.addOneDayShift(oneDayShift);
 			oneDayShift = addOneDayShift(LocalTime.parse(fieldSaturdayStart.getText()),
 					LocalTime.parse(fieldSaturdayEnd.getText()));
-			weekShifts.setOneDayShift(oneDayShift);
+			weekShifts.addOneDayShift(oneDayShift);
 			
 			// workDepartment.getWorkingLineFromName(choiceWeek.getValue());
 			//workDepartment.getWorkingLineFromName(choiceWeek.getValue()).addOneShift(weekShifts);
 			weekShifts.setIdWeek(idWeek);
-			workDepartment.getWorkingLineFromName(choiceWeek.getValue()).getShift().add(weekShifts);
+			workDepartment.getWorkingLineFromName(choiceWeek.getValue()).getWeekShifts().add(weekShifts);
 			//IOFileV2.exportJson("databaseV2", "department_database", toJson.WorkDepartmentToJson(workDepartment));
 			//ViewShiftsTab shifts = new ViewShiftsTab();
 			//shifts.ViewWorkingLine();

@@ -1,7 +1,10 @@
 package newWorkShiftsV2;
 
+import java.time.DayOfWeek;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -10,7 +13,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.Label;
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.SeparatorMenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -41,7 +47,7 @@ public class ViewShiftsTab {
 	int index = 0, weektoElaborate = 0;
 	AllEmployee allEmployee;
 	String idWeek;
-	ContextMenu contextMenu; //right click menu
+	ContextMenu contextMenu; // right click menu
 	ShiftsEmployeeAssociation shiftsEmployeeAssociation;
 	AllShiftsEmployeeAssociation allShiftsEmployeeAssociation;
 	String choosedName;
@@ -49,15 +55,24 @@ public class ViewShiftsTab {
 			Thursday, Friday, Saturday;
 	Label labelWeektoElaborate;
 	AllWorkDepartment allWorkDepartment;
+	LocalDate date;
+	MenuBar menuBar;
+	Menu fileMenu;
+	MenuItem newMenuBar, openFileMenuBar, saveMenuBar, saveAsMenuBar, exitMenuBar;
 
 	public void ViewWorkingLine() {
 
 		window = new Stage();
+		date = LocalDate.of(LocalDate.now().getYear(), 1, 1);
+		date = date.with((DayOfWeek.SUNDAY));
 		// Buttons delcaring
 		buttons();
 
 		// Labels
 		labelWeektoElaborate = new Label("Week");
+
+		// FileMenu on Top
+		menuBarDeclaring();
 
 		// contextMenu declaring (right click Menu on shifts)
 		rightClickMenuOnShifts();
@@ -86,7 +101,7 @@ public class ViewShiftsTab {
 
 		// Table shifts
 		tableViewDeclaring(tableWidth);
-		
+
 		setAllShiftOnTable();
 
 		// Layout Gridpane
@@ -95,7 +110,7 @@ public class ViewShiftsTab {
 		gridShifts.setPadding(new Insets(10, 10, 10, 10));
 		gridShifts.setVgap(8);
 		gridShifts.setHgap(10);
-		gridShifts.getChildren().addAll(rootWorkDepartment, activeWeek, addLineTextField, buttonAddLineTimes,
+		gridShifts.getChildren().addAll(menuBar, rootWorkDepartment, activeWeek, addLineTextField, buttonAddLineTimes,
 				labelWeektoElaborate, buttonNextWeek, buttonPrevWeek, buttonDeleteNewWorkingLine,
 				buttonAddNewWorkingLine, tableShiftsWeekShifts, buttonBackToMain);
 		gridShifts.setAlignment(Pos.CENTER);
@@ -104,6 +119,59 @@ public class ViewShiftsTab {
 		window.setScene(scene);
 		window.setTitle("Working Line");
 		window.show();
+	}
+
+	private void menuBarDeclaring() {
+		fileMenu = new Menu("File");
+		newMenuBar = new MenuItem("New...");
+		newMenuBar.setOnAction(e -> {
+			if (ConfirmBox.Confirm("SAVE", "Do you want Save before Exit?") == true) {
+				saveToFile();
+			}
+			allWorkDepartment = new AllWorkDepartment();
+			for (int x = 0; x < 53; x++) {
+				allWorkDepartment.addOneWorkDepartment(new WorkDepartment());
+			}
+			workDepartment = allWorkDepartment.getWorkDepartmentArray().get(0);
+			tableShiftsWeekShifts.getItems().clear();
+			root.getChildren().clear();
+
+		});
+
+		openFileMenuBar = new MenuItem("Open File...");
+		openFileMenuBar.setOnAction(e -> AlertBox.Display("ERROR", "This function come in the next update"));
+
+		exitMenuBar = new MenuItem("Exit");
+		exitMenuBar.setOnAction(e -> {
+			if (ConfirmBox.Confirm("Exit?", "Do you want Save before Exit?") == true){
+				saveToFile();
+			}
+			window.close();
+		});
+		saveMenuBar = new MenuItem("Save");
+		saveMenuBar.setOnAction(e -> {
+			saveToFile();
+			AlertBox.Display("Saved", "File has been saved");
+		});
+
+		saveAsMenuBar = new MenuItem("Save File as...");
+		saveAsMenuBar.setOnAction(e -> AlertBox.Display("ERROR", "This function come in the next update"));
+
+		fileMenu.getItems().add(newMenuBar);
+		fileMenu.getItems().add(openFileMenuBar);
+		fileMenu.getItems().add(saveMenuBar);
+		fileMenu.getItems().add(saveAsMenuBar);
+		fileMenu.getItems().add(new SeparatorMenuItem());
+		fileMenu.getItems().add(exitMenuBar);
+
+		menuBar = new MenuBar();
+		menuBar.getMenus().addAll(fileMenu);
+	}
+
+	private void saveToFile() {
+		IOFileV2.exportJson("databaseV2", "department_database", toJson.AllWorkDepartmentToJson(allWorkDepartment));
+		IOFileV2.exportJson("databaseV2", "shifts_association",
+				toJson.GenericObjectToJson(allShiftsEmployeeAssociation));
 	}
 
 	private void rootTreeItemDeclaring() {
@@ -146,27 +214,28 @@ public class ViewShiftsTab {
 		workingLineTC = new TableColumn<>("Line");
 		workingLineTC.setMinWidth(tableWidth);
 		workingLineTC.setCellValueFactory(new PropertyValueFactory<Week, String>("lineName"));
-		Sunday = new TableColumn<>("Sunday");
+		Sunday = new TableColumn<>();
 		Sunday.setMinWidth(tableWidth);
 		Sunday.setCellValueFactory(new PropertyValueFactory<Week, String>("sun"));
-		Monday = new TableColumn<>("Monday");
+		Monday = new TableColumn<>();
 		Monday.setMinWidth(tableWidth);
 		Monday.setCellValueFactory(new PropertyValueFactory<Week, String>("mon"));
-		Tuesday = new TableColumn<>("Tuesday");
+		Tuesday = new TableColumn<>();
 		Tuesday.setMinWidth(tableWidth);
 		Tuesday.setCellValueFactory(new PropertyValueFactory<Week, String>("tue"));
-		Wednesday = new TableColumn<>("Wednesday");
+		Wednesday = new TableColumn<>();
 		Wednesday.setMinWidth(tableWidth);
 		Wednesday.setCellValueFactory(new PropertyValueFactory<Week, String>("wed"));
-		Thursday = new TableColumn<>("Thursday");
+		Thursday = new TableColumn<>();
 		Thursday.setMinWidth(tableWidth);
 		Thursday.setCellValueFactory(new PropertyValueFactory<Week, String>("thu"));
-		Friday = new TableColumn<>("Friday");
+		Friday = new TableColumn<>();
 		Friday.setMinWidth(tableWidth);
 		Friday.setCellValueFactory(new PropertyValueFactory<Week, String>("fri"));
-		Saturday = new TableColumn<>("Saturday");
+		Saturday = new TableColumn<>();
 		Saturday.setMinWidth(tableWidth);
 		Saturday.setCellValueFactory(new PropertyValueFactory<Week, String>("sat"));
+		addDateToDayOfWeekColumn();
 	}
 
 	private void setShiftEmployeeAssociation(int indexCBOX) {
@@ -220,7 +289,7 @@ public class ViewShiftsTab {
 		addLineTextField.setPromptText("Write the name");
 		addLineTextField.setMinWidth(100);
 		activeWeek = new TextField();
-		String w = String.valueOf(1+ weektoElaborate);
+		String w = String.valueOf(1 + weektoElaborate);
 		activeWeek.setText("WeeK: " + w);
 		activeWeek.setMinWidth(50);
 		activeWeek.setEditable(false);
@@ -230,7 +299,8 @@ public class ViewShiftsTab {
 		contextMenu = new ContextMenu();
 		MenuItem delete = new MenuItem("Delete");
 		MenuItem addShift = new MenuItem("Add Shifts");
-		contextMenu.getItems().addAll(addShift, delete);
+		MenuItem copyShift = new MenuItem("Copy All Shift");
+		contextMenu.getItems().addAll(addShift, delete, copyShift);
 		addShift.setOnAction(e -> {
 			idWeek = LocalDateTime.now().toString();
 			workDepartment = AddShiftTime.addTimes(workDepartment, idWeek);
@@ -239,6 +309,41 @@ public class ViewShiftsTab {
 		delete.setOnAction(e -> {
 			if (ConfirmBox.Confirm("Delete?", "Do you want to delete the selected Shifts?"))
 				deleteSelectedShiftButton();
+
+		});
+
+		// Copy all the Shifts to Another week without Employee
+		copyShift.setOnAction(e -> {
+			int wk = CopyShifts.choseWeekToCopy();
+			if (ConfirmBox.Confirm("Copy?", "Do you want to copy Shifts from week: " + (1 + weektoElaborate)
+					+ " to week: " + (1 + wk) + "?") == true) {
+				idWeek = LocalDateTime.now().toString();
+				WorkDepartment workDepartmentClone = allWorkDepartment.getWorkDepartmentArray().get(wk);
+				for (int u = 0; u < workDepartment.getWorkingLines().size(); u++) {
+					WorkingLine WorkingLineClone = new WorkingLine();
+					WorkingLineClone.setNameLine(workDepartment.getWorkingLines().get(u).getNameLine());
+					for (int t = 0; t < workDepartment.getWorkingLines().get(u).getWeekShifts().size(); t++) {
+						WeekShifts weekShiftsClone = new WeekShifts();
+						weekShiftsClone.setIdWeek(idWeek + u + t);
+						for (int v = 0; v < workDepartment.getWorkingLines().get(u).getWeekShifts().get(t)
+								.getOneDayShifts().size(); v++) {
+							OneDayShift oneDayShiftClone = new OneDayShift();
+							oneDayShiftClone.setDayOff(workDepartment.getWorkingLines().get(u).getWeekShifts().get(t)
+									.getOneDayShifts().get(v).isDayOff());
+							oneDayShiftClone.setStartWorkTime(workDepartment.getWorkingLines().get(u).getWeekShifts()
+									.get(t).getOneDayShifts().get(v).getStartWorkTime());
+							oneDayShiftClone.setEndWorkTime(workDepartment.getWorkingLines().get(u).getWeekShifts()
+									.get(t).getOneDayShifts().get(v).getEndWorkTime());
+							weekShiftsClone.addOneDayShift(oneDayShiftClone);
+						}
+						WorkingLineClone.addOneWeekShift(weekShiftsClone);
+					}
+					workDepartmentClone.addWorkingLine(WorkingLineClone);
+				}
+
+				// allWorkDepartment.setOneWorkDepartment(workDepartmentClone, wk);
+				AlertBox.Display("DONE", "Shifts succesfully copied");
+			}
 		});
 	}
 
@@ -268,9 +373,7 @@ public class ViewShiftsTab {
 		buttonBackToMain = new Button();
 		buttonBackToMain.setText("Back to Main");
 		buttonBackToMain.setOnAction(e -> {
-			IOFileV2.exportJson("databaseV2", "department_database", toJson.AllWorkDepartmentToJson(allWorkDepartment));
-			IOFileV2.exportJson("databaseV2", "shifts_association",
-					toJson.GenericObjectToJson(allShiftsEmployeeAssociation));
+			saveToFile();
 			window.close();
 		});
 
@@ -288,13 +391,14 @@ public class ViewShiftsTab {
 			root.getChildren().clear();
 			addItemsToArrayLineTree();
 			setAllShiftOnTable();
+			addDateToDayOfWeekColumn();
 		});
 		buttonPrevWeek = new Button("<-");
 		buttonPrevWeek.setOnAction(e -> {
 			String w = ("WeeK: " + "52");
 			if (weektoElaborate > 0) {
 				weektoElaborate--;
-				w = "WeeK: " + String.valueOf(1+ weektoElaborate);
+				w = "WeeK: " + String.valueOf(1 + weektoElaborate);
 			} else {
 				weektoElaborate = 52;
 			}
@@ -303,8 +407,27 @@ public class ViewShiftsTab {
 			root.getChildren().clear();
 			addItemsToArrayLineTree();
 			setAllShiftOnTable();
+			addDateToDayOfWeekColumn();
+
 		});
 
+	}
+
+	private void addDateToDayOfWeekColumn() {
+		Sunday.setText(DayOfWeek.SUNDAY + "\n" + date.plusWeeks(weektoElaborate).with(DayOfWeek.SUNDAY));
+		date = date.plusDays(1);
+		Monday.setText(DayOfWeek.MONDAY + "\n" + date.plusWeeks(weektoElaborate).with(DayOfWeek.MONDAY));
+		date = date.plusDays(1);
+		Tuesday.setText(DayOfWeek.TUESDAY + "\n" + date.plusWeeks(weektoElaborate).with(DayOfWeek.TUESDAY));
+		date = date.plusDays(1);
+		Wednesday.setText(DayOfWeek.WEDNESDAY + "\n" + date.plusWeeks(weektoElaborate).with(DayOfWeek.WEDNESDAY));
+		date = date.plusDays(1);
+		Thursday.setText(DayOfWeek.THURSDAY + "\n" + date.plusWeeks(weektoElaborate).with(DayOfWeek.THURSDAY));
+		date = date.plusDays(1);
+		Friday.setText(DayOfWeek.FRIDAY + "\n" + date.plusWeeks(weektoElaborate).with(DayOfWeek.FRIDAY));
+		date = date.plusDays(1);
+		Saturday.setText(DayOfWeek.SATURDAY + "\n" + date.plusWeeks(weektoElaborate).with(DayOfWeek.SATURDAY));
+		date = date.minusDays(6);
 	}
 
 	private void addItemsToArrayLineTree() {
@@ -320,6 +443,7 @@ public class ViewShiftsTab {
 
 	private GridPane gridPanePositionSetting() {
 		GridPane gridShifts = new GridPane();
+		GridPane.setConstraints(menuBar, 10, 10);
 		GridPane.setConstraints(buttonBackToMain, 3, 2);
 		GridPane.setConstraints(rootWorkDepartment, 0, 0);
 		GridPane.setConstraints(buttonAddNewWorkingLine, 0, 3);
@@ -361,7 +485,7 @@ public class ViewShiftsTab {
 	public ObservableList<OneDayShift> getAllOneDayWeekShifts(WeekShifts weekShifts) {
 
 		ObservableList<OneDayShift> allWeekShifts = FXCollections.observableArrayList();
-		allWeekShifts.addAll(weekShifts.getWeekShifts());
+		allWeekShifts.addAll(weekShifts.getOneDayShifts());
 		return allWeekShifts;
 
 	}
@@ -381,8 +505,8 @@ public class ViewShiftsTab {
 	private void setSelectedShiftOnTable(int index) {
 		tableShiftsWeekShifts.getItems().clear();
 		workingLine = workDepartment.getWorkingLines().get(index);
-		weekShifts = workingLine.getShift();
-		for (int shiftsProLine = 0; shiftsProLine < workingLine.getShift().size(); shiftsProLine++) {
+		weekShifts = workingLine.getWeekShifts();
+		for (int shiftsProLine = 0; shiftsProLine < workingLine.getWeekShifts().size(); shiftsProLine++) {
 			tableShiftsWeekShifts.setItems(getShowedWeek(weekShifts.get(shiftsProLine), workingLine));
 		}
 	}
@@ -391,8 +515,8 @@ public class ViewShiftsTab {
 		tableShiftsWeekShifts.getItems().clear();
 		for (int x = 0; x < workDepartment.getWorkingLines().size(); x++) {
 			workingLine = workDepartment.getWorkingLines().get(x);
-			for (int y = 0; y < workingLine.getShift().size(); y++) {
-				weekShifts = workingLine.getShift();
+			for (int y = 0; y < workingLine.getWeekShifts().size(); y++) {
+				weekShifts = workingLine.getWeekShifts();
 				tableShiftsWeekShifts.setItems(getShowedWeek(weekShifts.get(y), workingLine));
 			}
 		}
@@ -435,16 +559,18 @@ public class ViewShiftsTab {
 			week.setNameSurnameID(employeeTemp.getSurname() + " " + employeeTemp.getName() + " ("
 					+ employeeTemp.getEmployeeID() + ")");
 		}
-		week.setWeek(workingLine.getNameLine(), weekShifts.getIdWeek(), weekShifts.getWeekShifts().get(0).getStartEnd(),
-				weekShifts.getWeekShifts().get(1).getStartEnd(), weekShifts.getWeekShifts().get(2).getStartEnd(),
-				weekShifts.getWeekShifts().get(3).getStartEnd(), weekShifts.getWeekShifts().get(4).getStartEnd(),
-				weekShifts.getWeekShifts().get(5).getStartEnd(), weekShifts.getWeekShifts().get(6).getStartEnd());
+		week.setWeek(workingLine.getNameLine(), weekShifts.getIdWeek(),
+				weekShifts.getOneDayShifts().get(0).getStartEnd(), weekShifts.getOneDayShifts().get(1).getStartEnd(),
+				weekShifts.getOneDayShifts().get(2).getStartEnd(), weekShifts.getOneDayShifts().get(3).getStartEnd(),
+				weekShifts.getOneDayShifts().get(4).getStartEnd(), weekShifts.getOneDayShifts().get(5).getStartEnd(),
+				weekShifts.getOneDayShifts().get(6).getStartEnd());
 		oneDayShiftList.add(week);
 		return oneDayShiftList;
 
 	}
 
 	public ObservableList<String> getSurnameEmployee() {
+		employeeObList.add("");
 		for (int x = 0; x < allEmployee.getAllEmployee().size(); x++) {
 			employeeObList.add(allEmployee.getAllEmployee().get(x).getSurname() + " "
 					+ allEmployee.getAllEmployee().get(x).getName() + " ("
@@ -482,10 +608,12 @@ public class ViewShiftsTab {
 
 		public void setNameSurnameID(String nameSurnameID) {
 			this.nameSurnameID = nameSurnameID;
-			String id = nameSurnameID;
-			id = id.substring(id.indexOf("("));
-			id = id.substring(1, id.indexOf(")", 1));
-			setIdEmployeeTC(id);
+			if (nameSurnameID.isEmpty() == false) {
+				String id = nameSurnameID;
+				id = id.substring(id.indexOf("("));
+				id = id.substring(1, id.indexOf(")", 1));
+				setIdEmployeeTC(id);
+			}
 
 		}
 
@@ -537,4 +665,5 @@ public class ViewShiftsTab {
 			return this.sat;
 		}
 	}
+
 }

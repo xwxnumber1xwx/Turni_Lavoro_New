@@ -2,31 +2,31 @@ package newWorkShiftsV2;
 
 import java.util.ArrayList;
 
-public class WeekShifts {
-	private ArrayList<OneDayShift> weekShifts = new ArrayList<>(6);
+public class WeekShifts implements Cloneable{
+	private ArrayList<OneDayShift> oneDayShifts = new ArrayList<>(6);
 	private String idWeek = "";
 
 	/**
 	 * @return the weekShifts
 	 */
-	public ArrayList<OneDayShift> getWeekShifts() {
-		return weekShifts;
+	public ArrayList<OneDayShift> getOneDayShifts() {
+		return oneDayShifts;
 	}
 
 	/**
-	 * @param weekShifts
+	 * @param oneDayShifts
 	 *            the weekShifts to set
 	 */
-	public void setWeekShifts(ArrayList<OneDayShift> weekShifts) {
-		this.weekShifts = weekShifts;
+	public void setOneDayShifts(ArrayList<OneDayShift> oneDayShifts) {
+		this.oneDayShifts = oneDayShifts;
 	}
 
 	public OneDayShift getOneDayWeekShifts(int index) {
-		return weekShifts.get(index);
+		return oneDayShifts.get(index);
 	}
 	
-	public void setOneDayShift (OneDayShift oneDayShift) {
-		this.weekShifts.add(oneDayShift);
+	public void addOneDayShift (OneDayShift oneDayShift) {
+		this.oneDayShifts.add(oneDayShift);
 	}
 
 	/**
@@ -42,5 +42,13 @@ public class WeekShifts {
 	public void setIdWeek(String idWeek) {
 		this.idWeek = idWeek;
 	}
-
+	@Override
+    public WeekShifts clone() {
+        try {
+            return (WeekShifts) super.clone();
+        }
+        catch (CloneNotSupportedException e) {
+            throw new Error("Something impossible just happened");
+        }
+    }
 }

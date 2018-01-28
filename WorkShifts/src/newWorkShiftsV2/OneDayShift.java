@@ -7,7 +7,6 @@ public class OneDayShift {
 	private boolean dayOff = false;
 	private LocalTime startWorkTime = LocalTime.MIN;
 	private LocalTime endWorkTime = LocalTime.MIN;
-	String StartEnd = "";
 
 	/**
 	 * @return the dayOff

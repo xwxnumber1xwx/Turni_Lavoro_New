@@ -3,9 +3,8 @@ package newWorkShiftsV2;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class WorkDepartment {
+public class WorkDepartment implements Cloneable{
 	private ArrayList<WorkingLine> workingLines = new ArrayList<WorkingLine>();
-	private LocalDate date;
 
 	/**
 	 * @return the nameOfDepartment
@@ -20,8 +19,8 @@ public class WorkDepartment {
 	/**
 	 * @param department the department to set
 	 */
-	public void setDepartment(ArrayList<WorkingLine> department) {
-		this.workingLines = department;
+	public void setWorkingLines(ArrayList<WorkingLine> workingLines) {
+		this.workingLines = workingLines;
 	}
 	
 	public void addWorkingLine(WorkingLine workingLine) {
@@ -59,19 +58,14 @@ public class WorkDepartment {
 		}
 		return yesNo;
 	}
-
-	/**
-	 * @return the date
-	 */
-	public LocalDate getDate() {
-		return date;
-	}
-
-	/**
-	 * @param date the date to set
-	 */
-	public void setDate(LocalDate date) {
-		this.date = date;
-	}
-
+	
+	@Override
+    public WorkDepartment clone() {
+        try {
+            return (WorkDepartment) super.clone();
+        }
+        catch (CloneNotSupportedException e) {
+            throw new Error("Something impossible just happened");
+        }
+    }
 }

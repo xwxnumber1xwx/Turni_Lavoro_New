@@ -59,6 +59,7 @@ public class addWorkOganization {
 		window.show();
 	}
 
+	
 	public void addWorkingLine(WorkDepartment workDepartment, TextField workingLineInput) {
 		WorkingLine workingLine = new WorkingLine();
 		workingLine.setNameLine(workingLineInput.getText());
