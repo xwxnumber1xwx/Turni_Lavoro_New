@@ -2,7 +2,7 @@ package newWorkShiftsV2;
 
 import java.util.ArrayList;
 
-public class WeekShifts implements Cloneable{
+public class WeekShifts{
 	private ArrayList<OneDayShift> oneDayShifts = new ArrayList<>(6);
 	private String idWeek = "";
 
@@ -42,13 +42,5 @@ public class WeekShifts implements Cloneable{
 	public void setIdWeek(String idWeek) {
 		this.idWeek = idWeek;
 	}
-	@Override
-    public WeekShifts clone() {
-        try {
-            return (WeekShifts) super.clone();
-        }
-        catch (CloneNotSupportedException e) {
-            throw new Error("Something impossible just happened");
-        }
-    }
+	
 }

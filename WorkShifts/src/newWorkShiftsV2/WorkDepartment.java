@@ -3,7 +3,7 @@ package newWorkShiftsV2;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class WorkDepartment implements Cloneable{
+public class WorkDepartment{
 	private ArrayList<WorkingLine> workingLines = new ArrayList<WorkingLine>();
 
 	/**
@@ -58,14 +58,5 @@ public class WorkDepartment implements Cloneable{
 		}
 		return yesNo;
 	}
-	
-	@Override
-    public WorkDepartment clone() {
-        try {
-            return (WorkDepartment) super.clone();
-        }
-        catch (CloneNotSupportedException e) {
-            throw new Error("Something impossible just happened");
-        }
-    }
+
 }
