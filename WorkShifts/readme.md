@@ -1,6 +1,6 @@
 # WORK SHIFTS
 
-the purpose of this program is to manage work shifts and needs of workers (for example: holidays).
+The purpose of this program is to manage work shifts and needs of workers (for example: holidays).
 
 ## MIT License
 
